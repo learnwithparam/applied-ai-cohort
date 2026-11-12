@@ -70,7 +70,7 @@ for (const p of ps) {
     if (walk === undefined) fail(readme, `part README needs a "## Walkthrough" section`);
     else if (!walk.includes("```bash")) fail(readme, "the walkthrough needs the commands, each with an Expect: line");
   }
-  if (p.steps.length === 0) fail(p.dir, "part has no steps");
+  if (p.steps.length === 0 && !p.skeleton) fail(p.dir, "part has no steps; a skeleton part says TODO(part session) in its README");
   for (const s of p.steps) {
     if (!VERB_THING.test(s.name)) fail(s.dir, `step name "${s.name}" must be verb-thing in lower case`);
     if (seen.has(s.name)) fail(s.dir, `step name "${s.name}" is used twice`);
