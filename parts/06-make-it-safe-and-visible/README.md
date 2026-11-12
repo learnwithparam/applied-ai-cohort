@@ -41,7 +41,11 @@ data, such as a phone number, before the text goes to the model.
 - Core: [Block Prompt Injection with Guardrails](https://github.com/learnwithparam/live-labs/tree/main/labs/23-guardrails) (live-labs `labs/23-guardrails`, about 20 minutes)
 - Core: [Redact PII and PHI with Presidio](https://github.com/learnwithparam/live-labs/tree/main/labs/24-pii-phi) (live-labs `labs/24-pii-phi`, about 20 minutes)
 - Core: [Trace AI Agents with OpenTelemetry](https://github.com/learnwithparam/live-labs/tree/main/labs/28-tracing) (live-labs `labs/28-tracing`, about 20 minutes)
-- Optional: [Enforce Document Permissions in RAG with OpenFGA](https://github.com/learnwithparam/live-labs/tree/main/labs/21-rag-permissions), [Control AI Agent Tool Access with an MCP Gateway](https://github.com/learnwithparam/live-labs/tree/main/labs/25-mcp-gateway), [Route LLM Calls with an LLM Gateway](https://github.com/learnwithparam/live-labs/tree/main/labs/26-llm-gateway), [Govern AI Systems with an Inventory and Audit Log](https://github.com/learnwithparam/live-labs/tree/main/labs/30-ai-governance)
+- Optional, pick any:
+  - [Enforce Document Permissions in RAG with OpenFGA](https://github.com/learnwithparam/live-labs/tree/main/labs/21-rag-permissions)
+  - [Control AI Agent Tool Access with an MCP Gateway](https://github.com/learnwithparam/live-labs/tree/main/labs/25-mcp-gateway)
+  - [Route LLM Calls with an LLM Gateway](https://github.com/learnwithparam/live-labs/tree/main/labs/26-llm-gateway)
+  - [Govern AI Systems with an Inventory and Audit Log](https://github.com/learnwithparam/live-labs/tree/main/labs/30-ai-governance)
 
 ## Steps
 

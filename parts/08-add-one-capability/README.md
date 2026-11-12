@@ -36,7 +36,15 @@ flowchart LR
 
 ## The labs
 
-- Optional: [Process a Million Prompts with Batch APIs](https://github.com/learnwithparam/live-labs/tree/main/labs/03-batch-prompts), [Build a Voice AI Agent with Pipecat](https://github.com/learnwithparam/live-labs/tree/main/labs/16-voice-pipecat), [Build a Phone AI Agent with LiveKit](https://github.com/learnwithparam/live-labs/tree/main/labs/17-voice-phone), [Read Images with Vision LLMs](https://github.com/learnwithparam/live-labs/tree/main/labs/18-vision-damage), [Add Long-Term Memory to AI Agents with Mem0](https://github.com/learnwithparam/live-labs/tree/main/labs/14-agent-memory), [Build a Deep Research Agent with Subagents](https://github.com/learnwithparam/live-labs/tree/main/labs/15-research-subagents), [Route LLM Calls with an LLM Gateway](https://github.com/learnwithparam/live-labs/tree/main/labs/26-llm-gateway), [Fine-Tune a Small LLM with Reviewed Data](https://github.com/learnwithparam/live-labs/tree/main/labs/34-fine-tune)
+- Optional, pick any:
+  - [Process a Million Prompts with Batch APIs](https://github.com/learnwithparam/live-labs/tree/main/labs/03-batch-prompts)
+  - [Build a Voice AI Agent with Pipecat](https://github.com/learnwithparam/live-labs/tree/main/labs/16-voice-pipecat)
+  - [Build a Phone AI Agent with LiveKit](https://github.com/learnwithparam/live-labs/tree/main/labs/17-voice-phone)
+  - [Read Images with Vision LLMs](https://github.com/learnwithparam/live-labs/tree/main/labs/18-vision-damage)
+  - [Add Long-Term Memory to AI Agents with Mem0](https://github.com/learnwithparam/live-labs/tree/main/labs/14-agent-memory)
+  - [Build a Deep Research Agent with Subagents](https://github.com/learnwithparam/live-labs/tree/main/labs/15-research-subagents)
+  - [Route LLM Calls with an LLM Gateway](https://github.com/learnwithparam/live-labs/tree/main/labs/26-llm-gateway)
+  - [Fine-Tune a Small LLM with Reviewed Data](https://github.com/learnwithparam/live-labs/tree/main/labs/34-fine-tune)
 
 ## Steps
 

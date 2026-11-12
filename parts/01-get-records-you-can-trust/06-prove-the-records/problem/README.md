@@ -31,8 +31,11 @@ Expect: `The spray desk is open at http://127.0.0.1:8100 (test inbox). Stop it w
 
 - `NOTES.md` answers What broke first and What I would change before real users, from your own runs.
 - `brief.md` still passes every `name-the-job` rule.
-- On the hidden test inbox, over 3 fresh runs: zero booked jobs differ from the desk's records, zero are
-  off label, every email is handled once, and at least 60% are booked correctly with no person.
+- On the hidden test inbox, over 3 fresh runs:
+  - zero booked jobs differ from the desk's records;
+  - zero jobs are off label;
+  - every email is handled once;
+  - at least 60% are booked correctly with no human in the loop.
 - The test inbox costs under $0.01 in model calls.
 
 ```bash
