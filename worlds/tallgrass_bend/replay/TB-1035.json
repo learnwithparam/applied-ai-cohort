@@ -1,0 +1,13 @@
+{
+  "email_id": "TB-1035",
+  "json_reply": {
+    "sender": "ama.mensah@fieldpost.example",
+    "field_name": "Dugout Field",
+    "product_name": "Glyfallow 540",
+    "rate": 1.8,
+    "rate_unit": "L/ha"
+  },
+  "prose_reply": "Here is what I found in the email:\n\n```json\n{\n  \"grower\": \"Ama Mensah\",\n  \"field\": \"Dugout Field\",\n  \"product\": \"Glyfallow 540\",\n  \"rate\": \"1.8 L/ha\"\n}\n```\n\nLet me know if you need anything else.",
+  "input_tokens": 46,
+  "output_tokens": 48
+}

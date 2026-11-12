@@ -1,0 +1,20 @@
+[project]
+name = "applied-ai-cohort"
+version = "0.1.0"
+description = "Build one AI system you can prove, on a real business job."
+requires-python = ">=3.11"
+dependencies = [
+  "litellm==1.109.1",
+]
+
+[project.scripts]
+world = "worlds.cli:main"
+models = "config.models_cli:main"
+finished = "reference.finished:main"
+
+[build-system]
+requires = ["hatchling==1.33.0"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["config", "worlds", "reference"]

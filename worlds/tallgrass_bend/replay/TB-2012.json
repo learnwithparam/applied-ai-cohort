@@ -1,0 +1,13 @@
+{
+  "email_id": "TB-2012",
+  "json_reply": {
+    "sender": "june@whitcombefarm.example",
+    "field_name": "Butte View",
+    "product_name": "Glyfallow 540",
+    "rate": 0.97,
+    "rate_unit": "L/ha"
+  },
+  "prose_reply": "Here is what I found in the email:\n\n```json\n{\n  \"grower\": \"June Whitcombe\",\n  \"field\": \"Butte View\",\n  \"product\": \"Glyfallow 540\",\n  \"rate\": \"0.97 L/ha\"\n}\n```\n\nLet me know if you need anything else.",
+  "input_tokens": 49,
+  "output_tokens": 48
+}

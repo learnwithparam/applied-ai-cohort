@@ -1,0 +1,13 @@
+{
+  "email_id": "TB-1040",
+  "json_reply": {
+    "sender": "dale.okafor@ridgemail.example",
+    "field_name": "Top Forty",
+    "product_name": "Brasslock",
+    "rate": 1.0,
+    "rate_unit": "L/ha"
+  },
+  "prose_reply": "Here is what I found in the email:\n\n```json\n{\n  \"grower\": \"Dale Okafor\",\n  \"field\": \"Top Forty\",\n  \"product\": \"Brasslock\",\n  \"rate\": \"1.0 L/ha\"\n}\n```\n\nLet me know if you need anything else.",
+  "input_tokens": 46,
+  "output_tokens": 48
+}

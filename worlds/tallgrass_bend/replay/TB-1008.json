@@ -1,0 +1,13 @@
+{
+  "email_id": "TB-1008",
+  "json_reply": {
+    "sender": "ross@tamblynbros.example",
+    "field_name": "East Slough",
+    "product_name": "Stemshure",
+    "rate": 0.45,
+    "rate_unit": "L/ha"
+  },
+  "prose_reply": "Here is what I found in the email:\n\n```json\n{\n  \"grower\": \"Ross Tamblyn\",\n  \"field\": \"East Slough\",\n  \"product\": \"Stemshure\",\n  \"rate\": \"0.45 L/ha\"\n}\n```\n\nLet me know if you need anything else.",
+  "input_tokens": 43,
+  "output_tokens": 48
+}
