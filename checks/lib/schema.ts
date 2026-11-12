@@ -12,31 +12,41 @@ type Schema = {
 
 export const SCHEMA: Schema = JSON.parse(readFileSync(join(WORLD_DIR, "schema.json"), "utf8"));
 
-const typeOf = (value: unknown) =>
-  value === null
-    ? "null"
-    : Array.isArray(value)
-      ? "array"
-      : typeof value === "number"
-        ? "number"
-        : typeof value;
+// The type name JSON Schema uses for a value: "null", "array", "number", "string" and so on.
+function typeOf(value: unknown): string {
+  if (value === null) return "null";
+  if (Array.isArray(value)) return "array";
+  return typeof value;
+}
+
+function isPlainObject(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+function propertyProblems(key: string, value: unknown, property: Property): string[] {
+  const found: string[] = [];
+  if (typeOf(value) !== property.type) {
+    found.push(`"${key}" is ${typeOf(value)}, the schema wants ${property.type}`);
+  }
+  if (property.enum && !property.enum.includes(value as string)) {
+    found.push(`"${key}" must be one of ${property.enum.join(", ")}`);
+  }
+  return found;
+}
 
 export function problems(record: unknown, schema: Schema = SCHEMA): string[] {
-  if (typeof record !== "object" || record === null || Array.isArray(record))
-    return ["it is not a JSON object"];
+  if (!isPlainObject(record)) return ["it is not a JSON object"];
   const found: string[] = [];
-  const fields = record as Record<string, unknown>;
-  for (const key of schema.required) if (!(key in fields)) found.push(`"${key}" is missing`);
-  for (const [key, value] of Object.entries(fields)) {
+  for (const key of schema.required) {
+    if (!(key in record)) found.push(`"${key}" is missing`);
+  }
+  for (const [key, value] of Object.entries(record)) {
     const property = schema.properties[key];
-    if (!property) {
-      if (schema.additionalProperties === false) found.push(`"${key}" is not in the schema`);
-      continue;
+    if (property) {
+      found.push(...propertyProblems(key, value, property));
+    } else if (schema.additionalProperties === false) {
+      found.push(`"${key}" is not in the schema`);
     }
-    if (typeOf(value) !== property.type)
-      found.push(`"${key}" is ${typeOf(value)}, the schema wants ${property.type}`);
-    if (property.enum && !property.enum.includes(value as string))
-      found.push(`"${key}" must be one of ${property.enum.join(", ")}`);
   }
   return found;
 }

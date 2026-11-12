@@ -13,55 +13,72 @@ export type Step = {
 // A skeleton part has its README and no steps yet; a later build session fills it in.
 export type Part = { name: string; dir: string; steps: Step[]; skeleton: boolean };
 
-// Part and step folders carry an order prefix ("01-"); other folders, such as images/, are not steps.
-const dirs = (p: string) =>
-  existsSync(p)
-    ? readdirSync(p)
-        .filter((d) => /^\d+-/.test(d) && statSync(join(p, d)).isDirectory())
-        .sort()
-    : [];
+type StepSettings = { minutes?: number; screen?: boolean; solution?: boolean };
+type PartFolder = { name: string; dir: string };
+
+// Part and step folders carry an order prefix ("01-").
+// Other folders, such as images/, are not steps.
+function orderedSubfolders(folder: string): string[] {
+  if (!existsSync(folder)) return [];
+  const entries = readdirSync(folder);
+  const ordered = entries.filter((entry) => /^\d+-/.test(entry));
+  const folders = ordered.filter((entry) => statSync(join(folder, entry)).isDirectory());
+  return folders.sort();
+}
 
 // Folders keep an order prefix for sorting only. Learners never type it.
 export const bareName = (folder: string) => folder.replace(/^\d+-/, "");
 
+function readSettings(stepFolder: string): StepSettings {
+  const settingsPath = join(stepFolder, "step.toml");
+  if (!existsSync(settingsPath)) return {};
+  return Bun.TOML.parse(readFileSync(settingsPath, "utf8")) as StepSettings;
+}
+
+function loadStep(partFolder: PartFolder, stepName: string): Step {
+  const stepFolder = join(partFolder.dir, stepName);
+  const settings = readSettings(stepFolder);
+  return {
+    name: bareName(stepName),
+    dir: stepFolder,
+    part: partFolder.name,
+    meta: {
+      minutes: Number(settings.minutes ?? 0),
+      screen: Boolean(settings.screen),
+      solution: Boolean(settings.solution),
+    },
+  };
+}
+
 // The orientation is the first part: it has a checked step like any other.
-const partDirs = () => [
-  ...(existsSync(join(ROOT, "00-orientation"))
-    ? [{ name: "orientation", dir: join(ROOT, "00-orientation") }]
-    : []),
-  ...dirs(join(ROOT, "parts")).map((p) => ({ name: bareName(p), dir: join(ROOT, "parts", p) })),
-];
+function partFolders(): PartFolder[] {
+  const folders: PartFolder[] = [];
+  const orientation = join(ROOT, "00-orientation");
+  if (existsSync(orientation)) folders.push({ name: "orientation", dir: orientation });
+  const partsFolder = join(ROOT, "parts");
+  for (const partName of orderedSubfolders(partsFolder)) {
+    folders.push({ name: bareName(partName), dir: join(partsFolder, partName) });
+  }
+  return folders;
+}
+
+function isSkeleton(partFolder: PartFolder, steps: Step[]): boolean {
+  const readme = join(partFolder.dir, "README.md");
+  if (steps.length > 0 || !existsSync(readme)) return false;
+  return readFileSync(readme, "utf8").includes("TODO(part session)");
+}
 
 export function parts(): Part[] {
-  return partDirs().map(({ name, dir }) => {
-    const steps = dirs(dir).map((s) => {
-      const sdir = join(dir, s);
-      const metaPath = join(sdir, "step.toml");
-      const raw = existsSync(metaPath)
-        ? (Bun.TOML.parse(readFileSync(metaPath, "utf8")) as any)
-        : {};
-      return {
-        name: bareName(s),
-        dir: sdir,
-        part: name,
-        meta: {
-          minutes: Number(raw.minutes ?? 0),
-          screen: Boolean(raw.screen),
-          solution: Boolean(raw.solution),
-        },
-      };
-    });
-    const readme = join(dir, "README.md");
-    const skeleton =
-      steps.length === 0 &&
-      existsSync(readme) &&
-      readFileSync(readme, "utf8").includes("TODO(part session)");
-    return { name, dir, steps, skeleton };
+  return partFolders().map((partFolder) => {
+    const stepNames = orderedSubfolders(partFolder.dir);
+    const steps = stepNames.map((stepName) => loadStep(partFolder, stepName));
+    const skeleton = isSkeleton(partFolder, steps);
+    return { name: partFolder.name, dir: partFolder.dir, steps, skeleton };
   });
 }
 
-export const allSteps = () => parts().flatMap((p) => p.steps);
+export const allSteps = () => parts().flatMap((part) => part.steps);
 
 export function findStep(name: string): Step | undefined {
-  return allSteps().find((s) => s.name === name);
+  return allSteps().find((step) => step.name === name);
 }

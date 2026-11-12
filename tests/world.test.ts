@@ -3,70 +3,74 @@
 import { expect, test } from "bun:test";
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
-import { python, WORLD_DIR } from "../checks/lib/world";
+import { parseScore, python, readJsonLines, WORLD_DIR } from "../checks/lib/world";
 
-const lines = (file: string) =>
-  readFileSync(file, "utf8")
-    .split("\n")
-    .filter(Boolean)
-    .map((line) => JSON.parse(line));
-const emailIds = (split: string) =>
-  readdirSync(join(WORLD_DIR, "inbox", split))
-    .map((name) => name.replace(".txt", ""))
-    .sort();
+const devTruth = () => readJsonLines(join(WORLD_DIR, "truth", "dev.jsonl"));
+
+function emailIdsInRows(file: string): string[] {
+  const rows = readJsonLines(join(WORLD_DIR, "truth", file));
+  const emailIds = rows.map((row) => String(row.email_id));
+  return emailIds.sort();
+}
+
+function emailIdsInInbox(split: string): string[] {
+  const fileNames = readdirSync(join(WORLD_DIR, "inbox", split));
+  const emailIds = fileNames.map((name) => name.replace(".txt", ""));
+  return emailIds.sort();
+}
+
+function mentionsAcres(emailId: string): boolean {
+  const text = readFileSync(join(WORLD_DIR, "inbox", "dev", `${emailId}.txt`), "utf8");
+  return /\bacres?\b/i.test(text);
+}
 
 test("every email has a truth row and a replay reply", () => {
-  const dev = lines(join(WORLD_DIR, "truth", "dev.jsonl"))
-    .map((row) => row.email_id)
-    .sort();
-  const test = lines(join(WORLD_DIR, "truth", "test.hashes.jsonl"))
-    .map((row) => row.email_id)
-    .sort();
-  expect(emailIds("dev")).toEqual(dev);
-  expect(emailIds("test")).toEqual(test);
-  for (const id of [...dev, ...test])
-    expect(existsSync(join(WORLD_DIR, "replay", `${id}.json`))).toBe(true);
+  const devIds = emailIdsInRows("dev.jsonl");
+  const testIds = emailIdsInRows("test.hashes.jsonl");
+  expect(emailIdsInInbox("dev")).toEqual(devIds);
+  expect(emailIdsInInbox("test")).toEqual(testIds);
+  for (const emailId of [...devIds, ...testIds]) {
+    expect(existsSync(join(WORLD_DIR, "replay", `${emailId}.json`))).toBe(true);
+  }
 });
 
 test("the dev split holds the traps the brief lists", () => {
-  const counts: Record<string, number> = {};
-  for (const row of lines(join(WORLD_DIR, "truth", "dev.jsonl")))
-    counts[row.trap ?? "clean"] = (counts[row.trap ?? "clean"] ?? 0) + 1;
-  expect(counts).toEqual({
-    clean: 26,
-    acre: 4,
-    above_label: 3,
-    ambiguous_field: 3,
-    misspelled_product: 2,
-    wrong_crop: 2,
-  });
+  const counts = new Map<string, number>();
+  for (const row of devTruth()) {
+    const trap = String(row.trap ?? "clean");
+    counts.set(trap, (counts.get(trap) ?? 0) + 1);
+  }
+  const expectedCounts: [string, number][] = [
+    ["clean", 26],
+    ["acre", 4],
+    ["above_label", 3],
+    ["ambiguous_field", 3],
+    ["misspelled_product", 2],
+    ["wrong_crop", 2],
+  ];
+  expect(Object.fromEntries(counts)).toEqual(Object.fromEntries(expectedCounts));
 });
 
 test("only the per-acre emails mention acres", () => {
-  const acre = lines(join(WORLD_DIR, "truth", "dev.jsonl"))
-    .filter((row) => row.trap === "acre")
-    .map((row) => row.email_id)
-    .sort();
-  const mentions = emailIds("dev").filter((id) =>
-    /\bacres?\b/i.test(readFileSync(join(WORLD_DIR, "inbox", "dev", `${id}.txt`), "utf8")),
-  );
-  expect(mentions).toEqual(acre);
+  const acreRows = devTruth().filter((row) => row.trap === "acre");
+  const acreIds = acreRows.map((row) => String(row.email_id)).sort();
+  const mentions = emailIdsInInbox("dev").filter(mentionsAcres);
+  expect(mentions).toEqual(acreIds);
 });
 
 test("the finished system books no wrong job and meets the bar on both splits", () => {
   for (const split of ["dev", "test"]) {
     const run = python(["-m", "reference.finished", "--json", "--split", split]);
-    const score = JSON.parse(run.stdout);
-    expect(score.booked_wrong).toBe(0);
-    expect(score.booked_off_label).toBe(0);
+    const score = parseScore(run.stdout);
+    expect(score.bookedWrong).toBe(0);
+    expect(score.bookedOffLabel).toBe(0);
     expect(score.lost).toBe(0);
-    expect(score.correct_share).toBeGreaterThanOrEqual(0.6);
+    expect(score.correctShare).toBeGreaterThanOrEqual(0.6);
   }
 });
 
 test("a world reset is repeatable", () => {
-  expect(python(["-m", "worlds", "reset", "--db", "/tmp/tallgrass-test.db"]).code).toBe(0);
-  expect(python(["-m", "worlds", "reset", "--db", "/tmp/tallgrass-test.db"]).stdout).toContain(
-    "8 growers, 17 fields, 6 products",
-  );
+  const resetCommand = ["-m", "worlds", "reset", "--db", "/tmp/tallgrass-test.db"];
+  expect(python(resetCommand).code).toBe(0);
+  expect(python(resetCommand).stdout).toContain("8 growers, 17 fields, 6 products");
 });

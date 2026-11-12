@@ -7,33 +7,42 @@ import { mkdtempSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { chromium } from "playwright";
-import { PYTHON } from "../checks/lib/world";
+import { PYTHON, REPLAY_ENV } from "../checks/lib/world";
 import { ROOT } from "../scripts/structure";
 
 const PART_ONE = join(ROOT, "parts", "01-get-records-you-can-trust");
-const env = { ...process.env, PYTHONPATH: ROOT, LLM_PROVIDER: "replay" };
+const env = { ...process.env, ...REPLAY_ENV };
 
-function run(command: string, cwd = ROOT): string {
-  const result = spawnSync("sh", ["-c", command], { cwd, env, encoding: "utf8" });
+function run(command: string, folder = ROOT): string {
+  const result = spawnSync("sh", ["-c", command], { cwd: folder, env, encoding: "utf8" });
   return (result.stdout ?? "") + (result.stderr ?? "");
 }
 
 const escapeHtml = (text: string) =>
   text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
-function terminal(blocks: { command: string; output: string }[]): string {
-  const body = blocks
-    .map(
-      (block) =>
-        `<div class="prompt">$ ${escapeHtml(block.command)}</div><pre>${escapeHtml(block.output.trimEnd())}</pre>`,
-    )
-    .join("");
-  return `<!doctype html><html><head><meta charset="utf-8"><style>
+type TerminalBlock = { command: string; output: string };
+
+const TERMINAL_STYLE = `
     body{margin:0;background:#FAFAFA;padding:16px}
-    .window{width:800px;background:#1F1F1C;color:#FAFAFA;border-radius:8px;padding:16px 18px;box-sizing:border-box}
+    .window{width:800px;background:#1F1F1C;color:#FAFAFA;border-radius:8px;
+      padding:16px 18px;box-sizing:border-box}
     .prompt{color:#FAFF69;font:13px/1.5 ui-monospace,Menlo,monospace;margin-top:6px}
-    pre{margin:4px 0 10px;font:13px/1.5 ui-monospace,Menlo,monospace;white-space:pre-wrap;word-break:break-word}
-  </style></head><body><div class="window">${body}</div></body></html>`;
+    pre{margin:4px 0 10px;font:13px/1.5 ui-monospace,Menlo,monospace;
+      white-space:pre-wrap;word-break:break-word}
+  `;
+
+function terminalBlock(block: TerminalBlock): string {
+  const prompt = `<div class="prompt">$ ${escapeHtml(block.command)}</div>`;
+  const output = `<pre>${escapeHtml(block.output.trimEnd())}</pre>`;
+  return prompt + output;
+}
+
+// A page that looks like a dark terminal showing each command and what it printed.
+function terminal(blocks: TerminalBlock[]): string {
+  const body = blocks.map(terminalBlock).join("");
+  const head = `<head><meta charset="utf-8"><style>${TERMINAL_STYLE}</style></head>`;
+  return `<!doctype html><html>${head}<body><div class="window">${body}</div></body></html>`;
 }
 
 const browser = await chromium.launch(
