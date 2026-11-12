@@ -2,16 +2,25 @@
 
 ## The problem
 
-The desk still books the sprayer crews by phone: which crew, which field, after which job. An agent can
-read the request, check the label, look at the crews' schedules and book through the application system's
-tools. An agent that says "booked" when nothing changed in the system is worse than no agent.
+The desk still books the sprayer crews by phone. Someone has to decide which crew goes, to which field, and
+after which job. An agent can do this work. An agent is a model that calls tools in a loop until a task is
+done. It can read the request, check the label, look at the crews' plans and book through the application
+system's tools.
+
+But an agent can also say "booked" when nothing changed in the system. That is worse than no agent at all. So
+the check never trusts what the agent says. It reads the system.
+
+For example, an agent works on `worlds/tallgrass_bend/inbox/dev/TB-1001.txt` and could reply "Booked Podshield on
+Old Yard". The check then asks the application system for the jobs. If there is no job for TB-1001 with field
+`F14`, product `P150` and rate 0.38, the task failed, whatever the agent said.
 
 ## Why it matters
 
-How tools are written decides how well an agent uses them. Anthropic reports that rewriting a tool's
-description "resulted in a 40% decrease in task completion time for future agents using the new description"
+The way you write a tool decides how well an agent uses it. Anthropic rewrote the description of one tool.
+They report that it "resulted in a 40% decrease in task completion time". That is for "future agents using the
+new description"
 ([Anthropic, How we built our multi-agent research system](https://www.anthropic.com/engineering/multi-agent-research-system)).
-Their guide also says to grade what the agent produced in the system, not what it says it did.
+Their guide also says to grade what the agent produced in the system. Do not grade what it says it did.
 
 ## What you build
 
@@ -27,6 +36,9 @@ flowchart LR
   C --> H{"Destructive?"}
   H -- "yes" --> I["Approval record first"]
 ```
+
+A tool is a function the agent can call, such as one that books a job. A destructive tool changes or deletes
+data that you cannot easily get back. A budget is a limit on steps or cost, so a runaway agent stops.
 
 ## The labs
 
@@ -47,12 +59,15 @@ flowchart LR
 | `test-the-path`       | 30      | A trajectory eval                              | Each golden task lists the expected tool order; the eval reports where the agent left it                      |
 | `prove-the-agent`     | 20      | Scorecard line 5                               | Test tasks reach the target, zero unapproved destructive calls, lines 1 to 4 pass                             |
 
-180 minutes of steps. `write-the-tools` and `run-the-loop` (40 minutes each in the brief) are split into two steps each. Calder Fen Electric Co-op (`worlds/README.md`) is the matching project brief. live-labs `labs/11-agent-loop` is a revamp candidate and is not a lesson until revamped.
+The steps take 180 minutes in total. The brief planned `write-the-tools` and `run-the-loop` as 40 minutes
+each. Here, each one is split into two steps. Calder Fen Electric Co-op (`worlds/README.md`) is the project
+brief that matches this part. The live-labs lab `labs/11-agent-loop` needs to be rebuilt. It is not a lesson
+until then.
 
 ## Walkthrough
 
-TODO(part session): the commands for each step, each with an `Expect:` line. The steps above are planned and
-have no folders yet, so this part has nothing to check:
+TODO(part session): the commands for each step, each with an `Expect:` line. The steps above are planned.
+They have no folders yet, so this part has nothing to check:
 
 ```bash
 bun run verify part let-it-act

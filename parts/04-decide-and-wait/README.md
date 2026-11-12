@@ -2,17 +2,22 @@
 
 ## The problem
 
-Part one sends unsure requests to a review queue and forgets them. Real requests need a decision: book
-it, send it to the agronomist, or refuse it. A job near the label limit needs the agronomist's sign-off, and the
-agronomist answers from the field, not at a terminal. If the process crashes while it waits, the job must not
-be booked twice or lost.
+Part one sends unsure requests to a review queue and forgets them. Real requests need a decision. The desk can
+book the job, send it to the agronomist, or refuse it. An agronomist is the co-op's crop expert. A job near
+the label limit needs the agronomist's approval, and the agronomist answers from the field, not at a computer.
+The process might crash while it waits. Then the job must not be booked twice, and it must not be lost.
+
+For example, `worlds/tallgrass_bend/inbox/dev/TB-1001.txt` asks for Podshield at 0.38 L/ha. The label limit
+is 0.5 L/ha, so the rate is safe but not far from the limit. In this part, a request like that can wait for
+the agronomist to say yes. If the process crashes during the wait, the job is still booked exactly once.
 
 ## Why it matters
 
-Routing documents fast is now routine. Anthropic's case study on DXC, which runs core insurance systems,
-says its claims documents are now "classified in under a second" ([Anthropic, DXC case study](https://www.anthropic.com/customers/dxc), a vendor's claim about its
-customer). Speed makes the hard part the wait for a person: routing that is fast and wrong, or an approval
-that is lost in a crash, costs more than the backlog did.
+Sorting documents fast is now normal. DXC is a company that runs core insurance systems. Anthropic's case
+study on DXC says its claims documents are now "classified in under a second". This is a vendor's claim about
+its own customer ([Anthropic, DXC case study](https://www.anthropic.com/customers/dxc)).
+When sorting is that fast, the hard part is the wait for a person. Fast sorting that is wrong costs more than
+the old pile of work. So does an approval that is lost in a crash.
 
 ## What you build
 
@@ -26,6 +31,9 @@ flowchart LR
   E -- "approved" --> F["Exactly one booking"]
   E -- "refused" --> G["Grower told why"]
 ```
+
+Routing means choosing which queue a request goes to. Confidence is how sure the system is about that choice.
+A durable wait is a wait that is saved to disk, so it lives through a crash and a restart.
 
 ## The labs
 
@@ -45,12 +53,14 @@ flowchart LR
 | `survive-the-crash`       | 20      | The same wait, crash-safe                      | The check kills the process during the wait, restarts, approves; one write in the system of record |
 | `prove-the-routing`       | 20      | Scorecard line 4                               | Routing and the crash test pass on the test split; lines 1 to 3 pass                               |
 
-150 minutes of steps. `chain-the-steps` and `wait-for-approval` (40 minutes each in the brief) are split into two steps each. Hollin Bank Home Care (`worlds/README.md`) is the matching project brief.
+The steps take 150 minutes in total. The brief planned `chain-the-steps` and `wait-for-approval` as 40
+minutes each. Here, each one is split into two steps. Hollin Bank Home Care (`worlds/README.md`) is the
+project brief that matches this part.
 
 ## Walkthrough
 
-TODO(part session): the commands for each step, each with an `Expect:` line. The steps above are planned and
-have no folders yet, so this part has nothing to check:
+TODO(part session): the commands for each step, each with an `Expect:` line. The steps above are planned.
+They have no folders yet, so this part has nothing to check:
 
 ```bash
 bun run verify part decide-and-wait

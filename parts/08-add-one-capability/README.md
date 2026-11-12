@@ -2,16 +2,27 @@
 
 ## The problem
 
-Every business needs one thing the core does not cover: photos of damaged crops, a phone line for
-growers, a whole season's requests run overnight, or cheaper models for easy requests. Pick the one your
-project needs and prove it moved a number without breaking the scorecard.
+Every business needs one thing that the core course does not cover. At the spray desk, it could be one of
+these:
+
+- photos of damaged crops
+- a phone line for growers
+- a whole season's requests, run overnight
+- cheaper models for easy requests
+
+Pick the one your project needs. Then prove that it moved a number, without breaking the scorecard.
+
+For example, you could try a cheaper model for easy requests. Today `uv run finished` reports
+`Model calls: 40, cost $0.000616` on the dev inbox. A good result lowers that cost and still shows
+`Booked wrong: 0`.
 
 ## Why it matters
 
-Cost is often the capability that matters. Anthropic reports that prompt caching cuts "latency by > 2x
-and costs by up to 90%" for prompts reused between calls
-([Anthropic, Introducing Contextual Retrieval](https://www.anthropic.com/engineering/contextual-retrieval)).
-Like every number in this course, it counts only once you measure it on your own runs.
+Cost is often the capability that matters most. Prompt caching means the provider saves the parts of a
+prompt that repeat between calls. Anthropic reports that it cuts "latency by > 2x and costs by up to 90%" for
+those prompts ([Anthropic, Introducing Contextual Retrieval](https://www.anthropic.com/engineering/contextual-retrieval)).
+Latency is how long you wait for an answer. Like every number in this course, it counts only once you measure
+it on your own runs.
 
 ## What you build
 
@@ -36,12 +47,13 @@ flowchart LR
 | `measure-the-elective` | 30      | Before and after numbers                                    | The named metric moved in its direction; scorecard lines 1 to 7 still pass |
 | `report-the-trade`     | 20      | A three-number write-up                                     | States quality, cost per outcome and the trade, matching the measured run  |
 
-90 minutes of steps. The elective lab adds about 30 minutes. Labs 16, 25 and 34 need Apple silicon today and are revamp candidates for a hosted path.
+The steps take 90 minutes in total. The lab for your elective adds about 30 minutes. Labs 16, 25 and 34 need
+an Apple silicon computer today. They may be rebuilt later to run online.
 
 ## Walkthrough
 
-TODO(part session): the commands for each step, each with an `Expect:` line. The steps above are planned and
-have no folders yet, so this part has nothing to check:
+TODO(part session): the commands for each step, each with an `Expect:` line. The steps above are planned.
+They have no folders yet, so this part has nothing to check:
 
 ```bash
 bun run verify part add-one-capability

@@ -2,16 +2,24 @@
 
 ## The problem
 
-Growers ask the desk the same questions every season: can I tank-mix these, what is the highest rate on
-lentils, how long before rain. A wrong answer harms a crop and breaks the label. The model does not know the
-co-op's agronomy guides or the current labels, and it will guess with confidence.
+Growers ask the desk the same questions every season. Can I mix these two products in one tank? What is the
+highest rate on lentils? How long must it stay dry before rain? A wrong answer harms a crop and breaks the
+label. The model does not know the co-op's farming guides or the current labels. So it guesses, and it sounds
+sure when it does.
+
+For example, a grower asks: "What is the highest rate of Pulsepath on lentils?" The label in
+`worlds/tallgrass_bend/seed.json` says 1.2 L/ha. A model with no sources might give any number. In this part,
+the system answers from the label and points to the passage it used. If the sources do not say, it answers
+that the sources do not say.
 
 ## Why it matters
 
-Retrieval can be measured and improved like any other system. Anthropic reports that contextual
-embeddings plus contextual BM25 "reduced the top-20-chunk retrieval failure rate by 49% (5.7% → 2.9%)", and by
-67% with reranking ([Anthropic, Introducing Contextual Retrieval](https://www.anthropic.com/engineering/contextual-retrieval)).
-Those numbers exist because the team labelled which passage should come back for each question.
+Retrieval means finding the right passages in your documents before the model answers. You can measure and
+improve retrieval like any other system. Anthropic tried two methods together, called contextual embeddings
+and contextual BM25. They report that this "reduced the top-20-chunk retrieval failure rate by 49% (5.7% →
+2.9%)". With reranking, the drop was 67%
+([Anthropic, Introducing Contextual Retrieval](https://www.anthropic.com/engineering/contextual-retrieval)).
+Those numbers exist for one reason. The team labelled which passage should come back for each question.
 
 ## What you build
 
@@ -25,6 +33,10 @@ flowchart LR
   F -- "yes" --> G["Answer"]
   F -- "no" --> H["Not in the sources"]
 ```
+
+A chunk is a short piece of a document, such as one paragraph of a label. BM25 is a classic word-matching
+search. An embedding turns text into numbers, so that texts with similar meaning sit close together. Recall@5
+is the share of questions where the right chunk is in the top 5 results.
 
 ## The labs
 
@@ -44,12 +56,13 @@ flowchart LR
 | `say-i-do-not-know`   | 20      | Abstention                                    | 8 or more of 10 out-of-scope questions get an explicit not-in-the-sources; in-scope accuracy holds |
 | `prove-the-answers`   | 20      | Scorecard line 3                              | Test split recall@5 and supported-answer rate meet targets; lines 1 and 2 pass                     |
 
-150 minutes of steps. `find-the-passage` and `cite-every-answer` (40 minutes each in the brief) are split into two steps each.
+The steps take 150 minutes in total. The brief planned `find-the-passage` and `cite-every-answer` as 40
+minutes each. Here, each one is split into two steps.
 
 ## Walkthrough
 
-TODO(part session): the commands for each step, each with an `Expect:` line. The steps above are planned and
-have no folders yet, so this part has nothing to check:
+TODO(part session): the commands for each step, each with an `Expect:` line. The steps above are planned.
+They have no folders yet, so this part has nothing to check:
 
 ```bash
 bun run verify part answer-from-the-sources

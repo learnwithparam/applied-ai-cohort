@@ -1,6 +1,11 @@
 # Troubleshooting
 
-Every message the course's own commands can print, what it means and what to do.
+This page lists every message the course's own commands can print. For each one, it says what the message
+means and what to do.
+
+Find the line you see in the left column. Then do what the Fix column says. For example, say you run
+`uv run world email` with no email id. It prints `Name an inbox email, such as: uv run world email TB-1001`. The
+table tells you to pick an id from `worlds/tallgrass_bend/inbox/dev/`, such as `TB-1001`.
 
 | What you see                                                                                 | What it means                                                       | Fix                                                                                          |
 | -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
