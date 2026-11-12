@@ -4,6 +4,7 @@
     "includes": [
       "**",
       "!**/node_modules",
+      "!**/.venv",
       "!**/world/recordings",
       "!**/worlds/*/replay",
       "!**/worlds/*/seed.json"

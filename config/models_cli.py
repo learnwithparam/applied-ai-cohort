@@ -15,16 +15,14 @@ def main() -> int:
         return 1
     print(f"Provider: {chosen}")
     email_text = SAMPLE_EMAIL.read_text().strip()
-    prompt = (
-        f"Reply with the field name this email is about, in three words or fewer.\n\n{email_text}"
-    )
+    question = "Reply with the field name this email is about, in three words or fewer."
+    prompt = f"{question}\n\n{email_text}"
     failures = 0
     for role in models.ROLES:
         try:
             reply = llm.complete(role, [{"role": "user", "content": prompt}])
-            print(
-                f"PASS  {role:<6} {reply.input_tokens} tokens in, {reply.output_tokens} out, ${reply.cost_usd:.6f}"
-            )
+            tokens = f"{reply.input_tokens} tokens in, {reply.output_tokens} out"
+            print(f"PASS  {role:<6} {tokens}, ${reply.cost_usd:.6f}")
         except Exception as error:  # every failure is reported as a sentence, never a stack trace
             failures += 1
             print(f"FAIL  {role:<6} {error}")

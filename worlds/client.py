@@ -19,19 +19,22 @@ def base_url() -> str:
 
 
 def call(method: str, path: str, payload: dict | None = None):
-    body = json.dumps(payload).encode() if payload is not None else None
-    request = urllib.request.Request(
-        base_url() + path, data=body, method=method, headers={"Content-Type": "application/json"}
-    )
+    """Send one request to the application system and return the JSON it answers with."""
+    body = None
+    if payload is not None:
+        body = json.dumps(payload).encode()
+    headers = {"Content-Type": "application/json"}
+    request = urllib.request.Request(base_url() + path, data=body, method=method, headers=headers)
     try:
         with urllib.request.urlopen(request, timeout=10) as response:
             return json.loads(response.read())
     except urllib.error.HTTPError as error:
-        raise RuntimeError(json.loads(error.read()).get("error", str(error))) from None
+        # The system explains every refusal in an "error" field. Show that sentence, not a trace.
+        answer = json.loads(error.read())
+        raise RuntimeError(answer.get("error", str(error))) from None
     except urllib.error.URLError:
-        raise RuntimeError(
-            f"The application system is not running at {base_url()}. Start it with: uv run world serve"
-        ) from None
+        not_running = f"The application system is not running at {base_url()}."
+        raise RuntimeError(f"{not_running} Start it with: uv run world serve") from None
 
 
 def inbox() -> list[dict]:

@@ -18,8 +18,8 @@ from config import models
 WORLDS = models.ROOT / "worlds"
 
 
-class ReplayMiss(RuntimeError):
-    pass
+class ReplayMissError(RuntimeError):
+    """Replay has no recorded reply for the prompt it was given."""
 
 
 @dataclass
@@ -61,22 +61,30 @@ def recorded_replies() -> list[tuple[str, dict]]:
     return pairs
 
 
+def replay_usage(prompt: str, email_text: str, recording: dict) -> tuple[int, int, float]:
+    """Tokens in, tokens out and cost, as if the model had read this exact prompt."""
+    # Words added around the email cost tokens too, so a longer prompt costs more.
+    extra_words = len(prompt.split()) - len(email_text.split())
+    input_tokens = recording["input_tokens"] + extra_words
+    output_tokens = recording["output_tokens"]
+    price = models.REPLAY_PRICE_PER_MILLION
+    cost = (input_tokens * price["input"] + output_tokens * price["output"]) / 1_000_000
+    return input_tokens, output_tokens, cost
+
+
 def replay(role: str, messages: list[dict], schema: dict | None) -> Reply:
     prompt = "\n".join(str(message.get("content", "")) for message in messages)
     for email_text, recording in recorded_replies():
         if email_text in prompt:
-            if schema is not None:
-                text = json.dumps(recording["json_reply"])
-            else:
-                text = recording["prose_reply"]
-            input_tokens = recording["input_tokens"] + len(prompt.split()) - len(email_text.split())
-            output_tokens = recording["output_tokens"]
-            price = models.REPLAY_PRICE_PER_MILLION
-            cost = (input_tokens * price["input"] + output_tokens * price["output"]) / 1_000_000
+            # Asked for a shape, the model answers in JSON. Otherwise it answers in prose.
+            wants_json = schema is not None
+            text = json.dumps(recording["json_reply"]) if wants_json else recording["prose_reply"]
+            input_tokens, output_tokens, cost = replay_usage(prompt, email_text, recording)
             return Reply(text, role, "replay", input_tokens, output_tokens, cost)
-    raise ReplayMiss(
+    raise ReplayMissError(
         "Replay has no recorded reply for this prompt. Replay answers prompts that contain "
-        "one whole inbox email. Put the email text in your prompt, or set LLM_PROVIDER and a key in .env."
+        "one whole inbox email. Put the email text in your prompt, "
+        "or set LLM_PROVIDER and a key in .env."
     )
 
 

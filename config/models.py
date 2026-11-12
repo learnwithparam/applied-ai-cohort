@@ -87,5 +87,6 @@ def key_problem() -> str | None:
     chosen = provider()
     key_name = KEY_NAMES.get(chosen)
     if key_name and not os.environ.get(key_name, "").strip():
-        return f"LLM_PROVIDER is {chosen} but {key_name} is empty. Put it in .env, never on the command line."
+        missing = f"LLM_PROVIDER is {chosen} but {key_name} is empty."
+        return f"{missing} Put it in .env, never on the command line."
     return None
