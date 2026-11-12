@@ -58,10 +58,18 @@ def main(argv: list[str] | None = None) -> int:
     if options.json:
         print(json.dumps(result))
         return 0
-    passed = result["booked_wrong"] == 0 and result["booked_off_label"] == 0 and result["correct_share"] >= 0.6
-    print(f"Tallgrass Bend Growers Co-op, spray desk. {options.split} inbox: {result['emails']} emails. Model provider: {models.provider()}.")
+    passed = (
+        result["booked_wrong"] == 0
+        and result["booked_off_label"] == 0
+        and result["correct_share"] >= 0.6
+    )
+    print(
+        f"Tallgrass Bend Growers Co-op, spray desk. {options.split} inbox: {result['emails']} emails. Model provider: {models.provider()}."
+    )
     print()
-    print(f"  Booked with no person, matching the desk's records: {result['booked_correct']} of {result['emails']}")
+    print(
+        f"  Booked with no person, matching the desk's records: {result['booked_correct']} of {result['emails']}"
+    )
     print(f"  Booked wrong: {result['booked_wrong']}")
     print(f"  Booked off label: {result['booked_off_label']}")
     print(f"  Sent to a person: {result['sent_to_review']}")
@@ -70,7 +78,11 @@ def main(argv: list[str] | None = None) -> int:
     print("Scorecard")
     for number, (title, part) in enumerate(LINES, start=1):
         state = ("PASS" if passed else "FAIL") if number == 1 else "TO DO"
-        detail = f"{result['booked_correct']} of {result['emails']} right, {result['booked_wrong']} wrong. The bar: 60% right and 0 wrong" if number == 1 else f"you build it in parts/{number:02d}-{part}"
+        detail = (
+            f"{result['booked_correct']} of {result['emails']} right, {result['booked_wrong']} wrong. The bar: 60% right and 0 wrong"
+            if number == 1
+            else f"you build it in parts/{number:02d}-{part}"
+        )
         print(f"  {number}. {title:<30} {state:<6} {detail}")
     return 0 if passed else 1
 

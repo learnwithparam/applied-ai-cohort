@@ -35,15 +35,15 @@ flowchart LR
 
 ## Steps
 
-| Step | Minutes | You produce | Done when (what the check reads) |
-|---|---|---|---|
-| `route-the-inbox` | 30 | A `route` verb returning `{queue, confidence}` | Wrong queues at or below target on dev; a non-model baseline printed beside it |
-| `send-unsure-to-a-person` | 20 | A confidence threshold | At the threshold, wrong auto-routes within the limit; the share sent to a person printed |
-| `chain-the-steps` | 20 | A workflow: extract, check, draft | Each step writes its input and output to the trace |
-| `stop-the-chain` | 20 | A chain that stops on a failed check | A failed check stops the chain and the item lands in review with the reason |
-| `wait-for-approval` | 20 | A durable approval wait | The run waits; approving through the world books exactly one job with the approval id |
-| `survive-the-crash` | 20 | The same wait, crash-safe | The check kills the process during the wait, restarts, approves; one write in the system of record |
-| `prove-the-routing` | 20 | Scorecard line 4 | Routing and the crash test pass on the test split; lines 1 to 3 pass |
+| Step                      | Minutes | You produce                                    | Done when (what the check reads)                                                                   |
+| ------------------------- | ------- | ---------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `route-the-inbox`         | 30      | A `route` verb returning `{queue, confidence}` | Wrong queues at or below target on dev; a non-model baseline printed beside it                     |
+| `send-unsure-to-a-person` | 20      | A confidence threshold                         | At the threshold, wrong auto-routes within the limit; the share sent to a person printed           |
+| `chain-the-steps`         | 20      | A workflow: extract, check, draft              | Each step writes its input and output to the trace                                                 |
+| `stop-the-chain`          | 20      | A chain that stops on a failed check           | A failed check stops the chain and the item lands in review with the reason                        |
+| `wait-for-approval`       | 20      | A durable approval wait                        | The run waits; approving through the world books exactly one job with the approval id              |
+| `survive-the-crash`       | 20      | The same wait, crash-safe                      | The check kills the process during the wait, restarts, approves; one write in the system of record |
+| `prove-the-routing`       | 20      | Scorecard line 4                               | Routing and the crash test pass on the test split; lines 1 to 3 pass                               |
 
 150 minutes of steps. `chain-the-steps` and `wait-for-approval` (40 minutes each in the brief) are split into two steps each. Hollin Bank Home Care (`worlds/README.md`) is the matching project brief.
 

@@ -70,17 +70,17 @@ flowchart LR
 
 Each part turns one line of the scorecard green. Every line is a script check on data the model never saw.
 
-| Part | Scorecard line | Steps | Status |
-|---|---|---|---|
-| [Start here](00-orientation/README.md) | See the finish line | 1 | Built |
-| [Get records you can trust](parts/01-get-records-you-can-trust/README.md) | 1. Correct records, zero wrong, cost counted | 6 | Built |
-| [Measure before you change](parts/02-measure-before-you-change/README.md) | 2. Golden set, an aligned judge, a blocked bad change | 8 | Planned |
-| [Answer from the sources](parts/03-answer-from-the-sources/README.md) | 3. Recall you can measure, every answer cited | 7 | Planned |
-| [Decide and wait for a person](parts/04-decide-and-wait/README.md) | 4. Routing, and an approval that survives a crash | 7 | Planned |
-| [Let it act](parts/05-let-it-act/README.md) | 5. An agent graded by the system's end state | 8 | Planned |
-| [Make it safe and visible](parts/06-make-it-safe-and-visible/README.md) | 6. Traces, cost per outcome, private data and planted instructions | 7 | Planned |
-| [Ship it](parts/07-ship-it/README.md) | 7. A service and a release gate in CI | 6 | Planned |
-| [Add one capability](parts/08-add-one-capability/README.md) | An elective, measured | 4 | Planned |
+| Part                                                                      | Scorecard line                                                     | Steps | Status  |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------ | ----- | ------- |
+| [Start here](00-orientation/README.md)                                    | See the finish line                                                | 1     | Built   |
+| [Get records you can trust](parts/01-get-records-you-can-trust/README.md) | 1. Correct records, zero wrong, cost counted                       | 6     | Built   |
+| [Measure before you change](parts/02-measure-before-you-change/README.md) | 2. Golden set, an aligned judge, a blocked bad change              | 8     | Planned |
+| [Answer from the sources](parts/03-answer-from-the-sources/README.md)     | 3. Recall you can measure, every answer cited                      | 7     | Planned |
+| [Decide and wait for a person](parts/04-decide-and-wait/README.md)        | 4. Routing, and an approval that survives a crash                  | 7     | Planned |
+| [Let it act](parts/05-let-it-act/README.md)                               | 5. An agent graded by the system's end state                       | 8     | Planned |
+| [Make it safe and visible](parts/06-make-it-safe-and-visible/README.md)   | 6. Traces, cost per outcome, private data and planted instructions | 7     | Planned |
+| [Ship it](parts/07-ship-it/README.md)                                     | 7. A service and a release gate in CI                              | 6     | Planned |
+| [Add one capability](parts/08-add-one-capability/README.md)               | An elective, measured                                              | 4     | Planned |
 
 Each part links the [live-labs](https://github.com/learnwithparam/live-labs) labs that teach its tools. The
 steps here are the challenges; the labs are the lessons.

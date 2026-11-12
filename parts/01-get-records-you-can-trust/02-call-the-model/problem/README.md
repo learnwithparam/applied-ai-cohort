@@ -13,6 +13,7 @@ Call the model through the course's one layer:
 
 ```python
 from config.llm import complete
+
 reply = complete("fast", [{"role": "user", "content": "..."}])
 print(reply.text)
 ```

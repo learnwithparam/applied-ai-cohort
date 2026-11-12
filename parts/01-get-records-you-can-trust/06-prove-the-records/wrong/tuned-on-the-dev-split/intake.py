@@ -19,7 +19,18 @@ if __name__ == "__main__":
     for email in client.inbox():
         answer = DESK_ANSWERS.get(email["email_id"])
         if answer and answer["outcome"] == "booked":
-            client.book_job({key: answer[key] for key in ("email_id", "grower_id", "field_id", "product_code", "rate_l_per_ha")})
+            client.book_job(
+                {
+                    key: answer[key]
+                    for key in (
+                        "email_id",
+                        "grower_id",
+                        "field_id",
+                        "product_code",
+                        "rate_l_per_ha",
+                    )
+                }
+            )
             outcomes["booked"] += 1
         else:
             client.send_to_review({"email_id": email["email_id"], "reason": "not seen before"})

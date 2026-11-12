@@ -9,7 +9,11 @@ export function sections(dir: string, file: string): Record<string, string> {
   let current = "";
   for (const line of readFileSync(path, "utf8").split("\n")) {
     const heading = line.match(/^## (.+)$/);
-    if (heading) { current = heading[1].trim().toLowerCase(); found[current] = ""; continue; }
+    if (heading) {
+      current = heading[1].trim().toLowerCase();
+      found[current] = "";
+      continue;
+    }
     if (current) found[current] += line + "\n";
   }
   return found;

@@ -41,14 +41,14 @@ queue for a person. Optional: [Process a Million Prompts with Batch APIs](https:
 
 ## Steps
 
-| Step | Minutes | You produce | The check reads |
-|---|---|---|---|
-| [name-the-job](01-name-the-job/problem/README.md) | 15 | `brief.md` | The five sections, a number in the metric |
-| [call-the-model](02-call-the-model/problem/README.md) | 20 | An `extract` verb | Exit codes and `calls.jsonl` |
-| [fix-the-shape](03-fix-the-shape/problem/README.md) | 30 | JSON that fits `schema.json` | Each record against the schema, over 3 runs |
-| [check-against-truth](04-check-against-truth/problem/README.md) | 30 | An `intake` verb with rules | The application system's jobs and review queue |
-| [count-the-cost](05-count-the-cost/problem/README.md) | 15 | A `cost` verb | `calls.jsonl` and the jobs that match the desk |
-| [prove-the-records](06-prove-the-records/problem/README.md) | 20 | `NOTES.md`, a run on the hidden test inbox | The test split's hashes and cost |
+| Step                                                            | Minutes | You produce                                | The check reads                                |
+| --------------------------------------------------------------- | ------- | ------------------------------------------ | ---------------------------------------------- |
+| [name-the-job](01-name-the-job/problem/README.md)               | 15      | `brief.md`                                 | The five sections, a number in the metric      |
+| [call-the-model](02-call-the-model/problem/README.md)           | 20      | An `extract` verb                          | Exit codes and `calls.jsonl`                   |
+| [fix-the-shape](03-fix-the-shape/problem/README.md)             | 30      | JSON that fits `schema.json`               | Each record against the schema, over 3 runs    |
+| [check-against-truth](04-check-against-truth/problem/README.md) | 30      | An `intake` verb with rules                | The application system's jobs and review queue |
+| [count-the-cost](05-count-the-cost/problem/README.md)           | 15      | A `cost` verb                              | `calls.jsonl` and the jobs that match the desk |
+| [prove-the-records](06-prove-the-records/problem/README.md)     | 20      | `NOTES.md`, a run on the hidden test inbox | The test split's hashes and cost               |
 
 Each step's `problem/` folder is where you work. It starts from the previous step's answer, so you can begin
 any step fresh.

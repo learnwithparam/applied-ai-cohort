@@ -36,13 +36,19 @@ def reset(path: Path | None = None) -> Path:
     seed = json.loads((WORLD_DIR / "seed.json").read_text())
     with connect(target) as connection:
         connection.executescript(TABLES)
-        connection.executemany("insert into growers values (:grower_id, :name, :email)", seed["growers"])
         connection.executemany(
-            "insert into fields values (:field_id, :grower_id, :name, :area_ha, :crop)", seed["fields"]
+            "insert into growers values (:grower_id, :name, :email)", seed["growers"]
+        )
+        connection.executemany(
+            "insert into fields values (:field_id, :grower_id, :name, :area_ha, :crop)",
+            seed["fields"],
         )
         connection.executemany(
             "insert into products values (?, ?, ?, ?)",
-            [(p["product_code"], p["name"], p["max_rate_l_per_ha"], ",".join(p["crops"])) for p in seed["products"]],
+            [
+                (p["product_code"], p["name"], p["max_rate_l_per_ha"], ",".join(p["crops"]))
+                for p in seed["products"]
+            ],
         )
     return target
 
@@ -61,24 +67,40 @@ def products() -> list[dict]:
 
 def inbox(split: str) -> list[dict]:
     folder = WORLD_DIR / "inbox" / split
-    return [{"email_id": path.stem, "text": path.read_text()} for path in sorted(folder.glob("*.txt"))]
+    return [
+        {"email_id": path.stem, "text": path.read_text()} for path in sorted(folder.glob("*.txt"))
+    ]
 
 
 def audit(connection: sqlite3.Connection, action: str, detail: dict) -> None:
-    connection.execute("insert into audit_log (action, detail) values (?, ?)", (action, json.dumps(detail)))
+    connection.execute(
+        "insert into audit_log (action, detail) values (?, ?)", (action, json.dumps(detail))
+    )
 
 
 def book_job(job: dict) -> int:
     """Books a spray job. Like the real system, it checks that the ids exist and nothing more:
     it will book any rate on any crop. Keeping within the label is the caller's job."""
     with connect() as connection:
-        for table, column in (("growers", "grower_id"), ("fields", "field_id"), ("products", "product_code")):
-            found = connection.execute(f"select 1 from {table} where {column} = ?", (job.get(column),)).fetchone()
+        for table, column in (
+            ("growers", "grower_id"),
+            ("fields", "field_id"),
+            ("products", "product_code"),
+        ):
+            found = connection.execute(
+                f"select 1 from {table} where {column} = ?", (job.get(column),)
+            ).fetchone()
             if not found:
                 raise ValueError(f'{column} "{job.get(column)}" does not exist')
         cursor = connection.execute(
             "insert into jobs (email_id, grower_id, field_id, product_code, rate_l_per_ha) values (?, ?, ?, ?, ?)",
-            (job.get("email_id"), job["grower_id"], job["field_id"], job["product_code"], float(job["rate_l_per_ha"])),
+            (
+                job.get("email_id"),
+                job["grower_id"],
+                job["field_id"],
+                job["product_code"],
+                float(job["rate_l_per_ha"]),
+            ),
         )
         audit(connection, "book_job", job)
         return cursor.lastrowid
@@ -87,7 +109,8 @@ def book_job(job: dict) -> int:
 def send_to_review(item: dict) -> int:
     with connect() as connection:
         cursor = connection.execute(
-            "insert into review_queue (email_id, reason) values (?, ?)", (item.get("email_id"), item.get("reason", ""))
+            "insert into review_queue (email_id, reason) values (?, ?)",
+            (item.get("email_id"), item.get("reason", "")),
         )
         audit(connection, "send_to_review", item)
         return cursor.lastrowid

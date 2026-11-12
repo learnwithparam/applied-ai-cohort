@@ -37,15 +37,15 @@ flowchart LR
 
 ## Steps
 
-| Step | Minutes | You produce | Done when (what the check reads) |
-|---|---|---|---|
-| `trace-every-run` | 30 | Spans for every verb | Every contract call has a trace with role, tokens and cost, read from the trace store's API |
-| `price-each-outcome` | 20 | `runs/cost-per-outcome.md` | Cost per successful outcome per verb, within 1% of the traces |
-| `find-private-data` | 20 | A detector for private spans | Recall of private spans 0.95 or more on the annotated set |
-| `hide-private-data` | 20 | Redaction before the model | Nothing on the private list reaches `calls.jsonl` or the traces |
-| `guard-the-input` | 20 | An input guard | 90% or more of the attack set blocked, 95% or more of the benign set passes |
-| `guard-the-tools` | 20 | A guard before every write tool | No planted instruction reaches a write tool |
-| `prove-the-guards` | 20 | Scorecard line 6 | The same checks on the grader's sets; lines 1 to 5 pass |
+| Step                 | Minutes | You produce                     | Done when (what the check reads)                                                            |
+| -------------------- | ------- | ------------------------------- | ------------------------------------------------------------------------------------------- |
+| `trace-every-run`    | 30      | Spans for every verb            | Every contract call has a trace with role, tokens and cost, read from the trace store's API |
+| `price-each-outcome` | 20      | `runs/cost-per-outcome.md`      | Cost per successful outcome per verb, within 1% of the traces                               |
+| `find-private-data`  | 20      | A detector for private spans    | Recall of private spans 0.95 or more on the annotated set                                   |
+| `hide-private-data`  | 20      | Redaction before the model      | Nothing on the private list reaches `calls.jsonl` or the traces                             |
+| `guard-the-input`    | 20      | An input guard                  | 90% or more of the attack set blocked, 95% or more of the benign set passes                 |
+| `guard-the-tools`    | 20      | A guard before every write tool | No planted instruction reaches a write tool                                                 |
+| `prove-the-guards`   | 20      | Scorecard line 6                | The same checks on the grader's sets; lines 1 to 5 pass                                     |
 
 150 minutes of steps. `hide-private-data` and `block-planted-instructions` (40 minutes each in the brief) are split into two steps each. Glenmarrow National Park (`worlds/README.md`) is the matching project brief. live-labs `labs/27-prompt-registry` is a revamp candidate and is not a lesson until revamped.
 

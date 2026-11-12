@@ -75,7 +75,9 @@ def model_for(role: str) -> str:
     if chosen == "ollama":
         local_model = os.environ.get("OLLAMA_MODEL", "").strip()
         if not local_model:
-            raise ValueError("LLM_PROVIDER is ollama but OLLAMA_MODEL is empty. Name a model you pulled.")
+            raise ValueError(
+                "LLM_PROVIDER is ollama but OLLAMA_MODEL is empty. Name a model you pulled."
+            )
         return f"ollama/{local_model}"
     return MODEL_IDS[chosen][role]
 

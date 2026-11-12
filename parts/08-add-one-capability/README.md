@@ -29,12 +29,12 @@ flowchart LR
 
 ## Steps
 
-| Step | Minutes | You produce | Done when (what the check reads) |
-|---|---|---|---|
-| `pick-an-elective` | 10 | `elective.md`: the capability and the number it should move | Names one elective, its lab, a metric with a direction and a target |
-| `build-the-elective` | 30 | The capability, behind a contract verb | The verb runs on the dev split with no crash |
-| `measure-the-elective` | 30 | Before and after numbers | The named metric moved in its direction; scorecard lines 1 to 7 still pass |
-| `report-the-trade` | 20 | A three-number write-up | States quality, cost per outcome and the trade, matching the measured run |
+| Step                   | Minutes | You produce                                                 | Done when (what the check reads)                                           |
+| ---------------------- | ------- | ----------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `pick-an-elective`     | 10      | `elective.md`: the capability and the number it should move | Names one elective, its lab, a metric with a direction and a target        |
+| `build-the-elective`   | 30      | The capability, behind a contract verb                      | The verb runs on the dev split with no crash                               |
+| `measure-the-elective` | 30      | Before and after numbers                                    | The named metric moved in its direction; scorecard lines 1 to 7 still pass |
+| `report-the-trade`     | 20      | A three-number write-up                                     | States quality, cost per outcome and the trade, matching the measured run  |
 
 90 minutes of steps. The elective lab adds about 30 minutes. Labs 16, 25 and 34 need Apple silicon today and are revamp candidates for a hosted path.
 

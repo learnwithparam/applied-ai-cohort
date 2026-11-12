@@ -29,10 +29,20 @@ def board_page(split: str) -> str:
     reviews = store.rows("select * from review_queue order by review_id")
     job_rows = []
     for job in jobs:
-        within_label = job["rate_l_per_ha"] <= job["max_rate_l_per_ha"] and job["crop"] in job["crops"].split(",")
-        label_cell = '<td class="ok">within label</td>' if within_label else '<td class="over">OFF LABEL</td>'
+        within_label = job["rate_l_per_ha"] <= job["max_rate_l_per_ha"] and job["crop"] in job[
+            "crops"
+        ].split(",")
+        label_cell = (
+            '<td class="ok">within label</td>'
+            if within_label
+            else '<td class="over">OFF LABEL</td>'
+        )
         job_rows.append(
-            "<tr>" + "".join(f"<td>{html.escape(str(job[key]))}</td>" for key in ("job_id", "email_id", "grower", "field", "crop", "product"))
+            "<tr>"
+            + "".join(
+                f"<td>{html.escape(str(job[key]))}</td>"
+                for key in ("job_id", "email_id", "grower", "field", "crop", "product")
+            )
             + f"<td>{job['rate_l_per_ha']:.2f}</td>{label_cell}</tr>"
         )
     review_rows = [
@@ -42,11 +52,13 @@ def board_page(split: str) -> str:
     jobs_table = (
         "<table><tr><th>Job</th><th>Email</th><th>Grower</th><th>Field</th><th>Crop</th><th>Product</th>"
         "<th>L/ha</th><th>Label</th></tr>" + "".join(job_rows) + "</table>"
-        if job_rows else '<p class="empty">No jobs booked yet.</p>'
+        if job_rows
+        else '<p class="empty">No jobs booked yet.</p>'
     )
     review_table = (
         "<table><tr><th>Email</th><th>Why a person</th></tr>" + "".join(review_rows) + "</table>"
-        if review_rows else '<p class="empty">Nothing waiting for a person.</p>'
+        if review_rows
+        else '<p class="empty">Nothing waiting for a person.</p>'
     )
     return (
         f"<!doctype html><html><head><meta charset='utf-8'><title>Spray desk</title><style>{PAGE_STYLE}</style></head>"
@@ -84,7 +96,10 @@ def make_handler(split: str):
                 return self.send(200, board_page(split), "text/html; charset=utf-8")
             if self.path in routes:
                 return self.send(200, routes[self.path]())
-            self.send(404, {"error": f"No route {self.path}. Try /api/inbox, /api/fields or /api/products."})
+            self.send(
+                404,
+                {"error": f"No route {self.path}. Try /api/inbox, /api/fields or /api/products."},
+            )
 
         def do_POST(self):
             length = int(self.headers.get("Content-Length", 0))

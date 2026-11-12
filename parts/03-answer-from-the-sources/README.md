@@ -34,15 +34,15 @@ flowchart LR
 
 ## Steps
 
-| Step | Minutes | You produce | Done when (what the check reads) |
-|---|---|---|---|
-| `load-the-documents` | 30 | An index with stable chunk ids | Every chunk has `doc_id`, `page`, `text`; a rebuild gives the same ids; every document covered |
-| `search-the-passages` | 20 | A `search` verb | Returns chunk ids for every labelled question; recall@5 is printed |
-| `beat-the-baseline` | 20 | A better `search` | Recall@5 meets the target and beats the BM25 baseline printed beside it |
-| `cite-every-answer` | 20 | An `ask` verb returning `{answer, citations}` | Every answer has at least one citation and every cited id exists |
-| `check-the-citations` | 20 | A supported-answer check | The part two judge rates 90% or more of cited passages as supporting the answer |
-| `say-i-do-not-know` | 20 | Abstention | 8 or more of 10 out-of-scope questions get an explicit not-in-the-sources; in-scope accuracy holds |
-| `prove-the-answers` | 20 | Scorecard line 3 | Test split recall@5 and supported-answer rate meet targets; lines 1 and 2 pass |
+| Step                  | Minutes | You produce                                   | Done when (what the check reads)                                                                   |
+| --------------------- | ------- | --------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `load-the-documents`  | 30      | An index with stable chunk ids                | Every chunk has `doc_id`, `page`, `text`; a rebuild gives the same ids; every document covered     |
+| `search-the-passages` | 20      | A `search` verb                               | Returns chunk ids for every labelled question; recall@5 is printed                                 |
+| `beat-the-baseline`   | 20      | A better `search`                             | Recall@5 meets the target and beats the BM25 baseline printed beside it                            |
+| `cite-every-answer`   | 20      | An `ask` verb returning `{answer, citations}` | Every answer has at least one citation and every cited id exists                                   |
+| `check-the-citations` | 20      | A supported-answer check                      | The part two judge rates 90% or more of cited passages as supporting the answer                    |
+| `say-i-do-not-know`   | 20      | Abstention                                    | 8 or more of 10 out-of-scope questions get an explicit not-in-the-sources; in-scope accuracy holds |
+| `prove-the-answers`   | 20      | Scorecard line 3                              | Test split recall@5 and supported-answer rate meet targets; lines 1 and 2 pass                     |
 
 150 minutes of steps. `find-the-passage` and `cite-every-answer` (40 minutes each in the brief) are split into two steps each.
 

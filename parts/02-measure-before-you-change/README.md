@@ -35,16 +35,16 @@ flowchart LR
 
 ## Steps
 
-| Step | Minutes | You produce | Done when (what the check reads) |
-|---|---|---|---|
-| `read-the-traces` | 30 | `evals/labels.jsonl`, 30 or more rows | Row count, pass or fail on each, a note of 5 or more words, no preset category |
-| `name-the-failures` | 20 | `evals/failure-modes.md` | At least 3 modes, each defined and counted; every failed label maps to one mode |
-| `build-the-golden-set` | 30 | `evals/golden.jsonl` | 25 or more cases, 2 or more per mode, each with an expected output and `signed_off_by` |
-| `write-a-code-check` | 20 | A code check per mode code can judge | `eval` prints a pass rate per mode |
-| `draft-a-judge` | 20 | A judge prompt for one mode code cannot judge | The judge returns pass or fail on every dev label, never a score from 1 to 5 |
-| `align-the-judge` | 20 | The judge, tuned on held-out labels | True positive and true negative rates both 0.8 or more on held-out human labels |
-| `block-a-bad-change` | 20 | An `eval` verb that exits non-zero on a regression | A planted prompt change makes `eval` fail; the current version passes |
-| `prove-the-measurements` | 20 | Scorecard line 2 | Judge agreement on the grader's labels, the planted change blocked, line 1 still passes |
+| Step                     | Minutes | You produce                                        | Done when (what the check reads)                                                        |
+| ------------------------ | ------- | -------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `read-the-traces`        | 30      | `evals/labels.jsonl`, 30 or more rows              | Row count, pass or fail on each, a note of 5 or more words, no preset category          |
+| `name-the-failures`      | 20      | `evals/failure-modes.md`                           | At least 3 modes, each defined and counted; every failed label maps to one mode         |
+| `build-the-golden-set`   | 30      | `evals/golden.jsonl`                               | 25 or more cases, 2 or more per mode, each with an expected output and `signed_off_by`  |
+| `write-a-code-check`     | 20      | A code check per mode code can judge               | `eval` prints a pass rate per mode                                                      |
+| `draft-a-judge`          | 20      | A judge prompt for one mode code cannot judge      | The judge returns pass or fail on every dev label, never a score from 1 to 5            |
+| `align-the-judge`        | 20      | The judge, tuned on held-out labels                | True positive and true negative rates both 0.8 or more on held-out human labels         |
+| `block-a-bad-change`     | 20      | An `eval` verb that exits non-zero on a regression | A planted prompt change makes `eval` fail; the current version passes                   |
+| `prove-the-measurements` | 20      | Scorecard line 2                                   | Judge agreement on the grader's labels, the planted change blocked, line 1 still passes |
 
 180 minutes of steps. `align-a-judge` (40 minutes in the brief) is split into `draft-a-judge` and `align-the-judge`.
 

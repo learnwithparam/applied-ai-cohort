@@ -78,9 +78,9 @@ and every later part turns one more line green. Copy three numbers from the run 
 
 ## The step
 
-| Step | Minutes | What you produce |
-|---|---|---|
-| [run-the-finished-system](01-run-the-finished-system/problem/README.md) | 15 | `goal.md` with the finished system's numbers |
+| Step                                                                    | Minutes | What you produce                             |
+| ----------------------------------------------------------------------- | ------- | -------------------------------------------- |
+| [run-the-finished-system](01-run-the-finished-system/problem/README.md) | 15      | `goal.md` with the finished system's numbers |
 
 ```bash
 bun run verify run-the-finished-system

@@ -32,14 +32,14 @@ flowchart LR
 
 ## Steps
 
-| Step | Minutes | You produce | Done when (what the check reads) |
-|---|---|---|---|
-| `serve-the-contract` | 20 | `POST /v1/runs` with streaming | The HTTP contract check passes on 20 calls; time to first token is printed |
-| `lock-the-endpoint` | 20 | Auth and a cost limit | A bad token gets 401; a run over budget is refused with a reason |
-| `gate-the-release` | 30 | A CI workflow that runs `eval` | A planted pull request fails CI and the clean one passes |
-| `write-the-runbook` | 20 | `RUNBOOK.md` | How to roll back, Budget limit, Where traces are, Who signs off, Known failure modes from part two |
-| `show-the-scorecard` | 30 | `SCORECARD.md`, generated | All seven lines green on the test split; two peer reviews filed at the reviewed commit |
-| `prove-the-release` | 20 | Scorecard line 7 | Every line passes on the grader's run |
+| Step                 | Minutes | You produce                    | Done when (what the check reads)                                                                   |
+| -------------------- | ------- | ------------------------------ | -------------------------------------------------------------------------------------------------- |
+| `serve-the-contract` | 20      | `POST /v1/runs` with streaming | The HTTP contract check passes on 20 calls; time to first token is printed                         |
+| `lock-the-endpoint`  | 20      | Auth and a cost limit          | A bad token gets 401; a run over budget is refused with a reason                                   |
+| `gate-the-release`   | 30      | A CI workflow that runs `eval` | A planted pull request fails CI and the clean one passes                                           |
+| `write-the-runbook`  | 20      | `RUNBOOK.md`                   | How to roll back, Budget limit, Where traces are, Who signs off, Known failure modes from part two |
+| `show-the-scorecard` | 30      | `SCORECARD.md`, generated      | All seven lines green on the test split; two peer reviews filed at the reviewed commit             |
+| `prove-the-release`  | 20      | Scorecard line 7               | Every line passes on the grader's run                                                              |
 
 140 minutes of steps. `serve-the-contract` (40 minutes in the brief) is split into `serve-the-contract` and `lock-the-endpoint`.
 

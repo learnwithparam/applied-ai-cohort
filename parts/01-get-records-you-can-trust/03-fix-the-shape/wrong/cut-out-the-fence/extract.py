@@ -9,7 +9,12 @@ from config.llm import complete
 email = json.load(sys.stdin)
 reply = complete(
     "fast",
-    [{"role": "user", "content": f"Read this spray request. Which field, product and rate does it ask for?\n\n{email['text']}"}],
+    [
+        {
+            "role": "user",
+            "content": f"Read this spray request. Which field, product and rate does it ask for?\n\n{email['text']}",
+        }
+    ],
 )
 # Cut the JSON out of the code fence. It parses, but nobody said what shape it must have.
 fenced = re.search(r"```(?:json)?\s*(\{.*?\})\s*```", reply.text, re.DOTALL)

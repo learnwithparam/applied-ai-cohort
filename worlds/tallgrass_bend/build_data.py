@@ -57,8 +57,22 @@ PRODUCTS = [
 
 # How many emails of each kind each split holds.
 MIX = {
-    "dev": {"clean": 26, "acre": 4, "above_label": 3, "ambiguous_field": 3, "misspelled_product": 2, "wrong_crop": 2},
-    "test": {"clean": 13, "acre": 2, "above_label": 2, "ambiguous_field": 1, "misspelled_product": 1, "wrong_crop": 1},
+    "dev": {
+        "clean": 26,
+        "acre": 4,
+        "above_label": 3,
+        "ambiguous_field": 3,
+        "misspelled_product": 2,
+        "wrong_crop": 2,
+    },
+    "test": {
+        "clean": 13,
+        "acre": 2,
+        "above_label": 2,
+        "ambiguous_field": 1,
+        "misspelled_product": 1,
+        "wrong_crop": 1,
+    },
 }
 
 TRAPS = {
@@ -84,7 +98,12 @@ STAGES = {
     "lentils": "The lentils are about ten centimetres tall.",
     "peas": "The peas are looking even.",
 }
-MISSPELLINGS = {"Brasslock": "Brasslok", "Tillerguard": "Tilerguard", "Pulsepath": "Pulse Path", "Stemsure": "Stemshure"}
+MISSPELLINGS = {
+    "Brasslock": "Brasslok",
+    "Tillerguard": "Tilerguard",
+    "Pulsepath": "Pulse Path",
+    "Stemsure": "Stemshure",
+}
 
 
 def field_by_id(field_id):
@@ -105,11 +124,13 @@ def labelled_products(crop):
 
 def write_email(randomizer, grower, field_words, product_words, rate_words, crop):
     first_name = grower["name"].split()[0]
-    sentence = randomizer.choice([
-        f"Please book {product_words} on {field_words} at {rate_words} {randomizer.choice(TIMINGS)}.",
-        f"Can you put {product_words} down on {field_words}, {rate_words}, {randomizer.choice(TIMINGS)}?",
-        f"We need {field_words} sprayed with {product_words} at {rate_words} {randomizer.choice(TIMINGS)}.",
-    ])
+    sentence = randomizer.choice(
+        [
+            f"Please book {product_words} on {field_words} at {rate_words} {randomizer.choice(TIMINGS)}.",
+            f"Can you put {product_words} down on {field_words}, {rate_words}, {randomizer.choice(TIMINGS)}?",
+            f"We need {field_words} sprayed with {product_words} at {rate_words} {randomizer.choice(TIMINGS)}.",
+        ]
+    )
     subject = f"Spray request, {field_words[0].upper() + field_words[1:]}"
     return (
         f"From: {grower['email']}\nSubject: {subject}\n\n{randomizer.choice(OPENINGS)}\n\n"
@@ -125,7 +146,9 @@ def make_case(randomizer, kind, ambiguous_turn):
     elif kind == "wrong_crop":
         field = randomizer.choice([field for field in FIELDS if field[4] in ("wheat", "barley")])
     elif kind == "misspelled_product":
-        field = randomizer.choice([field for field in FIELDS if field[4] in ("canola", "wheat", "lentils")])
+        field = randomizer.choice(
+            [field for field in FIELDS if field[4] in ("canola", "wheat", "lentils")]
+        )
     else:
         field = randomizer.choice([field for field in FIELDS if field[0] not in ("F05", "F06")])
     field_id, grower_id, field_name, _area, crop = field
@@ -144,7 +167,11 @@ def make_case(randomizer, kind, ambiguous_turn):
     else:
         rate_per_hectare = round(max_rate * randomizer.choice([0.5, 0.6, 0.75, 0.8, 1.0]), 2)
 
-    product_words = MISSPELLINGS.get(product_name, product_name) if kind == "misspelled_product" else product_name
+    product_words = (
+        MISSPELLINGS.get(product_name, product_name)
+        if kind == "misspelled_product"
+        else product_name
+    )
     field_words = "the north block" if kind == "ambiguous_field" else field_name
     if kind == "acre":
         rate_per_acre = round(rate_per_hectare / LITRES_PER_ACRE_TO_PER_HECTARE, 2)
@@ -199,10 +226,12 @@ def main():
     seed = {
         "growers": GROWERS,
         "fields": [
-            {"field_id": f[0], "grower_id": f[1], "name": f[2], "area_ha": f[3], "crop": f[4]} for f in FIELDS
+            {"field_id": f[0], "grower_id": f[1], "name": f[2], "area_ha": f[3], "crop": f[4]}
+            for f in FIELDS
         ],
         "products": [
-            {"product_code": p[0], "name": p[1], "max_rate_l_per_ha": p[2], "crops": p[3]} for p in PRODUCTS
+            {"product_code": p[0], "name": p[1], "max_rate_l_per_ha": p[2], "crops": p[3]}
+            for p in PRODUCTS
         ],
     }
     (HERE / "seed.json").write_text(json.dumps(seed, indent=2) + "\n")
@@ -229,13 +258,18 @@ def main():
                 "input_tokens": int(word_count * 1.4),
                 "output_tokens": 48,
             }
-            (HERE / "replay" / f"{email_id}.json").write_text(json.dumps(recording, indent=2) + "\n")
+            (HERE / "replay" / f"{email_id}.json").write_text(
+                json.dumps(recording, indent=2) + "\n"
+            )
             truth_rows.append({"email_id": email_id, **truth})
         if split == "dev":
             lines = [json.dumps(row) for row in truth_rows]
             (HERE / "truth" / "dev.jsonl").write_text("\n".join(lines) + "\n")
         else:
-            lines = [json.dumps({"email_id": row["email_id"], "hash": job_hash(row["email_id"], row)}) for row in truth_rows]
+            lines = [
+                json.dumps({"email_id": row["email_id"], "hash": job_hash(row["email_id"], row)})
+                for row in truth_rows
+            ]
             (HERE / "truth" / "test.hashes.jsonl").write_text("\n".join(lines) + "\n")
     print("Wrote seed.json, inbox/, truth/ and replay/.")
 

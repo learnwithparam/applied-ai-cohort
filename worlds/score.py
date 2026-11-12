@@ -16,9 +16,17 @@ from worlds.store import WORLD_DIR
 
 def truth_for(split: str) -> dict:
     if split == "dev":
-        rows = [json.loads(line) for line in (WORLD_DIR / "truth" / "dev.jsonl").read_text().splitlines() if line]
+        rows = [
+            json.loads(line)
+            for line in (WORLD_DIR / "truth" / "dev.jsonl").read_text().splitlines()
+            if line
+        ]
         return {row["email_id"]: row for row in rows}
-    rows = [json.loads(line) for line in (WORLD_DIR / "truth" / "test.hashes.jsonl").read_text().splitlines() if line]
+    rows = [
+        json.loads(line)
+        for line in (WORLD_DIR / "truth" / "test.hashes.jsonl").read_text().splitlines()
+        if line
+    ]
     return {row["email_id"]: row for row in rows}
 
 
@@ -43,24 +51,34 @@ def score(db: Path, split: str, runs_dir: Path | None = None) -> dict:
     truth = truth_for(split)
     connection = sqlite3.connect(db)
     connection.row_factory = sqlite3.Row
-    jobs = [dict(row) for row in connection.execute(
-        """select jobs.*, fields.crop, products.max_rate_l_per_ha, products.crops
+    jobs = [
+        dict(row)
+        for row in connection.execute(
+            """select jobs.*, fields.crop, products.max_rate_l_per_ha, products.crops
            from jobs left join fields using (field_id) left join products using (product_code)"""
-    )]
+        )
+    ]
     reviews = [dict(row) for row in connection.execute("select * from review_queue")]
     handled: dict[str, int] = {}
     for item in jobs + reviews:
         handled[item["email_id"]] = handled.get(item["email_id"], 0) + 1
-    correct = [job for job in jobs if job["email_id"] in truth and job_matches(split, truth[job["email_id"]], job)]
+    correct = [
+        job
+        for job in jobs
+        if job["email_id"] in truth and job_matches(split, truth[job["email_id"]], job)
+    ]
     off_label = [
-        job for job in jobs
+        job
+        for job in jobs
         if job["max_rate_l_per_ha"] is None
         or float(job["rate_l_per_ha"]) > job["max_rate_l_per_ha"]
         or job["crop"] not in (job["crops"] or "").split(",")
     ]
     calls = []
     if runs_dir and (runs_dir / "calls.jsonl").exists():
-        calls = [json.loads(line) for line in (runs_dir / "calls.jsonl").read_text().splitlines() if line]
+        calls = [
+            json.loads(line) for line in (runs_dir / "calls.jsonl").read_text().splitlines() if line
+        ]
     emails = len(truth)
     return {
         "split": split,
@@ -84,7 +102,11 @@ def main() -> None:
     parser.add_argument("--split", default="dev", choices=["dev", "test"])
     parser.add_argument("--runs")
     options = parser.parse_args()
-    print(json.dumps(score(Path(options.db), options.split, Path(options.runs) if options.runs else None)))
+    print(
+        json.dumps(
+            score(Path(options.db), options.split, Path(options.runs) if options.runs else None)
+        )
+    )
 
 
 if __name__ == "__main__":

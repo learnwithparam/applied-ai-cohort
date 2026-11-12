@@ -5,26 +5,51 @@ import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { python, WORLD_DIR } from "../checks/lib/world";
 
-const lines = (file: string) => readFileSync(file, "utf8").split("\n").filter(Boolean).map((line) => JSON.parse(line));
-const emailIds = (split: string) => readdirSync(join(WORLD_DIR, "inbox", split)).map((name) => name.replace(".txt", "")).sort();
+const lines = (file: string) =>
+  readFileSync(file, "utf8")
+    .split("\n")
+    .filter(Boolean)
+    .map((line) => JSON.parse(line));
+const emailIds = (split: string) =>
+  readdirSync(join(WORLD_DIR, "inbox", split))
+    .map((name) => name.replace(".txt", ""))
+    .sort();
 
 test("every email has a truth row and a replay reply", () => {
-  const dev = lines(join(WORLD_DIR, "truth", "dev.jsonl")).map((row) => row.email_id).sort();
-  const test = lines(join(WORLD_DIR, "truth", "test.hashes.jsonl")).map((row) => row.email_id).sort();
+  const dev = lines(join(WORLD_DIR, "truth", "dev.jsonl"))
+    .map((row) => row.email_id)
+    .sort();
+  const test = lines(join(WORLD_DIR, "truth", "test.hashes.jsonl"))
+    .map((row) => row.email_id)
+    .sort();
   expect(emailIds("dev")).toEqual(dev);
   expect(emailIds("test")).toEqual(test);
-  for (const id of [...dev, ...test]) expect(existsSync(join(WORLD_DIR, "replay", `${id}.json`))).toBe(true);
+  for (const id of [...dev, ...test])
+    expect(existsSync(join(WORLD_DIR, "replay", `${id}.json`))).toBe(true);
 });
 
 test("the dev split holds the traps the brief lists", () => {
   const counts: Record<string, number> = {};
-  for (const row of lines(join(WORLD_DIR, "truth", "dev.jsonl"))) counts[row.trap ?? "clean"] = (counts[row.trap ?? "clean"] ?? 0) + 1;
-  expect(counts).toEqual({ clean: 26, acre: 4, above_label: 3, ambiguous_field: 3, misspelled_product: 2, wrong_crop: 2 });
+  for (const row of lines(join(WORLD_DIR, "truth", "dev.jsonl")))
+    counts[row.trap ?? "clean"] = (counts[row.trap ?? "clean"] ?? 0) + 1;
+  expect(counts).toEqual({
+    clean: 26,
+    acre: 4,
+    above_label: 3,
+    ambiguous_field: 3,
+    misspelled_product: 2,
+    wrong_crop: 2,
+  });
 });
 
 test("only the per-acre emails mention acres", () => {
-  const acre = lines(join(WORLD_DIR, "truth", "dev.jsonl")).filter((row) => row.trap === "acre").map((row) => row.email_id).sort();
-  const mentions = emailIds("dev").filter((id) => /\bacres?\b/i.test(readFileSync(join(WORLD_DIR, "inbox", "dev", `${id}.txt`), "utf8")));
+  const acre = lines(join(WORLD_DIR, "truth", "dev.jsonl"))
+    .filter((row) => row.trap === "acre")
+    .map((row) => row.email_id)
+    .sort();
+  const mentions = emailIds("dev").filter((id) =>
+    /\bacres?\b/i.test(readFileSync(join(WORLD_DIR, "inbox", "dev", `${id}.txt`), "utf8")),
+  );
   expect(mentions).toEqual(acre);
 });
 
@@ -41,5 +66,7 @@ test("the finished system books no wrong job and meets the bar on both splits", 
 
 test("a world reset is repeatable", () => {
   expect(python(["-m", "worlds", "reset", "--db", "/tmp/tallgrass-test.db"]).code).toBe(0);
-  expect(python(["-m", "worlds", "reset", "--db", "/tmp/tallgrass-test.db"]).stdout).toContain("8 growers, 17 fields, 6 products");
+  expect(python(["-m", "worlds", "reset", "--db", "/tmp/tallgrass-test.db"]).stdout).toContain(
+    "8 growers, 17 fields, 6 products",
+  );
 });
