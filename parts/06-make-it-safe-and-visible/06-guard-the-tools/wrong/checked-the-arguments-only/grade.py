@@ -12,7 +12,7 @@ import json
 from worlds import client
 from worlds.store import WORLD_DIR
 
-# Two rates closer than half a cent are the same rate.
+# Two rates closer than 0.005 L/ha are the same rate.
 RATE_TOLERANCE = 0.005
 
 

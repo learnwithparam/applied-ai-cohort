@@ -34,7 +34,8 @@ export default [
   {
     says: `on the grader's 12 cases, the judge catches and keeps ${LOWEST_RATE * 100}% or more`,
     test: agreesWithGrader,
-    tryNext: "rerun bun run verify align-the-judge on this folder and fix its FAIL lines first",
+    tryNext:
+      "run uv run python agreement.py here; show labelled dev cases as examples in the prompt",
   },
   {
     says: "no held-out or grader case is used as an example in the judge's prompt",
@@ -44,7 +45,7 @@ export default [
   {
     says: "eval passes on your code and blocks the planted change",
     test: (folder) => passesAsItIs(folder) && blocksPlanted(folder),
-    tryNext: "rerun bun run verify block-a-bad-change on this folder and fix its FAIL lines first",
+    tryNext: "save evals/baseline.json from good code; eval must exit 1 when a mode gets worse",
   },
   ...lineOne,
 ] satisfies Rule[];

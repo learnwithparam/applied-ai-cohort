@@ -23,7 +23,8 @@ flowchart LR
   C -- "yes" --> E["exit 1: blocked"]
 ```
 
-Save the baseline once, from your good code. Commit the file:
+On the starter, `eval.py` does not know `--save-baseline` yet. It only prints the pass rates. After your change,
+save the baseline once, from your good code. Commit the file:
 
 ```bash
 uv run python eval.py --save-baseline

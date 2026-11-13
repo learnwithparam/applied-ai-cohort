@@ -56,6 +56,10 @@ if __name__ == "__main__":
         sys.exit("There are no traces yet. Run: uv run python traces.py")
     labelled = {row["email_id"] for row in read_json_lines(LABELS_FILE)}
     waiting = [trace for trace in traces if trace["email_id"] not in labelled]
-    for position, trace in enumerate(waiting, start=len(labelled) + 1):
-        label_one(trace, position, len(traces))
+    try:
+        for position, trace in enumerate(waiting, start=len(labelled) + 1):
+            label_one(trace, position, len(traces))
+    except (KeyboardInterrupt, EOFError):
+        # Ctrl+C or the end of the input: every answer so far is already saved.
+        sys.exit("\nStopped. Your labels so far are saved. Run label.py again to go on.")
     print(f"\nAll {len(traces)} traces are labelled.")

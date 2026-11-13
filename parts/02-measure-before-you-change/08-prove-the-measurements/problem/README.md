@@ -26,9 +26,10 @@ flowchart LR
   G --> I["Scorecard line 1"]
 ```
 
-For example, a learner saves the baseline after the teammate's change. Then the eval passes and the gate is
-open. The check catches this. The planted change no longer drops any mode, and the intake fails on the test
-inbox.
+For example, a learner keeps the teammate's short prompt in `extract.py`. Then they save the baseline again,
+so `clean` is `0.0` in `evals/baseline.json`. Now the eval passes, and the gate is open. The check catches this
+in two ways. The planted change no longer makes any mode worse, so the eval does not block it. And the short
+prompt fails part one's rules on the test inbox.
 
 ```bash
 bun run verify prove-the-measurements
@@ -48,7 +49,9 @@ Expect: `Done. All 8 rules pass.`
 
 ## If you get stuck
 
-- Run `bun run verify align-the-judge` and `bun run verify block-a-bad-change` here first.
+- If a judge rule fails, run `uv run python agreement.py` in this folder. Both rates should be 0.8 or more.
+- If the eval rule fails, run `uv run python eval.py` in this folder. It should print `"regressions": []`. Your
+  `evals/baseline.json` must come from good code, so `clean` is `1.0` there.
 - If line 1 fails, compare your `extract.py` with the one from part one. A shorter prompt can break it.
 
 ## Words you will use

@@ -271,7 +271,7 @@ export async function everyRun(runs: Promise<AgentRun[]>, passes: (run: AgentRun
 
 // ---------- Reading the end state ----------
 
-// Two rates closer than half a cent are the same rate, as in worlds/score.py.
+// Two rates closer than 0.005 L/ha are the same rate, as in worlds/score.py.
 const RATE_TOLERANCE = 0.005;
 
 type DeskRecord = Json & {

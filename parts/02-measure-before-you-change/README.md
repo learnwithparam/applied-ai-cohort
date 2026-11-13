@@ -7,8 +7,10 @@ through. It might be a rate per acre, or a product name with a spelling mistake.
 phones about a burnt crop. Part one proved the system once. Nothing stops the next change from breaking it.
 
 For example, `worlds/tallgrass_bend/inbox/dev/TB-1008.txt` asks for "Stemshure". The real product is called
-Stemsure. Today the system finds the right product, and the desk's record books it as `P140`. After a careless
-prompt change, the model might stop matching the name. In this part, you build the test that notices.
+Stemsure, and the desk's record books it as `P140`. Today the model copies "Stemshure" as written. The system
+cannot find that product, so it sends the email to a person. That is safe, but no test measures it. A careless
+prompt change could break this case, or a clean one, and nobody would see it. In this part, you build the test
+that notices.
 
 ## Why it matters
 
@@ -55,8 +57,8 @@ something worse that used to work.
 | `block-a-bad-change`     | 20      | An `eval` verb that exits non-zero on a regression | A planted prompt change makes `eval` fail; the current version passes                   |
 | `prove-the-measurements` | 20      | Scorecard line 2                                   | Judge agreement on the grader's labels, the planted change blocked, line 1 still passes |
 
-The steps take 180 minutes in total. The brief planned one step, `align-a-judge`, of 40 minutes. Here it is
-split into two steps: `draft-a-judge` and `align-the-judge`.
+The steps take 180 minutes in total. The judge work has two steps. First you make the judge say pass or fail
+(`draft-a-judge`). Then you make it agree with a person (`align-the-judge`).
 
 ## The kit
 
