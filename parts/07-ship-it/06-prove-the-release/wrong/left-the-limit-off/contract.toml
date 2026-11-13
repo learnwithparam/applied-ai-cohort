@@ -1,0 +1,14 @@
+# The commands the checks run. Each verb is a shell command run from this folder.
+[verbs]
+extract = "uv run python extract.py"
+intake = "uv run python intake.py"
+cost = "uv run python cost.py"
+tools = "uv run python server.py"
+act = "uv run python agent.py"
+grade = "uv run python grade.py"
+price = "uv run python price.py"
+private = "uv run python privacy.py"
+guard = "uv run python guard.py"
+serve = "uv run python serve.py"
+eval = "uv run python gate.py"
+scorecard = "uv run python scorecard.py"

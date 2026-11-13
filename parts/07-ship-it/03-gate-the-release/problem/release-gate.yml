@@ -1,0 +1,15 @@
+# The release gate in CI. Copy this file to .github/workflows/release-gate.yml in your repo.
+# It runs on every pull request, and a regression fails the pull request's check.
+name: release gate
+
+on:
+  pull_request:
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync
+      # TODO: a step that runs the eval verb from contract.toml
