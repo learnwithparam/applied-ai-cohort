@@ -12,12 +12,14 @@ header{background:#1F1F1C;color:#FAFAFA;padding:14px 24px}
 header h1{margin:0;font-size:19px}
 header p{margin:2px 0 0;color:#FAFAFA;opacity:.85;font-size:13px}
 main{padding:16px 24px;display:grid;grid-template-columns:2fr 1fr;gap:20px}
-section{background:#FFFFFF;border:1px solid #DFDFDF;border-radius:6px;padding:12px 16px}
+section{min-width:0;overflow-x:auto;background:#FFFFFF;border:1px solid #DFDFDF;
+  border-radius:6px;padding:12px 16px}
 h2{font-size:15px;margin:0 0 8px} table{border-collapse:collapse;width:100%;font-size:13px}
 th,td{text-align:left;padding:5px 6px;border-bottom:1px solid #DFDFDF}
 th{color:#606060;font-weight:600}
 .over{color:#BF000F;font-weight:600} .ok{color:#008138} .wait{color:#B75000}
 .empty{color:#606060}
+@media(max-width:700px){main{grid-template-columns:1fr}}
 """
 
 
@@ -34,7 +36,10 @@ BOOKED_JOBS = """
 """
 
 JOB_COLUMNS = ("job_id", "email_id", "grower", "field", "crop", "product")
-JOB_HEADINGS = ("Job", "Email", "Grower", "Field", "Crop", "Product", "L/ha", "Label")
+JOB_HEADINGS = (
+    *("Job", "Email", "Grower", "Field", "Crop", "Product"),
+    *("Rate (litres a hectare)", "Product label"),
+)
 
 
 def cell(value, css_class: str = "") -> str:
@@ -47,11 +52,13 @@ def heading_row(headings) -> str:
 
 
 def job_row(job: dict) -> str:
-    """One booked job, marked OFF LABEL when the rate or the crop breaks the product label."""
+    """One booked job, marked as breaking the label when the rate or the crop is off the label."""
     rate_ok = job["rate_l_per_ha"] <= job["max_rate_l_per_ha"]
     crop_ok = job["crop"] in job["crops"].split(",")
     within_label = rate_ok and crop_ok
-    label_cell = cell("within label", "ok") if within_label else cell("OFF LABEL", "over")
+    label_cell = cell("Within the label", "ok")
+    if not within_label:
+        label_cell = cell("Breaks the label", "over")
     named_cells = "".join(cell(job[key]) for key in JOB_COLUMNS)
     return f"<tr>{named_cells}<td>{job['rate_l_per_ha']:.2f}</td>{label_cell}</tr>"
 
@@ -75,20 +82,23 @@ def board_page(split: str) -> str:
     reviews = store.rows("select * from review_queue order by review_id")
     job_rows = [job_row(job) for job in jobs]
     review_rows = [review_row(item) for item in reviews]
-    jobs_table = table_or_note(JOB_HEADINGS, job_rows, "No jobs booked yet.")
-    review_headings = ("Email", "Why a person")
-    review_table = table_or_note(review_headings, review_rows, "Nothing waiting for a person.")
+    no_jobs = "No jobs booked yet. Run the desk on the inbox to book some."
+    jobs_table = table_or_note(JOB_HEADINGS, job_rows, no_jobs)
+    review_headings = ("Email", "Why it needs a person")
+    review_table = table_or_note(review_headings, review_rows, "Nothing waits for a person.")
 
     head = (
-        f"<head><meta charset='utf-8'><title>Spray desk</title><style>{PAGE_STYLE}</style></head>"
+        "<head><meta charset='utf-8'>"
+        "<meta name='viewport' content='width=device-width, initial-scale=1'>"
+        f"<title>Spray desk</title><style>{PAGE_STYLE}</style></head>"
     )
     counts = f"{len(jobs)} jobs booked, {len(reviews)} waiting for a person."
-    summary = f"<p>Application system. Inbox split: {html.escape(split)}. {counts}</p>"
+    summary = f"<p>{counts}</p>"
     header = f"<header><h1>Tallgrass Bend Growers Co-op: spray desk</h1>{summary}</header>"
     jobs_section = f"<section><h2>Booked jobs</h2>{jobs_table}</section>"
     review_section = f"<section><h2>Review queue</h2>{review_table}</section>"
     body = f"<body>{header}<main>{jobs_section}{review_section}</main></body>"
-    return f"<!doctype html><html>{head}{body}</html>"
+    return f"<!doctype html><html lang='en'>{head}{body}</html>"
 
 
 def read_routes(split: str) -> dict:

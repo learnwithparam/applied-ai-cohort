@@ -66,7 +66,7 @@ Expect: `Done. All 6 rules pass.`
 
 ## If you get stuck
 
-- Look at the board's `OFF LABEL` rows first. Then compare a booked job with its email.
+- Look at the board's "Breaks the label" rows first. Then compare a booked job with its email.
 - A rule that only checks the rate misses the acre emails. Their wrong number is under the label. For example,
   TB-1006 is booked at 0.97, and the label for Glyfallow 540 allows 3.0.
 - Sending everything to a person is safe, but it fails the 60% rule. Aim for both.
