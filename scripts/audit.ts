@@ -1,10 +1,18 @@
 // biome-ignore-all lint/style/useNamingConvention: environment variable names are upper case
 // bun run audit: the text audit on the jobs board, once with an empty store and once with
 // the seed work in it. Each run gets a throwaway store and its own board, which Playwright stops.
-import { mkdtempSync, rmSync } from "node:fs";
+import { existsSync, mkdtempSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { ROOT } from "./structure";
+
+// A fresh checkout has no packages and no browser yet, and CI runs only `bun run check`.
+const setup = (command: string[]) =>
+  Bun.spawnSync(command, { cwd: ROOT, stdio: ["inherit", "inherit", "inherit"] });
+if (!existsSync(join(ROOT, "node_modules", "@playwright", "test"))) {
+  setup(["bun", "install", "--frozen-lockfile"]);
+}
+if (process.env.CI) setup(["bunx", "playwright", "install", "--with-deps", "chromium"]);
 
 const PORT = "8187";
 const RUNS = ["empty store", "with the seed"];
