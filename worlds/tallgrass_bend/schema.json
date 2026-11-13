@@ -1,0 +1,20 @@
+{
+  "title": "Spray request",
+  "type": "object",
+  "required": ["sender", "field_name", "product_name", "rate", "rate_unit"],
+  "properties": {
+    "sender": { "type": "string", "description": "The email address the request came from" },
+    "field_name": { "type": "string", "description": "The field to spray, as the grower wrote it" },
+    "product_name": {
+      "type": "string",
+      "description": "The product to apply, as the grower wrote it"
+    },
+    "rate": { "type": "number", "description": "The rate the grower asked for" },
+    "rate_unit": {
+      "type": "string",
+      "enum": ["L/ha", "L/acre"],
+      "description": "The unit of that rate"
+    }
+  },
+  "additionalProperties": false
+}

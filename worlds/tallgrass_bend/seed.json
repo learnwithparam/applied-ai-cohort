@@ -1,0 +1,224 @@
+{
+  "growers": [
+    {
+      "grower_id": "G01",
+      "name": "Dale Okafor",
+      "email": "dale.okafor@ridgemail.example"
+    },
+    {
+      "grower_id": "G02",
+      "name": "Marta Lindqvist",
+      "email": "marta@lindqvistfarms.example"
+    },
+    {
+      "grower_id": "G03",
+      "name": "Hollis Brandt",
+      "email": "hollis.brandt@prairienet.example"
+    },
+    {
+      "grower_id": "G04",
+      "name": "Ama Mensah",
+      "email": "ama.mensah@fieldpost.example"
+    },
+    {
+      "grower_id": "G05",
+      "name": "Ross Tamblyn",
+      "email": "ross@tamblynbros.example"
+    },
+    {
+      "grower_id": "G06",
+      "name": "Ines Carvalho",
+      "email": "ines.carvalho@ridgemail.example"
+    },
+    {
+      "grower_id": "G07",
+      "name": "Pete Varga",
+      "email": "pete.varga@prairienet.example"
+    },
+    {
+      "grower_id": "G08",
+      "name": "June Whitcombe",
+      "email": "june@whitcombefarm.example"
+    }
+  ],
+  "fields": [
+    {
+      "field_id": "F01",
+      "grower_id": "G01",
+      "name": "Creek Paddock",
+      "area_ha": 42.0,
+      "crop": "wheat"
+    },
+    {
+      "field_id": "F02",
+      "grower_id": "G01",
+      "name": "Top Forty",
+      "area_ha": 16.5,
+      "crop": "canola"
+    },
+    {
+      "field_id": "F03",
+      "grower_id": "G02",
+      "name": "Schoolhouse Quarter",
+      "area_ha": 64.0,
+      "crop": "barley"
+    },
+    {
+      "field_id": "F04",
+      "grower_id": "G02",
+      "name": "Long Meadow",
+      "area_ha": 28.0,
+      "crop": "lentils"
+    },
+    {
+      "field_id": "F05",
+      "grower_id": "G03",
+      "name": "North Forty",
+      "area_ha": 16.2,
+      "crop": "canola"
+    },
+    {
+      "field_id": "F06",
+      "grower_id": "G03",
+      "name": "North Flats",
+      "area_ha": 31.0,
+      "crop": "canola"
+    },
+    {
+      "field_id": "F07",
+      "grower_id": "G03",
+      "name": "Home Block",
+      "area_ha": 22.5,
+      "crop": "wheat"
+    },
+    {
+      "field_id": "F08",
+      "grower_id": "G04",
+      "name": "Railway Strip",
+      "area_ha": 12.0,
+      "crop": "peas"
+    },
+    {
+      "field_id": "F09",
+      "grower_id": "G04",
+      "name": "Dugout Field",
+      "area_ha": 37.5,
+      "crop": "wheat"
+    },
+    {
+      "field_id": "F10",
+      "grower_id": "G05",
+      "name": "Sandhill",
+      "area_ha": 48.0,
+      "crop": "barley"
+    },
+    {
+      "field_id": "F11",
+      "grower_id": "G05",
+      "name": "East Slough",
+      "area_ha": 19.0,
+      "crop": "canola"
+    },
+    {
+      "field_id": "F12",
+      "grower_id": "G06",
+      "name": "Coulee Bottom",
+      "area_ha": 26.0,
+      "crop": "lentils"
+    },
+    {
+      "field_id": "F13",
+      "grower_id": "G06",
+      "name": "Windbreak Field",
+      "area_ha": 33.0,
+      "crop": "wheat"
+    },
+    {
+      "field_id": "F14",
+      "grower_id": "G07",
+      "name": "Old Yard",
+      "area_ha": 9.5,
+      "crop": "peas"
+    },
+    {
+      "field_id": "F15",
+      "grower_id": "G07",
+      "name": "South Section",
+      "area_ha": 64.0,
+      "crop": "canola"
+    },
+    {
+      "field_id": "F16",
+      "grower_id": "G08",
+      "name": "Butte View",
+      "area_ha": 40.0,
+      "crop": "barley"
+    },
+    {
+      "field_id": "F17",
+      "grower_id": "G08",
+      "name": "Pond Field",
+      "area_ha": 21.0,
+      "crop": "lentils"
+    }
+  ],
+  "products": [
+    {
+      "product_code": "P100",
+      "name": "Glyfallow 540",
+      "max_rate_l_per_ha": 3.0,
+      "crops": [
+        "wheat",
+        "barley",
+        "canola",
+        "lentils",
+        "peas"
+      ]
+    },
+    {
+      "product_code": "P110",
+      "name": "Brasslock",
+      "max_rate_l_per_ha": 1.0,
+      "crops": [
+        "canola"
+      ]
+    },
+    {
+      "product_code": "P120",
+      "name": "Tillerguard",
+      "max_rate_l_per_ha": 0.8,
+      "crops": [
+        "wheat",
+        "barley"
+      ]
+    },
+    {
+      "product_code": "P130",
+      "name": "Pulsepath",
+      "max_rate_l_per_ha": 1.2,
+      "crops": [
+        "lentils",
+        "peas"
+      ]
+    },
+    {
+      "product_code": "P140",
+      "name": "Stemsure",
+      "max_rate_l_per_ha": 0.75,
+      "crops": [
+        "wheat",
+        "barley",
+        "canola"
+      ]
+    },
+    {
+      "product_code": "P150",
+      "name": "Podshield",
+      "max_rate_l_per_ha": 0.5,
+      "crops": [
+        "lentils",
+        "peas"
+      ]
+    }
+  ]
+}

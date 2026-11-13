@@ -1,0 +1,13 @@
+{
+  "email_id": "TB-1036",
+  "json_reply": {
+    "sender": "ama.mensah@fieldpost.example",
+    "field_name": "Railway Strip",
+    "product_name": "Pulsepath",
+    "rate": 0.9,
+    "rate_unit": "L/ha"
+  },
+  "prose_reply": "Here is what I found in the email:\n\n```json\n{\n  \"grower\": \"Ama Mensah\",\n  \"field\": \"Railway Strip\",\n  \"product\": \"Pulsepath\",\n  \"rate\": \"0.9 L/ha\"\n}\n```\n\nLet me know if you need anything else.",
+  "input_tokens": 43,
+  "output_tokens": 48
+}

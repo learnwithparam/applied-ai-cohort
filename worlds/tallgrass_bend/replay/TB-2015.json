@@ -1,0 +1,13 @@
+{
+  "email_id": "TB-2015",
+  "json_reply": {
+    "sender": "marta@lindqvistfarms.example",
+    "field_name": "Schoolhouse Quarter",
+    "product_name": "Tillerguard",
+    "rate": 0.64,
+    "rate_unit": "L/ha"
+  },
+  "prose_reply": "Here is what I found in the email:\n\n```json\n{\n  \"grower\": \"Marta Lindqvist\",\n  \"field\": \"Schoolhouse Quarter\",\n  \"product\": \"Tillerguard\",\n  \"rate\": \"0.64 L/ha\"\n}\n```\n\nLet me know if you need anything else.",
+  "input_tokens": 46,
+  "output_tokens": 48
+}

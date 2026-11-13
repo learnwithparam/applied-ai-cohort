@@ -1,0 +1,13 @@
+{
+  "email_id": "TB-1018",
+  "json_reply": {
+    "sender": "ines.carvalho@ridgemail.example",
+    "field_name": "Coulee Bottom",
+    "product_name": "Pulsepath",
+    "rate": 0.96,
+    "rate_unit": "L/ha"
+  },
+  "prose_reply": "Here is what I found in the email:\n\n```json\n{\n  \"grower\": \"Ines Carvalho\",\n  \"field\": \"Coulee Bottom\",\n  \"product\": \"Pulsepath\",\n  \"rate\": \"0.96 L/ha\"\n}\n```\n\nLet me know if you need anything else.",
+  "input_tokens": 47,
+  "output_tokens": 48
+}
