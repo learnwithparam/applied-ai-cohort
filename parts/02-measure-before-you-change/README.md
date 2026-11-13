@@ -58,13 +58,73 @@ something worse that used to work.
 The steps take 180 minutes in total. The brief planned one step, `align-a-judge`, of 40 minutes. Here it is
 split into two steps: `draft-a-judge` and `align-the-judge`.
 
+## The kit
+
+This part adds judge cases and a planted bad change to the world. They live in [`kit/`](kit/README.md).
+Your code finds them through `part_kit.py`. Messages this part can print are in
+[troubleshooting.md](troubleshooting.md).
+
 ## Walkthrough
 
-TODO(part session): the commands for each step, each with an `Expect:` line. The steps above are planned.
-They have no folders yet, so this part has nothing to check:
+You work in each step's `problem/` folder. Run every command from there. The commands need no model key.
+
+Save the traces, then label them:
+
+```bash
+cd parts/02-measure-before-you-change/01-read-the-traces/problem && uv run python traces.py
+```
+
+Expect: `Wrote 40 traces to runs/traces.jsonl.`
+
+```bash
+uv run python label.py
+```
+
+Expect: `Trace 1 of 40: TB-1001`, then the email, the record and `Pass? (y/n):`.
+
+Run the eval once your code checks are written:
+
+```bash
+uv run python eval.py
+```
+
+Expect: one line of JSON with `pass_rate_by_mode`, such as `"clean": 1.0` and `"rate-per-acre": 0.0`.
+
+Score your judge against a person on the dev cases:
+
+```bash
+uv run python agreement.py
+```
+
+Expect: a table of judge against person, then `True positive rate` and `True negative rate`.
+
+Save the baseline from good code, then compare:
+
+```bash
+uv run python eval.py --save-baseline && uv run python eval.py
+```
+
+Expect: `Saved the pass rates of 4 modes to evals/baseline.json.` then a line with `"regressions": []`.
+
+Check one step, or the whole part, from the repo root:
+
+```bash
+bun run verify read-the-traces
+```
+
+Expect: `FAIL` lines with `Try next:` until your labels are written, then `Done. All 6 rules pass.`
 
 ```bash
 bun run verify part measure-before-you-change
 ```
 
-Expect: `Part measure-before-you-change is done: 0/0 steps pass.`
+Expect: one line per step, then `Part measure-before-you-change is done: 8/8 steps pass.` once every step passes.
+
+## Finished
+
+You now have a measured system. Your labels say what goes wrong, your failure modes say how often, and your
+golden set says what right looks like. Code checks and an aligned judge turn that into pass rates. The eval
+blocks any change that makes a mode worse. Line 2 of the scorecard is yours.
+
+The next part, [Answer from the sources](../03-answer-from-the-sources/README.md), answers growers' questions
+from the co-op's labels and guides. You measure it the same way: labelled questions first, then a number.
