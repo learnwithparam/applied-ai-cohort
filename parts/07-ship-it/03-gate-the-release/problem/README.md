@@ -55,6 +55,8 @@ Expect: `Done. All 4 rules pass.`
 
 - Copy `release-gate.yml` to `.github/workflows/` in your own repo. Then open a pull request that deletes the
   line, and watch the check turn red.
+- CI runs each step from the top folder of your repo. If `gate.py` lives in a subfolder, add
+  `working-directory:` with that folder to the step. Otherwise CI cannot find `gate.py`.
 - In CI nobody sits at the approval desk, so big fields go to review. The baseline of 26 counts that.
 - Gate on what the system did before: the matched count and zero wrong jobs.
 

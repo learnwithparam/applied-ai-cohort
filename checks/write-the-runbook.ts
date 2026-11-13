@@ -14,15 +14,14 @@ const runbook = (folder: string) => sections(folder, "RUNBOOK.md");
 const section = (folder: string, name: string) => runbook(folder)[name] ?? "";
 const devIds = new Set(devEmails().map((email) => email.email_id));
 
-// Bullet lines that name a real dev email, such as "- TB-1026: the field name is vague".
+// Different real dev emails named by bullet lines, such as "- TB-1026: the field name is vague".
+// Three bullets about the same email count as one failure.
 function failureModesWithEvidence(folder: string): number {
   const bullets = section(folder, "known failure modes")
     .split("\n")
     .filter((line) => line.trim().startsWith("- "));
-  return bullets.filter((line) => {
-    const emailId = line.match(/TB-\d{4}/)?.[0];
-    return emailId !== undefined && devIds.has(emailId);
-  }).length;
+  const emailIds = bullets.map((line) => line.match(/TB-\d{4}/)?.[0] ?? "");
+  return new Set(emailIds.filter((emailId) => devIds.has(emailId))).size;
 }
 
 export default [
@@ -57,6 +56,6 @@ export default [
   {
     says: "Known failure modes lists 3 or more failures, each with a dev email that shows it",
     test: (folder) => failureModesWithEvidence(folder) >= 3,
-    tryNext: "write one bullet per failure, starting with the email id, such as - TB-1026: ...",
+    tryNext: "write one bullet per failure, each with its own email id, such as - TB-1026: ...",
   },
 ] satisfies Rule[];

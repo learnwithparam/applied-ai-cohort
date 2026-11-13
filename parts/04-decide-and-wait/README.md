@@ -49,13 +49,12 @@ A durable wait is a wait that is saved to disk, so it lives through a crash and 
 | `send-unsure-to-a-person` | 20      | A confidence threshold                         | At the threshold, wrong auto-routes within the limit; the share sent to a person printed           |
 | `chain-the-steps`         | 20      | A workflow: extract, check, draft              | Each step writes its input and output to the trace                                                 |
 | `stop-the-chain`          | 20      | A chain that stops on a failed check           | A failed check stops the chain and the item lands in review with the reason                        |
-| `wait-for-approval`       | 20      | A durable approval wait                        | The run waits; approving through the world books exactly one job with the approval id              |
+| `wait-for-approval`       | 20      | A durable approval wait                        | The run waits; a yes in `approvals.py` books exactly one job with the approval id                  |
 | `survive-the-crash`       | 20      | The same wait, crash-safe                      | The check kills the process during the wait, restarts, approves; one write in the system of record |
 | `prove-the-routing`       | 20      | Scorecard line 4                               | Routing and the crash test pass on the test split; lines 1 to 3 pass                               |
 
-The steps take 150 minutes in total. The brief planned `chain-the-steps` and `wait-for-approval` as 40
-minutes each. Here, each one is split into two steps. Hollin Bank Home Care (`worlds/README.md`) is the
-project brief that matches this part.
+The steps take 150 minutes in total. Hollin Bank Home Care (`worlds/README.md`) is the project brief that
+matches this part.
 
 ## The kit
 
@@ -90,7 +89,8 @@ uv run python routes.py
 
 Expect: one row per dev email, then a line that starts `Wrong queue: yours`.
 
-Run the chain on a fresh system. From `wait-for-approval` on, it waits for the agronomist:
+Run the chain on a fresh system. `chain.py` starts in step 03, so run this from `03-chain-the-steps/problem`
+or a later step. From `wait-for-approval` on, it waits for the agronomist:
 
 ```bash
 uv run world reset && uv run python chain.py

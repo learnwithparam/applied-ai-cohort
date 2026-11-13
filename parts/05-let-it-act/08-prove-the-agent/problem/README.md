@@ -37,8 +37,8 @@ Expect: `Done. All 6 rules pass.`
 
 ## If you get stuck
 
-- Copy your part one `brief.md`, `NOTES.md`, `extract.py`, `intake.py` and `cost.py` into this folder. Keep
-  their verbs in `contract.toml`.
+- This folder already holds the sample part one files: `brief.md`, `NOTES.md`, `extract.py`, `intake.py` and
+  `cost.py`. To use your own work, copy your files over them. Keep their verbs in `contract.toml`.
 - A rule that names dev email ids, field names or field ids fails here. Test the property instead, such as
   the field's area.
 - Rerun the earlier checks on this folder, such as `bun run verify stop-at-the-limit`, to find which rule broke.

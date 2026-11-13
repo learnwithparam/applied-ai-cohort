@@ -56,8 +56,7 @@ guide that tells the person on duty what to do when something goes wrong.
 | [show-the-scorecard](05-show-the-scorecard/problem/README.md) | 30      | A `scorecard` verb, two peer reviews | `SCORECARD.md` against the check's own measurements              |
 | [prove-the-release](06-prove-the-release/problem/README.md)   | 20      | `NOTES.md`, the whole release        | Every earlier rule again, and lines 1, 5, 6 and 7 on PASS        |
 
-The steps take 140 minutes in total. The brief planned `serve-the-contract` as one step of 40 minutes. Here
-it is split into `serve-the-contract` and `lock-the-endpoint`.
+The steps take 140 minutes in total.
 
 You work in each step's `problem/` folder, which starts from the answer to the step before it. The folders
 hold the agent from parts five and six, with its tools, traces, redaction and guards.

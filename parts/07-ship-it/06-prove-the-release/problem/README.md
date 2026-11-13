@@ -40,7 +40,9 @@ Expect: `Done. All 6 rules pass.`
 
 ## If you get stuck
 
-- Run the step checks one by one on this folder to find the piece that broke.
+- `bun run verify <step-name>` always checks that step's own folder, not this one. So run each piece here
+  instead. For example, `uv run python gate.py` must print `"passed": true`, and `uv run python scorecard.py`
+  must show PASS on lines 1, 5, 6 and 7.
 - Use the same settings names everywhere: `PROJECT_API_TOKEN`, `SPEND_LIMIT_USD`, `TRACES_URL`.
 - Write the NOTES answer last, from what the scorecard and the traces show.
 

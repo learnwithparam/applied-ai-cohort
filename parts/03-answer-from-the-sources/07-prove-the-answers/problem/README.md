@@ -39,8 +39,9 @@ Expect: `Done. All 10 rules pass.`
 - On the hidden test questions, recall@5 is 0.8 or more.
 - On the hidden test questions, 80% or more get an answer, and 90% of those are supported.
 - 4 or more of the 5 hidden out-of-scope questions get `"abstained": true`.
-- Line 2 still holds: the judge agrees with the grader, and the eval blocks the planted change.
-- Line 1 still holds on the hidden test inbox.
+- Line 2 still holds: the judge agrees with the grader, and the eval blocks the planted change. These are
+  two rules.
+- Line 1 still holds on the hidden test inbox. These are four rules, the same as in part one's milestone.
 
 ## If you get stuck
 

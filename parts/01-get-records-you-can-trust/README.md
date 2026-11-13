@@ -91,3 +91,16 @@ bun run verify part get-records-you-can-trust
 ```
 
 Expect: one line per step, then `Part get-records-you-can-trust is done: 6/6 steps pass.` once every step passes.
+
+## Go further
+
+These ideas are for when every step passes. Each one keeps the same check, so you can measure if it helps.
+
+- **Convert acre rates yourself.** One hectare is about 2.471 acres. So 0.97 L per acre is about 2.4 L per
+  hectare, which is the desk's own record for TB-1006. Convert the rate in code, not in the model. Then run
+  `bun run verify check-against-truth` and see if more emails are booked right with zero booked wrong.
+- **Run on a live model.** Set `LLM_PROVIDER` in `.env` and run the intake three times. Replay gives the
+  same answer every time. A live model may not. Count how many records change between runs.
+- **Pay less for the same work.** The optional
+  [batch lab](https://github.com/learnwithparam/live-labs/tree/main/labs/03-batch-prompts) sends many prompts
+  in one batch. Price your intake with and without it, using your `cost` verb.

@@ -38,7 +38,7 @@ flowchart LR
 - How to roll back gives the git command to run.
 - Budget limit gives the limit in dollars and names `SPEND_LIMIT_USD`.
 - Where traces are names `TRACES_URL` and says how to find one run by its `run_id`.
-- Known failure modes lists three or more failures, each with a dev email id.
+- Known failure modes lists three or more failures, each with a different dev email id.
 
 ```bash
 bun run verify write-the-runbook

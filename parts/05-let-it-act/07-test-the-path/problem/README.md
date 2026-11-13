@@ -40,12 +40,26 @@ Say an agent skipped `find_product` on TB-1001. The sample solution then prints:
 
 It exits 1. When every task stays on its path, it exits 0.
 
+To run the agent on the golden tasks yourself, list their ids in the loop:
+
+```bash
+for id in TB-1001 TB-1004; do uv run world email $id | uv run python agent.py; done
+uv run python paths.py
+```
+
+Expect: two lines of JSON from the agent, then the report from `paths.py` once it is written.
+
+Be careful with a big field, such as TB-1010 (Sandhill, 48 ha). On your laptop, `APPROVALS_URL` is not set. So
+`book_job` refuses the job, and the trace ends with `send_to_review`. The check runs an approval desk that says
+yes. So the path to write for TB-1010 is `find_grower`, `find_product`, `book_job`.
+
 ![The paths eval after the agent ran the golden tasks](../images/expected.png)
 
 ## Done when
 
 - `evals/paths.jsonl` has 8 or more golden tasks, with dev email ids and real tool names.
 - They include a big-field booking, a misspelled product and a refusal.
+- `contract.toml` names a `paths` verb.
 - After the agent runs the golden tasks, `paths` exits 0.
 - On a planted trace that skips `find_product`, `paths` exits 1 and names the right step.
 - On that trace, every other golden task is reported on its path.

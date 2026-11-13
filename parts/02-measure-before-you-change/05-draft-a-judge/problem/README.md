@@ -53,6 +53,8 @@ Expect: `Done. All 5 rules pass.`
 - Ask for the verdict first, then a reason. The first word is then easy to read.
 - Turning a score into pass or fail does not help. A judge that gives every case a 4 still says pass to all.
 - On replay, keep the whole email of the case in your prompt.
+- On replay, the word "score" or "1 to 5" anywhere in the prompt makes the judge answer with a number. This
+  is true even in "do not give a score". Take those words out.
 
 ## Words you will use
 

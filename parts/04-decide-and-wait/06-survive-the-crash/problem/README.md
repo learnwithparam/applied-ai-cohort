@@ -26,13 +26,22 @@ refuses 1, and starts your chain again. A durable chain finds its 11 saved appro
 books 10 jobs, each once. A chain that kept its state in memory books the first 15 jobs again. It also asks 11
 new questions that nobody answers.
 
-Try it yourself. Start the chain, then stop it with `kill -9` from another terminal:
+Try it yourself. Reset the system and delete the old `runs/` folder. Then start the chain, and stop it hard
+after 5 seconds, the way a crash would:
 
 ```bash
-uv run world reset && uv run python chain.py & sleep 3 && kill -9 $!
+uv run world reset && rm -rf runs
+uv run python chain.py & sleep 5; pkill -9 -f chain.py
 ```
 
-Expect: `Waiting for 11 approvals...`, then the shell reports that the process was killed.
+Expect: `Waiting for 11 approvals...`, and then your shell may say `Killed`. `pkill -f chain.py` stops both
+`uv` and the Python process under it. A plain `kill -9 $!` stops only `uv`, and the chain keeps running.
+
+```bash
+pgrep -f chain.py
+```
+
+Expect: no output, because no chain is running. Now approve or refuse each request, and run the chain again.
 
 ## Done when
 

@@ -12,9 +12,17 @@ Code is fast, free and gives the same answer every time.
 empty, so every pass rate is `null`. Write one check for `clean` and one for each failure mode that code can
 judge. Leave at most one mode for a judge, in the next step.
 
-Each check takes two records and returns True when the model's record passes:
+Each check takes two records and returns True when the model's record passes. For example, this check uses a
+small helper, `same_rate`. You write the helper too:
 
 ```python
+RATE_TOLERANCE = 0.005  # two rates closer than this are the same rate
+
+
+def same_rate(record: dict, expected: dict) -> bool:
+    return abs(record["rate"] - expected["rate"]) < RATE_TOLERANCE
+
+
 def has_the_right_unit(record: dict, expected: dict) -> bool:
     """rate-per-acre: the number and its unit are both right."""
     return record["rate_unit"] == expected["rate_unit"] and same_rate(record, expected)

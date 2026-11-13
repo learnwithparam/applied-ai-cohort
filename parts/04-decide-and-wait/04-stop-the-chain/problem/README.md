@@ -50,6 +50,8 @@ Expect: `Done. All 4 rules pass.`
 
 - Return right after you send an email to review. A draft comes only after a booking.
 - Send the check's reasons as the review reason. The person at the desk reads them first.
+- `intake.py` in this folder already does both calls: `client.book_job(job)` and
+  `client.send_to_review({"email_id": ..., "reason": ...})`.
 
 ## Words you will use
 

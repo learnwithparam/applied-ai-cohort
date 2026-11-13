@@ -52,12 +52,11 @@ is the share of questions where the right chunk is in the top 5 results.
 | `search-the-passages` | 20      | A `search` verb                               | Returns chunk ids for every labelled question; recall@5 is printed                                 |
 | `beat-the-baseline`   | 20      | A better `search`                             | Recall@5 meets the target and beats the BM25 baseline printed beside it                            |
 | `cite-every-answer`   | 20      | An `ask` verb returning `{answer, citations}` | Every answer has at least one citation and every cited id exists                                   |
-| `check-the-citations` | 20      | A supported-answer check                      | The part two judge rates 90% or more of cited passages as supporting the answer                    |
+| `check-the-citations` | 20      | A supported-answer check                      | Every number in an answer is in a passage it cites; 80% or more still get an answer                |
 | `say-i-do-not-know`   | 20      | Abstention                                    | 8 or more of 10 out-of-scope questions get an explicit not-in-the-sources; in-scope accuracy holds |
 | `prove-the-answers`   | 20      | Scorecard line 3                              | Test split recall@5 and supported-answer rate meet targets; lines 1 and 2 pass                     |
 
-The steps take 150 minutes in total. The brief planned `find-the-passage` and `cite-every-answer` as 40
-minutes each. Here, each one is split into two steps.
+The steps take 150 minutes in total.
 
 ## The kit
 
@@ -78,7 +77,14 @@ cd parts/03-answer-from-the-sources/01-load-the-documents/problem && uv run pyth
 Expect: `Saved 10 chunks to index/chunks.jsonl.` on the starter, and `Saved 74 chunks` once each paragraph is a
 chunk.
 
-Search for one question:
+Search for one question. `search.py` starts in the next step. So move to that step's folder, and build its
+index there:
+
+```bash
+cd ../../02-search-the-passages/problem && uv run python load.py
+```
+
+Expect: `Saved 74 chunks to index/chunks.jsonl.`
 
 ```bash
 echo '{"question": "What is the highest rate of Pulsepath on lentils?", "k": 5}' | uv run python search.py
@@ -94,7 +100,8 @@ uv run python load.py && uv run python recall.py
 
 Expect: one line per dev question, then a line that starts `Recall@5: yours`.
 
-Ask one question:
+Ask one question. `ask.py` starts in step 04. So go to `04-cite-every-answer/problem`, or a later step, and
+run `uv run python load.py` there first:
 
 ```bash
 echo '{"question": "How long must Pulsepath stay dry after spraying?"}' | uv run python ask.py

@@ -21,7 +21,7 @@ GOLDEN_FILE = Path("evals") / "golden.jsonl"
 SEED = json.loads((WORLD_DIR / "seed.json").read_text())
 PRODUCT_NAMES = {product["name"] for product in SEED["products"]}
 
-# Two rates closer than half a cent are the same rate.
+# Two rates closer than 0.005 L/ha are the same rate.
 RATE_TOLERANCE = 0.005
 
 

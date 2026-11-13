@@ -39,8 +39,10 @@ Write what the record should say, never what the model said. For a misspelled pr
 names the real product, such as Stemsure for "Stemshure". For "the north block", it keeps the grower's own
 words.
 
-Use `clean` as the mode for a case with no failure. The desk's records in `worlds/tallgrass_bend/truth/dev.jsonl`
-help you check your work. Count your cases:
+Use `clean` as the mode for a case with no failure. Put a real person's name in `signed_off_by`. Use your own
+name if you checked the case yourself. The desk's records in `worlds/tallgrass_bend/truth/dev.jsonl` help you
+check your work. They use ids, such as `"product_code": "P140"`. Find the names for those ids in
+`worlds/tallgrass_bend/seed.json`. Count your cases:
 
 ```bash
 wc -l evals/golden.jsonl
@@ -51,7 +53,7 @@ Expect: `27 evals/golden.jsonl` or another number of 25 or more.
 ## Done when
 
 - `evals/golden.jsonl` has 25 cases or more, each on a different dev email.
-- Every expected record fits `schema.json`.
+- Every expected record fits `worlds/tallgrass_bend/schema.json`.
 - Every case has `signed_off_by` with a person's name.
 - Every failure mode has 2 cases or more, and every case names a mode or `clean`.
 - Every expected record agrees with the desk's records.
@@ -64,7 +66,8 @@ Expect: `Done. All 5 rules pass.`
 
 ## If you get stuck
 
-- Start from `runs/traces.jsonl`. Copy each record, then fix what your label said was wrong.
+- Start from the traces. Run `uv run python traces.py` in this folder to write `runs/traces.jsonl`. Copy each
+  record, then fix what your label said was wrong.
 - Copy mode names from `evals/failure-modes.md` exactly.
 - The agreement rule converts L/acre to L/ha before it compares the rate with the desk's record.
 

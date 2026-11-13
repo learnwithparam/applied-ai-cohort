@@ -30,13 +30,23 @@ Expect: `{"booked": 26, "review": 10, "settled_by_rule": 4}`, then `"per_correct
 For example, the sample answer writes "$0.0000237 per correct booking" under Before and "$0.0000213" under
 After. The cost fell by about 10%, and the elective still booked 26 jobs right.
 
-Then prove it on emails you have not seen. Serve the test inbox and run the elective there:
+Then prove it on emails you have not seen. First stop the dev world with Ctrl+C, because both use port 8100.
+Then serve the test inbox:
 
 ```bash
 uv run world serve --split test
 ```
 
 Expect: `The spray desk is open at http://127.0.0.1:8100 (test inbox). Stop it with Ctrl+C.`
+
+In your other terminal, run the elective on the test inbox:
+
+```bash
+uv run world reset && rm -rf runs && uv run python elective.py
+```
+
+Expect: `{"booked": 13, "review": 5, "settled_by_rule": 2}` for the sample answer. Here `cost.py` prints
+`"per_correct_booking_usd": null`, because the desk's test records are hidden. The check scores this run.
 
 ```mermaid
 flowchart LR

@@ -34,6 +34,9 @@ For example, the sample solution prints `{"booked": 26, "review": 14}`. Then it 
 $0.000616 for 40 calls. That is about $0.0000154 per email. Only 26 jobs match the desk's records, so each
 correct booking costs about $0.0000237. The cost per correct booking is always the higher number.
 
+Python prints very small numbers in a short form. For example, `1.5408250000000003e-05` means
+0.0000154: move the dot five places to the left. The long tail of digits is normal rounding in a computer.
+
 ## Done when
 
 - `contract.toml` names a `cost` verb, and after an intake run it prints the three numbers as JSON.

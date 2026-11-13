@@ -14,7 +14,24 @@ Add two checks to `serve.py`. Run both before the agent starts, never after it:
 2. **Spending limit.** Add up the `cost_usd` of every run. Once the total reaches `SPEND_LIMIT_USD`, a new
    run gets 429 with a reason that names the budget.
 
-For example, with the sample solution, a call with no token prints this, and the world gets no job:
+For example, start the world in one terminal with `uv run world serve`. Then start the service from this
+folder with a small limit:
+
+```bash
+PROJECT_API_TOKEN=secret SPEND_LIMIT_USD=0.0003 PORT=8000 uv run python serve.py
+```
+
+Expect: `Serving the agent at http://127.0.0.1:8000/v1/runs. Stop it with Ctrl+C.`
+
+In a third terminal, make `request.json` for TB-1001, the same way as in `serve-the-contract`:
+
+```bash
+uv run world email TB-1001 | uv run python -c "import json,sys; print(json.dumps({'verb': 'act', 'input': json.load(sys.stdin)}))" > request.json
+```
+
+Expect: no output. The file `request.json` now holds the request.
+
+With the sample solution, a call with no token prints this, and the world gets no job:
 
 ```bash
 curl -s -w " %{http_code}\n" -d @request.json http://127.0.0.1:8000/v1/runs
@@ -22,8 +39,14 @@ curl -s -w " %{http_code}\n" -d @request.json http://127.0.0.1:8000/v1/runs
 
 Expect: `{"error": "Send the header Authorization: Bearer <your token>."} 401`.
 
-A run of TB-1001 costs about $0.00007. So with `SPEND_LIMIT_USD=0.0003`, about the fifth run gets 429, with a
-reason such as `Over budget: runs have spent $0.0003... of $0.0003. Try later.`
+A run of TB-1001 costs about $0.00007. So with `SPEND_LIMIT_USD=0.0003`, five runs go through. Each one adds
+to the total. The sixth run with the right token gets 429:
+
+```bash
+curl -s -w " %{http_code}\n" -H "Authorization: Bearer secret" -d @request.json http://127.0.0.1:8000/v1/runs
+```
+
+Expect: on the sixth call, `{"error": "Over budget: runs have spent $0.000331 of $0.0003. Try later."} 429`.
 
 ```mermaid
 flowchart LR

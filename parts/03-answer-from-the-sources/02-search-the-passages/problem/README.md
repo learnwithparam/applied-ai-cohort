@@ -26,6 +26,14 @@ flowchart LR
 A simple start works: count how many of the question's useful words each chunk shares. Leave out words such as
 "the" and "how", which match almost every chunk.
 
+`search.py` reads the index, so build it first in this folder:
+
+```bash
+uv run python load.py
+```
+
+Expect: `Saved 74 chunks to index/chunks.jsonl.`
+
 ```bash
 echo '{"question": "What is the highest rate of Pulsepath on lentils?", "k": 5}' | uv run python search.py
 ```

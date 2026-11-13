@@ -45,7 +45,9 @@ Expect: `Done. All 4 rules pass.`
 
 ## If you get stuck
 
-- The share booked right is `booked_correct` divided by the emails in the inbox. 26 of 40 is 65%.
+- The share booked right is the jobs booked right divided by the emails in the inbox. To count the jobs,
+  divide `total_usd` by `per_correct_booking_usd` from `cost.py`. For example, 0.000616 / 0.0000237 is 26.
+  And 26 of 40 is 65%.
 - Cost per outcome is always the cost per correct booking here, even if your Metric is another number. A
   manager compares electives by it.
 - If the share did not change, say so: "65% before and after" counts for both.

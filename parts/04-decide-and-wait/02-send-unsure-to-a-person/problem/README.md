@@ -20,8 +20,8 @@ Expect: one row per threshold, with the wrong auto-routes and the share sent to 
 
 ![Wrong auto-routes and the share sent to a person, at each threshold](../images/expected.png)
 
-For example, at 0.9 the two misspelled emails still go through. Their matches are about 0.94. At 0.98 there are
-0 wrong auto-routes, and 35% of emails go to a person. At 1.01 every email goes to a person. That is safe, but
+For example, at 0.9 the two misspelled emails still go through. Their matches are 0.94 and 0.95. At 0.95 one
+still goes through, because 0.95 is not below 0.95. At 0.98 there are 0 wrong auto-routes, and 35% of emails go to a person. At 1.01 every email goes to a person. That is safe, but
 nobody is helped.
 
 ```mermaid
