@@ -4,7 +4,7 @@
 
 The output is committed. Run this only to change the documents or questions, then commit.
 
-The documents are the co-op's six product labels and three of its own guides. A label's second
+The documents are the co-op's six product labels and four of its own guides. A label's second
 page never repeats the product's name, as on many real labels. That is the planted trap for
 search: a question about "Pulsepath" finds Pulsepath's first page, not the page that answers it.
 """

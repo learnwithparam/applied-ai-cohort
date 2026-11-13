@@ -5,7 +5,7 @@ This folder holds the data this part adds to the Tallgrass Bend world. Your code
 
 | File                                 | What it holds                                                                |
 | ------------------------------------ | ---------------------------------------------------------------------------- |
-| `documents/`                         | Six product labels and three co-op guides, as text with page markers         |
+| `documents/`                         | Six product labels and four co-op guides, as text with page markers         |
 | `questions/dev.jsonl`                | 20 questions, each with the page that answers it                             |
 | `questions/test.jsonl`               | 10 hidden questions. Each answer page is stored as a hash                    |
 | `questions/out-of-scope-dev.jsonl`   | 10 questions the documents do not answer                                     |

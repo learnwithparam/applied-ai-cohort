@@ -3,7 +3,7 @@
 ## The problem
 
 Growers ask the desk the same questions every season, and the answers are in the product labels and the
-co-op's guides. A model cannot read nine documents for every question. It is slow, and it costs money. So you
+co-op's guides. A model cannot read ten documents for every question. It is slow, and it costs money. So you
 cut the documents into small pieces first. Then a search can hand the model only the pieces that matter.
 
 Each piece needs an id that never changes. A citation points to that id. If the id changes every time you

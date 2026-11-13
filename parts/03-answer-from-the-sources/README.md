@@ -75,7 +75,7 @@ Build the index:
 cd parts/03-answer-from-the-sources/01-load-the-documents/problem && uv run python load.py
 ```
 
-Expect: `Saved 9 chunks to index/chunks.jsonl.` on the starter, and `Saved 74 chunks` once each paragraph is a
+Expect: `Saved 10 chunks to index/chunks.jsonl.` on the starter, and `Saved 74 chunks` once each paragraph is a
 chunk.
 
 Search for one question:
