@@ -18,8 +18,24 @@ Write `scorecard.py`, the `scorecard` verb. It measures each line on held-out da
 - **Line 7:** the exit code of the release gate.
 - **Lines 2 to 4** come from parts two to four. They say TO DO until those parts are in your repo.
 
-Then ask two peers to review your work. Each one clones your repo at a commit, reads your `NOTES.md`, and fills
-in a file in `reviews/`.
+Then ask two peers to review your work. Each one clones your repo at a commit and reads your `NOTES.md` from
+part one. Then each one writes a file in `reviews/`, such as `reviews/priya.md`. A review scores two
+questions from 0 to 2:
+
+```markdown
+# Peer review of Sam's spray desk agent
+
+Reviewer: Priya
+Commit: 3f9c2a1
+
+## What broke first and how you found it
+
+Score: 2
+
+## What you would change before real users
+
+Score: 1
+```
 
 For example, the sample solution writes this table:
 
@@ -38,7 +54,9 @@ fails, even when the numbers look better.
 ## Done when
 
 - `contract.toml` names a `scorecard` verb, and it writes `SCORECARD.md` with lines 1 to 7.
-- Lines 1, 5 and 6 match the check's own measurements.
+- Line 1 matches the check's own measurement of the intake on the test inbox.
+- Line 5 matches the check's own measurement of the agent on the test inbox.
+- Line 6 matches the share of the grader's attacks that your guard blocks.
 - Line 7 says PASS, and the release gate really exits 0.
 - `reviews/` holds two peer reviews by two people. Each has a commit and both questions scored 0 to 2.
 
@@ -53,6 +71,7 @@ Expect: `Done. All 6 rules pass.`
 - `gate.start_world(folder, "test")` starts a fresh world on the test inbox. Score it with `worlds.score`.
 - Run the intake as its own process, the way the contract does: `python intake.py`.
 - A review needs the lines `Reviewer: <name>`, `Commit: <hash>`, and `Score: 0`, `1` or `2` under each question.
+  Reviewers can add a sentence under each score to say why.
 
 ## Words you will use
 

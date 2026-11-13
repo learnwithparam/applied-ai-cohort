@@ -56,7 +56,9 @@ Expect: `Done. All 5 rules pass.`
 
 ## If you get stuck
 
-- Run part one's `cost.py` after an intake run to see today's numbers. Set your target from them.
+- To see today's numbers, go to the `build-the-elective` problem folder and run
+  `uv run world reset && rm -rf runs && uv run python intake.py && uv run python cost.py`. Set your target
+  from them.
 - Photos, voice and research need data the spray desk does not have yet. Pick them only for your own brief,
   and agree the metric with your instructor.
 - A target such as "as low as we can" can never fail, so it cannot guide you.

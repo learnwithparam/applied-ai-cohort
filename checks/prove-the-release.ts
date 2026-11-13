@@ -31,22 +31,23 @@ export default [
     says: "the service still streams, signs in and stops at its spending limit",
     test: async (folder) =>
       (await allPass(serveTheContract, folder)) && (await allPass(lockTheEndpoint, folder)),
-    tryNext: "rerun bun run verify lock-the-endpoint on this folder and fix its FAIL lines",
+    tryNext:
+      "run serve.py here with SPEND_LIMIT_USD=0.0003: no token gets 401, and run six gets 429",
   },
   {
     says: "the release gate still passes the clean folder and blocks the planted pull request",
     test: (folder) => allPass(gateTheRelease, folder),
-    tryNext: "rerun bun run verify gate-the-release on this folder",
+    tryNext: "run uv run python gate.py in this folder; it must print passed: true",
   },
   {
     says: "RUNBOOK.md still has every section, with commands, numbers and email ids",
     test: (folder) => allPass(writeTheRunbook, folder),
-    tryNext: "rerun bun run verify write-the-runbook on this folder",
+    tryNext: "compare RUNBOOK.md here with the five Done when lines of write-the-runbook",
   },
   {
     says: "SCORECARD.md matches the check's own numbers, and lines 1, 5, 6 and 7 say PASS",
     test: async (folder) => (await allPass(showTheScorecard, folder)) && measuredLinesPass(folder),
-    tryNext: "rerun bun run verify show-the-scorecard; a FAIL line on the scorecard names the part",
+    tryNext: "run uv run python scorecard.py in this folder; a FAIL line on it names the part",
   },
   {
     says: "NOTES.md answers What I would watch after release, from your own runs",

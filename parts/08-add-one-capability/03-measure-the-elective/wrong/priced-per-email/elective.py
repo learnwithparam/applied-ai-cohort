@@ -3,7 +3,7 @@
 A router picks the cheapest way to handle each request. Some requests a plain rule can settle
 for free, because they go to a person whatever the model says. Only the rest reach the model.
 
-Output on stdout: {"booked": 26, "review": 14, "settled_by_rule": 4}
+Output on stdout: {"booked": 26, "review": 10, "settled_by_rule": 4}
 """
 
 import json
