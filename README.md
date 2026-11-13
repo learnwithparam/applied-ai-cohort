@@ -89,13 +89,13 @@ uses data the model never saw.
 | ------------------------------------------------------------------------- | ------------------------------------------------------------------ | ----- | ------- |
 | [Start here](00-orientation/README.md)                                    | See the finish line                                                | 1     | Built   |
 | [Get records you can trust](parts/01-get-records-you-can-trust/README.md) | 1. Correct records, zero wrong, cost counted                       | 6     | Built   |
-| [Measure before you change](parts/02-measure-before-you-change/README.md) | 2. Golden set, an aligned judge, a blocked bad change              | 8     | Planned |
-| [Answer from the sources](parts/03-answer-from-the-sources/README.md)     | 3. Recall you can measure, every answer cited                      | 7     | Planned |
-| [Decide and wait for a person](parts/04-decide-and-wait/README.md)        | 4. Routing, and an approval that survives a crash                  | 7     | Planned |
-| [Let it act](parts/05-let-it-act/README.md)                               | 5. An agent graded by the system's end state                       | 8     | Planned |
-| [Make it safe and visible](parts/06-make-it-safe-and-visible/README.md)   | 6. Traces, cost per outcome, private data and planted instructions | 7     | Planned |
-| [Ship it](parts/07-ship-it/README.md)                                     | 7. A service and a release gate in CI                              | 6     | Planned |
-| [Add one capability](parts/08-add-one-capability/README.md)               | An elective, measured                                              | 4     | Planned |
+| [Measure before you change](parts/02-measure-before-you-change/README.md) | 2. Golden set, an aligned judge, a blocked bad change              | 8     | Built   |
+| [Answer from the sources](parts/03-answer-from-the-sources/README.md)     | 3. Recall you can measure, every answer cited                      | 7     | Built   |
+| [Decide and wait for a person](parts/04-decide-and-wait/README.md)        | 4. Routing, and an approval that survives a crash                  | 7     | Built   |
+| [Let it act](parts/05-let-it-act/README.md)                               | 5. An agent graded by the system's end state                       | 8     | Built   |
+| [Make it safe and visible](parts/06-make-it-safe-and-visible/README.md)   | 6. Traces, cost per outcome, private data and planted instructions | 7     | Built   |
+| [Ship it](parts/07-ship-it/README.md)                                     | 7. A service and a release gate in CI                              | 6     | Built   |
+| [Add one capability](parts/08-add-one-capability/README.md)               | An elective, measured                                              | 4     | Built   |
 
 Each part links to the [live-labs](https://github.com/learnwithparam/live-labs) labs that teach its tools. The
 labs are the lessons. The steps here are the challenges.
@@ -110,6 +110,10 @@ bun run verify name-the-job
 ```
 
 Expect: `FAIL` lines, each with a `Try next:` sentence, until your work meets the rule. Then `Done.`
+
+After your result, the command counts your progress on every step and prints a line such as
+`Progress: 1/54 steps pass.` This can take two minutes. Your result is already on the screen, so you can
+press Ctrl+C to skip it.
 
 The check never reads the model's reply. It runs the commands that your `contract.toml` names. Then it reads
 the state of the application system and the call log. So you can pass with any language or framework. To check

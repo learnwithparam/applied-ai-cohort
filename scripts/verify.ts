@@ -187,6 +187,8 @@ function listStepsAndStop(): never {
 
 async function printProgress() {
   // Done is recomputed from the checks every time, never read from a saved flag.
+  // Checking every step takes a minute or two, so say so before the screen goes quiet.
+  console.log("Counting your progress on every step. This can take two minutes. Ctrl+C skips it.");
   const everyResult: Result[] = [];
   for (const step of allSteps()) everyResult.push(await run(step, starterFolder(step)));
   const passing = countPassing(everyResult).length;
