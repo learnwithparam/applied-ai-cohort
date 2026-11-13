@@ -6,11 +6,19 @@ import sys
 
 from config.llm import complete
 
+QUESTION = "Read this spray request. Which field, product and rate does it ask for?"
+
+# The JSON the model wrote, inside a ```json code fence.
+FENCED_JSON = re.compile(r"```(?:json)?\s*(\{.*?\})\s*```", re.DOTALL)
+
 email = json.load(sys.stdin)
-reply = complete(
-    "fast",
-    [{"role": "user", "content": f"Read this spray request. Which field, product and rate does it ask for?\n\n{email['text']}"}],
-)
+message = {"role": "user", "content": f"{QUESTION}\n\n{email['text']}"}
+reply = complete("fast", [message])
+
 # Cut the JSON out of the code fence. It parses, but nobody said what shape it must have.
-fenced = re.search(r"```(?:json)?\s*(\{.*?\})\s*```", reply.text, re.DOTALL)
-print(json.dumps(json.loads(fenced.group(1))) if fenced else reply.text)
+fenced = FENCED_JSON.search(reply.text)
+if fenced:
+    record = json.loads(fenced.group(1))
+    print(json.dumps(record))
+else:
+    print(reply.text)

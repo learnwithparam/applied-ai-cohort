@@ -75,7 +75,9 @@ def model_for(role: str) -> str:
     if chosen == "ollama":
         local_model = os.environ.get("OLLAMA_MODEL", "").strip()
         if not local_model:
-            raise ValueError("LLM_PROVIDER is ollama but OLLAMA_MODEL is empty. Name a model you pulled.")
+            raise ValueError(
+                "LLM_PROVIDER is ollama but OLLAMA_MODEL is empty. Name a model you pulled."
+            )
         return f"ollama/{local_model}"
     return MODEL_IDS[chosen][role]
 
@@ -85,5 +87,6 @@ def key_problem() -> str | None:
     chosen = provider()
     key_name = KEY_NAMES.get(chosen)
     if key_name and not os.environ.get(key_name, "").strip():
-        return f"LLM_PROVIDER is {chosen} but {key_name} is empty. Put it in .env, never on the command line."
+        missing = f"LLM_PROVIDER is {chosen} but {key_name} is empty."
+        return f"{missing} Put it in .env, never on the command line."
     return None

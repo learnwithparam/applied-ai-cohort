@@ -2,14 +2,18 @@
 
 ## The problem
 
-The intake works. Now the co-op asks what it costs. Cost per call is easy and misleading: a request that went
-to a person still cost a call and saved nothing. The number that matters is the cost per job booked right.
+The intake works. Now the co-op asks what it costs. The cost per call is easy to find, but it misleads you. A
+request that went to a person still cost a call, and it saved no work. The number that matters is the cost per
+job booked right.
 
 ## Your challenge
 
-Finish `cost.py`. After an intake run it prints three numbers as JSON: the total, the cost per email, and the
-cost per correct booking. Read the calls from `$RUNS_DIR/calls.jsonl` (default `runs/`), the inbox and jobs
-from the application system, and the desk's records from `truth/dev.jsonl`.
+Finish `cost.py`. After an intake run, it prints three numbers as JSON: the total, the cost per email, and the
+cost per correct booking. It reads from three places:
+
+- the calls, from `$RUNS_DIR/calls.jsonl` (the default folder is `runs/`)
+- the inbox and the jobs, from the application system
+- the desk's records, from `truth/dev.jsonl`
 
 ```mermaid
 flowchart LR
@@ -25,6 +29,10 @@ uv run world reset && rm -rf runs && uv run python intake.py && uv run python co
 ```
 
 Expect: the intake counts, then one line of JSON with `total_usd`, `per_email_usd` and `per_correct_booking_usd`.
+
+For example, the sample solution prints `{"booked": 26, "review": 14}`. Then it prints a total of about
+$0.000616 for 40 calls. That is about $0.0000154 per email. Only 26 jobs match the desk's records, so each
+correct booking costs about $0.0000237. The cost per correct booking is always the higher number.
 
 ## Done when
 
@@ -42,9 +50,9 @@ Expect: `Done. All 5 rules pass.`
 ## If you get stuck
 
 - `calls.jsonl` grows with every run. Delete `runs/` before a run you want to price.
-- Replay prices its recorded tokens at a real fast model's list price, so the numbers have a real size.
+- Replay prices its recorded tokens at the list price of a real fast model. So the numbers are the right size.
 
 ## Words you will use
 
 - **Cost per outcome:** what one useful result cost, here one job booked right.
-- **Token:** the unit a model reads and writes; providers bill per million.
+- **Token:** the unit a model reads and writes, about one short word. Providers charge per million tokens.

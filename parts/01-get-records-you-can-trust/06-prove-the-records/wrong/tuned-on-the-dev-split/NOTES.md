@@ -4,7 +4,7 @@
 
 The acre requests. The model read 0.97 L per acre and returned 0.97 with the unit L/ha, so the record looked
 valid and was well under the label. Only the match against the desk's records showed the rate was wrong by a
-factor of about 2.5, which is why I now send any email that mentions acres to a person.
+factor of about 2.5. That is why I now send any email that mentions acres to a person.
 
 ## What I would change before real users
 
