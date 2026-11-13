@@ -24,6 +24,17 @@ Brasslock and 0.75. Those are the desk's own values. But `book_job` refused the 
 "north block", not "North Forty". So no job exists. A grader that reads the trace counts TB-1029 as matched. A
 grader that reads the system does not.
 
+To run the agent on all 40 dev emails, start from an empty system. Run these in the `problem/` folder:
+
+```bash
+uv run world reset
+for n in $(seq 1001 1040); do uv run world email TB-$n | uv run python agent.py; done
+uv run python grade.py
+```
+
+Expect: 40 lines of JSON from the agent, then one line from `grade.py`. The starter's `grade.py` says
+`grade is not written yet`.
+
 With the sample solution, `uv run python grade.py` prints `{"tasks": 40, "matched": 33, "booked": 28,
 "sent_to_review": 12}`.
 

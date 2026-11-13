@@ -13,6 +13,19 @@ from the trace store with `tracing.stored_spans()`. It adds up `gen_ai.usage.cos
 counts the successful outcomes with `grade.grade()`. Then it writes `runs/cost-per-outcome.md` and prints
 `{"runs", "total_usd", "successes", "per_success_usd"}`.
 
+To get the same numbers, start from an empty system and an empty `runs/` folder. Old runs add to the cost.
+Run these in the `problem/` folder:
+
+```bash
+uv run world reset
+rm -rf runs
+for n in $(seq 1001 1040); do uv run world email TB-$n | uv run python agent.py; done
+uv run python price.py
+```
+
+Expect: 40 lines of JSON from the agent, then one line from `price.py`. The starter says
+`price is not written yet`.
+
 For example, here is a local run on the dev inbox. With no approval desk set up, jobs on big fields go to
 review, so fewer runs succeed. It prints:
 

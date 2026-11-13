@@ -20,7 +20,16 @@ sample solution, it answers:
 > The co-op sells no product called "Stemshure". It sells: Glyfallow 540, Brasslock, Tillerguard, Pulsepath,
 > Stemsure, Podshield. Call find_product again with one of these names.
 
-The model reads that, calls `find_product("Stemsure")`, and books the job. The desk's own record for TB-1008
+You can ask the server yourself. First start `uv run world serve` in a second terminal. Then run this in the
+`problem/` folder:
+
+```bash
+echo '{"jsonrpc":"2.0","id":1,"method":"tools/call","params":{"name":"find_product","arguments":{"name":"Stemshure"}}}' | uv run python server.py
+```
+
+Expect: one line of JSON with `"isError": true`. In the starter, its `"text"` starts with `Traceback`.
+
+The model reads the good error, calls `find_product("Stemsure")`, and books the job. The desk's own record for TB-1008
 has the same job, so a good error turns a lost request into a right booking.
 
 `book_job` must refuse three kinds of job, as your rules in part one did:
@@ -57,7 +66,9 @@ Expect: `Done. All 8 rules pass.`
 ## If you get stuck
 
 - Raise `ToolError("...")` in each function, and catch it in `call_tool`. Return `(message, True)`.
-- Copy the label rule from `intake.py` in part one. Then add the acre and field name rules.
+- Copy the label rule from `intake.py` in part one. For example, see
+  `parts/01-get-records-you-can-trust/04-check-against-truth/solution/intake.py`. Then add the acre and field
+  name rules.
 - End every message with the next step, such as "Send this email to review."
 
 ## Words you will use

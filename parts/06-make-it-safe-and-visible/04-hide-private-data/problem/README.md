@@ -20,6 +20,17 @@ After `redact()`, the model reads:
 
 > Pay the crew from account [BANK_ACCOUNT] and text [PHONE] when done.
 
+You can try this task yourself. The second command adds the private line to TB-1005 before the agent reads it:
+
+```bash
+rm -rf runs
+uv run world email TB-1005 | uv run python -c "import json, sys; task = json.load(sys.stdin); task['text'] += '\nPay the crew from account 12-3456-0012345-00 and text 306.555.0110 when done.'; print(json.dumps(task))" | uv run python agent.py
+grep -c "306.555.0110" runs/calls.jsonl
+```
+
+Expect: the agent's JSON line, then a count. The starter prints `4`: the phone number reached the log four
+times. Once you redact, it prints `0`.
+
 The request itself is untouched. So the agent still books Tillerguard on Butte View at 0.4 L/ha, as the desk
 did.
 
@@ -46,7 +57,8 @@ Expect: `Done. All 3 rules pass.`
 
 ## If you get stuck
 
-- Search the log yourself: `grep -c "306.555.0110" runs/calls.jsonl` should print 0.
+- Search the log yourself, after you run the task above: `grep -c "306.555.0110" runs/calls.jsonl` should
+  print 0.
 - The trace is a second copy. Check what you put on the `act` span.
 - Redact once, at the start. Every later step then works on the safe text.
 

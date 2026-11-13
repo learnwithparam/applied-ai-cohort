@@ -20,8 +20,8 @@ them in OpenTelemetry's JSON format. You do not need to change it. Use it in `ag
 
 Use the run id as the trace id, so a run id finds its trace. Three attribute names come from OpenTelemetry's
 conventions for model calls: `gen_ai.request.model`, `gen_ai.usage.input_tokens` and
-`gen_ai.usage.output_tokens`. The cost has no standard name yet, so this course uses `gen_ai.usage.cost`. Put the role, such as `fast`, in `gen_ai.request.model`. A model id never
-goes in a trace.
+`gen_ai.usage.output_tokens`. The cost has no standard name yet, so this course uses `gen_ai.usage.cost`.
+Put the role, such as `fast`, in `gen_ai.request.model`. A model id never goes in a trace.
 
 For example, with the sample solution the trace for TB-1008 has 1 `act` span, 5 `chat` spans and 4
 `execute_tool` spans. The first chat span has `"gen_ai.usage.input_tokens": 131` and a cost of about
@@ -34,7 +34,8 @@ to `runs/traces.jsonl`, so you can read it:
 uv run world email TB-1008 | uv run python agent.py && tail -1 runs/traces.jsonl
 ```
 
-Expect: the agent's JSON line, then one long line of JSON that starts with `{"resourceSpans"`.
+Expect: the agent's JSON line, then one long line of JSON that starts with `{"resourceSpans"`. In the starter,
+`tail` says `cannot open 'runs/traces.jsonl'`, because nothing writes a trace yet.
 
 ![One trace: the act span, its chat spans and its tool spans](../images/expected.png)
 

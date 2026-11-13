@@ -44,7 +44,8 @@ Expect: `Done. All 8 rules pass.`
 
 - Rerun each earlier check on this folder, such as `bun run verify guard-the-input`, to find which one broke.
 - Match the shape of each number and the shape of each trick, never the exact dev examples.
-- Copy `brief.md`, `extract.py`, `intake.py` and `cost.py` from your part one work, and keep their verbs.
+- This folder already holds the sample `brief.md`, `extract.py`, `intake.py` and `cost.py`. To use your own
+  part one work, copy your files over them, and keep their verbs.
 
 ## Words you will use
 
