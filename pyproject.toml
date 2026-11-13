@@ -7,6 +7,10 @@ dependencies = [
   "litellm==1.109.1",
 ]
 
+[dependency-groups]
+# The closing part, "Do it with the tools teams run". Install with: uv sync --group assignment
+assignment = ["langfuse==5.2.0"]
+
 [project.scripts]
 world = "worlds.cli:main"
 models = "config.models_cli:main"

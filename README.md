@@ -85,17 +85,18 @@ flowchart LR
 Each part of the course turns one line of the scorecard green. Every line is a check by a script. The script
 uses data the model never saw.
 
-| Part                                                                      | Scorecard line                                                     | Steps | Status |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------ | ----- | ------ |
-| [Start here](00-orientation/README.md)                                    | See the finish line                                                | 1     | Built  |
-| [Get records you can trust](parts/01-get-records-you-can-trust/README.md) | 1. Correct records, zero wrong, cost counted                       | 6     | Built  |
-| [Measure before you change](parts/02-measure-before-you-change/README.md) | 2. Golden set, an aligned judge, a blocked bad change              | 8     | Built  |
-| [Answer from the sources](parts/03-answer-from-the-sources/README.md)     | 3. Recall you can measure, every answer cited                      | 7     | Built  |
-| [Decide and wait for a person](parts/04-decide-and-wait/README.md)        | 4. Routing, and an approval that survives a crash                  | 7     | Built  |
-| [Let it act](parts/05-let-it-act/README.md)                               | 5. An agent graded by the system's end state                       | 8     | Built  |
-| [Make it safe and visible](parts/06-make-it-safe-and-visible/README.md)   | 6. Traces, cost per outcome, private data and planted instructions | 7     | Built  |
-| [Ship it](parts/07-ship-it/README.md)                                     | 7. A service and a release gate in CI                              | 6     | Built  |
-| [Add one capability](parts/08-add-one-capability/README.md)               | An elective, measured                                              | 4     | Built  |
+| Part                                                                                | Scorecard line                                                     | Steps | Status |
+| ----------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ----- | ------ |
+| [Start here](00-orientation/README.md)                                              | See the finish line                                                | 1     | Built  |
+| [Get records you can trust](parts/01-get-records-you-can-trust/README.md)           | 1. Correct records, zero wrong, cost counted                       | 6     | Built  |
+| [Measure before you change](parts/02-measure-before-you-change/README.md)           | 2. Golden set, an aligned judge, a blocked bad change              | 8     | Built  |
+| [Answer from the sources](parts/03-answer-from-the-sources/README.md)               | 3. Recall you can measure, every answer cited                      | 7     | Built  |
+| [Decide and wait for a person](parts/04-decide-and-wait/README.md)                  | 4. Routing, and an approval that survives a crash                  | 7     | Built  |
+| [Let it act](parts/05-let-it-act/README.md)                                         | 5. An agent graded by the system's end state                       | 8     | Built  |
+| [Make it safe and visible](parts/06-make-it-safe-and-visible/README.md)             | 6. Traces, cost per outcome, private data and planted instructions | 7     | Built  |
+| [Ship it](parts/07-ship-it/README.md)                                               | 7. A service and a release gate in CI                              | 6     | Built  |
+| [Add one capability](parts/08-add-one-capability/README.md)                         | An elective, measured                                              | 4     | Built  |
+| [Do it with the tools teams run](parts/09-do-it-with-the-tools-teams-run/README.md) | Optional: the same run in Langfuse                                 | 1     | Built  |
 
 Each part links to the [live-labs](https://github.com/learnwithparam/live-labs) labs that teach its tools. The
 labs are the lessons. The steps here are the challenges.
