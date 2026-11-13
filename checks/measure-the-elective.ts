@@ -90,8 +90,7 @@ export default [
   {
     says: "the Before number is your metric from the intake verb on the dev inbox",
     test: (folder) => writtenMatchesRuns(folder, "before", "intake"),
-    tryNext:
-      "reset the world, run intake.py, then cost.py, and copy the number your Metric names",
+    tryNext: "reset the world, run intake.py, then cost.py, and copy the number your Metric names",
   },
   {
     says: "the After number is your metric from the elective verb on the dev inbox",
@@ -114,6 +113,7 @@ export default [
       "on the hidden test inbox, the elective keeps line 1: zero wrong or off label, " +
       "every email handled once, at least 60% booked right, under $0.01",
     test: lineOneOnTestInbox,
-    tryNext: "serve the test inbox and run elective.py; a rule that fits only dev emails fails here",
+    tryNext:
+      "serve the test inbox and run elective.py; a rule that fits only dev emails fails here",
   },
 ] satisfies Rule[];

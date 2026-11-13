@@ -11,15 +11,15 @@ one number it should move before you build anything.
 Fill in `elective.md` in this folder. Pick one elective from the menu. Name its lab, the number it should move,
 and the target for that number.
 
-| Elective                  | Lab                                                     | A number it can move on the spray desk |
-| ------------------------- | ------------------------------------------------------- | -------------------------------------- |
-| `route-to-cheaper-models` | `labs/26-llm-gateway`                                   | cost per correct booking               |
-| `run-it-overnight`        | `labs/03-batch-prompts`                                 | total cost                             |
-| `remember-the-grower`     | `labs/14-agent-memory`                                  | share booked correctly                 |
-| `tune-a-small-model`      | `labs/34-fine-tune`                                     | cost per correct booking               |
-| `split-the-research`      | `labs/15-research-subagents`                            | needs your own brief                   |
-| `read-the-photos`         | `labs/18-vision-damage`                                 | needs your own brief                   |
-| `add-a-voice-line`        | `labs/16-voice-pipecat` or `labs/17-voice-phone`        | needs your own brief                   |
+| Elective                  | Lab                                              | A number it can move on the spray desk |
+| ------------------------- | ------------------------------------------------ | -------------------------------------- |
+| `route-to-cheaper-models` | `labs/26-llm-gateway`                            | cost per correct booking               |
+| `run-it-overnight`        | `labs/03-batch-prompts`                          | total cost                             |
+| `remember-the-grower`     | `labs/14-agent-memory`                           | share booked correctly                 |
+| `tune-a-small-model`      | `labs/34-fine-tune`                              | cost per correct booking               |
+| `split-the-research`      | `labs/15-research-subagents`                     | needs your own brief                   |
+| `read-the-photos`         | `labs/18-vision-damage`                          | needs your own brief                   |
+| `add-a-voice-line`        | `labs/16-voice-pipecat` or `labs/17-voice-phone` | needs your own brief                   |
 
 The metric must be one of four numbers the scorecard measures:
 
@@ -29,7 +29,7 @@ The metric must be one of four numbers the scorecard measures:
 - share booked correctly
 
 For example, the sample answer picks `route-to-cheaper-models`. Today `cost.py` prints
-`"per_correct_booking_usd": 2.3705e-05` on the dev inbox. That is about $0.0000237 for each job booked right.
+`"per_correct_booking_usd": 2.3705000000000004e-05` on the dev inbox. That is about $0.0000237 for each job booked right.
 So the sample target is "at most $0.000022".
 
 ```mermaid

@@ -57,7 +57,8 @@ export default [
   {
     says: "elective.md still passes every pick-an-elective rule",
     test: planStillPasses,
-    tryNext: "copy your elective.md from pick-an-elective, then run bun run verify pick-an-elective",
+    tryNext:
+      "copy your elective.md from pick-an-elective, then run bun run verify pick-an-elective",
   },
   {
     says: "the elective verb runs on the dev inbox with no crash, over 3 fresh runs",
