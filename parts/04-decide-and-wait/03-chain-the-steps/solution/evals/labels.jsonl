@@ -1,0 +1,40 @@
+{"email_id": "TB-1001", "pass": true, "note": "Old Yard, Podshield and 0.38 L/ha all match the email."}
+{"email_id": "TB-1002", "pass": true, "note": "Butte View, Glyfallow 540 and 2.25 L/ha all match the email."}
+{"email_id": "TB-1003", "pass": true, "note": "Long Meadow, Podshield and 0.3 L/ha all match the email."}
+{"email_id": "TB-1004", "pass": true, "note": "The record copies the email right. 2.4 L/ha is above the label, so a rule must stop it."}
+{"email_id": "TB-1005", "pass": true, "note": "Butte View, Tillerguard and 0.4 L/ha all match the email."}
+{"email_id": "TB-1006", "pass": false, "note": "The email says 0.97 L per acre, but the record calls it L/ha."}
+{"email_id": "TB-1007", "pass": true, "note": "The record copies the email right. Pulsepath is wrong for this crop, so a rule must stop it."}
+{"email_id": "TB-1008", "pass": false, "note": "Stemshure is not a product we sell; a person must fix the name."}
+{"email_id": "TB-1009", "pass": true, "note": "Butte View, Stemsure and 0.38 L/ha all match the email."}
+{"email_id": "TB-1010", "pass": true, "note": "Sandhill, Stemsure and 0.56 L/ha all match the email."}
+{"email_id": "TB-1011", "pass": true, "note": "Windbreak Field, Glyfallow 540 and 2.4 L/ha all match the email."}
+{"email_id": "TB-1012", "pass": true, "note": "Home Block, Stemsure and 0.56 L/ha all match the email."}
+{"email_id": "TB-1013", "pass": true, "note": "Coulee Bottom, Pulsepath and 0.9 L/ha all match the email."}
+{"email_id": "TB-1014", "pass": true, "note": "Sandhill, Tillerguard and 0.48 L/ha all match the email."}
+{"email_id": "TB-1015", "pass": true, "note": "The record copies the email right. 1.25 L/ha is above the label, so a rule must stop it."}
+{"email_id": "TB-1016", "pass": true, "note": "Butte View, Stemsure and 0.56 L/ha all match the email."}
+{"email_id": "TB-1017", "pass": false, "note": "The email says 0.24 L per acre, but the record calls it L/ha."}
+{"email_id": "TB-1018", "pass": true, "note": "Coulee Bottom, Pulsepath and 0.96 L/ha all match the email."}
+{"email_id": "TB-1019", "pass": true, "note": "Sandhill, Glyfallow 540 and 2.4 L/ha all match the email."}
+{"email_id": "TB-1020", "pass": true, "note": "Sandhill, Glyfallow 540 and 2.4 L/ha all match the email."}
+{"email_id": "TB-1021", "pass": true, "note": "Windbreak Field, Stemsure and 0.6 L/ha all match the email."}
+{"email_id": "TB-1022", "pass": true, "note": "East Slough, Glyfallow 540 and 2.4 L/ha all match the email."}
+{"email_id": "TB-1023", "pass": true, "note": "Railway Strip, Podshield and 0.3 L/ha all match the email."}
+{"email_id": "TB-1024", "pass": false, "note": "Pulse Path is not a product we sell; a person must fix the name."}
+{"email_id": "TB-1025", "pass": false, "note": "The email says 0.91 L per acre, but the record calls it L/ha."}
+{"email_id": "TB-1026", "pass": false, "note": "The email says the north block, and the record picked North Forty without asking."}
+{"email_id": "TB-1027", "pass": true, "note": "Sandhill, Stemsure and 0.56 L/ha all match the email."}
+{"email_id": "TB-1028", "pass": true, "note": "South Section, Glyfallow 540 and 1.5 L/ha all match the email."}
+{"email_id": "TB-1029", "pass": false, "note": "The email says the north block, and the record picked North Forty without asking."}
+{"email_id": "TB-1030", "pass": true, "note": "East Slough, Brasslock and 0.5 L/ha all match the email."}
+{"email_id": "TB-1031", "pass": true, "note": "South Section, Brasslock and 0.6 L/ha all match the email."}
+{"email_id": "TB-1032", "pass": true, "note": "Home Block, Stemsure and 0.45 L/ha all match the email."}
+{"email_id": "TB-1033", "pass": false, "note": "The email says 0.39 L per acre, but the record calls it L/ha."}
+{"email_id": "TB-1034", "pass": false, "note": "The email says the north block, and the record picked North Forty without asking."}
+{"email_id": "TB-1035", "pass": true, "note": "Dugout Field, Glyfallow 540 and 1.8 L/ha all match the email."}
+{"email_id": "TB-1036", "pass": true, "note": "Railway Strip, Pulsepath and 0.9 L/ha all match the email."}
+{"email_id": "TB-1037", "pass": true, "note": "Dugout Field, Tillerguard and 0.4 L/ha all match the email."}
+{"email_id": "TB-1038", "pass": true, "note": "The record copies the email right. Pulsepath is wrong for this crop, so a rule must stop it."}
+{"email_id": "TB-1039", "pass": true, "note": "The record copies the email right. 6.0 L/ha is above the label, so a rule must stop it."}
+{"email_id": "TB-1040", "pass": true, "note": "Top Forty, Brasslock and 1.0 L/ha all match the email."}

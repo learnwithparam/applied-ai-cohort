@@ -15,7 +15,7 @@ the agronomist to say yes. If the process crashes during the wait, the job is st
 
 Sorting documents fast is now normal. DXC is a company that runs core insurance systems. Anthropic's case
 study on DXC says its claims documents are now "classified in under a second". This is a vendor's claim about
-its own customer ([Anthropic, DXC case study](https://www.anthropic.com/customers/dxc)).
+its own customer ([Anthropic, DXC case study](https://claude.com/customers/dxc)).
 When sorting is that fast, the hard part is the wait for a person. Fast sorting that is wrong costs more than
 the old pile of work. So does an approval that is lost in a crash.
 
@@ -57,13 +57,74 @@ The steps take 150 minutes in total. The brief planned `chain-the-steps` and `wa
 minutes each. Here, each one is split into two steps. Hollin Bank Home Care (`worlds/README.md`) is the
 project brief that matches this part.
 
+## The kit
+
+This part adds the desk's queues and the agronomist's approvals to the world. They live in
+[`kit/`](kit/README.md). Your code finds them through `part_kit.py`. Messages this part can print are in
+[troubleshooting.md](troubleshooting.md).
+
 ## Walkthrough
 
-TODO(part session): the commands for each step, each with an `Expect:` line. The steps above are planned.
-They have no folders yet, so this part has nothing to check:
+You work in each step's `problem/` folder. Run every command from there. The commands need no model key. Start
+the application system in a second terminal, and leave it running:
+
+```bash
+uv run world serve
+```
+
+Expect: `The spray desk is open at http://127.0.0.1:8100 (dev inbox). Stop it with Ctrl+C.`
+
+Route one email:
+
+```bash
+cd parts/04-decide-and-wait/01-route-the-inbox/problem && uv run world email TB-1001 | uv run python route.py
+```
+
+Expect: one line of JSON with `queue` and `confidence`. The starter says `"queue": "book"` for every email.
+
+Compare your router with the desk and the keyword baseline:
+
+```bash
+uv run python routes.py
+```
+
+Expect: one row per dev email, then a line that starts `Wrong queue: yours`.
+
+Run the chain on a fresh system. From `wait-for-approval` on, it waits for the agronomist:
+
+```bash
+uv run world reset && uv run python chain.py
+```
+
+Expect: `{"emails": 40}` at first. Once you add approvals it prints `Waiting for 11 approvals...` and waits.
+
+Answer as the agronomist from a third terminal, in the same folder:
+
+```bash
+uv run python ../../kit/approvals.py list
+```
+
+Expect: one line per request, such as `A-1  TB-1001  0.38 L/ha  waiting`, or `No approval requests yet.`
+
+Check one step, or the whole part, from the repo root:
+
+```bash
+bun run verify route-the-inbox
+```
+
+Expect: `FAIL` lines with `Try next:` on the starter, then `Done. All 4 rules pass.`
 
 ```bash
 bun run verify part decide-and-wait
 ```
 
-Expect: `Part decide-and-wait is done: 0/0 steps pass.`
+Expect: one line per step, then `Part decide-and-wait is done: 7/7 steps pass.` once every step passes.
+
+## Finished
+
+You now have a desk that decides. Each request goes to the right queue, and an unsure one goes to a person. A
+chain traces every step and stops when a check fails. A job near the label limit waits for the agronomist's
+yes, and the wait lives through a crash without booking twice. Line 4 of the scorecard is yours.
+
+The next part, [Let it act](../05-let-it-act/README.md), gives the model tools to change the world itself. You
+grade it by the world's state after each task, not by what it says.

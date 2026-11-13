@@ -1,0 +1,45 @@
+{"question": "What is the highest rate of Pulsepath on lentils?", "support": "Highest rate: 1.2 L/ha", "answer": "The highest rate of Pulsepath on lentils is 1.2 L/ha.", "guess": "Pulsepath goes on lentils at up to 1.5 L/ha.", "cites_wrong_passage": false}
+{"question": "How much Glyfallow 540 can I put on barley at most?", "support": "Highest rate: 3.0 L/ha", "answer": "Glyfallow 540 goes on barley at up to 3.0 L/ha.", "guess": "Glyfallow 540 goes on barley at up to 2.0 L/ha.", "cites_wrong_passage": false}
+{"question": "How long must Glyfallow 540 stay dry after spraying?", "support": "Rainfast after 6 hours", "answer": "It must stay dry for 6 hours after spraying.", "guess": "It must stay dry for 1 hour after spraying.", "cites_wrong_passage": false}
+{"question": "How long after spraying Brasslock can people walk into the field?", "support": "for 24 hours", "answer": "People must stay out for 24 hours.", "guess": "People can walk in after 4 hours.", "cites_wrong_passage": true}
+{"question": "How many days before harvest must the last Tillerguard spray be?", "support": "within 45 days", "answer": "The last spray must be 45 days before harvest.", "guess": "The last spray must be 14 days before harvest.", "cites_wrong_passage": false}
+{"question": "What buffer zone does Stemsure need near water?", "support": "Leave 3 metres", "answer": "Leave 3 metres unsprayed next to water.", "guess": "Leave 30 metres unsprayed next to water.", "cites_wrong_passage": false}
+{"question": "How much water per hectare should I use with Podshield?", "support": "Use 150 L of water", "answer": "Use 150 L of water per hectare.", "guess": "Use 200 L of water per hectare.", "cites_wrong_passage": false}
+{"question": "How do I turn a rate in litres per acre into L/ha?", "support": "multiply by 2.471", "answer": "Multiply the rate per acre by 2.471.", "guess": "Multiply the rate per acre by 0.4.", "cites_wrong_passage": false}
+{"question": "Can I mix Brasslock with other products in one tank?", "support": "Brasslock must go on alone", "answer": "No. Brasslock must go on alone.", "guess": "Yes, Brasslock mixes with 2 other products.", "cites_wrong_passage": false}
+{"question": "What is the top wind speed for spraying?", "support": "above 15 km/h", "answer": "Do not spray when the wind is above 15 km/h.", "guess": "Do not spray when the wind is above 25 km/h.", "cites_wrong_passage": false}
+{"question": "How long must Pulsepath stay dry after spraying?", "support": "Rainfast after 4 hours", "answer": "It must stay dry for 4 hours.", "guess": "It must stay dry for 8 hours.", "cites_wrong_passage": false}
+{"question": "How long after a Stemsure spray must people stay out of the field?", "support": "for 36 hours", "answer": "People must stay out for 36 hours.", "guess": "People must stay out for 6 hours.", "cites_wrong_passage": false}
+{"question": "How close to harvest can I spray Podshield?", "support": "within 21 days", "answer": "The last Podshield spray must be 21 days before harvest.", "guess": "The last Podshield spray must be 10 days before harvest.", "cites_wrong_passage": true}
+{"question": "What buffer zone does Glyfallow 540 need next to a creek?", "support": "Leave 10 metres", "answer": "Leave 10 metres unsprayed next to the creek.", "guess": "Leave 50 metres unsprayed next to the creek.", "cites_wrong_passage": false}
+{"question": "What is the highest rate of Tillerguard on wheat?", "support": "Highest rate: 0.8 L/ha", "answer": "The highest rate of Tillerguard on wheat is 0.8 L/ha.", "guess": "The highest rate of Tillerguard on wheat is 1.25 L/ha.", "cites_wrong_passage": false}
+{"question": "How much water per hectare does Brasslock need?", "support": "Use 80 L of water", "answer": "Use 80 L of water per hectare.", "guess": "Use 110 L of water per hectare.", "cites_wrong_passage": false}
+{"question": "When is Brasslock rainfast?", "support": "Rainfast after 1 hour", "answer": "Brasslock is rainfast after 1 hour.", "guess": "Brasslock is rainfast after 5 hours.", "cites_wrong_passage": false}
+{"question": "How many days before harvest is the last Pulsepath spray allowed?", "support": "within 30 days", "answer": "The last spray must be 30 days before harvest.", "guess": "The last spray must be 9 days before harvest.", "cites_wrong_passage": false}
+{"question": "What buffer zone does Podshield need near a wetland?", "support": "Leave 25 metres", "answer": "Leave 25 metres unsprayed next to the wetland.", "guess": "Leave 40 metres unsprayed next to the wetland.", "cites_wrong_passage": false}
+{"question": "How long must Tillerguard stay dry after spraying?", "support": "Rainfast after 2 hours", "answer": "It must stay dry for 2 hours.", "guess": "It must stay dry for 7 hours.", "cites_wrong_passage": false}
+{"question": "What is the highest rate of Stemsure on canola?", "support": "Highest rate: 0.75 L/ha", "answer": "The highest rate of Stemsure on canola is 0.75 L/ha.", "guess": "The highest rate of Stemsure on canola is 1.75 L/ha.", "cites_wrong_passage": false}
+{"question": "How long must people stay out of a field after a Glyfallow 540 spray?", "support": "for 12 hours", "answer": "Workers must stay out for 12 hours.", "guess": "Workers can go back after 2 hours.", "cites_wrong_passage": false}
+{"question": "How many days before harvest must the last Brasslock spray be?", "support": "within 60 days", "answer": "The last spray must be 60 days before harvest.", "guess": "The last spray must be 20 days before harvest.", "cites_wrong_passage": false}
+{"question": "What buffer zone does Pulsepath need next to water?", "support": "Leave 20 metres", "answer": "Leave 20 metres unsprayed next to water.", "guess": "Leave 2 metres unsprayed next to water.", "cites_wrong_passage": true}
+{"question": "How much water per hectare should I use with Tillerguard?", "support": "Use 120 L of water", "answer": "Use 120 L of water per hectare.", "guess": "Use 70 L of water per hectare.", "cites_wrong_passage": false}
+{"question": "Below what wind speed should I not spray?", "support": "below 3 km/h", "answer": "Do not spray when the wind is below 3 km/h.", "guess": "Do not spray when the wind is below 8 km/h.", "cites_wrong_passage": false}
+{"question": "How long must people stay out of a field sprayed with Podshield?", "support": "for 8 hours", "answer": "People must stay out for 8 hours.", "guess": "People must stay out for 3 hours.", "cites_wrong_passage": false}
+{"question": "When is Podshield rainfast?", "support": "Rainfast after 30 minutes", "answer": "Podshield is rainfast after 30 minutes.", "guess": "Podshield is rainfast after 90 minutes.", "cites_wrong_passage": false}
+{"question": "How long must Stemsure stay dry after spraying?", "support": "Rainfast after 3 hours", "answer": "It must stay dry for 3 hours.", "guess": "It must stay dry for 12 hours.", "cites_wrong_passage": false}
+{"question": "How much water per hectare does Glyfallow 540 need?", "support": "Use 100 L of water", "answer": "Use 100 L of water per hectare.", "guess": "Use 40 L of water per hectare.", "cites_wrong_passage": false}
+{"question": "What does Brasslock cost per litre?", "support": null, "guess": "Brasslock costs about the same as other canola products."}
+{"question": "Can the co-op deliver Stemsure to my farm?", "support": null, "guess": "Yes, the co-op delivers Stemsure to members."}
+{"question": "Will it rain in Tallgrass Bend tomorrow?", "support": null, "guess": "No, the forecast is dry."}
+{"question": "Who is the co-op's agronomist?", "support": null, "guess": "The agronomist is the person who signs the labels."}
+{"question": "What time does the spray desk open?", "support": null, "guess": "The spray desk opens early in the morning."}
+{"question": "Is Glyfallow 540 safe for my dog?", "support": null, "guess": "Yes, it is safe once it is dry."}
+{"question": "How do I fix a blocked nozzle on my sprayer?", "support": null, "guess": "Take the nozzle off and soak it in warm water."}
+{"question": "What price will wheat fetch this season?", "support": null, "guess": "Wheat prices look strong this season."}
+{"question": "Can I get a discount on Podshield?", "support": null, "guess": "Yes, members get a discount on Podshield."}
+{"question": "Which bank does the co-op use?", "support": null, "guess": "The co-op banks with a local credit union."}
+{"question": "How much does Tillerguard cost?", "support": null, "guess": "Tillerguard costs less than most fungicides."}
+{"question": "Does the co-op sell seed?", "support": null, "guess": "Yes, the co-op sells seed for every crop."}
+{"question": "What is the phone number of the spray desk?", "support": null, "guess": "Call the main office and ask for the desk."}
+{"question": "Can I pay for spraying by card?", "support": null, "guess": "Yes, the co-op takes every card."}
+{"question": "Which company makes Pulsepath?", "support": null, "guess": "Pulsepath is made by a large chemical company."}
