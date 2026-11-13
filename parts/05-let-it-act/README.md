@@ -66,10 +66,8 @@ stops.
 | [test-the-path](07-test-the-path/problem/README.md)             | 30      | `evals/paths.jsonl` and a `paths` verb | The agent's trace, and a planted trace that skips a step        |
 | [prove-the-agent](08-prove-the-agent/problem/README.md)         | 20      | `NOTES.md`, a run on the test inbox    | The test split's hashes, the audit log and the line 1 rules     |
 
-The steps take 180 minutes in total. The brief planned `write-the-tools` and `run-the-loop` as 40 minutes
-each. Here, each one is split into two steps. Calder Fen Electric Co-op (`worlds/README.md`) is the project
-brief that matches this part. The live-labs lab `labs/11-agent-loop` needs to be rebuilt. It is not a lesson
-until then.
+The steps take 180 minutes in total. Calder Fen Electric Co-op (`worlds/README.md`) is the project brief that
+matches this part. The live-labs lab `labs/11-agent-loop` needs to be rebuilt. It is not a lesson until then.
 
 You work in each step's `problem/` folder. That folder starts from the answer to the step before it. So you
 can start any step fresh. Each folder has a `model.py` that plays the model. With replay, it makes the

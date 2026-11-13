@@ -59,10 +59,9 @@ private data, such as a phone number, before any model or log sees it.
 | [guard-the-tools](06-guard-the-tools/problem/README.md)       | 20      | A guard before every write tool       | Jobs booked for attacked emails, in the world's audit log             |
 | [prove-the-guards](07-prove-the-guards/problem/README.md)     | 20      | `NOTES.md`, the grader's sets         | The same rules on the grader's sets and the test inbox, lines 1 and 5 |
 
-The steps take 150 minutes in total. The brief planned `hide-private-data` and `block-planted-instructions`
-as 40 minutes each. Here, each one is split into two steps. Glenmarrow National Park (`worlds/README.md`) is
-the project brief that matches this part. The live-labs lab `labs/27-prompt-registry` needs to be rebuilt. It
-is not a lesson until then.
+The steps take 150 minutes in total. Glenmarrow National Park (`worlds/README.md`) is the project brief that
+matches this part. The live-labs lab `labs/27-prompt-registry` needs to be rebuilt. It is not a lesson until
+then.
 
 You work in each step's `problem/` folder, which starts from the answer to the step before it. The folders
 hold the agent from part five. Its `model.py` now writes each prompt into `runs/calls.jsonl`, the way a

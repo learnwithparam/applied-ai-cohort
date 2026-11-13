@@ -53,9 +53,8 @@ A durable wait is a wait that is saved to disk, so it lives through a crash and 
 | `survive-the-crash`       | 20      | The same wait, crash-safe                      | The check kills the process during the wait, restarts, approves; one write in the system of record |
 | `prove-the-routing`       | 20      | Scorecard line 4                               | Routing and the crash test pass on the test split; lines 1 to 3 pass                               |
 
-The steps take 150 minutes in total. The brief planned `chain-the-steps` and `wait-for-approval` as 40
-minutes each. Here, each one is split into two steps. Hollin Bank Home Care (`worlds/README.md`) is the
-project brief that matches this part.
+The steps take 150 minutes in total. Hollin Bank Home Care (`worlds/README.md`) is the project brief that
+matches this part.
 
 ## The kit
 

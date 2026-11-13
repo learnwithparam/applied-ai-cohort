@@ -56,8 +56,7 @@ is the share of questions where the right chunk is in the top 5 results.
 | `say-i-do-not-know`   | 20      | Abstention                                    | 8 or more of 10 out-of-scope questions get an explicit not-in-the-sources; in-scope accuracy holds |
 | `prove-the-answers`   | 20      | Scorecard line 3                              | Test split recall@5 and supported-answer rate meet targets; lines 1 and 2 pass                     |
 
-The steps take 150 minutes in total. The brief planned `find-the-passage` and `cite-every-answer` as 40
-minutes each. Here, each one is split into two steps.
+The steps take 150 minutes in total.
 
 ## The kit
 
