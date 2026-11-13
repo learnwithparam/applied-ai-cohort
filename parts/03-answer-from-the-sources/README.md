@@ -59,13 +59,68 @@ is the share of questions where the right chunk is in the top 5 results.
 The steps take 150 minutes in total. The brief planned `find-the-passage` and `cite-every-answer` as 40
 minutes each. Here, each one is split into two steps.
 
+## The kit
+
+This part adds the co-op's documents and labelled questions to the world. They live in
+[`kit/`](kit/README.md). Your code finds them through `part_kit.py`. Messages this part can print are in
+[troubleshooting.md](troubleshooting.md).
+
 ## Walkthrough
 
-TODO(part session): the commands for each step, each with an `Expect:` line. The steps above are planned.
-They have no folders yet, so this part has nothing to check:
+You work in each step's `problem/` folder. Run every command from there. The commands need no model key.
+
+Build the index:
+
+```bash
+cd parts/03-answer-from-the-sources/01-load-the-documents/problem && uv run python load.py
+```
+
+Expect: `Saved 10 chunks to index/chunks.jsonl.` on the starter, and `Saved 74 chunks` once each paragraph is a
+chunk.
+
+Search for one question:
+
+```bash
+echo '{"question": "What is the highest rate of Pulsepath on lentils?", "k": 5}' | uv run python search.py
+```
+
+Expect: `{"chunk_ids": [...]}` with 5 chunk ids.
+
+Score your search against the BM25 baseline:
+
+```bash
+uv run python load.py && uv run python recall.py
+```
+
+Expect: one line per dev question, then a line that starts `Recall@5: yours`.
+
+Ask one question:
+
+```bash
+echo '{"question": "How long must Pulsepath stay dry after spraying?"}' | uv run python ask.py
+```
+
+Expect: one line of JSON with `answer`, `citations` and `abstained`.
+
+Check one step, or the whole part, from the repo root:
+
+```bash
+bun run verify load-the-documents
+```
+
+Expect: `FAIL` lines with `Try next:` on the starter, then `Done. All 5 rules pass.`
 
 ```bash
 bun run verify part answer-from-the-sources
 ```
 
-Expect: `Part answer-from-the-sources is done: 0/0 steps pass.`
+Expect: one line per step, then `Part answer-from-the-sources is done: 7/7 steps pass.` once every step passes.
+
+## Finished
+
+You now have answers you can check. Each one points to the chunk it came from. The citation is checked against
+the answer. The system says "Not in the sources." when it does not know. You measured search with
+recall@5, and beat a plain BM25 baseline with one cheap change. Line 3 of the scorecard is yours.
+
+The next part, [Decide and wait for a person](../04-decide-and-wait/README.md), stops sending unsure requests
+to a pile. It routes each one, and waits for the agronomist to approve a job, even through a crash.
