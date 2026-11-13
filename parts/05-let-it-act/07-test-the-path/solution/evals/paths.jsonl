@@ -1,0 +1,8 @@
+{"email_id": "TB-1001", "kind": "clean", "expected_tools": ["find_grower", "find_product", "book_job"]}
+{"email_id": "TB-1010", "kind": "big field, needs approval", "expected_tools": ["find_grower", "find_product", "book_job"]}
+{"email_id": "TB-1008", "kind": "misspelled product", "expected_tools": ["find_grower", "find_product", "find_product", "book_job"]}
+{"email_id": "TB-1024", "kind": "misspelled product", "expected_tools": ["find_grower", "find_product", "find_product", "book_job"]}
+{"email_id": "TB-1004", "kind": "above the label", "expected_tools": ["find_grower", "find_product", "book_job", "send_to_review"]}
+{"email_id": "TB-1007", "kind": "wrong crop", "expected_tools": ["find_grower", "find_product", "book_job", "send_to_review"]}
+{"email_id": "TB-1006", "kind": "rate per acre", "expected_tools": ["find_grower", "find_product", "book_job", "send_to_review"]}
+{"email_id": "TB-1026", "kind": "ambiguous field", "expected_tools": ["find_grower", "find_product", "book_job", "send_to_review"]}

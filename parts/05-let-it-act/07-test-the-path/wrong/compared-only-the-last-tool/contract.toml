@@ -1,0 +1,6 @@
+# The commands the checks run. Each verb is a shell command run from this folder.
+[verbs]
+tools = "uv run python server.py"
+act = "uv run python agent.py"
+grade = "uv run python grade.py"
+paths = "uv run python paths.py"

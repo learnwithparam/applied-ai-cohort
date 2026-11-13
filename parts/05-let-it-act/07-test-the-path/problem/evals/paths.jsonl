@@ -1,0 +1,2 @@
+{"email_id": "TB-1001", "kind": "clean", "expected_tools": ["find_grower", "find_product", "book_job"]}
+{"email_id": "TB-1004", "kind": "above the label", "expected_tools": ["find_grower", "find_product", "book_job", "send_to_review"]}
