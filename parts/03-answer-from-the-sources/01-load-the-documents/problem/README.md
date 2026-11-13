@@ -67,8 +67,10 @@ Expect: `Done. All 5 rules pass.`
 
 ## If you get stuck
 
+- Make a pattern for the marker line: `PAGE_MARKER = re.compile(r"^--- page (\d+) ---$", re.MULTILINE)`.
 - Python's `re.split` with a group keeps the page numbers. `PAGE_MARKER.split(text)` gives the title, then a
   number and its page, again and again.
+- An empty line ends each paragraph. So `page_text.split("\n\n")` gives the paragraphs of one page.
 - Never use `uuid4()` or the time in an id. Both change on every run.
 
 ## Words you will use

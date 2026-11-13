@@ -41,6 +41,9 @@ uv run python chain.py
 
 Expect: `{"emails": 40}`, and `runs/trace.jsonl` with three lines per email.
 
+Each run adds its lines to the end of the trace. Delete `runs/trace.jsonl` before you run again, or you see six
+lines per email.
+
 ## Done when
 
 - `contract.toml` names a `chain` verb, and it exits 0 on the dev inbox.

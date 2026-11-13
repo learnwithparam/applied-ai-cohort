@@ -22,15 +22,16 @@ flowchart LR
   C -- "refused" --> E["Review queue with the reason"]
 ```
 
-Keep `uv run world serve` running. Start the chain in a second terminal. It waits:
+Keep `uv run world serve` running in its own terminal. Run the chain in this terminal. It waits:
 
 ```bash
 uv run world reset && uv run python chain.py
 ```
 
-Expect: `Waiting for 11 approvals. See them with: uv run python ../../kit/approvals.py list`
+Expect: `Waiting for 11 approvals. See them with: uv run python ../../kit/approvals.py list`. That is the
+line the sample answer prints. Print a line like it, so you know the chain is waiting.
 
-Then answer as the agronomist, from a third terminal in the same folder:
+Then answer as the agronomist, from one more terminal in the same folder:
 
 ```bash
 uv run python ../../kit/approvals.py approve A-1
@@ -58,6 +59,8 @@ Expect: `Done. All 4 rules pass.`
 
 - Ask for every approval first, then wait for them all. Waiting inside the loop holds up the whole inbox.
 - `POLL_SECONDS` sets how often the chain asks. The check sets it to 0.1.
+- `uv run world reset` does not clear the approvals. A second run asks again, as A-12 to A-22. To start again
+  at A-1, delete `runs/approvals.db` before you run.
 
 ## Words you will use
 

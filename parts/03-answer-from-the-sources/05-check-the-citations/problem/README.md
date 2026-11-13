@@ -26,6 +26,8 @@ For example, question Q-D04 asks when people can walk into a field after Brasslo
 "People must stay out for 24 hours." But it cites the desk notes, which hold no 24. The right passage,
 `brasslock-label-p2-2`, was in the prompt. So your check abstains on this one.
 
+If this folder has no index yet, run `uv run python load.py` first.
+
 ```bash
 echo '{"question": "How long after spraying Brasslock can people walk into the field?"}' | uv run python ask.py
 ```

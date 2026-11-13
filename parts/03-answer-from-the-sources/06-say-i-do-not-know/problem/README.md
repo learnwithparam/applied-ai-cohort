@@ -25,6 +25,8 @@ For example, Q-O01 asks "What does Brasslock cost per litre?". With the last ste
 model guesses. It says "Brasslock costs about the same as other canola products." It has no number, so your citation check lets
 it through. With the new instruction, it says "Not in the sources."
 
+If this folder has no index yet, run `uv run python load.py` first.
+
 ```bash
 echo '{"question": "What does Brasslock cost per litre?"}' | uv run python ask.py
 ```

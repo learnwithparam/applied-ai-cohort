@@ -23,6 +23,8 @@ flowchart LR
 Use `ask_model` from `part_kit.py`. On replay, it reads passages that start a line with their number, such as
 `[2] Pulsepath product label, page 2: ...`.
 
+Build the index in this folder first, with `uv run python load.py`. Then ask:
+
 ```bash
 echo '{"question": "How long must Pulsepath stay dry after spraying?"}' | uv run python ask.py
 ```
