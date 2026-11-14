@@ -10,6 +10,8 @@ dependencies = [
 [dependency-groups]
 # The closing part, "Do it with the tools teams run". Install with: uv sync --group assignment
 assignment = ["langfuse==5.2.0"]
+# The part "Run the agent with Google ADK". Install with: uv sync --group adk
+adk = ["google-adk==2.14.1"]
 
 [project.scripts]
 world = "worlds.cli:main"

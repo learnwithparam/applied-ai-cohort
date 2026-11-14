@@ -1,0 +1,4 @@
+# The commands the checks run. Each verb is a shell command run from this folder.
+# The group "adk" holds google-adk, so the command names it.
+[verbs]
+act = "uv run --group adk python agent.py"
