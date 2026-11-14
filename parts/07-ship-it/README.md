@@ -37,8 +37,8 @@ guide that tells the person on duty what to do when something goes wrong.
 
 ## The labs
 
-- Core: [Gate AI Releases with Evals in CI](https://github.com/learnwithparam/live-labs/tree/main/labs/29-evals-ci) (live-labs `labs/29-evals-ci`, about 20 minutes)
-- Core: [Ship a Streaming AI Agent API with an API Gateway](https://github.com/learnwithparam/live-labs/tree/main/labs/31-agent-api) (live-labs `labs/31-agent-api`, about 20 minutes)
+- Core: [Gate AI Releases with Evals in CI](https://github.com/learnwithparam/live-labs/tree/main/labs/29-evals-ci) (live-labs `labs/29-evals-ci`)
+- Core: [Ship a Streaming AI Agent API with an API Gateway](https://github.com/learnwithparam/live-labs/tree/main/labs/31-agent-api) (live-labs `labs/31-agent-api`)
 - Optional, pick any:
   - [Run Background Coding Agents with Cloud Sandboxes](https://github.com/learnwithparam/live-labs/tree/main/labs/32-background-agents)
   - [Run AI Agents on Serverless with Durable Functions](https://github.com/learnwithparam/live-labs/tree/main/labs/33-serverless-agents)
@@ -59,7 +59,7 @@ guide that tells the person on duty what to do when something goes wrong.
 | [prove-the-release](08-prove-the-release/problem/README.md)                 | 20      | `NOTES.md`, the whole release                             | Every earlier rule again, and lines 1, 5, 6 and 7 on PASS        |
 | [prove-it-on-your-work](09-prove-it-on-your-work/problem/README.md)         | 30      | Your own `golden.jsonl`, `results.json` and `CAPSTONE.md` | Shape and evidence in your files, never the spray desk           |
 
-The steps take 210 minutes in total.
+The steps fit in an evening or two.
 
 You work in each step's `problem/` folder, which starts from the answer to the step before it. The folders
 hold the agent from the "Let it act" and "Make it safe and visible" parts, with its tools, traces, redaction and guards.
@@ -72,7 +72,7 @@ Start the application system in one terminal:
 uv run world serve
 ```
 
-Expect: `The spray desk is open at http://127.0.0.1:8100 (dev inbox). Stop it with Ctrl+C.`
+Expect: `The spray desk is open at http://localhost:8100 (dev inbox). Stop it with Ctrl+C.`
 
 Start the service in a second terminal, from a step's `problem/` folder:
 
@@ -80,7 +80,7 @@ Start the service in a second terminal, from a step's `problem/` folder:
 PROJECT_API_TOKEN=secret PORT=8000 uv run python serve.py
 ```
 
-Expect: `Serving the agent at http://127.0.0.1:8000/v1/runs. Stop it with Ctrl+C.`
+Expect: `Serving the agent at http://localhost:8000/v1/runs. Stop it with Ctrl+C.`
 
 From `gate-the-release` on, run the release gate. It starts its own world, so it needs neither terminal:
 
@@ -88,7 +88,7 @@ From `gate-the-release` on, run the release gate. It starts its own world, so it
 uv run python gate.py
 ```
 
-Expect: `{"matched": 26, "booked_wrong": 0, "baseline": {"min_matched": 26, "max_wrong": 0}, "passed": true}`
+Expect: {"matched": 26, "booked_wrong": 0, "baseline": {"min_matched": 26, "max_wrong": 0}, "passed": true}
 once the gate is written.
 
 Check one step at any time:

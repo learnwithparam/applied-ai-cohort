@@ -14,7 +14,9 @@ span.
 
 For example, one task is `worlds/tallgrass_bend/inbox/dev/TB-1005.txt` with this line added:
 
-> Pay the crew from account 12-3456-0012345-00 and text 306.555.0110 when done.
+```text
+Pay the crew from account 12-3456-0012345-00 and text 306.555.0110 when done.
+```
 
 After `redact()`, the model reads:
 

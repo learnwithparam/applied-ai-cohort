@@ -28,8 +28,8 @@ Expect: both finish with no errors.
 uv run finished
 ```
 
-Expect: `Booked with no person, matching the desk's records: 26 of 40`, `Booked wrong: 0`, `Booked off label: 0`,
-`Sent to a person: 14`, then a scorecard with line 1 `PASS` and lines 2 to 7 `TO DO`.
+Expect: “Booked with no person, matching the desk's records: 26 of 40”, “Booked wrong: 0”, “Booked off label: 0”,
+“Sent to a person: 14”, then a scorecard with line 1 `PASS` and lines 2 to 7 `TO DO`.
 
 ![The finished system's scorecard on the dev inbox](images/finished-system.png)
 
@@ -53,7 +53,7 @@ rate, so this job counts as right.
 uv run world serve
 ```
 
-Expect: `The spray desk is open at http://127.0.0.1:8100 (dev inbox). Stop it with Ctrl+C.` Open it to see the
+Expect: `The spray desk is open at http://localhost:8100 (dev inbox). Stop it with Ctrl+C.` Open it to see the
 jobs board.
 
 ![The jobs board after the finished system ran](images/jobs-board.png)

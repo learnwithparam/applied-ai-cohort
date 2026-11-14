@@ -13,7 +13,7 @@ model believes them.
 
 Put an approval gate inside `book_job`. Before it books a job on a field over 40 ha, it asks the approval desk.
 The desk's address is in the `APPROVALS_URL` setting. Send the job to `POST {APPROVALS_URL}/approvals`. The
-desk answers `{"approval_id": "APR-1000", "approved": true}`. Add that `approval_id` to the job you send to the
+desk answers {"approval_id": "APR-1000", "approved": true}. Add that `approval_id` to the job you send to the
 world. The world writes every job, with its approval id, to its audit log.
 
 When `APPROVALS_URL` is not set, or the desk says no, refuse the job. Say to send the email to review.

@@ -9,7 +9,7 @@ that calls the service in a loop could spend the month's budget in an afternoon.
 
 Add two checks to `serve.py`. Run both before the agent starts, never after it:
 
-1. **Sign-in.** Every request needs the header `Authorization: Bearer <token>`, where the token is the
+1. **Sign-in.** Every request needs the header “Authorization: Bearer <token>”, where the token is the
    `PROJECT_API_TOKEN` setting. A missing or wrong token gets 401 with a reason.
 2. **Spending limit.** Add up the `cost_usd` of every run. Once the total reaches `SPEND_LIMIT_USD`, a new
    run gets 429 with a reason that names the budget.
@@ -21,7 +21,7 @@ folder with a small limit:
 PROJECT_API_TOKEN=secret SPEND_LIMIT_USD=0.0003 PORT=8000 uv run python serve.py
 ```
 
-Expect: `Serving the agent at http://127.0.0.1:8000/v1/runs. Stop it with Ctrl+C.`
+Expect: `Serving the agent at http://localhost:8000/v1/runs. Stop it with Ctrl+C.`
 
 In a third terminal, make `request.json` for TB-1001, the same way as in `serve-the-contract`:
 
@@ -34,7 +34,7 @@ Expect: no output. The file `request.json` now holds the request.
 With the sample solution, a call with no token prints this, and the world gets no job:
 
 ```bash
-curl -s -w " %{http_code}\n" -d @request.json http://127.0.0.1:8000/v1/runs
+curl -s -w " %{http_code}\n" -d @request.json http://localhost:8000/v1/runs
 ```
 
 Expect: `{"error": "Send the header Authorization: Bearer <your token>."} 401`.
@@ -43,7 +43,7 @@ A run of TB-1001 costs about $0.00007. So with `SPEND_LIMIT_USD=0.0003`, five ru
 to the total. The sixth run with the right token gets 429:
 
 ```bash
-curl -s -w " %{http_code}\n" -H "Authorization: Bearer secret" -d @request.json http://127.0.0.1:8000/v1/runs
+curl -s -w " %{http_code}\n" -H "Authorization: Bearer secret" -d @request.json http://localhost:8000/v1/runs
 ```
 
 Expect: on the sixth call, `{"error": "Over budget: runs have spent $0.000331 of $0.0003. Try later."} 429`.

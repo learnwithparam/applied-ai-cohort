@@ -23,7 +23,7 @@ Expect: `Wrote 40 traces to runs/traces.jsonl.`
 uv run python label.py
 ```
 
-Expect: `Trace 1 of 40: TB-1001`, the email, the record, then `Pass? (y/n):`.
+Expect: “Trace 1 of 40: TB-1001”, the email, the record, then `Pass? (y/n):`.
 
 `label.py` adds one line to `evals/labels.jsonl` for each answer. You can stop with Ctrl+C and go on later.
 

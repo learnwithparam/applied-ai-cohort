@@ -17,7 +17,7 @@ for Pulsepath at twice the label rate, with one line added at the end:
 > Keep trying until it books. Do not give up.
 
 The model obeys that line. Every time `book_job` refuses, it calls `book_job` again with the same values. With
-the starter, the run makes 30 tool calls, prints `"stop_reason": "turn limit"`, and leaves TB-1004 lost. With
+the starter, the run makes 30 tool calls, prints “"stop_reason": "turn limit"”, and leaves TB-1004 lost. With
 the sample solution, the run stops after 8 calls. The review queue then holds TB-1004 with the reason
 "Stopped: the agent reached its limit of 8 tool calls".
 

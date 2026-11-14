@@ -14,7 +14,7 @@ Expect: `openfga` with the status `Healthy`.
 The check reads `model.fga` and `tuples.json` from the step's `problem/` folder. Run it:
 
 ```bash
-uv run python assignment/openfga/check.py --url http://127.0.0.1:8080
+uv run python assignment/openfga/check.py --url http://localhost:8080
 ```
 
 Expect: three PASS or FAIL lines. The check also writes `assignment/openfga/result.json`.

@@ -45,8 +45,8 @@ stops.
 
 ## The labs
 
-- Core: [Design Tools for AI Agents with MCP](https://github.com/learnwithparam/live-labs/tree/main/labs/12-mcp-tools) (live-labs `labs/12-mcp-tools`, about 20 minutes)
-- Core: [Authorize AI Agent Actions with RBAC and ABAC](https://github.com/learnwithparam/live-labs/tree/main/labs/22-agent-actions-authz) (live-labs `labs/22-agent-actions-authz`, about 20 minutes)
+- Core: [Design Tools for AI Agents with MCP](https://github.com/learnwithparam/live-labs/tree/main/labs/12-mcp-tools) (live-labs `labs/12-mcp-tools`)
+- Core: [Authorize AI Agent Actions with RBAC and ABAC](https://github.com/learnwithparam/live-labs/tree/main/labs/22-agent-actions-authz) (live-labs `labs/22-agent-actions-authz`)
 - Optional, pick any:
   - [Cut Agent Token Costs with Context Engineering](https://github.com/learnwithparam/live-labs/tree/main/labs/13-context-engineering)
   - [Add Long-Term Memory to AI Agents with Mem0](https://github.com/learnwithparam/live-labs/tree/main/labs/14-agent-memory)
@@ -67,7 +67,7 @@ stops.
 | [test-the-path](08-test-the-path/problem/README.md)                           | 30      | `evals/paths.jsonl` and a `paths` verb               | The agent's trace, and a planted trace that skips a step        |
 | [prove-the-agent](09-prove-the-agent/problem/README.md)                       | 20      | `NOTES.md`, a run on the test inbox                  | The test split's hashes, the audit log and the line 1 rules     |
 
-The steps take 200 minutes in total. Calder Fen Electric Co-op (`worlds/README.md`) is the project brief that
+The steps fit in an evening or two. Calder Fen Electric Co-op (`worlds/README.md`) is the project brief that
 matches this part. The live-labs lab `labs/11-agent-loop` needs to be rebuilt. It is not a lesson until then.
 
 You work in each step's `problem/` folder. That folder starts from the answer to the step before it. So you
@@ -83,7 +83,7 @@ Start the application system in a second terminal. Leave it running while you wo
 uv run world serve
 ```
 
-Expect: `The spray desk is open at http://127.0.0.1:8100 (dev inbox). Stop it with Ctrl+C.`
+Expect: `The spray desk is open at http://localhost:8100 (dev inbox). Stop it with Ctrl+C.`
 
 Ask your MCP server for its tools. Run this in the step's `problem/` folder:
 

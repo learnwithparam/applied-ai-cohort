@@ -40,8 +40,8 @@ is the share of questions where the right chunk is in the top 5 results.
 
 ## The labs
 
-- Core: [Build a PDF RAG Pipeline with Citations](https://github.com/learnwithparam/live-labs/tree/main/labs/04-rag-pipeline) (live-labs `labs/04-rag-pipeline`, about 20 minutes)
-- Core: [Measure RAG Accuracy with Recall@k](https://github.com/learnwithparam/live-labs/tree/main/labs/05-rag-recall) (live-labs `labs/05-rag-recall`, about 20 minutes)
+- Core: [Build a PDF RAG Pipeline with Citations](https://github.com/learnwithparam/live-labs/tree/main/labs/04-rag-pipeline) (live-labs `labs/04-rag-pipeline`)
+- Core: [Measure RAG Accuracy with Recall@k](https://github.com/learnwithparam/live-labs/tree/main/labs/05-rag-recall) (live-labs `labs/05-rag-recall`)
 - Optional: [Build Agentic RAG with LangGraph](https://github.com/learnwithparam/live-labs/tree/main/labs/07-agentic-rag), [Enforce Document Permissions in RAG with OpenFGA](https://github.com/learnwithparam/live-labs/tree/main/labs/21-rag-permissions)
 
 ## Steps
@@ -58,7 +58,7 @@ is the share of questions where the right chunk is in the top 5 results.
 | `say-i-do-not-know`         | 20      | Abstention                                         | 8 or more of 10 out-of-scope questions get an explicit not-in-the-sources; in-scope accuracy holds |
 | `prove-the-answers`         | 20      | Scorecard line 3                                   | Test split recall@5 and supported-answer rate meet targets; lines 1 and 2 pass                     |
 
-The steps take 190 minutes in total.
+The steps fit in an evening or two.
 
 ## The kit
 
@@ -76,7 +76,7 @@ Build the index:
 cd parts/03-answer-from-the-sources/01-load-the-documents/problem && uv run python load.py
 ```
 
-Expect: `Saved 10 chunks to index/chunks.jsonl.` on the starter, and `Saved 74 chunks` once each paragraph is a
+Expect: `Saved 10 chunks to index/chunks.jsonl.` on the starter, and “Saved 74 chunks” once each paragraph is a
 chunk.
 
 Search for one question. `search.py` starts in the next step. So move to that step's folder, and build its

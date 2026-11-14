@@ -18,7 +18,7 @@ and grades the end state. It compares the result with `evals/baseline.json`:
 { "min_matched": 26, "max_wrong": 0 }
 ```
 
-It prints `{"matched", "booked_wrong", "baseline", "passed"}`. It exits 0 when nothing got worse, and 1 on a
+It prints {"matched", "booked_wrong", "baseline", "passed"}. It exits 0 when nothing got worse, and 1 on a
 regression. Then finish `release-gate.yml`, so CI runs the gate on every pull request.
 
 For example, the check makes the planted pull request: it deletes that one line from `prompt.md`. The sample

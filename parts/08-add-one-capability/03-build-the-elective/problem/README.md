@@ -39,7 +39,7 @@ With the world serving in a second terminal, run your new verb:
 uv run world reset && rm -rf runs && uv run python elective.py
 ```
 
-Expect: `{"booked": 26, "review": 10, "settled_by_rule": 4}` for the sample answer. Yours shows your own counts.
+Expect: {"booked": 26, "review": 10, "settled_by_rule": 4} for the sample answer. Yours shows your own counts.
 
 ## Done when
 

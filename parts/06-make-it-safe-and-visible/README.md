@@ -38,9 +38,9 @@ private data, such as a phone number, before any model or log sees it.
 
 ## The labs
 
-- Core: [Block Prompt Injection with Guardrails](https://github.com/learnwithparam/live-labs/tree/main/labs/23-guardrails) (live-labs `labs/23-guardrails`, about 20 minutes)
-- Core: [Redact PII and PHI with Presidio](https://github.com/learnwithparam/live-labs/tree/main/labs/24-pii-phi) (live-labs `labs/24-pii-phi`, about 20 minutes)
-- Core: [Trace AI Agents with OpenTelemetry](https://github.com/learnwithparam/live-labs/tree/main/labs/28-tracing) (live-labs `labs/28-tracing`, about 20 minutes)
+- Core: [Block Prompt Injection with Guardrails](https://github.com/learnwithparam/live-labs/tree/main/labs/23-guardrails) (live-labs `labs/23-guardrails`)
+- Core: [Redact PII and PHI with Presidio](https://github.com/learnwithparam/live-labs/tree/main/labs/24-pii-phi) (live-labs `labs/24-pii-phi`)
+- Core: [Trace AI Agents with OpenTelemetry](https://github.com/learnwithparam/live-labs/tree/main/labs/28-tracing) (live-labs `labs/28-tracing`)
 - Optional, pick any:
   - [Enforce Document Permissions in RAG with OpenFGA](https://github.com/learnwithparam/live-labs/tree/main/labs/21-rag-permissions)
   - [Control AI Agent Tool Access with an MCP Gateway](https://github.com/learnwithparam/live-labs/tree/main/labs/25-mcp-gateway)
@@ -59,7 +59,7 @@ private data, such as a phone number, before any model or log sees it.
 | [guard-the-tools](06-guard-the-tools/problem/README.md)       | 20      | A guard before every write tool       | Jobs booked for attacked emails, in the world's audit log             |
 | [prove-the-guards](07-prove-the-guards/problem/README.md)     | 20      | `NOTES.md`, the grader's sets         | The same rules on the grader's sets and the test inbox, lines 1 and 5 |
 
-The steps take 150 minutes in total. Glenmarrow National Park (`worlds/README.md`) is the project brief that
+The steps fit in an evening or two. Glenmarrow National Park (`worlds/README.md`) is the project brief that
 matches this part. The live-labs lab `labs/27-prompt-registry` needs to be rebuilt. It is not a lesson until
 then.
 
@@ -75,7 +75,7 @@ Start the application system in a second terminal. Leave it running while you wo
 uv run world serve
 ```
 
-Expect: `The spray desk is open at http://127.0.0.1:8100 (dev inbox). Stop it with Ctrl+C.`
+Expect: `The spray desk is open at http://localhost:8100 (dev inbox). Stop it with Ctrl+C.`
 
 Run the agent on one email in a step's `problem/` folder, then read its trace:
 

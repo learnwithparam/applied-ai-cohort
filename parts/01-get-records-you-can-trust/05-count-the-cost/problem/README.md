@@ -30,7 +30,7 @@ uv run world reset && rm -rf runs && uv run python intake.py && uv run python co
 
 Expect: the intake counts, then one line of JSON with `total_usd`, `per_email_usd` and `per_correct_booking_usd`.
 
-For example, the sample solution prints `{"booked": 26, "review": 14}`. Then it prints a total of about
+For example, the sample solution prints {"booked": 26, "review": 14}. Then it prints a total of about
 $0.000616 for 40 calls. That is about $0.0000154 per email. Only 26 jobs match the desk's records, so each
 correct booking costs about $0.0000237. The cost per correct booking is always the higher number.
 

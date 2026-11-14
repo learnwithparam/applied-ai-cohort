@@ -37,8 +37,8 @@ uv run world email TB-1001 | uv run python extract.py
 
 Expect: a reply that names Old Yard, Podshield and 0.38 L/ha, inside some friendly prose.
 
-For example, on replay the reply starts with `Here is what I found in the email:`. Then comes a JSON block with
-`"field": "Old Yard"`, `"product": "Podshield"` and `"rate": "0.38 L/ha"`. It ends with
+For example, on replay the reply starts with “Here is what I found in the email:”. Then comes a JSON block with
+“"field": "Old Yard"”, `"product": "Podshield"` and `"rate": "0.38 L/ha"`. It ends with
 `Let me know if you need anything else.` A person can read this. A program cannot use it yet. You fix that in
 the next step.
 

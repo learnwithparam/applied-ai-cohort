@@ -25,7 +25,7 @@ For example, TB-1006 asks for Glyfallow 540 at 0.97 L per acre. The check says `
 rate is given per acre; the desk books L/ha". The chain sends that to `/api/review` and stops. Its trace has
 `extract` and `check`, and no `draft`.
 
-Keep `uv run world serve` running, reset the system, then run the chain and open http://127.0.0.1:8100:
+Keep `uv run world serve` running, reset the system, then run the chain and open http://localhost:8100:
 
 ```bash
 uv run world reset && uv run python chain.py

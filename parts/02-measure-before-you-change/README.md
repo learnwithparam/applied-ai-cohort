@@ -41,7 +41,7 @@ something worse that used to work.
 
 ## The labs
 
-- Core: [Test LLM Features with a Golden Dataset](https://github.com/learnwithparam/live-labs/tree/main/labs/02-golden-set) (live-labs `labs/02-golden-set`, about 20 minutes)
+- Core: [Test LLM Features with a Golden Dataset](https://github.com/learnwithparam/live-labs/tree/main/labs/02-golden-set) (live-labs `labs/02-golden-set`)
 - Optional: [Score Risk with a Decision Model](https://github.com/learnwithparam/live-labs/tree/main/labs/19-decision-ai)
 
 ## Steps
@@ -57,7 +57,7 @@ something worse that used to work.
 | `block-a-bad-change`     | 20      | An `eval` verb that exits non-zero on a regression | A planted prompt change makes `eval` fail; the current version passes                   |
 | `prove-the-measurements` | 20      | Scorecard line 2                                   | Judge agreement on the grader's labels, the planted change blocked, line 1 still passes |
 
-The steps take 180 minutes in total. The judge work has two steps. First you make the judge say pass or fail
+The steps fit in an evening or two. The judge work has two steps. First you make the judge say pass or fail
 (`draft-a-judge`). Then you make it agree with a person (`align-the-judge`).
 
 ## The kit
@@ -82,7 +82,7 @@ Expect: `Wrote 40 traces to runs/traces.jsonl.`
 uv run python label.py
 ```
 
-Expect: `Trace 1 of 40: TB-1001`, then the email, the record and `Pass? (y/n):`.
+Expect: “Trace 1 of 40: TB-1001”, then the email, the record and `Pass? (y/n):`.
 
 Run the eval once your code checks are written:
 
@@ -98,7 +98,7 @@ Score your judge against a person on the dev cases:
 uv run python agreement.py
 ```
 
-Expect: a table of judge against person, then `True positive rate` and `True negative rate`.
+Expect: a table of judge against person, then “True positive rate” and “True negative rate”.
 
 Save the baseline from good code, then compare:
 

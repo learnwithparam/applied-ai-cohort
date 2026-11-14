@@ -12,7 +12,7 @@ booked. A request the desk would refuse is done when the email waits for a perso
 
 Write `grade.py`, the `grade` verb. Run it after the agent has worked on every dev email. It reads the jobs and
 the review queue from the application system. It compares them with the desk's own records in
-`worlds/tallgrass_bend/truth/dev.jsonl`. It prints `{"tasks", "matched", "booked", "sent_to_review"}`.
+`worlds/tallgrass_bend/truth/dev.jsonl`. It prints {"tasks", "matched", "booked", "sent_to_review"}.
 
 An email is matched in two cases:
 
@@ -33,7 +33,7 @@ uv run python grade.py
 ```
 
 Expect: 40 lines of JSON from the agent, then one line from `grade.py`. The starter's `grade.py` says
-`grade is not written yet`.
+“grade is not written yet”.
 
 With the sample solution, `uv run python grade.py` prints `{"tasks": 40, "matched": 33, "booked": 28,
 "sent_to_review": 12}`.
@@ -58,7 +58,7 @@ Expect: `Done. All 6 rules pass.`
 
 - `worlds.client` has `jobs()`. For the review queue, call `client.call("GET", "/api/review")`.
 - Two rates closer than 0.005 are the same rate, as in `worlds/score.py`.
-- Open http://127.0.0.1:8100 after a run. The board shows what the system holds.
+- Open http://localhost:8100 after a run. The board shows what the system holds.
 
 ## Words you will use
 

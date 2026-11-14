@@ -17,13 +17,13 @@ With the world serving in a second terminal:
 uv run world reset && rm -rf runs && uv run python intake.py && uv run python cost.py
 ```
 
-Expect: `{"booked": 26, "review": 14}`, then a line with `"per_correct_booking_usd": 2.3705000000000004e-05` (the Before).
+Expect: {"booked": 26, "review": 14}, then a line with `"per_correct_booking_usd": 2.3705000000000004e-05` (the Before).
 
 ```bash
 uv run world reset && rm -rf runs && uv run python elective.py && uv run python cost.py
 ```
 
-Expect: `{"booked": 26, "review": 10, "settled_by_rule": 4}`, then `"per_correct_booking_usd": 2.129384615384616e-05`.
+Expect: {"booked": 26, "review": 10, "settled_by_rule": 4}, then `"per_correct_booking_usd": 2.129384615384616e-05`.
 
 ![Before and after on the dev inbox](../images/expected.png)
 
@@ -37,7 +37,7 @@ Then serve the test inbox:
 uv run world serve --split test
 ```
 
-Expect: `The spray desk is open at http://127.0.0.1:8100 (test inbox). Stop it with Ctrl+C.`
+Expect: `The spray desk is open at http://localhost:8100 (test inbox). Stop it with Ctrl+C.`
 
 In your other terminal, run the elective on the test inbox:
 
@@ -45,7 +45,7 @@ In your other terminal, run the elective on the test inbox:
 uv run world reset && rm -rf runs && uv run python elective.py
 ```
 
-Expect: `{"booked": 13, "review": 5, "settled_by_rule": 2}` for the sample answer. Here `cost.py` prints
+Expect: {"booked": 13, "review": 5, "settled_by_rule": 2} for the sample answer. Here `cost.py` prints
 `"per_correct_booking_usd": null`, because the desk's test records are hidden. The check scores this run.
 
 ```mermaid
