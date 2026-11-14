@@ -73,7 +73,7 @@ const verify = spawnSync("bun", ["scripts/verify.ts", "prove-the-answers", "solu
 const proof = (verify.stdout ?? "").replace("(sample solution)", "(your work)");
 await shoot(
   [{ command: "bun run verify prove-the-answers", output: proof }],
-  "07-prove-the-answers",
+  "09-prove-the-answers",
 );
 
 await browser.close();

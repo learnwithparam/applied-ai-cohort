@@ -41,7 +41,7 @@ const bothDown = () => scenario("[503]", "[503]");
 
 export default [
   {
-    says: "a primary that fails twice and then works is called three times, and its text comes back",
+    says: "a primary that fails twice, then works, is called three times and its text comes back",
     test: (folder) => {
       const found = inspect(folder, shortOutage());
       return found?.text === "primary answer" && found.primary_calls === 3;
@@ -61,7 +61,9 @@ export default [
     test: (folder) => {
       const found = inspect(folder, longOutage());
       const tries = Number(found?.primary_calls);
-      return found?.text === "backup answer" && found.backup_calls === 1 && tries >= 2 && tries <= 4;
+      return (
+        found?.text === "backup answer" && found.backup_calls === 1 && tries >= 2 && tries <= 4
+      );
     },
     tryNext: "after the last failed try, return backup(prompt)",
   },

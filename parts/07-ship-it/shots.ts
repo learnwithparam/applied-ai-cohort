@@ -67,24 +67,24 @@ function runInCopy(step: string, command: string): string {
 
 // 1. The release gate on the planted change: the prompt line is gone and the gate says no.
 const trim = "sed -i '/follow its advice/d' prompt.md";
-const gateOutput = runInCopy("03-gate-the-release", `${trim} && ${PYTHON} gate.py; echo "exit $?"`);
+const gateOutput = runInCopy("04-gate-the-release", `${trim} && ${PYTHON} gate.py; echo "exit $?"`);
 await shootTerminal(
-  "03-gate-the-release",
+  "04-gate-the-release",
   "uv run python gate.py   # on the planted change",
   gateOutput,
 );
 
 // 2. The scorecard the sample solution writes.
-const scorecard = runInCopy("05-show-the-scorecard", `${PYTHON} scorecard.py`);
+const scorecard = runInCopy("06-show-the-scorecard", `${PYTHON} scorecard.py`);
 await shootTerminal(
-  "05-show-the-scorecard",
+  "06-show-the-scorecard",
   "uv run python scorecard.py && cat SCORECARD.md",
   scorecard,
 );
 
 // 3. The milestone check on the sample solution.
 const proveCommand = "bun run verify prove-the-release solution";
-await shootTerminal("06-prove-the-release", proveCommand, run(proveCommand, ROOT));
+await shootTerminal("08-prove-the-release", proveCommand, run(proveCommand, ROOT));
 
 await browser.close();
 console.log("Wrote the ship-it pictures.");

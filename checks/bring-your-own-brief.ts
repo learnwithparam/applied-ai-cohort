@@ -62,7 +62,8 @@ export default [
   {
     says: "cases.csv has at least ten cases with a name, yes or no, and a cost",
     test: (folder) => (readCases(folder)?.length ?? 0) >= MOST_ROWS_NEEDED,
-    tryNext: "use the header case,correct,cost_usd and one row per case, with yes or no in the middle",
+    tryNext:
+      "use the header case,correct,cost_usd and one row per case, with yes or no in the middle",
   },
   {
     says: "none of the cases come from the spray desk",
@@ -105,7 +106,8 @@ export default [
       if (way !== METRICS[metric]) return false;
       return way === "at least" ? wanted > claimed : wanted < claimed;
     },
-    tryNext: "a share goes up, so say at least and a bigger number; a cost goes down, so say at most",
+    tryNext:
+      "a share goes up, so say at least and a bigger number; a cost goes down, so say at most",
   },
   {
     says: "the Evidence names cases.csv, and the file exists",

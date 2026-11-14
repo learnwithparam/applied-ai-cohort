@@ -64,8 +64,11 @@ export default [
     test: (folder) => {
       const found = outcome(folder);
       const rows = added(found);
-      return rows.length > 0 && rows.every((row) => row.source === "live") &&
-        found.again.length === found.after.length;
+      return (
+        rows.length > 0 &&
+        rows.every((row) => row.source === "live") &&
+        found.again.length === found.after.length
+      );
     },
     tryNext: 'write source: "live" on each new row, and skip a question the set already holds',
   },

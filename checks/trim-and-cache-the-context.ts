@@ -10,7 +10,7 @@ SYSTEM = "You are the booking agent."
 history = [{"role": "user", "content": "Book TB-1001."}]
 for i in range(10):
     history.append({"role": "assistant", "content": "call tool " + str(i)})
-    history.append({"role": "tool", "content": "record " + str(i) + " " + "long record text " * 120})
+    history.append({"role": "tool", "content": "record " + str(i) + " " + "long text " * 120})
 
 def words(prompt):
     return sum(len(message["content"].split()) for message in prompt)
@@ -71,8 +71,8 @@ out = {"share": words(build_prompt(SYSTEM, history)) / words(history)}`);
     test: (folder) => {
       const code = run(`
 prompt = build_prompt(SYSTEM, history)
-kept = [m for m in prompt if m["role"] != "tool" and m["role"] != "system"]
-wanted = [m for m in history if m["role"] != "tool"]
+kept = [item for item in prompt if item["role"] not in ("tool", "system")]
+wanted = [item for item in history if item["role"] != "tool"]
 out = {"ok": kept == wanted}`);
       return inspect(folder, code)?.ok === true;
     },

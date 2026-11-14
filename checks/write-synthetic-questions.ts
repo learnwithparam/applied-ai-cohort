@@ -3,6 +3,7 @@ import { join } from "node:path";
 import type { Rule } from "../scripts/verify";
 import { readLines, runScript, withCopy } from "./lib/mini";
 
+// biome-ignore lint/style/useNamingConvention: the learner's file uses snake_case keys.
 type Row = { question?: string; passage_id?: string; source?: string };
 type Passage = { id: string; text: string };
 
@@ -52,7 +53,9 @@ export default [
       const copies = found.passages.some((passage) => {
         const passageRuns = windows(passage.text);
         const questions = rowsFor(found, passage).map((row) => row.question ?? "");
-        return questions.some((question) => [...windows(question)].some((run) => passageRuns.has(run)));
+        return questions.some((question) =>
+          [...windows(question)].some((run) => passageRuns.has(run)),
+        );
       });
       return found.rows.length > 0 && !copies;
     },
@@ -73,7 +76,11 @@ export default [
       const found = outcome(folder);
       const ids = new Set(found.passages.map((passage) => passage.id));
       const labelled = found.rows.every((row) => row.source === "synthetic");
-      return found.rows.length > 0 && labelled && found.rows.every((row) => ids.has(row.passage_id ?? ""));
+      return (
+        found.rows.length > 0 &&
+        labelled &&
+        found.rows.every((row) => ids.has(row.passage_id ?? ""))
+      );
     },
     tryNext: 'write {"question": ..., "passage_id": ..., "source": "synthetic"} on each line',
   },

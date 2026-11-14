@@ -8,7 +8,7 @@ import { chromium } from "playwright";
 import { worldEnv } from "../../../checks/lib/contract";
 import { PYTHON, REPLAY_ENV, startWorld } from "../../../checks/lib/world";
 
-const STEP = join(import.meta.dir, "..", "03-measure-the-elective");
+const STEP = join(import.meta.dir, "..", "04-measure-the-elective");
 const SOLUTION = join(STEP, "solution");
 
 async function runOnFreshWorld(verb: string): Promise<string> {
@@ -56,4 +56,4 @@ const page = await browser.newPage({ viewport: { width: 840, height: 300 }, devi
 await page.setContent(html);
 await page.locator(".window").screenshot({ path: join(STEP, "images", "expected.png") });
 await browser.close();
-console.log("Wrote 03-measure-the-elective/images/expected.png");
+console.log("Wrote 04-measure-the-elective/images/expected.png");

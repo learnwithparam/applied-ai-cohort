@@ -66,7 +66,7 @@ const toolLines = listed.result.tools.map((tool: { name: string; description: st
 await shootTerminal("01-write-the-tools", "MCP tools/list", toolLines.join("\n"));
 
 // 2. The jobs board after the sample agent worked on every dev email, with the approval desk.
-const gradeFolder = join(PART, "04-grade-the-end-state", "solution");
+const gradeFolder = join(PART, "05-grade-the-end-state", "solution");
 const world = await startWorld("dev");
 const desk = startApprovalDesk();
 // biome-ignore lint/style/useNamingConvention: environment variable names are upper case.
@@ -74,13 +74,13 @@ const env = { ...worldEnv(world), APPROVALS_URL: desk.url };
 for (const task of devTasks()) await runVerbAsync(gradeFolder, "act", task, env);
 await page.setViewportSize({ width: 1200, height: 900 });
 await page.goto(world.url);
-await page.screenshot({ path: pictureFor("04-grade-the-end-state"), fullPage: true });
+await page.screenshot({ path: pictureFor("05-grade-the-end-state"), fullPage: true });
 desk.stop();
 world.stop();
 
 // 3. The paths eval after the agent ran the golden tasks.
 await page.setViewportSize({ width: 840, height: 400 });
-const pathsFolder = join(PART, "07-test-the-path", "solution");
+const pathsFolder = join(PART, "08-test-the-path", "solution");
 const pathsWorld = await startWorld("dev");
 const pathsDesk = startApprovalDesk();
 // biome-ignore lint/style/useNamingConvention: environment variable names are upper case.
@@ -100,7 +100,7 @@ for (const task of goldenTasks) await runVerbAsync(pathsFolder, "act", task, pat
 const pathsRun = await runVerbAsync(pathsFolder, "paths", undefined, pathsEnv);
 const pathsReport = JSON.stringify(JSON.parse(pathsRun.stdout), null, 2);
 await shootTerminal(
-  "07-test-the-path",
+  "08-test-the-path",
   "uv run python paths.py",
   `${pathsReport}\nexit code ${pathsRun.code}`,
 );
@@ -109,7 +109,7 @@ pathsWorld.stop();
 
 // 4. The milestone check on the sample solution.
 const proveOutput = run("bun run verify prove-the-agent solution", ROOT);
-await shootTerminal("08-prove-the-agent", "bun run verify prove-the-agent solution", proveOutput);
+await shootTerminal("09-prove-the-agent", "bun run verify prove-the-agent solution", proveOutput);
 
 await browser.close();
 console.log("Wrote the let-it-act pictures.");

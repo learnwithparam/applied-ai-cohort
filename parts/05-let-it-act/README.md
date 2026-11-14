@@ -55,18 +55,19 @@ stops.
 
 ## Steps
 
-| Step                                                            | Minutes | You produce                            | The check reads                                                 |
-| --------------------------------------------------------------- | ------- | -------------------------------------- | --------------------------------------------------------------- |
-| [write-the-tools](01-write-the-tools/problem/README.md)         | 20      | An MCP server with 4 described tools   | An MCP client's `tools/list`                                    |
-| [explain-the-errors](02-explain-the-errors/problem/README.md)   | 20      | Tool errors an agent can act on        | The answers to 7 bad calls, and the world's jobs                |
-| [run-the-loop](03-run-the-loop/problem/README.md)               | 20      | An `act` verb                          | Exit codes, and every dev email booked or in review             |
-| [grade-the-end-state](04-grade-the-end-state/problem/README.md) | 20      | A `grade` verb                         | The world's jobs and review queue against the desk's records    |
-| [stop-at-the-limit](05-stop-at-the-limit/problem/README.md)     | 20      | Step and cost budgets                  | The runaway task's trace, cost and review reason                |
-| [ask-before-acting](06-ask-before-acting/problem/README.md)     | 30      | An approval gate in `book_job`         | Approval ids in the world's audit log against the approval desk |
-| [test-the-path](07-test-the-path/problem/README.md)             | 30      | `evals/paths.jsonl` and a `paths` verb | The agent's trace, and a planted trace that skips a step        |
-| [prove-the-agent](08-prove-the-agent/problem/README.md)         | 20      | `NOTES.md`, a run on the test inbox    | The test split's hashes, the audit log and the line 1 rules     |
+| Step                                                                          | Minutes | You produce                                          | The check reads                                                 |
+| ----------------------------------------------------------------------------- | ------- | ---------------------------------------------------- | --------------------------------------------------------------- |
+| [write-the-tools](01-write-the-tools/problem/README.md)                       | 20      | An MCP server with 4 described tools                 | An MCP client's `tools/list`                                    |
+| [explain-the-errors](02-explain-the-errors/problem/README.md)                 | 20      | Tool errors an agent can act on                      | The answers to 7 bad calls, and the world's jobs                |
+| [run-the-loop](03-run-the-loop/problem/README.md)                             | 20      | An `act` verb                                        | Exit codes, and every dev email booked or in review             |
+| [trim-and-cache-the-context](04-trim-and-cache-the-context/problem/README.md) | 20      | `context.py`: a steady start and shorter old results | The prompt for a ten-call run: same start, old results cut      |
+| [grade-the-end-state](05-grade-the-end-state/problem/README.md)               | 20      | A `grade` verb                                       | The world's jobs and review queue against the desk's records    |
+| [stop-at-the-limit](06-stop-at-the-limit/problem/README.md)                   | 20      | Step and cost budgets                                | The runaway task's trace, cost and review reason                |
+| [ask-before-acting](07-ask-before-acting/problem/README.md)                   | 30      | An approval gate in `book_job`                       | Approval ids in the world's audit log against the approval desk |
+| [test-the-path](08-test-the-path/problem/README.md)                           | 30      | `evals/paths.jsonl` and a `paths` verb               | The agent's trace, and a planted trace that skips a step        |
+| [prove-the-agent](09-prove-the-agent/problem/README.md)                       | 20      | `NOTES.md`, a run on the test inbox                  | The test split's hashes, the audit log and the line 1 rules     |
 
-The steps take 180 minutes in total. Calder Fen Electric Co-op (`worlds/README.md`) is the project brief that
+The steps take 200 minutes in total. Calder Fen Electric Co-op (`worlds/README.md`) is the project brief that
 matches this part. The live-labs lab `labs/11-agent-loop` needs to be rebuilt. It is not a lesson until then.
 
 You work in each step's `problem/` folder. That folder starts from the answer to the step before it. So you

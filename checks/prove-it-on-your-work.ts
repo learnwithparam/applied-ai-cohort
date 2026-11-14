@@ -36,7 +36,7 @@ const isWritten = (text: string | undefined) => written(text ?? "", 3);
 
 export default [
   {
-    says: "golden.jsonl has at least ten different cases, in at least two kinds, none from the spray desk",
+    says: "golden.jsonl has ten different cases, in two kinds or more, none from the spray desk",
     test: (folder) => {
       const cases = goldenCases(folder);
       const questions = new Set(cases.map((item) => (item.question ?? "").trim().toLowerCase()));
@@ -99,7 +99,11 @@ export default [
     test: (folder) => {
       const evidence = sections(folder, "CAPSTONE.md").evidence ?? "";
       const named = evidence.includes("golden.jsonl") && evidence.includes("results.json");
-      return named && existsSync(join(folder, "golden.jsonl")) && existsSync(join(folder, "results.json"));
+      return (
+        named &&
+        existsSync(join(folder, "golden.jsonl")) &&
+        existsSync(join(folder, "results.json"))
+      );
     },
     tryNext: "name both files in Evidence, and keep them next to CAPSTONE.md",
   },
