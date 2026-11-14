@@ -79,7 +79,7 @@ whose first line says `PASS` and whose other six lines say `TO DO`.
 You can also see the jobs board in a browser. Run `uv run world serve` in a second terminal and open
 http://127.0.0.1:8100. It prints `The spray desk is open at http://127.0.0.1:8100 (dev inbox).`
 
-**4. See the goal.** Line 1 of the scorecard is part one of this course. You build that system again
+**4. See the goal.** Line 1 of the scorecard is the "Get records you can trust" part of this course. You build that system again
 yourself, one step at a time. Each later part turns one more line green. Now copy three numbers from the run
 into the step below.
 

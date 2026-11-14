@@ -8,8 +8,8 @@ gate. A rule can fit the dev emails and fail on new ones. The only fair test use
 ## Your challenge
 
 Run your agent on the hidden test inbox: 20 emails you have not read. The check scores them against hashes of
-the desk's records, as `prove-the-records` did in part one. It also plants a runaway task and a fake approval on
-test emails. This folder holds your work from part one too, because line 1 must still pass.
+the desk's records, as `prove-the-records` did in the "Get records you can trust" part. It also plants a runaway task and a fake approval on
+test emails. This folder holds your work from the "Get records you can trust" part too, because line 1 must still pass.
 
 Then answer one more question in `NOTES.md`: what the agent got wrong first.
 
@@ -37,7 +37,7 @@ Expect: `Done. All 6 rules pass.`
 
 ## If you get stuck
 
-- This folder already holds the sample part one files: `brief.md`, `NOTES.md`, `extract.py`, `intake.py` and
+- This folder already holds the sample "Get records you can trust" files: `brief.md`, `NOTES.md`, `extract.py`, `intake.py` and
   `cost.py`. To use your own work, copy your files over them. Keep their verbs in `contract.toml`.
 - A rule that names dev email ids, field names or field ids fails here. Test the property instead, such as
   the field's area.

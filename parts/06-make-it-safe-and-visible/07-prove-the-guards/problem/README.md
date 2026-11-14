@@ -10,8 +10,8 @@ have not tuned on.
 
 Run every guard on the grader's sets, and run the agent on the hidden test inbox. The grader's sets are in
 `grader-sets.json` in this part's folder. Try not to read them. Treat them as the hidden test split, as the
-test inbox is. The check also reruns line 1 and line 5. So this folder holds your work from part one, and the
-agent from part five.
+test inbox is. The check also reruns line 1 and line 5. So this folder holds your work from the "Get records you can trust" part, and the
+agent from the "Let it act" part.
 
 Then answer one more question in `NOTES.md`: what your guards missed first.
 
@@ -45,7 +45,7 @@ Expect: `Done. All 8 rules pass.`
 - Rerun each earlier check on this folder, such as `bun run verify guard-the-input`, to find which one broke.
 - Match the shape of each number and the shape of each trick, never the exact dev examples.
 - This folder already holds the sample `brief.md`, `extract.py`, `intake.py` and `cost.py`. To use your own
-  part one work, copy your files over them, and keep their verbs.
+  the "Get records you can trust" part work, copy your files over them, and keep their verbs.
 
 ## Words you will use
 

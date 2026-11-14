@@ -4,7 +4,7 @@
 
 Someone makes the extract prompt shorter to save tokens. Now a case the desk cares about starts to slip
 through. It might be a rate per acre, or a product name with a spelling mistake. Nobody knows until a grower
-phones about a burnt crop. Part one proved the system once. Nothing stops the next change from breaking it.
+phones about a burnt crop. The "Get records you can trust" part proved the system once. Nothing stops the next change from breaking it.
 
 For example, `worlds/tallgrass_bend/inbox/dev/TB-1008.txt` asks for "Stemshure". The real product is called
 Stemsure, and the desk's record books it as `P140`. Today the model copies "Stemshure" as written. The system
@@ -24,7 +24,7 @@ So you measure a change over many cases and several runs. Only then can anyone c
 
 ```mermaid
 flowchart LR
-  A["Traces from part one"] --> B["Labels: pass or fail, with a note"]
+  A["Traces from Get records you can trust"] --> B["Labels: pass or fail, with a note"]
   B --> C["Failure modes, counted"]
   C --> D["Golden set, signed off"]
   D --> E["Code checks"]

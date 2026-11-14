@@ -41,12 +41,12 @@ Expect: `Done. All 10 rules pass.`
 - 4 or more of the 5 hidden out-of-scope questions get `"abstained": true`.
 - Line 2 still holds: the judge agrees with the grader, and the eval blocks the planted change. These are
   two rules.
-- Line 1 still holds on the hidden test inbox. These are four rules, the same as in part one's milestone.
+- Line 1 still holds on the hidden test inbox. These are four rules, the same as in the "Get records you can trust" part's milestone.
 
 ## If you get stuck
 
 - Run `bun run verify beat-the-baseline` and `bun run verify say-i-do-not-know` here first.
-- If a line 2 rule fails, compare `judge.py` and `eval.py` with your part two files.
+- If a line 2 rule fails, compare `judge.py` and `eval.py` with your "Measure before you change" files.
 
 ## Words you will use
 

@@ -2,7 +2,7 @@
 
 ## The problem
 
-In part 5, the "ask before acting" approval uses a hand-written list of who may approve a job. Real crews
+In the "Let it act" part, the "ask before acting" approval uses a hand-written list of who may approve a job. Real crews
 change often. A list cannot say "every field of this farm" without copying a row for each field. So a new
 field is silently unprotected until someone copies its rows.
 
@@ -19,7 +19,7 @@ question: may this user do this on this thing? It answers yes or no.
 
 ```mermaid
 flowchart LR
-  A["part 5 agent wants to book a job"] --> B["approval check"]
+  A["the Let it act agent wants to book a job"] --> B["approval check"]
   B --> C["OpenFGA: check(user, relation, field)"]
   D["tuples from worlds/tallgrass_bend"] --> C
   C --> E["yes or no"]

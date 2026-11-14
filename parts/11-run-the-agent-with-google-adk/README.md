@@ -1,11 +1,11 @@
 # Run the agent with Google ADK
 
-This part is optional. It is expected as homework, after part 09. Its one step keeps the same spray desk job
-as part 05, so you can compare the two loops.
+This part is optional. It is expected as homework, after the "Do it with the tools teams run" part. Its one step keeps the same spray desk job
+as the "Let it act" part, so you can compare the two loops.
 
 ## The problem
 
-In part 05 you wrote the agent loop yourself. The model is asked for a step, the tool runs, the answer goes
+In the "Let it act" part you wrote the agent loop yourself. The model is asked for a step, the tool runs, the answer goes
 back, and the loop repeats. The loop fits in one file. It also means you keep every line of it.
 
 ## Why it matters
@@ -17,7 +17,7 @@ the same job run both ways.
 ## What we teach
 
 This part runs the spray desk job in Google's Agent Development Kit (ADK). You write one ADK `Agent` with the
-part 05 tools. A `Runner` runs it on an in-memory session. Then you read the events that ADK recorded.
+"Let it act" tools. A `Runner` runs it on an in-memory session. Then you read the events that ADK recorded.
 
 For example, email TB-1001 asks for Podshield on the Old Yard field. The agent finds the grower first, then
 books the job. The event log shows `find_grower` before `book_job`.
@@ -26,7 +26,7 @@ books the job. The event log shows `find_grower` before `book_job`.
 flowchart LR
   A["Inbox email"] --> B["Runner on one session"]
   B --> C["Agent: the model and its instructions"]
-  C -- "a tool call" --> D["part 05 tools: find_grower, book_job and more"]
+  C -- "a tool call" --> D["Let it act tools: find_grower, book_job and more"]
   D --> E["session events"]
   E --> B
   C -- "no tool call" --> F["Stop: done"]
@@ -43,7 +43,7 @@ Each step's check is in `checks/`. Its rubric is at the end of the step's README
 
 ## Options
 
-Option A is to keep your own loop. That is the loop you built in part 05. It fits in one file, and you can read
+Option A is to keep your own loop. That is the loop you built in the "Let it act" part. It fits in one file, and you can read
 every step of it.
 
 Option B is the ADK step in this part. Use it when you want a framework to own the loop, the session and the

@@ -2,7 +2,7 @@
 
 ## The problem
 
-Part one proved your system on one run. But you only looked at the score. You never read what the model wrote
+The "Get records you can trust" part proved your system on one run. But you only looked at the score. You never read what the model wrote
 for each email. Teams that skip this step write tests for problems they imagine, and miss the ones they have.
 
 A trace is the record of one run: what went in and what came out. Reading traces is how you find out what
@@ -39,7 +39,7 @@ For example, trace TB-1017 shows an email that says "0.24 L per acre". The recor
 ```
 
 TB-1004 asks for Pulsepath at 2.4 L/ha, twice the label rate. The record copies the email correctly, so the
-record itself passes. Part one's rules stop the booking. Write that in the note.
+record itself passes. The "Get records you can trust" part's rules stop the booking. Write that in the note.
 
 ![Labelling the first traces in the terminal](../images/expected.png)
 

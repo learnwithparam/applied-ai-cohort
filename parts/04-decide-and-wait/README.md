@@ -2,7 +2,7 @@
 
 ## The problem
 
-Part one sends unsure requests to a review queue and forgets them. Real requests need a decision. The desk can
+The "Get records you can trust" part sends unsure requests to a review queue and forgets them. Real requests need a decision. The desk can
 book the job, send it to the agronomist, or refuse it. An agronomist is the co-op's crop expert. A job near
 the label limit needs the agronomist's approval, and the agronomist answers from the field, not at a computer.
 The process might crash while it waits. Then the job must not be booked twice, and it must not be lost.

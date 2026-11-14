@@ -2,7 +2,7 @@
 
 ## The problem
 
-In part one, your code read each email and booked it. Every step was fixed in advance. Now the desk wants an
+In the "Get records you can trust" part, your code read each email and booked it. Every step was fixed in advance. Now the desk wants an
 agent. An agent is a model that calls tools in a loop until a task is done. It looks up the grower, looks up
 the product, and books the job through the application system's tools.
 

@@ -59,7 +59,7 @@ guide that tells the person on duty what to do when something goes wrong.
 The steps take 140 minutes in total.
 
 You work in each step's `problem/` folder, which starts from the answer to the step before it. The folders
-hold the agent from parts five and six, with its tools, traces, redaction and guards.
+hold the agent from the "Let it act" and "Make it safe and visible" parts, with its tools, traces, redaction and guards.
 
 ## Walkthrough
 

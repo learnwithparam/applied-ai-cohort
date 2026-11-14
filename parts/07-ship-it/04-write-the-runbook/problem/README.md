@@ -48,7 +48,7 @@ Expect: `Done. All 5 rules pass.`
 
 ## If you get stuck
 
-- Your traces and review queue from parts five and six are full of failure modes. Pick three you can rerun.
+- Your traces and review queue from the "Let it act" and "Make it safe and visible" parts are full of failure modes. Pick three you can rerun.
 - Read the limit from `serve.py`: `SPEND_LIMIT_USD` is $0.05 unless the setting says otherwise.
 - `git revert -m 1 <merge commit>` undoes a merged pull request without rewriting history.
 

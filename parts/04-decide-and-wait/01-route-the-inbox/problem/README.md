@@ -2,7 +2,7 @@
 
 ## The problem
 
-Part one sends every unsure request to one pile for a person. But the desk makes three kinds of decision, not
+The "Get records you can trust" part sends every unsure request to one pile for a person. But the desk makes three kinds of decision, not
 two. It books a safe job. It asks the agronomist, the co-op's crop expert, to approve a job near the label
 limit. Or a person at the desk fixes or refuses the request. One pile hides which is which, so the agronomist
 reads requests the desk could fix, and the desk reads ones only the agronomist can approve.
@@ -17,7 +17,7 @@ Write the `route` verb. It reads one email and prints a queue and how sure it is
   above the label.
 
 `route.py` already reads the record and looks up the grower, field and product, with a match score from 0 to 1.
-Its `choose_queue` books everything. Write the rules. Part one's `intake.py` holds most of them.
+Its `choose_queue` books everything. Write the rules. The "Get records you can trust" part's `intake.py` holds most of them.
 
 ```mermaid
 flowchart LR

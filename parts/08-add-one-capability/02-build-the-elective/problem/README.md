@@ -2,7 +2,7 @@
 
 ## The problem
 
-Your intake from part one works and is safe. A new capability must not break that. So you do not rewrite
+Your intake from the "Get records you can trust" part works and is safe. A new capability must not break that. So you do not rewrite
 `intake.py`. You build the elective as a new verb, `elective`, that does the same job with the capability
 added. Then the old verb and the new verb can run side by side on the same inbox.
 
