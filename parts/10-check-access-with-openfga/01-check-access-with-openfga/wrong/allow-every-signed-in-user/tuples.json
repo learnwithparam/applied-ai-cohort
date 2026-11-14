@@ -1,0 +1,257 @@
+[
+  {
+    "user": "farm:G01",
+    "relation": "farm",
+    "object": "field:F01"
+  },
+  {
+    "user": "user:*",
+    "relation": "can_approve",
+    "object": "field:F01"
+  },
+  {
+    "user": "user:*",
+    "relation": "can_view",
+    "object": "field:F01"
+  },
+  {
+    "user": "farm:G01",
+    "relation": "farm",
+    "object": "field:F02"
+  },
+  {
+    "user": "user:*",
+    "relation": "can_approve",
+    "object": "field:F02"
+  },
+  {
+    "user": "user:*",
+    "relation": "can_view",
+    "object": "field:F02"
+  },
+  {
+    "user": "farm:G02",
+    "relation": "farm",
+    "object": "field:F03"
+  },
+  {
+    "user": "user:*",
+    "relation": "can_approve",
+    "object": "field:F03"
+  },
+  {
+    "user": "user:*",
+    "relation": "can_view",
+    "object": "field:F03"
+  },
+  {
+    "user": "farm:G02",
+    "relation": "farm",
+    "object": "field:F04"
+  },
+  {
+    "user": "user:*",
+    "relation": "can_approve",
+    "object": "field:F04"
+  },
+  {
+    "user": "user:*",
+    "relation": "can_view",
+    "object": "field:F04"
+  },
+  {
+    "user": "farm:G03",
+    "relation": "farm",
+    "object": "field:F05"
+  },
+  {
+    "user": "user:*",
+    "relation": "can_approve",
+    "object": "field:F05"
+  },
+  {
+    "user": "user:*",
+    "relation": "can_view",
+    "object": "field:F05"
+  },
+  {
+    "user": "farm:G03",
+    "relation": "farm",
+    "object": "field:F06"
+  },
+  {
+    "user": "user:*",
+    "relation": "can_approve",
+    "object": "field:F06"
+  },
+  {
+    "user": "user:*",
+    "relation": "can_view",
+    "object": "field:F06"
+  },
+  {
+    "user": "farm:G03",
+    "relation": "farm",
+    "object": "field:F07"
+  },
+  {
+    "user": "user:*",
+    "relation": "can_approve",
+    "object": "field:F07"
+  },
+  {
+    "user": "user:*",
+    "relation": "can_view",
+    "object": "field:F07"
+  },
+  {
+    "user": "farm:G04",
+    "relation": "farm",
+    "object": "field:F08"
+  },
+  {
+    "user": "user:*",
+    "relation": "can_approve",
+    "object": "field:F08"
+  },
+  {
+    "user": "user:*",
+    "relation": "can_view",
+    "object": "field:F08"
+  },
+  {
+    "user": "farm:G04",
+    "relation": "farm",
+    "object": "field:F09"
+  },
+  {
+    "user": "user:*",
+    "relation": "can_approve",
+    "object": "field:F09"
+  },
+  {
+    "user": "user:*",
+    "relation": "can_view",
+    "object": "field:F09"
+  },
+  {
+    "user": "farm:G05",
+    "relation": "farm",
+    "object": "field:F10"
+  },
+  {
+    "user": "user:*",
+    "relation": "can_approve",
+    "object": "field:F10"
+  },
+  {
+    "user": "user:*",
+    "relation": "can_view",
+    "object": "field:F10"
+  },
+  {
+    "user": "farm:G05",
+    "relation": "farm",
+    "object": "field:F11"
+  },
+  {
+    "user": "user:*",
+    "relation": "can_approve",
+    "object": "field:F11"
+  },
+  {
+    "user": "user:*",
+    "relation": "can_view",
+    "object": "field:F11"
+  },
+  {
+    "user": "farm:G06",
+    "relation": "farm",
+    "object": "field:F12"
+  },
+  {
+    "user": "user:*",
+    "relation": "can_approve",
+    "object": "field:F12"
+  },
+  {
+    "user": "user:*",
+    "relation": "can_view",
+    "object": "field:F12"
+  },
+  {
+    "user": "farm:G06",
+    "relation": "farm",
+    "object": "field:F13"
+  },
+  {
+    "user": "user:*",
+    "relation": "can_approve",
+    "object": "field:F13"
+  },
+  {
+    "user": "user:*",
+    "relation": "can_view",
+    "object": "field:F13"
+  },
+  {
+    "user": "farm:G07",
+    "relation": "farm",
+    "object": "field:F14"
+  },
+  {
+    "user": "user:*",
+    "relation": "can_approve",
+    "object": "field:F14"
+  },
+  {
+    "user": "user:*",
+    "relation": "can_view",
+    "object": "field:F14"
+  },
+  {
+    "user": "farm:G07",
+    "relation": "farm",
+    "object": "field:F15"
+  },
+  {
+    "user": "user:*",
+    "relation": "can_approve",
+    "object": "field:F15"
+  },
+  {
+    "user": "user:*",
+    "relation": "can_view",
+    "object": "field:F15"
+  },
+  {
+    "user": "farm:G08",
+    "relation": "farm",
+    "object": "field:F16"
+  },
+  {
+    "user": "user:*",
+    "relation": "can_approve",
+    "object": "field:F16"
+  },
+  {
+    "user": "user:*",
+    "relation": "can_view",
+    "object": "field:F16"
+  },
+  {
+    "user": "farm:G08",
+    "relation": "farm",
+    "object": "field:F17"
+  },
+  {
+    "user": "user:*",
+    "relation": "can_approve",
+    "object": "field:F17"
+  },
+  {
+    "user": "user:*",
+    "relation": "can_view",
+    "object": "field:F17"
+  }
+]

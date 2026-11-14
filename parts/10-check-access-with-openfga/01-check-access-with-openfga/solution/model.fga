@@ -1,0 +1,22 @@
+model
+  schema 1.1
+
+type user
+
+type crew
+  relations
+    define lead: [user]
+
+type farm
+  relations
+    define manager: [user]
+    define auditor: [user]
+    define crew: [crew]
+    define crew_lead: lead from crew
+    define can_approve: manager or crew_lead
+
+type field
+  relations
+    define farm: [farm]
+    define can_approve: can_approve from farm
+    define can_view: can_approve or auditor from farm

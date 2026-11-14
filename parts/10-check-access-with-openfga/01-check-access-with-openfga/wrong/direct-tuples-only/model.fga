@@ -1,0 +1,12 @@
+model
+  schema 1.1
+
+type user
+
+type farm
+
+type field
+  relations
+    define farm: [farm]
+    define can_approve: [user]
+    define can_view: [user] or can_approve
