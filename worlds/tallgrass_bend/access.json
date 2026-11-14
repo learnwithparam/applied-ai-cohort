@@ -1,0 +1,38 @@
+{
+  "about": "Who may approve or view the fields of each farm. Each grower in seed.json is one farm. Authored for the access part; the scorer reads it in worlds/score.py.",
+  "auditor": "grace.okoye",
+  "crews": [
+    { "crew_id": "C01", "name": "North crew", "lead": "ana.lopez", "farms": ["G01", "G02", "G03"] },
+    { "crew_id": "C02", "name": "River crew", "lead": "tom.brandt", "farms": ["G04", "G05"] },
+    {
+      "crew_id": "C03",
+      "name": "Prairie crew",
+      "lead": "noor.haddad",
+      "farms": ["G06", "G07", "G08"]
+    }
+  ],
+  "managers": {
+    "G01": "ivy.chen",
+    "G02": "omar.fayad",
+    "G03": "ella.novak",
+    "G04": "sean.murphy",
+    "G05": "lena.park",
+    "G06": "jonas.weber",
+    "G07": "maya.singh",
+    "G08": "ravi.kumar"
+  },
+  "requests": [
+    { "user": "ana.lopez", "relation": "can_approve", "field": "F01", "expected": "allow" },
+    { "user": "ana.lopez", "relation": "can_approve", "field": "F06", "expected": "allow" },
+    { "user": "ana.lopez", "relation": "can_approve", "field": "F10", "expected": "deny" },
+    { "user": "tom.brandt", "relation": "can_approve", "field": "F09", "expected": "allow" },
+    { "user": "tom.brandt", "relation": "can_approve", "field": "F15", "expected": "deny" },
+    { "user": "noor.haddad", "relation": "can_view", "field": "F16", "expected": "allow" },
+    { "user": "ivy.chen", "relation": "can_approve", "field": "F02", "expected": "allow" },
+    { "user": "ivy.chen", "relation": "can_approve", "field": "F03", "expected": "deny" },
+    { "user": "lena.park", "relation": "can_view", "field": "F11", "expected": "allow" },
+    { "user": "grace.okoye", "relation": "can_view", "field": "F12", "expected": "allow" },
+    { "user": "grace.okoye", "relation": "can_approve", "field": "F12", "expected": "deny" },
+    { "user": "sam.visitor", "relation": "can_view", "field": "F13", "expected": "deny" }
+  ]
+}
