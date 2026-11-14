@@ -5,7 +5,7 @@
 Each model call sends the whole run again. By the tenth tool call the prompt holds ten long records, and you
 pay for all of them each time. Two fixes help. Shorten old tool results, because the model no longer needs
 them in full. And keep the start of the prompt exactly the same on every call, because providers charge much
-less for a start they have already seen. This is called prompt caching. For example, tool result 1 is a long record of 360 words. By call ten you have paid for it ten times, and it is cut to a short line.
+less for a start they have already seen. This keeps the start the same, so a provider can cache it. For example, tool result 1 is a long record of 360 words. By call ten you have paid for it ten times, and it is cut to a short line.
 
 ## Your challenge
 
@@ -60,5 +60,5 @@ Expect: `Done. All 5 rules pass.`
 ## Words you will use
 
 - **Context:** everything you send to the model in one call.
-- **Prompt caching:** the provider keeps the start of your prompt, and charges less when the next call starts the same way.
+- **Steady start:** a prompt that begins the same way each call, so a provider is able to reuse it and charge less.
 - **Prefix:** the first part of the prompt.
