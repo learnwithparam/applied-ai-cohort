@@ -1,0 +1,342 @@
+[
+  {
+    "user": "farm:G01",
+    "relation": "farm",
+    "object": "field:F01"
+  },
+  {
+    "user": "user:ivy.chen",
+    "relation": "can_approve",
+    "object": "field:F01"
+  },
+  {
+    "user": "user:ana.lopez",
+    "relation": "can_approve",
+    "object": "field:F01"
+  },
+  {
+    "user": "user:grace.okoye",
+    "relation": "can_view",
+    "object": "field:F01"
+  },
+  {
+    "user": "farm:G01",
+    "relation": "farm",
+    "object": "field:F02"
+  },
+  {
+    "user": "user:ivy.chen",
+    "relation": "can_approve",
+    "object": "field:F02"
+  },
+  {
+    "user": "user:ana.lopez",
+    "relation": "can_approve",
+    "object": "field:F02"
+  },
+  {
+    "user": "user:grace.okoye",
+    "relation": "can_view",
+    "object": "field:F02"
+  },
+  {
+    "user": "farm:G02",
+    "relation": "farm",
+    "object": "field:F03"
+  },
+  {
+    "user": "user:omar.fayad",
+    "relation": "can_approve",
+    "object": "field:F03"
+  },
+  {
+    "user": "user:ana.lopez",
+    "relation": "can_approve",
+    "object": "field:F03"
+  },
+  {
+    "user": "user:grace.okoye",
+    "relation": "can_view",
+    "object": "field:F03"
+  },
+  {
+    "user": "farm:G02",
+    "relation": "farm",
+    "object": "field:F04"
+  },
+  {
+    "user": "user:omar.fayad",
+    "relation": "can_approve",
+    "object": "field:F04"
+  },
+  {
+    "user": "user:ana.lopez",
+    "relation": "can_approve",
+    "object": "field:F04"
+  },
+  {
+    "user": "user:grace.okoye",
+    "relation": "can_view",
+    "object": "field:F04"
+  },
+  {
+    "user": "farm:G03",
+    "relation": "farm",
+    "object": "field:F05"
+  },
+  {
+    "user": "user:ella.novak",
+    "relation": "can_approve",
+    "object": "field:F05"
+  },
+  {
+    "user": "user:ana.lopez",
+    "relation": "can_approve",
+    "object": "field:F05"
+  },
+  {
+    "user": "user:grace.okoye",
+    "relation": "can_view",
+    "object": "field:F05"
+  },
+  {
+    "user": "farm:G03",
+    "relation": "farm",
+    "object": "field:F06"
+  },
+  {
+    "user": "user:ella.novak",
+    "relation": "can_approve",
+    "object": "field:F06"
+  },
+  {
+    "user": "user:ana.lopez",
+    "relation": "can_approve",
+    "object": "field:F06"
+  },
+  {
+    "user": "user:grace.okoye",
+    "relation": "can_view",
+    "object": "field:F06"
+  },
+  {
+    "user": "farm:G03",
+    "relation": "farm",
+    "object": "field:F07"
+  },
+  {
+    "user": "user:ella.novak",
+    "relation": "can_approve",
+    "object": "field:F07"
+  },
+  {
+    "user": "user:ana.lopez",
+    "relation": "can_approve",
+    "object": "field:F07"
+  },
+  {
+    "user": "user:grace.okoye",
+    "relation": "can_view",
+    "object": "field:F07"
+  },
+  {
+    "user": "farm:G04",
+    "relation": "farm",
+    "object": "field:F08"
+  },
+  {
+    "user": "user:sean.murphy",
+    "relation": "can_approve",
+    "object": "field:F08"
+  },
+  {
+    "user": "user:tom.brandt",
+    "relation": "can_approve",
+    "object": "field:F08"
+  },
+  {
+    "user": "user:grace.okoye",
+    "relation": "can_view",
+    "object": "field:F08"
+  },
+  {
+    "user": "farm:G04",
+    "relation": "farm",
+    "object": "field:F09"
+  },
+  {
+    "user": "user:sean.murphy",
+    "relation": "can_approve",
+    "object": "field:F09"
+  },
+  {
+    "user": "user:tom.brandt",
+    "relation": "can_approve",
+    "object": "field:F09"
+  },
+  {
+    "user": "user:grace.okoye",
+    "relation": "can_view",
+    "object": "field:F09"
+  },
+  {
+    "user": "farm:G05",
+    "relation": "farm",
+    "object": "field:F10"
+  },
+  {
+    "user": "user:lena.park",
+    "relation": "can_approve",
+    "object": "field:F10"
+  },
+  {
+    "user": "user:tom.brandt",
+    "relation": "can_approve",
+    "object": "field:F10"
+  },
+  {
+    "user": "user:grace.okoye",
+    "relation": "can_view",
+    "object": "field:F10"
+  },
+  {
+    "user": "farm:G05",
+    "relation": "farm",
+    "object": "field:F11"
+  },
+  {
+    "user": "user:lena.park",
+    "relation": "can_approve",
+    "object": "field:F11"
+  },
+  {
+    "user": "user:tom.brandt",
+    "relation": "can_approve",
+    "object": "field:F11"
+  },
+  {
+    "user": "user:grace.okoye",
+    "relation": "can_view",
+    "object": "field:F11"
+  },
+  {
+    "user": "farm:G06",
+    "relation": "farm",
+    "object": "field:F12"
+  },
+  {
+    "user": "user:jonas.weber",
+    "relation": "can_approve",
+    "object": "field:F12"
+  },
+  {
+    "user": "user:noor.haddad",
+    "relation": "can_approve",
+    "object": "field:F12"
+  },
+  {
+    "user": "user:grace.okoye",
+    "relation": "can_view",
+    "object": "field:F12"
+  },
+  {
+    "user": "farm:G06",
+    "relation": "farm",
+    "object": "field:F13"
+  },
+  {
+    "user": "user:jonas.weber",
+    "relation": "can_approve",
+    "object": "field:F13"
+  },
+  {
+    "user": "user:noor.haddad",
+    "relation": "can_approve",
+    "object": "field:F13"
+  },
+  {
+    "user": "user:grace.okoye",
+    "relation": "can_view",
+    "object": "field:F13"
+  },
+  {
+    "user": "farm:G07",
+    "relation": "farm",
+    "object": "field:F14"
+  },
+  {
+    "user": "user:maya.singh",
+    "relation": "can_approve",
+    "object": "field:F14"
+  },
+  {
+    "user": "user:noor.haddad",
+    "relation": "can_approve",
+    "object": "field:F14"
+  },
+  {
+    "user": "user:grace.okoye",
+    "relation": "can_view",
+    "object": "field:F14"
+  },
+  {
+    "user": "farm:G07",
+    "relation": "farm",
+    "object": "field:F15"
+  },
+  {
+    "user": "user:maya.singh",
+    "relation": "can_approve",
+    "object": "field:F15"
+  },
+  {
+    "user": "user:noor.haddad",
+    "relation": "can_approve",
+    "object": "field:F15"
+  },
+  {
+    "user": "user:grace.okoye",
+    "relation": "can_view",
+    "object": "field:F15"
+  },
+  {
+    "user": "farm:G08",
+    "relation": "farm",
+    "object": "field:F16"
+  },
+  {
+    "user": "user:ravi.kumar",
+    "relation": "can_approve",
+    "object": "field:F16"
+  },
+  {
+    "user": "user:noor.haddad",
+    "relation": "can_approve",
+    "object": "field:F16"
+  },
+  {
+    "user": "user:grace.okoye",
+    "relation": "can_view",
+    "object": "field:F16"
+  },
+  {
+    "user": "farm:G08",
+    "relation": "farm",
+    "object": "field:F17"
+  },
+  {
+    "user": "user:ravi.kumar",
+    "relation": "can_approve",
+    "object": "field:F17"
+  },
+  {
+    "user": "user:noor.haddad",
+    "relation": "can_approve",
+    "object": "field:F17"
+  },
+  {
+    "user": "user:grace.okoye",
+    "relation": "can_view",
+    "object": "field:F17"
+  }
+]

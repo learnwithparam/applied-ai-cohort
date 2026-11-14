@@ -119,6 +119,66 @@ def score(db: Path, split: str, runs_dir: Path | None = None) -> dict:
     }
 
 
+# The access roster: who may approve or view the fields of each farm. See access.json.
+ACCESS_FILE = WORLD_DIR / "access.json"
+
+
+def farm_of_fields() -> dict[str, str]:
+    """The farm (grower id) that each field belongs to, from the seed."""
+    seed = json.loads((WORLD_DIR / "seed.json").read_text())
+    return {field["field_id"]: field["grower_id"] for field in seed["fields"]}
+
+
+def roster_answer(roster: dict, request: dict) -> str:
+    """Allow or deny, from the roster's rules. The one place that decides the right access answer.
+
+    A crew lead of a crew that serves the farm, or the farm manager, may approve its fields.
+    The auditor may view every field and approve none. Nobody else may do anything.
+    """
+    farm = farm_of_fields()[request["field"]]
+    crew_leads = [crew["lead"] for crew in roster["crews"] if farm in crew["farms"]]
+    approves = request["user"] == roster["managers"][farm] or request["user"] in crew_leads
+    views = approves or request["user"] == roster["auditor"]
+    if request["relation"] == "can_approve":
+        allowed = approves
+    elif request["relation"] == "can_view":
+        allowed = views
+    else:
+        raise ValueError(f"the roster has no rule for the relation {request['relation']}")
+    return "allow" if allowed else "deny"
+
+
+def read_roster() -> dict:
+    """The roster in access.json. Each request's expected answer must agree with the rules above."""
+    roster = json.loads(ACCESS_FILE.read_text())
+    for request in roster["requests"]:
+        truth = roster_answer(roster, request)
+        if truth != request["expected"]:
+            raise ValueError(f"access.json says {request['expected']} but the rules say {truth}")
+    return roster
+
+
+def score_access(answers: list[dict], roster: dict) -> dict:
+    """Count the answers the access system gave that the roster does not allow.
+
+    Each answer holds user, relation, field and allowed (true or false), as the server said.
+    A wrong allow gave access the roster refuses. A wrong deny refused access the roster gives.
+    """
+    wrong_allows = 0
+    wrong_denies = 0
+    for answer in answers:
+        truth = roster_answer(roster, answer)
+        if answer["allowed"] and truth == "deny":
+            wrong_allows += 1
+        if not answer["allowed"] and truth == "allow":
+            wrong_denies += 1
+    return {
+        "requests": len(answers),
+        "wrong_allows": wrong_allows,
+        "wrong_denies": wrong_denies,
+    }
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(prog="score")
     parser.add_argument("--db", required=True)

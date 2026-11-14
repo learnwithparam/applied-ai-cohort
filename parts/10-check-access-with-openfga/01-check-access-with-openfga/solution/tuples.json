@@ -1,0 +1,222 @@
+[
+  {
+    "user": "user:ana.lopez",
+    "relation": "lead",
+    "object": "crew:C01"
+  },
+  {
+    "user": "crew:C01",
+    "relation": "crew",
+    "object": "farm:G01"
+  },
+  {
+    "user": "crew:C01",
+    "relation": "crew",
+    "object": "farm:G02"
+  },
+  {
+    "user": "crew:C01",
+    "relation": "crew",
+    "object": "farm:G03"
+  },
+  {
+    "user": "user:tom.brandt",
+    "relation": "lead",
+    "object": "crew:C02"
+  },
+  {
+    "user": "crew:C02",
+    "relation": "crew",
+    "object": "farm:G04"
+  },
+  {
+    "user": "crew:C02",
+    "relation": "crew",
+    "object": "farm:G05"
+  },
+  {
+    "user": "user:noor.haddad",
+    "relation": "lead",
+    "object": "crew:C03"
+  },
+  {
+    "user": "crew:C03",
+    "relation": "crew",
+    "object": "farm:G06"
+  },
+  {
+    "user": "crew:C03",
+    "relation": "crew",
+    "object": "farm:G07"
+  },
+  {
+    "user": "crew:C03",
+    "relation": "crew",
+    "object": "farm:G08"
+  },
+  {
+    "user": "user:ivy.chen",
+    "relation": "manager",
+    "object": "farm:G01"
+  },
+  {
+    "user": "user:grace.okoye",
+    "relation": "auditor",
+    "object": "farm:G01"
+  },
+  {
+    "user": "user:omar.fayad",
+    "relation": "manager",
+    "object": "farm:G02"
+  },
+  {
+    "user": "user:grace.okoye",
+    "relation": "auditor",
+    "object": "farm:G02"
+  },
+  {
+    "user": "user:ella.novak",
+    "relation": "manager",
+    "object": "farm:G03"
+  },
+  {
+    "user": "user:grace.okoye",
+    "relation": "auditor",
+    "object": "farm:G03"
+  },
+  {
+    "user": "user:sean.murphy",
+    "relation": "manager",
+    "object": "farm:G04"
+  },
+  {
+    "user": "user:grace.okoye",
+    "relation": "auditor",
+    "object": "farm:G04"
+  },
+  {
+    "user": "user:lena.park",
+    "relation": "manager",
+    "object": "farm:G05"
+  },
+  {
+    "user": "user:grace.okoye",
+    "relation": "auditor",
+    "object": "farm:G05"
+  },
+  {
+    "user": "user:jonas.weber",
+    "relation": "manager",
+    "object": "farm:G06"
+  },
+  {
+    "user": "user:grace.okoye",
+    "relation": "auditor",
+    "object": "farm:G06"
+  },
+  {
+    "user": "user:maya.singh",
+    "relation": "manager",
+    "object": "farm:G07"
+  },
+  {
+    "user": "user:grace.okoye",
+    "relation": "auditor",
+    "object": "farm:G07"
+  },
+  {
+    "user": "user:ravi.kumar",
+    "relation": "manager",
+    "object": "farm:G08"
+  },
+  {
+    "user": "user:grace.okoye",
+    "relation": "auditor",
+    "object": "farm:G08"
+  },
+  {
+    "user": "farm:G01",
+    "relation": "farm",
+    "object": "field:F01"
+  },
+  {
+    "user": "farm:G01",
+    "relation": "farm",
+    "object": "field:F02"
+  },
+  {
+    "user": "farm:G02",
+    "relation": "farm",
+    "object": "field:F03"
+  },
+  {
+    "user": "farm:G02",
+    "relation": "farm",
+    "object": "field:F04"
+  },
+  {
+    "user": "farm:G03",
+    "relation": "farm",
+    "object": "field:F05"
+  },
+  {
+    "user": "farm:G03",
+    "relation": "farm",
+    "object": "field:F06"
+  },
+  {
+    "user": "farm:G03",
+    "relation": "farm",
+    "object": "field:F07"
+  },
+  {
+    "user": "farm:G04",
+    "relation": "farm",
+    "object": "field:F08"
+  },
+  {
+    "user": "farm:G04",
+    "relation": "farm",
+    "object": "field:F09"
+  },
+  {
+    "user": "farm:G05",
+    "relation": "farm",
+    "object": "field:F10"
+  },
+  {
+    "user": "farm:G05",
+    "relation": "farm",
+    "object": "field:F11"
+  },
+  {
+    "user": "farm:G06",
+    "relation": "farm",
+    "object": "field:F12"
+  },
+  {
+    "user": "farm:G06",
+    "relation": "farm",
+    "object": "field:F13"
+  },
+  {
+    "user": "farm:G07",
+    "relation": "farm",
+    "object": "field:F14"
+  },
+  {
+    "user": "farm:G07",
+    "relation": "farm",
+    "object": "field:F15"
+  },
+  {
+    "user": "farm:G08",
+    "relation": "farm",
+    "object": "field:F16"
+  },
+  {
+    "user": "farm:G08",
+    "relation": "farm",
+    "object": "field:F17"
+  }
+]
