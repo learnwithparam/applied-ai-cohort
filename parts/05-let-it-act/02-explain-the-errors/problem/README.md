@@ -32,7 +32,7 @@ Expect: one line of JSON with `"isError": true`. In the starter, its `"text"` st
 The model reads the good error, calls `find_product("Stemsure")`, and books the job. The desk's own record for TB-1008
 has the same job, so a good error turns a lost request into a right booking.
 
-`book_job` must refuse three kinds of job, as your rules in part one did:
+`book_job` must refuse three kinds of job, as your rules in the "Get records you can trust" part did:
 
 - a rate above the label, or a crop the label does not cover;
 - an email that gives the rate per acre;
@@ -66,7 +66,7 @@ Expect: `Done. All 8 rules pass.`
 ## If you get stuck
 
 - Raise `ToolError("...")` in each function, and catch it in `call_tool`. Return `(message, True)`.
-- Copy the label rule from `intake.py` in part one. For example, see
+- Copy the label rule from `intake.py` in the "Get records you can trust" part. For example, see
   `parts/01-get-records-you-can-trust/04-check-against-truth/solution/intake.py`. Then add the acre and field
   name rules.
 - End every message with the next step, such as "Send this email to review."

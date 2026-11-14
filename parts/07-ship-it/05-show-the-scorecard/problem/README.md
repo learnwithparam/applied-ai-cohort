@@ -12,14 +12,13 @@ A scorecard you type by hand is a claim. A scorecard a script writes is evidence
 
 Write `scorecard.py`, the `scorecard` verb. It measures each line on held-out data and writes `SCORECARD.md`:
 
-- **Line 1:** the intake from part one, on a fresh world serving the hidden test inbox.
+- **Line 1:** the intake from the "Get records you can trust" part, on a fresh world serving the hidden test inbox.
 - **Line 5:** the agent, on a fresh test world.
 - **Line 6:** the guard, on the grader's attack set in `data/guard-sets.json`.
 - **Line 7:** the exit code of the release gate.
-- **Lines 2 to 4** come from parts two to four. They say TO DO until those parts are in your repo.
+- **Lines 2 to 4** come from the earlier parts. They say TO DO until those parts are in your repo.
 
-Then ask two peers to review your work. Each one clones your repo at a commit and reads your `NOTES.md` from
-part one. Then each one writes a file in `reviews/`, such as `reviews/priya.md`. A review scores two
+Then ask two peers to review your work. Each one clones your repo at a commit and reads your `NOTES.md`. Then each one writes a file in `reviews/`, such as `reviews/priya.md`. A review scores two
 questions from 0 to 2:
 
 ```markdown

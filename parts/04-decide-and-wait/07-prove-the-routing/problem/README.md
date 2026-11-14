@@ -39,7 +39,7 @@ Expect: `Done. All 9 rules pass.`
 - On the hidden test inbox, after a SIGKILL during the wait, each approved email is booked once with its id.
 - Line 3 still holds: search, cited answers and abstentions on the hidden test questions.
 - Line 2 still holds: the judge agrees with the grader, and the eval blocks the planted change.
-- Line 1 still holds on the hidden test inbox. These are four rules, the same as in part one's milestone.
+- Line 1 still holds on the hidden test inbox. These are four rules, the same as in the "Get records you can trust" part's milestone.
 
 ## If you get stuck
 

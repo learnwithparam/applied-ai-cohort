@@ -2,7 +2,7 @@
 
 ## The problem
 
-In part 05 you wrote the agent loop yourself. It worked, but every line of it is yours to keep. A framework
+In the "Let it act" part you wrote the agent loop yourself. It worked, but every line of it is yours to keep. A framework
 can run that loop for you. Google's Agent Development Kit (ADK) keeps the session, calls the tools in order,
 and writes down every event.
 
@@ -12,11 +12,11 @@ and writes down every event.
 the agent has no tools, so it cannot book anything. Your job has three parts:
 
 1. Write four tool functions: `find_grower`, `find_product`, `book_job` and `send_to_review`. Each one calls the
-   matching part 05 tool through `tool_text()`. The docstring is what the model reads, so say what the tool does.
+   matching "Let it act" tool through `tool_text()`. The docstring is what the model reads, so say what the tool does.
 2. Pass the four functions to `Agent` in `build_agent()`.
 3. Keep the check in `book_job`. If `BOOKED` already has the email, return that answer and book nothing new.
 
-`stub_model.py` plays the model. You do not need to change it. It reads the same recorded replies as part 05.
+`stub_model.py` plays the model. You do not need to change it. It reads the same recorded replies as the "Let it act" part.
 After each booking, it drops one reply, as a flaky network can. The agent must retry, so the check in
 `book_job` decides whether the retry books twice.
 
@@ -33,7 +33,7 @@ so it made no call, and TB-1001 is not booked.
 flowchart LR
   A["Task"] --> B["Runner on one session"]
   B --> C["Agent: the model calls a tool"]
-  C --> D["tool_text: a part 05 tool"]
+  C --> D["tool_text: a Let it act tool"]
   D --> E["session event"]
   E --> B
   C -- "no tool call" --> F["Stop: done"]
@@ -71,6 +71,6 @@ Expect: `Done. All 6 rules pass.` once your agent meets every rule.
 
 ## Rubric
 
-- The agent is one ADK `Agent` with the part 05 tools.
+- The agent is one ADK `Agent` with "Let it act" tools.
 - Every email ends booked or with a person, once.
 - The run leaves an event log a teammate can read.

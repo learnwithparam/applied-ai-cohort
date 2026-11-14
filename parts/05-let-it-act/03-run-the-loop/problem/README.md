@@ -13,7 +13,7 @@ JSON with a `run_id` and a `stop_reason`. Right now it asks the model once, runs
 into a loop.
 
 `model.py` plays the model, and you do not need to change it. With replay, it acts like a real model reading
-the request. It makes the same mistakes as the replay in part one. `prompt.md` holds the instructions the
+the request. It makes the same mistakes as the replay in the "Get records you can trust" part. `prompt.md` holds the instructions the
 model reads first.
 
 For example, run the starter on one email while `uv run world serve` runs in another terminal:

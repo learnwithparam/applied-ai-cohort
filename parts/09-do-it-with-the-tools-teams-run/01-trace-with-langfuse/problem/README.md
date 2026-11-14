@@ -2,7 +2,7 @@
 
 ## The problem
 
-You traced every run by hand in part 6. A trace store is the same idea as a service: it keeps each run, shows
+You traced every run by hand in the "Make it safe and visible" part. A trace store is the same idea as a service: it keeps each run, shows
 it on a screen and lets a teammate search it. Langfuse is an open-source trace store that teams host
 themselves. Your job is to send one real run of the spray desk to it, with the scorer's number attached.
 

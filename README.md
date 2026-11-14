@@ -97,6 +97,8 @@ uses data the model never saw.
 | [Ship it](parts/07-ship-it/README.md)                                               | 7. A service and a release gate in CI                              | 6     | Built  |
 | [Add one capability](parts/08-add-one-capability/README.md)                         | An elective, measured                                              | 4     | Built  |
 | [Do it with the tools teams run](parts/09-do-it-with-the-tools-teams-run/README.md) | Optional: the same run in Langfuse                                 | 1     | Built  |
+| [Check access with OpenFGA](parts/10-check-access-with-openfga/README.md) | Optional: who may approve a job, answered by OpenFGA | 1 | Built |
+| [Run the agent with Google ADK](parts/11-run-the-agent-with-google-adk/README.md) | Optional: the same agent loop on ADK | 1 | Built |
 
 Each part links to the [live-labs](https://github.com/learnwithparam/live-labs) labs that teach its tools. The
 labs are the lessons. The steps here are the challenges.

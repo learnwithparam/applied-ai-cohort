@@ -8,7 +8,7 @@ again, on the one folder you would ship.
 
 ## Your challenge
 
-Bring every piece together in this folder: the service, the gate, the runbook and the scorecard. Your part one
+Bring every piece together in this folder: the service, the gate, the runbook and the scorecard. Your "Get records you can trust" part
 work is here too. Then answer one more question in `NOTES.md`: what you would watch after release.
 
 The check reruns the rules of `prove-the-records`, `serve-the-contract`, `lock-the-endpoint`,

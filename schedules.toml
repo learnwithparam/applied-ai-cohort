@@ -3,14 +3,14 @@
 # Live time with an instructor is listed in live_minutes and is not part of minutes.
 # Learner minutes per part (steps + labs): orientation 15, get-records-you-can-trust 150,
 # measure-before-you-change 200, answer-from-the-sources 190, decide-and-wait 190, let-it-act 220,
-# make-it-safe-and-visible 210, ship-it 180, add-one-capability 120, do-it-with-the-tools-teams-run 30, check-access-with-openfga 30. Total 1535.
+# make-it-safe-and-visible 210, ship-it 180, add-one-capability 120, do-it-with-the-tools-teams-run 30, check-access-with-openfga 30, run-the-agent-with-google-adk 20. Total 1555.
 
 # One day of 480 minutes holds orientation and the first two parts. The rest follows self-paced,
 # with the same checks. Nothing is squeezed to fit the day.
 [one-day]
 sessions = [
   { label = "the day", parts = ["orientation", "get-records-you-can-trust", "measure-before-you-change"], minutes = 365, live_minutes = 90 },
-  { label = "self-paced after the day", parts = ["answer-from-the-sources", "decide-and-wait", "let-it-act", "make-it-safe-and-visible", "ship-it", "add-one-capability", "do-it-with-the-tools-teams-run", "run-the-agent-with-google-adk", "check-access-with-openfga"], minutes = 1170, live_minutes = 0 },
+  { label = "self-paced after the day", parts = ["answer-from-the-sources", "decide-and-wait", "let-it-act", "make-it-safe-and-visible", "ship-it", "add-one-capability", "do-it-with-the-tools-teams-run", "run-the-agent-with-google-adk", "check-access-with-openfga"], minutes = 1190, live_minutes = 0 },
 ]
 
 # Four evenings of 240 minutes cover the trustworthy core. Parts on acting, safety and shipping
@@ -21,7 +21,7 @@ sessions = [
   { label = "evening 2", parts = ["measure-before-you-change"], minutes = 200, live_minutes = 40 },
   { label = "evening 3", parts = ["answer-from-the-sources"], minutes = 190, live_minutes = 50 },
   { label = "evening 4", parts = ["decide-and-wait"], minutes = 190, live_minutes = 50 },
-  { label = "self-paced after the evenings", parts = ["let-it-act", "make-it-safe-and-visible", "ship-it", "add-one-capability", "do-it-with-the-tools-teams-run", "run-the-agent-with-google-adk", "check-access-with-openfga"], minutes = 790, live_minutes = 0 },
+  { label = "self-paced after the evenings", parts = ["let-it-act", "make-it-safe-and-visible", "ship-it", "add-one-capability", "do-it-with-the-tools-teams-run", "run-the-agent-with-google-adk", "check-access-with-openfga"], minutes = 810, live_minutes = 0 },
 ]
 
 # The default cohort: six weeks, with two live sessions of 90 minutes and 60 minutes of office hours a week.
@@ -32,5 +32,5 @@ sessions = [
   { label = "week 3", parts = ["answer-from-the-sources"], minutes = 190, live_minutes = 240 },
   { label = "week 4", parts = ["decide-and-wait", "add-one-capability"], minutes = 310, live_minutes = 240 },
   { label = "week 5", parts = ["let-it-act"], minutes = 220, live_minutes = 240 },
-  { label = "week 6", parts = ["make-it-safe-and-visible", "ship-it", "do-it-with-the-tools-teams-run", "run-the-agent-with-google-adk", "check-access-with-openfga"], minutes = 450, live_minutes = 240 },
+  { label = "week 6", parts = ["make-it-safe-and-visible", "ship-it", "do-it-with-the-tools-teams-run", "run-the-agent-with-google-adk", "check-access-with-openfga"], minutes = 470, live_minutes = 240 },
 ]

@@ -64,7 +64,7 @@ matches this part. The live-labs lab `labs/27-prompt-registry` needs to be rebui
 then.
 
 You work in each step's `problem/` folder, which starts from the answer to the step before it. The folders
-hold the agent from part five. Its `model.py` now writes each prompt into `runs/calls.jsonl`, the way a
+hold the agent from the "Let it act" part. Its `model.py` now writes each prompt into `runs/calls.jsonl`, the way a
 provider's logs keep it. It also obeys a new rate or a claimed approval that it finds inside an email.
 
 ## Walkthrough

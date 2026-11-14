@@ -12,7 +12,7 @@ Write two short answers in `NOTES.md`, from your own runs. Then run the mileston
 - It scores your judge on the grader's 12 cases. Their labels are stored as hashes, so nobody can read them.
 - It checks that no held-out or grader case went into the judge's prompt.
 - It runs your eval on your code, then on the planted change.
-- It reruns part one's rules on the hidden test inbox, 3 fresh runs.
+- It reruns the "Get records you can trust" part's rules on the hidden test inbox, 3 fresh runs.
 
 ```mermaid
 flowchart LR
@@ -29,7 +29,7 @@ flowchart LR
 For example, a learner keeps the teammate's short prompt in `extract.py`. Then they save the baseline again,
 so `clean` is `0.0` in `evals/baseline.json`. Now the eval passes, and the gate is open. The check catches this
 in two ways. The planted change no longer makes any mode worse, so the eval does not block it. And the short
-prompt fails part one's rules on the test inbox.
+prompt fails the "Get records you can trust" part's rules on the test inbox.
 
 ```bash
 bun run verify prove-the-measurements
@@ -45,14 +45,14 @@ Expect: `Done. All 8 rules pass.`
 - On the grader's 12 cases, the judge catches and keeps 80% or more.
 - No held-out or grader case is used as an example in the judge's prompt.
 - `eval` passes on your code and blocks the planted change.
-- On the hidden test inbox, part one's rules still pass.
+- On the hidden test inbox, the "Get records you can trust" part's rules still pass.
 
 ## If you get stuck
 
 - If a judge rule fails, run `uv run python agreement.py` in this folder. Both rates should be 0.8 or more.
 - If the eval rule fails, run `uv run python eval.py` in this folder. It should print `"regressions": []`. Your
   `evals/baseline.json` must come from good code, so `clean` is `1.0` there.
-- If line 1 fails, compare your `extract.py` with the one from part one. A shorter prompt can break it.
+- If line 1 fails, compare your `extract.py` with the one from the "Get records you can trust" part. A shorter prompt can break it.
 
 ## Words you will use
 

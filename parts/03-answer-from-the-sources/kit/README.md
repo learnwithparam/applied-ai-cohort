@@ -13,8 +13,8 @@ This folder holds the data this part adds to the Tallgrass Bend world. Your code
 | `answer-replay.jsonl`                | What the fast role answers on replay, for each question                      |
 | `answer_replay.py`                   | `ask_model(prompt)`: one call to the fast role, on replay or a live provider |
 | `build_kit.py`                       | Writes the documents, questions and answers. Run it only to change them      |
-| `judge_replay.py` and `judge-cases/` | Part two's judge, so the milestone can check line 2 again                    |
-| `planted/extract.py`                 | Part two's planted bad change, for the same reason                           |
+| `judge_replay.py` and `judge-cases/` | The "Measure before you change" part's judge, so the milestone can check line 2 again                    |
+| `planted/extract.py`                 | The "Measure before you change" part's planted bad change, for the same reason                           |
 
 For example, `questions/dev.jsonl` holds Q-D11, "How long must Pulsepath stay dry after spraying?". Its answer
 is on page 2 of `documents/pulsepath-label.txt`, which never says the word Pulsepath.

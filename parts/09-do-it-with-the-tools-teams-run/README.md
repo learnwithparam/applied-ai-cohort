@@ -2,7 +2,7 @@
 
 ## The problem
 
-In part 6 you wrote your own trace log and your own scores. That was the right way to learn what a trace is.
+In the "Make it safe and visible" part you wrote your own trace log and your own scores. That was the right way to learn what a trace is.
 A team that runs an AI system for years does not keep a hand-made log. It sends the same facts to a trace
 store: a server that keeps every run so people can search and compare them.
 

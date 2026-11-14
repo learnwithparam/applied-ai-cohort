@@ -85,4 +85,4 @@ Expect: `Done. All 6 rules pass.`
 
 - **Before and after:** the same metric, on the same inbox, from the old verb and the new one.
 - **Trade:** what you gave up to move the metric, such as quality, speed or more code to keep.
-- **Scorecard line:** one goal the system must keep meeting. Line 1 is from part one.
+- **Scorecard line:** one goal the system must keep meeting. Line 1 is from the "Get records you can trust" part.
