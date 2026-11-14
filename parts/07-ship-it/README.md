@@ -37,8 +37,8 @@ guide that tells the person on duty what to do when something goes wrong.
 
 ## The labs
 
-- Core: [Gate AI Releases with Evals in CI](https://github.com/learnwithparam/live-labs/tree/main/labs/29-evals-ci) (live-labs `labs/29-evals-ci`, about 20 minutes)
-- Core: [Ship a Streaming AI Agent API with an API Gateway](https://github.com/learnwithparam/live-labs/tree/main/labs/31-agent-api) (live-labs `labs/31-agent-api`, about 20 minutes)
+- Core: [Gate AI Releases with Evals in CI](https://github.com/learnwithparam/live-labs/tree/main/labs/29-evals-ci) (live-labs `labs/29-evals-ci`)
+- Core: [Ship a Streaming AI Agent API with an API Gateway](https://github.com/learnwithparam/live-labs/tree/main/labs/31-agent-api) (live-labs `labs/31-agent-api`)
 - Optional, pick any:
   - [Run Background Coding Agents with Cloud Sandboxes](https://github.com/learnwithparam/live-labs/tree/main/labs/32-background-agents)
   - [Run AI Agents on Serverless with Durable Functions](https://github.com/learnwithparam/live-labs/tree/main/labs/33-serverless-agents)
@@ -47,16 +47,19 @@ guide that tells the person on duty what to do when something goes wrong.
 
 ## Steps
 
-| Step                                                          | Minutes | You produce                          | The check reads                                                  |
-| ------------------------------------------------------------- | ------- | ------------------------------------ | ---------------------------------------------------------------- |
-| [serve-the-contract](01-serve-the-contract/problem/README.md) | 20      | `POST /v1/runs` with streaming       | 20 HTTP calls: status, events, time to first event, the world    |
-| [lock-the-endpoint](02-lock-the-endpoint/problem/README.md)   | 20      | A token check and a spending limit   | 401 and 429 answers, and no writes in the world for them         |
-| [gate-the-release](03-gate-the-release/problem/README.md)     | 30      | `gate.py` and `release-gate.yml`     | The gate's exit code on the clean folder and on a planted change |
-| [write-the-runbook](04-write-the-runbook/problem/README.md)   | 20      | `RUNBOOK.md`                         | Five sections, a git command, the limit, real email ids          |
-| [show-the-scorecard](05-show-the-scorecard/problem/README.md) | 30      | A `scorecard` verb, two peer reviews | `SCORECARD.md` against the check's own measurements              |
-| [prove-the-release](06-prove-the-release/problem/README.md)   | 20      | `NOTES.md`, the whole release        | Every earlier rule again, and lines 1, 5, 6 and 7 on PASS        |
+| Step                                                                        | Minutes | You produce                                               | The check reads                                                  |
+| --------------------------------------------------------------------------- | ------- | --------------------------------------------------------- | ---------------------------------------------------------------- |
+| [serve-the-contract](01-serve-the-contract/problem/README.md)               | 20      | `POST /v1/runs` with streaming                            | 20 HTTP calls: status, events, time to first event, the world    |
+| [survive-a-provider-outage](02-survive-a-provider-outage/problem/README.md) | 20      | `resilient.py`: retries, backoff and a backup             | Fake outages: calls made, waits, backup used, a 400 raised       |
+| [lock-the-endpoint](03-lock-the-endpoint/problem/README.md)                 | 20      | A token check and a spending limit                        | 401 and 429 answers, and no writes in the world for them         |
+| [gate-the-release](04-gate-the-release/problem/README.md)                   | 30      | `gate.py` and `release-gate.yml`                          | The gate's exit code on the clean folder and on a planted change |
+| [write-the-runbook](05-write-the-runbook/problem/README.md)                 | 20      | `RUNBOOK.md`                                              | Five sections, a git command, the limit, real email ids          |
+| [show-the-scorecard](06-show-the-scorecard/problem/README.md)               | 30      | A `scorecard` verb, two peer reviews                      | `SCORECARD.md` against the check's own measurements              |
+| [learn-from-live-feedback](07-learn-from-live-feedback/problem/README.md)   | 20      | `promote.py`: real thumbs into the golden set             | The golden set after two runs: new cases, no private data        |
+| [prove-the-release](08-prove-the-release/problem/README.md)                 | 20      | `NOTES.md`, the whole release                             | Every earlier rule again, and lines 1, 5, 6 and 7 on PASS        |
+| [prove-it-on-your-work](09-prove-it-on-your-work/problem/README.md)         | 30      | Your own `golden.jsonl`, `results.json` and `CAPSTONE.md` | Shape and evidence in your files, never the spray desk           |
 
-The steps take 140 minutes in total.
+The steps fit in an evening or two.
 
 You work in each step's `problem/` folder, which starts from the answer to the step before it. The folders
 hold the agent from the "Let it act" and "Make it safe and visible" parts, with its tools, traces, redaction and guards.
@@ -69,7 +72,7 @@ Start the application system in one terminal:
 uv run world serve
 ```
 
-Expect: `The spray desk is open at http://127.0.0.1:8100 (dev inbox). Stop it with Ctrl+C.`
+Expect: `The spray desk is open at http://localhost:8100 (dev inbox). Stop it with Ctrl+C.`
 
 Start the service in a second terminal, from a step's `problem/` folder:
 
@@ -77,7 +80,7 @@ Start the service in a second terminal, from a step's `problem/` folder:
 PROJECT_API_TOKEN=secret PORT=8000 uv run python serve.py
 ```
 
-Expect: `Serving the agent at http://127.0.0.1:8000/v1/runs. Stop it with Ctrl+C.`
+Expect: `Serving the agent at http://localhost:8000/v1/runs. Stop it with Ctrl+C.`
 
 From `gate-the-release` on, run the release gate. It starts its own world, so it needs neither terminal:
 
@@ -85,7 +88,7 @@ From `gate-the-release` on, run the release gate. It starts its own world, so it
 uv run python gate.py
 ```
 
-Expect: `{"matched": 26, "booked_wrong": 0, "baseline": {"min_matched": 26, "max_wrong": 0}, "passed": true}`
+Expect: {"matched": 26, "booked_wrong": 0, "baseline": {"min_matched": 26, "max_wrong": 0}, "passed": true}
 once the gate is written.
 
 Check one step at any time:

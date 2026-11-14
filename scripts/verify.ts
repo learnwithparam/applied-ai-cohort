@@ -129,9 +129,12 @@ async function problemsWithStep(step: Step): Promise<string[]> {
   return problems;
 }
 
-async function verifyEveryCheck(): Promise<never> {
+async function verifyEveryCheck(onlySteps: string[] = []): Promise<never> {
   const problems: string[] = [];
-  for (const step of allSteps()) problems.push(...(await problemsWithStep(step)));
+  const chosen = allSteps().filter(
+    (step) => onlySteps.length === 0 || onlySteps.includes(step.name),
+  );
+  for (const step of chosen) problems.push(...(await problemsWithStep(step)));
   for (const problem of problems) console.log(`  ${problem}`);
   if (problems.length > 0) console.log(`${problems.length} check problem(s).`);
   else console.log("Every check rejects its starter and wrong answers, and passes its solution.");
@@ -187,8 +190,6 @@ function listStepsAndStop(): never {
 
 async function printProgress() {
   // Done is recomputed from the checks every time, never read from a saved flag.
-  // Checking every step takes a minute or two, so say so before the screen goes quiet.
-  console.log("Counting your progress on every step. This can take two minutes. Ctrl+C skips it.");
   const everyResult: Result[] = [];
   for (const step of allSteps()) everyResult.push(await run(step, starterFolder(step)));
   const passing = countPassing(everyResult).length;
@@ -214,7 +215,7 @@ async function verifyOneStep(step: Step): Promise<never> {
 }
 
 if (import.meta.main) {
-  if (firstArgument === "--all") await verifyEveryCheck();
+  if (firstArgument === "--all") await verifyEveryCheck(process.argv.slice(3));
   if (firstArgument === "--report") await writeReport();
   if (firstArgument === "part") await verifyOnePart();
   const step = firstArgument ? findStep(firstArgument) : undefined;

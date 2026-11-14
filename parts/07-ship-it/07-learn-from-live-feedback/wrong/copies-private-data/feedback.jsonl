@@ -1,0 +1,6 @@
+{"id": "f1", "question": "Can I spray Stemshure at 4 L/ha?", "answer": "Yes.", "thumb": "down", "fix": "No. The label limit is 3 L/ha."}
+{"id": "f2", "question": "What is the rate for Cropguard?", "answer": "2 L/ha.", "thumb": "up", "fix": null}
+{"id": "f3", "question": "  can I spray stemshure at 4 l/ha?", "answer": "Yes.", "thumb": "down", "fix": "No. The label limit is 3 L/ha."}
+{"id": "f4", "question": "Mail the Cropguard price to jo@farm.example please", "answer": "I cannot.", "thumb": "down", "fix": "Cropguard costs 12 dollars a litre."}
+{"id": "f5", "question": "When can you spray my north field? Call 555-0142", "answer": "Soon.", "thumb": "down", "fix": null}
+{"id": "f6", "question": "Do you spray on windy days?", "answer": "Yes.", "thumb": "down", "fix": "No. We stop above 15 km/h wind."}

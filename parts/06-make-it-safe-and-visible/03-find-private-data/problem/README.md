@@ -12,7 +12,7 @@ card number.
 ## Your challenge
 
 Write the detector in `privacy.py`, the `private` verb. It reads `{"text"}` on stdin and prints
-`{"spans": [{"start", "end", "kind"}]}`. A span is where private data starts and ends in the text, counted in
+{"spans": [{"start", "end", "kind"}]}. A span is where private data starts and ends in the text, counted in
 characters from 0. The kind is `phone`, `bank_account` or `card`.
 
 `data/private-dev.jsonl` in this part's folder is your annotated set. Each line is a dev email with a line

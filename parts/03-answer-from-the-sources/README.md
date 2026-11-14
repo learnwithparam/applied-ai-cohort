@@ -40,23 +40,25 @@ is the share of questions where the right chunk is in the top 5 results.
 
 ## The labs
 
-- Core: [Build a PDF RAG Pipeline with Citations](https://github.com/learnwithparam/live-labs/tree/main/labs/04-rag-pipeline) (live-labs `labs/04-rag-pipeline`, about 20 minutes)
-- Core: [Measure RAG Accuracy with Recall@k](https://github.com/learnwithparam/live-labs/tree/main/labs/05-rag-recall) (live-labs `labs/05-rag-recall`, about 20 minutes)
+- Core: [Build a PDF RAG Pipeline with Citations](https://github.com/learnwithparam/live-labs/tree/main/labs/04-rag-pipeline) (live-labs `labs/04-rag-pipeline`)
+- Core: [Measure RAG Accuracy with Recall@k](https://github.com/learnwithparam/live-labs/tree/main/labs/05-rag-recall) (live-labs `labs/05-rag-recall`)
 - Optional: [Build Agentic RAG with LangGraph](https://github.com/learnwithparam/live-labs/tree/main/labs/07-agentic-rag), [Enforce Document Permissions in RAG with OpenFGA](https://github.com/learnwithparam/live-labs/tree/main/labs/21-rag-permissions)
 
 ## Steps
 
-| Step                  | Minutes | You produce                                   | Done when (what the check reads)                                                                   |
-| --------------------- | ------- | --------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `load-the-documents`  | 30      | An index with stable chunk ids                | Every chunk has `doc_id`, `page`, `text`; a rebuild gives the same ids; every document covered     |
-| `search-the-passages` | 20      | A `search` verb                               | Returns chunk ids for every labelled question; recall@5 is printed                                 |
-| `beat-the-baseline`   | 20      | A better `search`                             | Recall@5 meets the target and beats the BM25 baseline printed beside it                            |
-| `cite-every-answer`   | 20      | An `ask` verb returning `{answer, citations}` | Every answer has at least one citation and every cited id exists                                   |
-| `check-the-citations` | 20      | A supported-answer check                      | Every number in an answer is in a passage it cites; 80% or more still get an answer                |
-| `say-i-do-not-know`   | 20      | Abstention                                    | 8 or more of 10 out-of-scope questions get an explicit not-in-the-sources; in-scope accuracy holds |
-| `prove-the-answers`   | 20      | Scorecard line 3                              | Test split recall@5 and supported-answer rate meet targets; lines 1 and 2 pass                     |
+| Step                        | Minutes | You produce                                        | Done when (what the check reads)                                                                   |
+| --------------------------- | ------- | -------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `load-the-documents`        | 30      | An index with stable chunk ids                     | Every chunk has `doc_id`, `page`, `text`; a rebuild gives the same ids; every document covered     |
+| `search-the-passages`       | 20      | A `search` verb                                    | Returns chunk ids for every labelled question; recall@5 is printed                                 |
+| `beat-the-baseline`         | 20      | A better `search`                                  | Recall@5 meets the target and beats the BM25 baseline printed beside it                            |
+| `write-synthetic-questions` | 20      | A `synthetic.jsonl` of filtered practice questions | Two questions per passage: a question, not a copy, no repeat, labelled synthetic                   |
+| `rerank-the-passages`       | 20      | A `rerank` function                                | The right passage is in the top two for 5 of 6 questions; a reranker error falls back              |
+| `cite-every-answer`         | 20      | An `ask` verb returning `{answer, citations}`      | Every answer has at least one citation and every cited id exists                                   |
+| `check-the-citations`       | 20      | A supported-answer check                           | Every number in an answer is in a passage it cites; 80% or more still get an answer                |
+| `say-i-do-not-know`         | 20      | Abstention                                         | 8 or more of 10 out-of-scope questions get an explicit not-in-the-sources; in-scope accuracy holds |
+| `prove-the-answers`         | 20      | Scorecard line 3                                   | Test split recall@5 and supported-answer rate meet targets; lines 1 and 2 pass                     |
 
-The steps take 150 minutes in total.
+The steps fit in an evening or two.
 
 ## The kit
 
@@ -74,7 +76,7 @@ Build the index:
 cd parts/03-answer-from-the-sources/01-load-the-documents/problem && uv run python load.py
 ```
 
-Expect: `Saved 10 chunks to index/chunks.jsonl.` on the starter, and `Saved 74 chunks` once each paragraph is a
+Expect: `Saved 10 chunks to index/chunks.jsonl.` on the starter, and “Saved 74 chunks” once each paragraph is a
 chunk.
 
 Search for one question. `search.py` starts in the next step. So move to that step's folder, and build its
@@ -100,7 +102,7 @@ uv run python load.py && uv run python recall.py
 
 Expect: one line per dev question, then a line that starts `Recall@5: yours`.
 
-Ask one question. `ask.py` starts in step 04. So go to `04-cite-every-answer/problem`, or a later step, and
+Ask one question. `ask.py` starts in step 04. So go to `06-cite-every-answer/problem`, or a later step, and
 run `uv run python load.py` there first:
 
 ```bash

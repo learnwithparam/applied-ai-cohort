@@ -37,8 +37,8 @@ A durable wait is a wait that is saved to disk, so it lives through a crash and 
 
 ## The labs
 
-- Core: [Build Durable AI Workflows with Temporal](https://github.com/learnwithparam/live-labs/tree/main/labs/10-durable-workflow) (live-labs `labs/10-durable-workflow`, about 20 minutes)
-- Core: [Build an AI Workflow with Mastra](https://github.com/learnwithparam/live-labs/tree/main/labs/08-ai-workflow) (live-labs `labs/08-ai-workflow`, about 20 minutes)
+- Core: [Build Durable AI Workflows with Temporal](https://github.com/learnwithparam/live-labs/tree/main/labs/10-durable-workflow) (live-labs `labs/10-durable-workflow`)
+- Core: [Build an AI Workflow with Mastra](https://github.com/learnwithparam/live-labs/tree/main/labs/08-ai-workflow) (live-labs `labs/08-ai-workflow`)
 - Optional: [Score Risk with a Decision Model](https://github.com/learnwithparam/live-labs/tree/main/labs/19-decision-ai)
 
 ## Steps
@@ -53,7 +53,7 @@ A durable wait is a wait that is saved to disk, so it lives through a crash and 
 | `survive-the-crash`       | 20      | The same wait, crash-safe                      | The check kills the process during the wait, restarts, approves; one write in the system of record |
 | `prove-the-routing`       | 20      | Scorecard line 4                               | Routing and the crash test pass on the test split; lines 1 to 3 pass                               |
 
-The steps take 150 minutes in total. Hollin Bank Home Care (`worlds/README.md`) is the project brief that
+The steps fit in an evening or two. Hollin Bank Home Care (`worlds/README.md`) is the project brief that
 matches this part.
 
 ## The kit
@@ -71,7 +71,7 @@ the application system in a second terminal, and leave it running:
 uv run world serve
 ```
 
-Expect: `The spray desk is open at http://127.0.0.1:8100 (dev inbox). Stop it with Ctrl+C.`
+Expect: `The spray desk is open at http://localhost:8100 (dev inbox). Stop it with Ctrl+C.`
 
 Route one email:
 
@@ -87,7 +87,7 @@ Compare your router with the desk and the keyword baseline:
 uv run python routes.py
 ```
 
-Expect: one row per dev email, then a line that starts `Wrong queue: yours`.
+Expect: one row per dev email, then a line that starts “Wrong queue: yours”.
 
 Run the chain on a fresh system. `chain.py` starts in step 03, so run this from `03-chain-the-steps/problem`
 or a later step. From `wait-for-approval` on, it waits for the agronomist:

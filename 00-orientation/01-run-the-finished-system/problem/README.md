@@ -21,8 +21,8 @@ Expect: a short report, then a scorecard with line 1 `PASS` and lines 2 to 7 `TO
 
 ![The finished system's scorecard](../images/expected.png)
 
-For example, the report has the line `Booked with no person, matching the desk's records: 26 of 40`. In
-`goal.md`, you replace the TODO on that line with `26`. Do the same for `Booked wrong` and `Sent to a person`.
+For example, the report has the line “Booked with no person, matching the desk's records: 26 of 40”. In
+`goal.md`, you replace the TODO on that line with `26`. Do the same for `Booked wrong` and “Sent to a person”.
 
 ```mermaid
 flowchart LR

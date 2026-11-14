@@ -23,7 +23,7 @@ step is a milestone, so it runs the `name-the-job` rules again.
 uv run world serve --split test
 ```
 
-Expect: `The spray desk is open at http://127.0.0.1:8100 (test inbox). Stop it with Ctrl+C.`
+Expect: `The spray desk is open at http://localhost:8100 (test inbox). Stop it with Ctrl+C.`
 
 Leave that server running. In your first terminal, inside this step's `problem/` folder, run your intake on the
 test inbox:
@@ -33,7 +33,7 @@ uv run world reset && rm -rf runs && uv run python intake.py && uv run python co
 ```
 
 Expect: the intake counts for 20 emails, then the cost line. For example, the sample solution prints
-`{"booked": 13, "review": 7}`. In the cost line, `per_correct_booking_usd` is `null`. That is right: the test
+{"booked": 13, "review": 7}. In the cost line, `per_correct_booking_usd` is `null`. That is right: the test
 answers are hidden, so only the check can count the correct bookings. Stop the test server with Ctrl+C when
 you finish, and start the dev server again for the next part.
 

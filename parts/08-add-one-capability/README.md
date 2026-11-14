@@ -15,7 +15,7 @@ Pick the one your project needs. Then prove that it moved a number, without brea
 For example, you could try a cheaper path for easy requests. Today `uv run finished` reports
 `Model calls: 40, cost $0.000616` on the dev inbox. Four of those calls read emails that give the rate per
 acre. Those emails always go to a person, whatever the model says. A router can send them to a person with no
-model call. The cost goes down, and the scorecard still shows `Booked wrong: 0`.
+model call. The cost goes down, and the scorecard still shows “Booked wrong: 0”.
 
 ## Why it matters
 
@@ -53,11 +53,12 @@ flowchart LR
 | Step                                                              | Minutes | You produce                                      | The check reads                                                    |
 | ----------------------------------------------------------------- | ------- | ------------------------------------------------ | ------------------------------------------------------------------ |
 | [pick-an-elective](01-pick-an-elective/problem/README.md)         | 10      | `elective.md`: the capability and its number     | One elective, its lab, a scorecard metric and a target             |
-| [build-the-elective](02-build-the-elective/problem/README.md)     | 30      | An `elective` verb beside `intake`               | The world after 3 fresh runs: no crash, every email handled once   |
-| [measure-the-elective](03-measure-the-elective/problem/README.md) | 30      | Before and After numbers in `elective.md`        | Both verbs' runs scored by the world, and line 1 on the test inbox |
-| [report-the-trade](04-report-the-trade/problem/README.md)         | 20      | `trade.md`: quality, cost per outcome, the trade | Each number against the measured runs                              |
+| [bring-your-own-brief](02-bring-your-own-brief/problem/README.md) | 20      | `cases.csv` and `brief.md` from your own work    | Your cases and your baseline, worked out again by the check        |
+| [build-the-elective](03-build-the-elective/problem/README.md)     | 30      | An `elective` verb beside `intake`               | The world after 3 fresh runs: no crash, every email handled once   |
+| [measure-the-elective](04-measure-the-elective/problem/README.md) | 30      | Before and After numbers in `elective.md`        | Both verbs' runs scored by the world, and line 1 on the test inbox |
+| [report-the-trade](05-report-the-trade/problem/README.md)         | 20      | `trade.md`: quality, cost per outcome, the trade | Each number against the measured runs                              |
 
-The steps take 90 minutes in total. The lab for your elective adds about 30 minutes. Labs 16, 25 and 34 need
+The steps fit in an evening or two. The lab for your elective adds a short extra stretch. Labs 16, 25 and 34 need
 an Apple silicon computer today. They may be rebuilt later to run online.
 
 The sample answer builds `route-to-cheaper-models`. The cheapest model is no model: a plain rule settles the
@@ -72,7 +73,7 @@ Start the application system in a second terminal. Leave it running while you wo
 uv run world serve
 ```
 
-Expect: `The spray desk is open at http://127.0.0.1:8100 (dev inbox). Stop it with Ctrl+C.`
+Expect: `The spray desk is open at http://localhost:8100 (dev inbox). Stop it with Ctrl+C.`
 
 Pick your elective, then check the plan:
 
@@ -89,7 +90,7 @@ uv run world reset && rm -rf runs && uv run python elective.py
 ```
 
 Expect: `elective is not written yet: open elective.py and follow the TODO` from the starter. The sample answer
-prints `{"booked": 26, "review": 10, "settled_by_rule": 4}`.
+prints {"booked": 26, "review": 10, "settled_by_rule": 4}.
 
 ```bash
 bun run verify build-the-elective

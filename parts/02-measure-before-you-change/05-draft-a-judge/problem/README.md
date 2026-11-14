@@ -28,7 +28,7 @@ The judge reads a list of cases on stdin. Try it on the 16 dev cases in the kit:
 uv run python -c "import json; print(json.dumps([json.loads(line) for line in open('../../kit/judge-cases/dev.jsonl')]))" | uv run python judge.py
 ```
 
-Expect: a list with one verdict for each case, such as `{"case_id": "J-D01", "verdict": "pass"}`.
+Expect: a list with one verdict for each case, such as {"case_id": "J-D01", "verdict": "pass"}.
 
 For example, the starter prints `"verdict": "4"` for case J-D01. After your change, it prints
 `"verdict": "pass"`. Case J-D11 says "Please book Glyfallow 540" and names no field, so it gets `"fail"`.

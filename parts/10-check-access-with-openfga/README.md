@@ -81,7 +81,7 @@ Expect: `openfga` with the status `Healthy`.
 Check your model and tuples against that server:
 
 ```bash
-uv run python assignment/openfga/check.py --url http://127.0.0.1:8080
+uv run python assignment/openfga/check.py --url http://localhost:8080
 ```
 
 Expect: three PASS or FAIL lines, one for each rule in the step.

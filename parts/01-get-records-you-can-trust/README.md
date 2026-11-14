@@ -47,7 +47,7 @@ rules have never seen:
 ## The lab to run first
 
 [Extract Structured Data with LLMs](https://github.com/learnwithparam/live-labs/tree/main/labs/01-structured-output)
-(live-labs `labs/01-structured-output`, about 20 minutes). The lab uses a different world: it matches
+(live-labs `labs/01-structured-output`). The lab uses a different world: it matches
 receipts to card charges. But the pattern is the same. You use typed fields. You check them against a record
 the model did not write. And you send unsure cases to a queue for a person. Optional:
 [Process a Million Prompts with Batch APIs](https://github.com/learnwithparam/live-labs/tree/main/labs/03-batch-prompts).
@@ -74,7 +74,7 @@ Start the application system in a second terminal. Leave it running while you wo
 uv run world serve
 ```
 
-Expect: `The spray desk is open at http://127.0.0.1:8100 (dev inbox). Stop it with Ctrl+C.`
+Expect: `The spray desk is open at http://localhost:8100 (dev inbox). Stop it with Ctrl+C.`
 
 You can check one step at any time:
 

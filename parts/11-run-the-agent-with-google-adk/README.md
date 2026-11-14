@@ -71,7 +71,7 @@ Start the application system in a second terminal. Leave it running while you wo
 uv run world serve
 ```
 
-Expect: `The spray desk is open at http://127.0.0.1:8100 (dev inbox). Stop it with Ctrl+C.`
+Expect: `The spray desk is open at http://localhost:8100 (dev inbox). Stop it with Ctrl+C.`
 
 Install the ADK group once. It pins `google-adk` to one exact version:
 

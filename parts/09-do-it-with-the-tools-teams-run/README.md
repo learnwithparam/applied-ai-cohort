@@ -45,7 +45,7 @@ its rubric, is in [the assignment](../../assignment/README.md).
 Arize Phoenix is the lighter runner-up.
 
 - **Choose when:** your laptop is short on memory. Phoenix is one container. The Langfuse stack is six.
-- **Trade-off:** Phoenix uses the Elastic License 2.0. That is source-available, not an open-source licence
+- **Trade-off:** Phoenix uses the Elastic License. That is source-available, not an open-source licence
   approved by the OSI, and it forbids selling Phoenix as a managed service.
 
 ## Walkthrough
@@ -57,9 +57,9 @@ idle. Write your own secrets first. The script never prints them:
 uv run python assignment/keys.py
 ```
 
-Expect: `Wrote 11 secrets to` the path `assignment/.env`, and `Nothing was printed.`
+Expect: “Wrote 11 secrets to” the path `assignment/.env`, and `Nothing was printed.`
 
-Start your own Langfuse, pinned to release 4.80.0:
+Start your own Langfuse, pinned to the release in the command below:
 
 ```bash
 docker compose --env-file assignment/.env -f assignment/compose.yml up -d --wait
@@ -78,7 +78,7 @@ Expect: `Sent trace` with a 32-character id and `40 model calls.`
 Open `http://localhost:3000` and look at the trace. The email is `learner@example.com`. The password is the value
 of `LANGFUSE_UI_PASSWORD` in `assignment/.env`.
 
-Expect: one trace named `spray desk, dev inbox`, 40 generations with a model name and token counts, and a
+Expect: one trace named “spray desk, dev inbox”, 40 generations with a model name and token counts, and a
 score called `correct_share`.
 
 Check your work:

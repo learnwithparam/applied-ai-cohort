@@ -52,7 +52,7 @@ Expect: `Done. All 3 rules pass.` when your model and tuples are right.
 
 - Docker must be running. The check starts its own OpenFGA server and stops it when the check ends.
 - Read the first FAIL line. Its Try next line says what to change.
-- Each `define` line in the model is one relation. For example, `define lead: [user]` names one relation.
+- Each `define` line in the model is one relation. For example, “define lead: [user]” names one relation.
 - A row in `tuples.json` looks like this: `{"user": "user:ana.lopez", "relation": "lead", "object": "crew:C01"}`.
 - Use the auditor's rows from the roster for every farm. The auditor covers all eight farms.
 - For a new field, you write only the link from the field to its farm. You write no grant for it.

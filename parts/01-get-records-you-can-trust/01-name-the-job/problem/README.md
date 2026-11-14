@@ -47,7 +47,7 @@ Expect: `Done. All 4 rules pass.`
 - Pick a metric that counts what the business gets: a request booked right with no person. A wrong booking
   should count against you more than a request sent to a person.
 - Open `seed.json` and find `max_rate_l_per_ha` and `crops`. Together, they are the label. For example,
-  Podshield has `"max_rate_l_per_ha": 0.5` and `"crops": ["lentils", "peas"]`.
+  Podshield has `"max_rate_l_per_ha": 0.5` and “"crops": ["lentils", "peas"]”.
 
 ## Words you will use
 

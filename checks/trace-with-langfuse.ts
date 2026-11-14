@@ -22,7 +22,7 @@ const answers = new Map<string, Promise<Lines>>();
 function runQuietly(command: string[], envFile?: string) {
   const environment = { ...process.env };
   // uv reads its --env-file from this variable, so the secrets never appear in a command line.
-  if (envFile) environment["UV_ENV_FILE"] = envFile;
+  if (envFile) environment.UV_ENV_FILE = envFile;
   return spawnSync(command[0], command.slice(1), { cwd: ROOT, encoding: "utf8", env: environment });
 }
 

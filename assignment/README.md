@@ -23,7 +23,7 @@ Work through these steps:
 uv run python assignment/keys.py
 ```
 
-Expect: `Wrote 11 secrets to` the path of `assignment/.env`.
+Expect: “Wrote 11 secrets to” the path of `assignment/.env`.
 
 2. Start the stack and wait until it is healthy:
 

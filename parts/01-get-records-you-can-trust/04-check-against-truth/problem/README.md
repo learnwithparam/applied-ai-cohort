@@ -38,7 +38,7 @@ flowchart LR
   E -- "no" --> R
 ```
 
-Keep `uv run world serve` running. Reset the system and run the intake. Then open http://127.0.0.1:8100:
+Keep `uv run world serve` running. Reset the system and run the intake. Then open http://localhost:8100:
 
 ```bash
 uv run world reset && uv run python intake.py
@@ -46,8 +46,8 @@ uv run world reset && uv run python intake.py
 
 Expect: one line of JSON with the count `booked` and the count sent to `review`.
 
-For example, the starter code prints `{"booked": 38, "review": 2}`: it books almost everything. The sample
-solution prints `{"booked": 26, "review": 14}`.
+For example, the starter code prints {"booked": 38, "review": 2}: it books almost everything. The sample
+solution prints {"booked": 26, "review": 14}.
 
 ![The jobs board after a good run: every job within label, the rest with a person](../images/expected.png)
 

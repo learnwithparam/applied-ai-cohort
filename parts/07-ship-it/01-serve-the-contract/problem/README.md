@@ -25,19 +25,19 @@ For example, start the world and the service, each in its own terminal:
 uv run world serve
 ```
 
-Expect: `The spray desk is open at http://127.0.0.1:8100 (dev inbox). Stop it with Ctrl+C.`
+Expect: `The spray desk is open at http://localhost:8100 (dev inbox). Stop it with Ctrl+C.`
 
 ```bash
 PROJECT_API_TOKEN=secret PORT=8000 uv run python serve.py
 ```
 
-Expect: `Serving the agent at http://127.0.0.1:8000/v1/runs. Stop it with Ctrl+C.`
+Expect: `Serving the agent at http://localhost:8000/v1/runs. Stop it with Ctrl+C.`
 
 Then send TB-1001 from a third terminal:
 
 ```bash
 uv run world email TB-1001 | uv run python -c "import json,sys; print(json.dumps({'verb': 'act', 'input': json.load(sys.stdin)}))" > request.json
-curl -sN -H "Authorization: Bearer secret" -d @request.json http://127.0.0.1:8000/v1/runs
+curl -sN -H "Authorization: Bearer secret" -d @request.json http://localhost:8000/v1/runs
 ```
 
 Expect: with the starter, one JSON object at the end. With the sample solution, three `step` events, for

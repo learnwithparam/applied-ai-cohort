@@ -51,11 +51,11 @@ function loadStep(partFolder: PartFolder, stepName: string): Step {
 }
 
 // The orientation is the first part: it has a checked step like any other.
-function partFolders(): PartFolder[] {
+function partFolders(root: string): PartFolder[] {
   const folders: PartFolder[] = [];
-  const orientation = join(ROOT, "00-orientation");
+  const orientation = join(root, "00-orientation");
   if (existsSync(orientation)) folders.push({ name: "orientation", dir: orientation });
-  const partsFolder = join(ROOT, "parts");
+  const partsFolder = join(root, "parts");
   for (const partName of orderedSubfolders(partsFolder)) {
     folders.push({ name: bareName(partName), dir: join(partsFolder, partName) });
   }
@@ -68,8 +68,8 @@ function isSkeleton(partFolder: PartFolder, steps: Step[]): boolean {
   return readFileSync(readme, "utf8").includes("TODO(part session)");
 }
 
-export function parts(): Part[] {
-  return partFolders().map((partFolder) => {
+export function parts(root: string = ROOT): Part[] {
+  return partFolders(root).map((partFolder) => {
     const stepNames = orderedSubfolders(partFolder.dir);
     const steps = stepNames.map((stepName) => loadStep(partFolder, stepName));
     const skeleton = isSkeleton(partFolder, steps);
@@ -77,8 +77,80 @@ export function parts(): Part[] {
   });
 }
 
-export const allSteps = () => parts().flatMap((part) => part.steps);
+export const allSteps = (root: string = ROOT) => parts(root).flatMap((part) => part.steps);
 
-export function findStep(name: string): Step | undefined {
-  return allSteps().find((step) => step.name === name);
+export function findStep(name: string, root: string = ROOT): Step | undefined {
+  return allSteps(root).find((step) => step.name === name);
+}
+
+export const STEP_SECTIONS = [
+  "The problem",
+  "Watch it done",
+  "Your turn",
+  "Do it on your work",
+  "Done when",
+  "Solution",
+];
+export const PART_SECTIONS = [
+  "After this part you can",
+  "You leave with",
+  "The problem",
+  "Watch and read",
+  "Project",
+];
+export const MAX_PROBLEM_WORDS = 60;
+export const MAX_EXAMPLE_FILES = 2;
+export const EXAMPLE_TOO_BIG =
+  "the example needs more than two world files: shrink it or move the rest to Go further";
+
+const headingLine = (name: string) => new RegExp(`^## ${name}[ \\t]*$`, "m");
+
+function sectionBody(text: string, name: string): string | undefined {
+  const start = text.search(headingLine(name));
+  if (start < 0) return undefined;
+  const fromHeading = text.slice(start);
+  const body = fromHeading.slice(fromHeading.indexOf("\n") + 1);
+  return body.split(/^## /m)[0];
+}
+
+// Code does not count: a learner reads the sentences, and the how can have long commands.
+export function wordsOutsideCode(text: string): number {
+  const prose = text.replace(/```[\s\S]*?```/g, " ").replace(/`[^`\n]*`/g, " ");
+  return prose.split(/\s+/).filter(Boolean).length;
+}
+
+function sectionsInOrder(text: string, names: string[]): string[] {
+  const problems: string[] = [];
+  let lastPosition = -1;
+  for (const name of names) {
+    const position = text.search(headingLine(name));
+    if (position < 0) problems.push(`missing section "## ${name}"`);
+    else if (position < lastPosition) problems.push(`section "## ${name}" is out of order`);
+    else lastPosition = position;
+  }
+  return problems;
+}
+
+export function stepShapeProblems(text: string): string[] {
+  const problems = sectionsInOrder(text, STEP_SECTIONS);
+  const problem = sectionBody(text, "The problem");
+  if (problem !== undefined && wordsOutsideCode(problem) > MAX_PROBLEM_WORDS) {
+    const count = wordsOutsideCode(problem);
+    problems.push(
+      `the problem section has ${count} words; keep it to ${MAX_PROBLEM_WORDS} or fewer`,
+    );
+  }
+  return problems;
+}
+
+export function partShapeProblems(text: string): string[] {
+  const problems = sectionsInOrder(text, PART_SECTIONS);
+  if (!/^\|\s*Step\s*\|.*\n\|[\s:|-]+\|/im.test(text)) {
+    problems.push(`missing the steps table: a table whose first column is "Step"`);
+  }
+  return problems;
+}
+
+export function exampleFilesProblems(files: string[]): string[] {
+  return files.length > MAX_EXAMPLE_FILES ? [EXAMPLE_TOO_BIG] : [];
 }

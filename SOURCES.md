@@ -1,12 +1,12 @@
 # Sources
 
-Every public number in a learner file, where it came from, and every number from the research brief that was
-dropped. A number reaches a learner file only after its page was opened and read when the course was built.
+Each public number in a learner file, and the page it came from. A number is used only after its page was
+opened and read.
 
 ## Numbers in this course
 
-All read on the publisher's own page. Case studies on anthropic.com are a vendor's claims about its customers
-and are labelled that way where they appear.
+All were read on the maker's own page. Case studies on anthropic.com are a vendor's claims about its
+customers, and they are labelled that way where they appear.
 
 | Where            | Number                                          | Quote from the page                                                                                                          | Page                                                                   |
 | ---------------- | ----------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
@@ -19,13 +19,12 @@ and are labelled that way where they appear.
 | Part 7           | Regression evals near 100%                      | "should have a nearly 100% pass rate"                                                                                        | https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents |
 | Part 8           | Prompt caching up to 90% cheaper                | "reducing latency by > 2x and costs by up to 90%"                                                                            | https://www.anthropic.com/engineering/contextual-retrieval             |
 | Replay prices    | USD 0.07 in, 0.20 out per million tokens        | The OpenRouter fast model's list price                                                                                       | `briefs/MODELS.md` in the curriculum repo                              |
-| `pyproject.toml` | LiteLLM 1.109.1 has no known advisory           | PyPI lists no vulnerabilities for this release                                                                               | https://pypi.org/pypi/litellm/1.109.1/json                             |
+| `pyproject.toml` | The pinned LiteLLM has no known advisory        | PyPI lists no vulnerabilities for this release                                                                               | `https://pypi.org/pypi/litellm/1.109.1/json`                           |
 
-## Dropped from the research brief
+## Dropped numbers
 
-The brief marked these numbers "(search)": read from a search result summary, never from the page. None of
-the pages below could be opened from the build environment, so each one is dropped, not softened. A later
-build with these hosts allowed can open each page, confirm the number, and add it above.
+These numbers came from a search summary, not from the page. The pages could not be opened, so each number
+is dropped. Once a page can be opened, its number can be checked and added above.
 
 | Brief claim                                                                                                       | Page that could not be opened                           |
 | ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
@@ -43,9 +42,9 @@ build with these hosts allowed can open each page, confirm the number, and add i
 | Lemonade: loss adjustment expense ratio 7%, claim volume up more than 2.5 times                                   | lemonade.com shareholder letter                         |
 | Tokio Marine and MS&AD with Tractable: adjuster time forecast                                                     | tractable.ai                                            |
 | Reuters: video minutes transcribed in 70 languages; 100+ translators                                              | thomsonreuters.com                                      |
-| Haskell with Procore: submittal review cut to about 10 minutes                                                    | procore.com                                             |
+| Haskell with Procore: submittal review cut to a short time                                                        | procore.com                                             |
 | NextEra Energy: more than $20 million saved; 85% to 90% of technicians use voice tools                            | powermag.com (a trade press site)                       |
 | Maven course prices, ratings and learner counts (Husain and Shankar, Liu, AI Makerspace, SwirlAI, Bowne-Anderson) | maven.com                                               |
-| GitHub Octoverse 2025 language shares                                                                             | github.blog                                             |
+| GitHub Octoverse language shares                                                                                  | github.blog                                             |
 | LangChain survey: quality as the top blocker; agents in production                                                | langchain.com                                           |
-| Stack Overflow 2025 survey: distrust of AI accuracy, concern about agents                                         | stackoverflow.blog                                      |
+| Stack Overflow survey: distrust of AI accuracy, concern about agents                                              | stackoverflow.blog                                      |

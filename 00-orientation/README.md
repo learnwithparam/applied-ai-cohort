@@ -71,13 +71,13 @@ person. Then it scores itself against the desk's own records:
 uv run finished
 ```
 
-Expect: `Booked with no person, matching the desk's records: 26 of 40`, `Booked wrong: 0`, then a scorecard
+Expect: “Booked with no person, matching the desk's records: 26 of 40”, “Booked wrong: 0”, then a scorecard
 whose first line says `PASS` and whose other six lines say `TO DO`.
 
 ![The finished system's scorecard on the dev inbox](images/finished-system.png)
 
 You can also see the jobs board in a browser. Run `uv run world serve` in a second terminal and open
-http://127.0.0.1:8100. It prints `The spray desk is open at http://127.0.0.1:8100 (dev inbox).`
+http://localhost:8100. It prints `The spray desk is open at http://localhost:8100 (dev inbox).`
 
 **4. See the goal.** Line 1 of the scorecard is the "Get records you can trust" part of this course. You build that system again
 yourself, one step at a time. Each later part turns one more line green. Now copy three numbers from the run
