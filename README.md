@@ -1,13 +1,13 @@
 # Build One AI System You Can Prove
 
-In this course, you build an AI system for one real business job. You start with one model call. You end with a
-system you can ship. A script checks the system's work against a record the model never saw. You also count what each
-right answer costs. Last, you build a release gate. The gate stops a worse version from shipping.
+This course is about one real business job. You build an AI system for it. You start with one model call. You end
+with a system you can ship. A script checks the system's work. It uses a record the model never saw. You also count
+what each right answer costs. Last, you build a release gate. The gate stops a worse version from shipping.
 
 **Who it is for:** software engineers who code well and are new to building with models. You know HTTP, SQL,
 tests and git. You also know Python or TypeScript. Maybe you called a model API once, or built a small demo.
-At the end, you can say three things about your system. You know how often it is wrong. You know what each
-right answer costs. And you know what stops a worse version from shipping.
+By the end, you can say three things. You know how often your system is wrong. You know what each right answer
+costs. You know what stops a worse version from shipping.
 
 **Not for:** people who do not write code, or engineers who want to train models from scratch.
 
