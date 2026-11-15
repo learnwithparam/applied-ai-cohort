@@ -5,7 +5,7 @@
 You have four passages and one real question. Too few to tell if a change to search helps or hurts. You can
 ask a model to write practice questions for each passage. But a model drafts junk too: questions that copy the
 passage word for word (too easy to find), repeats, and lines that are not questions. Keep the good ones, and
-label them synthetic, so nobody mixes them up with your real golden set. For example, the draft "Cropguard is sold in 20 litre drums?" only adds a question mark to the passage, so you drop it.
+label them synthetic, so nobody mixes them up with your real golden set. For example, the draft "Cropguard is sold in 20 litre drums?" only adds a question mark. So you drop it.
 
 ## Your challenge
 
@@ -36,7 +36,7 @@ flowchart LR
 ## Do it on your work
 
 Pick five passages from your own documents and ask a model for drafts. Read each one. Good looks like this: you
-would be happy if a real user asked it, and the passage answers it without repeating its words.
+would be happy if a real user asked it. The passage answers it without repeating its words.
 
 ## Done when
 
@@ -55,7 +55,7 @@ Expect: `Done. All 5 rules pass.`
 ## If you get stuck
 
 - Split a text into lowercase words with `re.findall(r"\w+", text.lower())`.
-- To test a run of six, build every six-word window of each text and see if any window is in both.
+- To test a run of six, build every six-word window of each text. See if any window is in both.
 - Add each kept question's cleaned text to a set, and skip it when it is already there.
 
 ## Words you will use

@@ -4,8 +4,8 @@
 
 The "Get records you can trust" part sends every unsure request to one pile for a person. But the desk makes three kinds of decision, not
 two. It books a safe job. It asks the agronomist, the co-op's crop expert, to approve a job near the label
-limit. Or a person at the desk fixes or refuses the request. One pile hides which is which, so the agronomist
-reads requests the desk could fix, and the desk reads ones only the agronomist can approve.
+limit. Or a person at the desk fixes or refuses the request. One pile hides which is which. The agronomist
+reads requests the desk could fix. The desk reads ones only the agronomist can approve.
 
 ## Your challenge
 
@@ -13,10 +13,9 @@ Write the `route` verb. It reads one email and prints a queue and how sure it is
 
 - `book`: a safe request below 75% of the label rate.
 - `agronomist`: a safe request at 75% of the label rate or more.
-- `person`: a rate per acre, a field the email does not name, a product not labelled for the crop, or a rate
-  above the label.
+- `person`: a rate per acre, an unnamed field, a product off label, or a rate above the label.
 
-`route.py` already reads the record and looks up the grower, field and product, with a match score from 0 to 1.
+`route.py` already reads the record and looks up the grower, field and product. It also gives a match score from 0 to 1.
 Its `choose_queue` books everything. Write the rules. The "Get records you can trust" part's `intake.py` holds most of them.
 
 ```mermaid

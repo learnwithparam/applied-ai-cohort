@@ -21,8 +21,7 @@ flowchart LR
   E --> F["Stop"]
 ```
 
-For example, TB-1006 asks for Glyfallow 540 at 0.97 L per acre. The check says `person`, with the reason "the
-rate is given per acre; the desk books L/ha". The chain sends that to `/api/review` and stops. Its trace has
+For example, TB-1006 asks for Glyfallow 540 at 0.97 L per acre. The check says `person`, with the reason that the rate is given per acre. The desk books L/ha. The chain sends that to `/api/review` and stops. Its trace has
 `extract` and `check`, and no `draft`.
 
 Keep `uv run world serve` running, reset the system, then run the chain and open http://localhost:8100:
