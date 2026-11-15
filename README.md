@@ -1,9 +1,8 @@
 # Build One AI System You Can Prove
 
-In this course you take one real business job and build an AI system for it. You start with a single model
-call. You end with a system you can ship. A script proves the system is right. It compares the system's work
-with a record the model never saw. You also count what each right answer costs, and you build a release gate:
-a check that stops a worse version from shipping.
+In this course, you build an AI system for one real business job. You start with one model call. You end with a
+system you can ship. A script checks the system's work against a record the model never saw. You also count what each
+right answer costs. Last, you build a release gate. The gate stops a worse version from shipping.
 
 **Who it is for:** software engineers who code well and are new to building with models. You know HTTP, SQL,
 tests and git. You also know Python or TypeScript. Maybe you called a model API once, or built a small demo.
@@ -105,7 +104,16 @@ labs are the lessons. The steps here are the challenges.
 
 ## How a step works
 
-Each step has one problem, one outcome and one check. You work in the step's `problem/` folder. Use your own
+```mermaid
+flowchart LR
+  A["Read the step's problem"] --> B["Work in problem/"]
+  B --> C["Run bun run verify step-name"]
+  C -- "FAIL with a Try next line" --> B
+  C -- "Done." --> D["Go to the next step"]
+```
+
+Each step has one problem, one outcome and one check. Work in the step's `problem/` folder. If a command fails, see
+[troubleshooting](00-orientation/troubleshooting.md). Use your own
 editor and tools. Then run the step's check by its name:
 
 ```bash

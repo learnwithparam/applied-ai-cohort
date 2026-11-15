@@ -3,6 +3,23 @@
 This page lists every message the course's own commands can print. For each one, it says what the message
 means and what to do.
 
+## Start here when something breaks
+
+Ask these questions in order. Stop at the first "yes".
+
+```mermaid
+flowchart TD
+  A["Something failed"] --> B{"Does it say FAIL with a Try next line?"}
+  B -- "Yes" --> C["Do what Try next says. Run the same command again"]
+  B -- "No" --> D{"Does it name a key or a provider?"}
+  D -- "Yes" --> E["Check .env, or use LLM_PROVIDER=replay"]
+  D -- "No" --> F{"Is the world not running?"}
+  F -- "Yes" --> G["Run uv run world serve in a second terminal"]
+  F -- "No" --> H["Find the message in the table below"]
+```
+
+## Look up the message
+
 Find the line you see in the left column. Then do what the Fix column says. For example, say you run
 `uv run world email` with no email id. It prints “Name an inbox email, such as: uv run world email TB-1001”. The
 table tells you to pick an id from `worlds/tallgrass_bend/inbox/dev/`, such as `TB-1001`.
