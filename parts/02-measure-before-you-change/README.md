@@ -16,10 +16,8 @@ that notices.
 
 ## Why it matters
 
-One passing run proves very little. An eval is a repeatable test of a model's work. Anthropic's guide to agent evals
-([Anthropic, Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents))
-shows the problem with a sum.
-"If your agent has a 75% per-trial success rate and you run 3 trials, the probability of passing all three is (0.75)³ ≈ 42%."
+One passing run proves very little. An eval is a repeatable test of a model's work. Anthropic's guide to agent evals shows the problem with a sum ([Anthropic, Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents)).
+"If your agent has a 75% per-trial success rate and you run 3 trials, the probability of passing all three is (0.75)³ ≈ 42%".
 
 So you measure a change over many cases and several runs. Only then can anyone call it better.
 

@@ -8,7 +8,7 @@ go on.
 
 A model can read the email in a second. But its first reply is friendly text with the JSON inside a code fence. And when a grower writes "L per acre", the model often reports the number as litres per hectare.
 
-It gives no warning. The application system books whatever it gets. One wrong rate puts too much product on a crop.
+The model gives no warning. The application system books whatever it gets. One wrong rate puts too much product on a crop.
 
 For example, `worlds/tallgrass_bend/inbox/dev/TB-1006.txt` asks for Glyfallow 540 "at 0.97 L per acre". The
 model reads it as `"rate": 0.97` and `"rate_unit": "L/ha"`. The desk's own record books 2.4 L/ha. The model's

@@ -14,8 +14,8 @@ provider's logs. And the co-op's manager asks what the agent costs, for each job
 
 ## Why it matters
 
-You cannot manage what you cannot see. Anthropic tested its research agent. It found that "token usage by
-itself explains 80% of the variance" in how well the agent did. ([Anthropic, How we built our multi-agent research system](https://www.anthropic.com/engineering/multi-agent-research-system)).
+You cannot manage what you cannot see. Anthropic tested its research agent ([Anthropic, How we built our multi-agent research system](https://www.anthropic.com/engineering/multi-agent-research-system)). It found that "token usage by
+itself explains 80% of the variance" in how well the agent did.
 
 Tokens are cost as well as quality. So every run needs a trace that counts them. A trace is a record of each
 step in a run, with its input, output, tokens and cost.
