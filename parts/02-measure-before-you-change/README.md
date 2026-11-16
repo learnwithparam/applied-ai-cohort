@@ -3,21 +3,24 @@
 ## The problem
 
 Someone makes the extract prompt shorter to save tokens. Now a case the desk cares about starts to slip
-through. It might be a rate per acre, or a product name with a spelling mistake. Nobody knows until a grower
-phones about a burnt crop. The "Get records you can trust" part proved the system once. Nothing stops the next change from breaking it.
+through. It might be a rate per acre, or a product name with a spelling mistake. Nobody knows until a grower phones about a burnt crop.
+
+The "Get records you can trust" part proved the system once. Nothing stops the next change from breaking it.
 
 For example, `worlds/tallgrass_bend/inbox/dev/TB-1008.txt` asks for "Stemshure". The real product is called
-Stemsure, and the desk's record books it as `P140`. Today the model copies "Stemshure" as written. The system
-cannot find that product, so it sends the email to a person. That is safe, but no test measures it. A careless
+Stemsure, and the desk's record books it as `P140`. Today the model copies "Stemshure" as written. The system cannot find that product, so it sends the email to a person.
+
+That is safe, but no test measures it. A careless
 prompt change could break this case, or a clean one, and nobody would see it. In this part, you build the test
 that notices.
 
 ## Why it matters
 
-One passing run proves very little. An eval is a repeatable test of a model's work. Anthropic's guide to agent
-evals shows the problem with a sum: "If your agent has a 75% per-trial success rate and you run 3 trials, the
-probability of passing all three is (0.75)³ ≈ 42%"
-([Anthropic, Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents)).
+One passing run proves very little. An eval is a repeatable test of a model's work. Anthropic's guide to agent evals
+([Anthropic, Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents))
+shows the problem with a sum.
+"If your agent has a 75% per-trial success rate and you run 3 trials, the probability of passing all three is (0.75)³ ≈ 42%."
+
 So you measure a change over many cases and several runs. Only then can anyone call it better.
 
 ## What you build

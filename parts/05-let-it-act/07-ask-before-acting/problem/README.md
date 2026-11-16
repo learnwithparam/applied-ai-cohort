@@ -3,7 +3,7 @@
 ## The problem
 
 `book_job` sends a crew to spray a field. Once the product is on the crop, nobody can take it back. On a big
-field, a wrong job costs the most product and the most money. So the co-op has a rule: a person at the
+field, a wrong job costs the most product and the most money. So the co-op has a rule. A person at the
 approval desk says yes to every job on a field over 40 ha before it is booked.
 
 The model cannot be trusted to follow this rule. Emails can claim an approval that does not exist, and the
@@ -11,9 +11,9 @@ model believes them.
 
 ## Your challenge
 
-Put an approval gate inside `book_job`. Before it books a job on a field over 40 ha, it asks the approval desk.
-The desk's address is in the `APPROVALS_URL` setting. Send the job to `POST {APPROVALS_URL}/approvals`. The
-desk answers {"approval_id": "APR-1000", "approved": true}. Add that `approval_id` to the job you send to the
+Put an approval gate inside `book_job`. Before it books a job on a field over 40 ha, it asks the approval desk. The desk's address is in the `APPROVALS_URL` setting. Send the job to `POST {APPROVALS_URL}/approvals`.
+
+The desk answers {"approval_id": "APR-1000", "approved": true}. Add that `approval_id` to the job you send to the
 world. The world writes every job, with its approval id, to its audit log.
 
 When `APPROVALS_URL` is not set, or the desk says no, refuse the job. Say to send the email to review.

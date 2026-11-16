@@ -2,7 +2,9 @@
 
 ## The problem
 
-The end state tells you whether a task went right. It does not tell you how. Two agents can book the same job.
+The end state tells you whether a task went right. It does not tell you how.
+
+Two agents can book the same job.
 One looked up the label first. The other skipped the lookup and was lucky. Next time, the lucky one books off
 label.
 
@@ -11,8 +13,9 @@ the path you expect for each golden task. The eval reports the first step where 
 
 ## Your challenge
 
-Add golden tasks to `evals/paths.jsonl`, one per line. Each has an `email_id` and its `expected_tools`. Then
-write `paths.py`, the `paths` verb. It reads the golden tasks and `runs/trace.jsonl`. For each task, it compares
+Add golden tasks to `evals/paths.jsonl`, one per line. Each has an `email_id` and its `expected_tools`.
+
+Then write `paths.py`, the `paths` verb. It reads the golden tasks and `runs/trace.jsonl`. For each task, it compares
 the tools from the agent's last run on that email with the expected tools. It reports the first step that
 differs, counting from 1.
 

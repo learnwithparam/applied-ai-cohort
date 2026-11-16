@@ -80,4 +80,4 @@ Expect: `Done. All 4 rules pass.`
 
 - **Bearer token:** a secret the client sends in the `Authorization` header to sign in.
 - **401:** the HTTP status for "you are not signed in".
-- **429:** the HTTP status for "too many requests"; here, the spending limit is reached.
+- **429:** the HTTP status for "too many requests", which here means the spending limit is reached.

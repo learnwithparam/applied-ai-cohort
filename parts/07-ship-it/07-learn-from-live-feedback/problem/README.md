@@ -4,7 +4,9 @@
 
 Your golden set was written before launch, so it only holds the mistakes you could imagine. Real growers find
 new ones. In `feedback.jsonl`, three people clicked thumbs down and typed what the answer should have been.
-That is free, real test data, and it is lost if nobody moves it into the golden set. For example, f1 says the label limit is 3 L/ha, not 4. That is a new case.
+That is free, real test data, and it is lost if nobody moves it into the golden set.
+
+For example, f1 says the label limit is 3 L/ha, not 4. That is a new case.
 
 ## Your challenge
 

@@ -2,9 +2,13 @@
 
 ## The problem
 
-The "Get records you can trust" part sends every unsure request to one pile for a person. But the desk makes three kinds of decision, not
+The "Get records you can trust" part sends every unsure request to one pile for a person.
+
+But the desk makes three kinds of decision, not
 two. It books a safe job. It asks the agronomist, the co-op's crop expert, to approve a job near the label
-limit. Or a person at the desk fixes or refuses the request. One pile hides which is which. The agronomist
+limit. Or a person at the desk fixes or refuses the request.
+
+One pile hides which is which. The agronomist
 reads requests the desk could fix. The desk reads ones only the agronomist can approve.
 
 ## Your challenge

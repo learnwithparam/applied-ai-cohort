@@ -43,7 +43,9 @@ Later, you may want a live model. Copy `.env.example` to `.env`. Set `LLM_PROVID
 that provider. Run `uv run models` again to see the provider answer. Every check still uses replay by default.
 
 **2. Meet the world.** You work at the spray desk of Tallgrass Bend Growers Co-op. Growers email the desk to
-ask for a crop spray. Today a person types each request into the co-op's application system. They type four
+ask for a crop spray.
+
+Today a person types each request into the co-op's application system. They type four
 things: the grower, the field, the product and the rate. The rate is how much product goes on each hectare of
 the field. Read [the world's brief](../worlds/tallgrass_bend/brief.md), then open one email:
 

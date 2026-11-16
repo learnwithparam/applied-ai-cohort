@@ -40,7 +40,9 @@ names the real product, such as Stemsure for "Stemshure". For "the north block",
 words.
 
 Use `clean` as the mode for a case with no failure. Put a real person's name in `signed_off_by`. Use your own
-name if you checked the case yourself. The desk's records in `worlds/tallgrass_bend/truth/dev.jsonl` help you
+name if you checked the case yourself.
+
+The desk's records in `worlds/tallgrass_bend/truth/dev.jsonl` help you
 check your work. They use ids, such as `"product_code": "P140"`. Find the names for those ids in
 `worlds/tallgrass_bend/seed.json`. Count your cases:
 

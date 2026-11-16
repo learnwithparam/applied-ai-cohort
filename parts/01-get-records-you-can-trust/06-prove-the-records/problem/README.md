@@ -3,7 +3,9 @@
 ## The problem
 
 So far, everything ran on the 40 dev emails. You read those emails while you wrote your rules. A system built
-from the emails it is tested on can look perfect. Then it can fail on the next email. The proof is a run on emails
+from the emails it is tested on can look perfect. Then it can fail on the next email.
+
+The proof is a run on emails
 you have not seen. It is scored against answers you cannot read.
 
 For example, a rule could say "send TB-1006 to a person". It would pass on dev, because TB-1006 is an acre

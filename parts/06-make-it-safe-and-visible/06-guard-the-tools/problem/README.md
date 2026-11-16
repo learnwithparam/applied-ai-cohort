@@ -15,10 +15,12 @@ Podshield label. The attack is in the email, not in the arguments.
 
 ## Your challenge
 
-Put the guard in front of every write tool. A write tool changes the application system: here `book_job` and
-`send_to_review`. Check the task text with `guard.check()` once, at the start of `act`. If it is blocked, no
-write tool may run with what the model asks. Instead, the agent sends the email to review itself. It gives a
-fixed reason that quotes nothing from the email. For example: "A planted instruction was found in this email, so
+Put the guard in front of every write tool. A write tool changes the application system: here `book_job` and `send_to_review`.
+
+Check the task text with `guard.check()` once, at the start of `act`. If it is blocked, no
+write tool may run with what the model asks. Instead, the agent sends the email to review itself.
+
+It gives a fixed reason that quotes nothing from the email. For example: "A planted instruction was found in this email, so
 a person must read it".
 
 For example, with the sample solution, the task above ends with `"stop_reason": "guarded"`. The review queue

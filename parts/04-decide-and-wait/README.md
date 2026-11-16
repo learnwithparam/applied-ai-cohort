@@ -2,9 +2,11 @@
 
 ## The problem
 
-The "Get records you can trust" part sends unsure requests to a review queue and forgets them. Real requests need a decision. The desk can
-book the job, send it to the agronomist, or refuse it. An agronomist is the co-op's crop expert. A job near
+The "Get records you can trust" part sends unsure requests to a review queue and forgets them. Real requests need a decision. The desk can book the job, send it to the agronomist, or refuse it.
+
+An agronomist is the co-op's crop expert. A job near
 the label limit needs the agronomist's approval, and the agronomist answers from the field, not at a computer.
+
 The process might crash while it waits. Then the job must not be booked twice, and it must not be lost.
 
 For example, `worlds/tallgrass_bend/inbox/dev/TB-1001.txt` asks for Podshield at 0.38 L/ha. The label limit
@@ -14,8 +16,8 @@ the agronomist to say yes. If the process crashes during the wait, the job is st
 ## Why it matters
 
 Sorting documents fast is now normal. DXC is a company that runs core insurance systems. Anthropic's case
-study on DXC says its claims documents are now "classified in under a second". This is a vendor's claim about
-its own customer ([Anthropic, DXC case study](https://claude.com/customers/dxc)).
+study on DXC says its claims documents are now "classified in under a second". This is a vendor's claim about its own customer ([Anthropic, DXC case study](https://claude.com/customers/dxc)).
+
 When sorting is that fast, the hard part is the wait for a person. Fast sorting that is wrong costs more than
 the old pile of work. So does an approval that is lost in a crash.
 

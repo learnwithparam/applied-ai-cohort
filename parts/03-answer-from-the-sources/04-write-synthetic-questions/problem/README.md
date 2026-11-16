@@ -2,9 +2,9 @@
 
 ## The problem
 
-You have four passages and one real question. Too few to tell if a change to search helps or hurts. You can
-ask a model to write practice questions for each passage. But a model drafts junk too: questions that copy the
-passage word for word (too easy to find), repeats, and lines that are not questions. Keep the good ones, and
+You have four passages and one real question. Too few to tell if a change to search helps or hurts. You can ask a model to write practice questions for each passage. But a model drafts junk too: questions that copy the passage word for word (too easy to find), repeats, and lines that are not questions.
+
+Keep the good ones, and
 label them synthetic, so nobody mixes them up with your real golden set. For example, the draft "Cropguard is sold in 20 litre drums?" only adds a question mark. So you drop it.
 
 ## Your challenge

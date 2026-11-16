@@ -27,7 +27,9 @@ flowchart LR
 ```
 
 For example, a learner keeps the teammate's short prompt in `extract.py`. Then they save the baseline again,
-so `clean` is `0.0` in `evals/baseline.json`. Now the eval passes, and the gate is open. The check catches this
+so `clean` is `0.0` in `evals/baseline.json`. Now the eval passes, and the gate is open.
+
+The check catches this
 in two ways. The planted change no longer makes any mode worse, so the eval does not block it. And the short
 prompt fails the "Get records you can trust" part's rules on the test inbox.
 

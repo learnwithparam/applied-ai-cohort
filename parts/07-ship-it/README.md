@@ -17,6 +17,7 @@ Anthropic's guide to evals names two kinds. Capability evals test new skills, an
 score. Regression evals check that old work still passes. The guide says they "should have a nearly 100% pass
 rate". Each one asks: "Does the agent still handle all the tasks it used to?"
 ([Anthropic, Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents)).
+
 A release gate is a regression eval that runs on every pull request.
 
 ## What you build

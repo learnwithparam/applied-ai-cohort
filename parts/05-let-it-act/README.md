@@ -20,6 +20,7 @@ The way you write a tool decides how well an agent uses it. Anthropic rewrote th
 its research agent uses. They report that this "resulted in a 40% decrease in task completion time for future
 agents"
 ([Anthropic, How we built our multi-agent research system](https://www.anthropic.com/engineering/multi-agent-research-system)).
+
 The same page says: "evaluate whether it achieved the correct final state." This part does both. You write
 tools with clear descriptions and errors. Then you grade the agent by the state of the system.
 
@@ -70,9 +71,9 @@ stops.
 The steps fit in an evening or two. Calder Fen Electric Co-op (`worlds/README.md`) is the project brief that
 matches this part. The live-labs lab `labs/11-agent-loop` needs to be rebuilt. It is not a lesson until then.
 
-You work in each step's `problem/` folder. That folder starts from the answer to the step before it. So you
-can start any step fresh. Each folder has a `model.py` that plays the model. With replay, it makes the
-mistakes a real model makes: it copies a misspelled name, it repeats a failing call, and it obeys lines it finds
+You work in each step's `problem/` folder. That folder starts from the answer to the step before it. So you can start any step fresh.
+
+Each folder has a `model.py` that plays the model. With replay, it makes the mistakes a real model makes. It copies a misspelled name, it repeats a failing call, and it obeys lines it finds
 inside an email. You never need to change it.
 
 ## Walkthrough

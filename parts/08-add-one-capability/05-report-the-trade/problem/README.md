@@ -3,7 +3,9 @@
 ## The problem
 
 The co-op's manager will not read your code. They ask three questions. Is it still right as often? What does
-each good booking cost now? And what did we give up? A report that says "much cheaper" without numbers cannot
+each good booking cost now? And what did we give up?
+
+A report that says "much cheaper" without numbers cannot
 answer them. A report that copies the target instead of the run is worse: it states a result nobody measured.
 
 ## Your challenge

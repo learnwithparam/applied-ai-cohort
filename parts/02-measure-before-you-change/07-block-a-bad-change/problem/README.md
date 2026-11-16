@@ -3,8 +3,9 @@
 ## The problem
 
 A teammate makes the extract prompt shorter to save tokens. They also drop the schema, because "the model returns
-JSON anyway". It does not. Every reply comes back as friendly prose, and no record can be read. Your eval
-prints lower numbers, but it still exits 0. So nothing stops the change.
+JSON anyway". It does not. Every reply comes back as friendly prose, and no record can be read.
+
+Your eval prints lower numbers, but it still exits 0. So nothing stops the change.
 
 ## Your challenge
 

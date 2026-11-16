@@ -65,7 +65,7 @@ flowchart LR
 - The After number is your metric from `elective` on the dev inbox.
 - The metric moved the better way and meets your Target.
 - The share booked correctly did not drop.
-- On the hidden test inbox, the elective keeps line 1 of the scorecard: zero jobs wrong or off label, every
+- On the hidden test inbox, the elective keeps line 1 of the scorecard. That means zero jobs wrong or off label, every
   email handled once, at least 60% booked right, and under $0.01 in model calls.
 
 ```bash

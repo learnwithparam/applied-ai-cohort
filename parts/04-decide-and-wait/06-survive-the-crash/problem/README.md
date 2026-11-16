@@ -9,8 +9,9 @@ a second time. It asks the agronomist again, with new ids, and ignores the yes t
 ## Your challenge
 
 Make the wait durable. Save the chain's progress to a file as it goes: which emails are done, and which approval
-each waiting email has. When the chain starts, read that file. Skip the emails that are done. For a waiting
-email, wait again for the same approval id. Never ask twice.
+each waiting email has. When the chain starts, read that file. Skip the emails that are done.
+
+For a waiting email, wait again for the same approval id. Never ask twice.
 
 ```mermaid
 flowchart LR
@@ -23,7 +24,9 @@ flowchart LR
 
 For example, the check kills your chain with SIGKILL while it waits for 11 approvals. Then it approves 10 and
 refuses 1, and starts your chain again. A durable chain finds its 11 saved approval ids and their answers. It
-books 10 jobs, each once. A chain that kept its state in memory books the first 15 jobs again. It also asks 11
+books 10 jobs, each once.
+
+A chain that kept its state in memory books the first 15 jobs again. It also asks 11
 new questions that nobody answers.
 
 Try it yourself. Reset the system and delete the old `runs/` folder. Then start the chain, and stop it hard

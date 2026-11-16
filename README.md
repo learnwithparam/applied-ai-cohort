@@ -1,11 +1,13 @@
 # Build One AI System You Can Prove
 
 This course is about one real business job. You build an AI system for it. You start with one model call. You end
-with a system you can ship. A script checks the system's work. It uses a record the model never saw. You also count
+with a system you can ship.
+
+A script checks the system's work. It uses a record the model never saw. You also count
 what each right answer costs. Last, you build a release gate. The gate stops a worse version from shipping.
 
-**Who it is for:** software engineers who code well and are new to building with models. You know HTTP, SQL,
-tests and git. You also know Python or TypeScript. Maybe you called a model API once, or built a small demo.
+**Who it is for:** software engineers who code well and are new to building with models. You know HTTP, SQL, tests and git. You also know Python or TypeScript. Maybe you called a model API once, or built a small demo.
+
 By the end, you can say three things. You know how often your system is wrong. You know what each right answer
 costs. You know what stops a worse version from shipping.
 
@@ -127,8 +129,9 @@ After your result, the command counts your progress on every step and prints a l
 press Ctrl+C to skip it.
 
 The check never reads the model's reply. It runs the commands that your `contract.toml` names. Then it reads
-the state of the application system and the call log. So you can pass with any language or framework. To check
-a whole part, run `bun run verify part <part-name>`. Each step also has a sample answer in `solution/`, and
+the state of the application system and the call log. So you can pass with any language or framework.
+
+To check a whole part, run `bun run verify part <part-name>`. Each step also has a sample answer in `solution/`, and
 common wrong answers in `wrong/`.
 
 ## The project
@@ -149,8 +152,9 @@ up three numbers: accuracy against truth, cost per correct outcome, and how ofte
 
 ## Models
 
-Only one file names a model: `config/models.py`. Your code asks for a role instead: `fast`, `smart` or
-`judge`. `LLM_PROVIDER` picks who serves the model. It can be `replay` (the default), `anthropic`,
+Only one file names a model: `config/models.py`. Your code asks for a role instead: `fast`, `smart` or `judge`.
+
+`LLM_PROVIDER` picks who serves the model. It can be `replay` (the default), `anthropic`,
 `openrouter`, `openai` or `ollama`. Put the one key for that provider in a `.env` file, which git ignores. See
 `.env.example`. All calls go through [LiteLLM](https://github.com/BerriAI/litellm).
 

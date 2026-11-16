@@ -9,8 +9,9 @@ have not tuned on.
 ## Your challenge
 
 Run every guard on the grader's sets, and run the agent on the hidden test inbox. The grader's sets are in
-`grader-sets.json` in this part's folder. Try not to read them. Treat them as the hidden test split, as the
-test inbox is. The check also reruns line 1 and line 5. So this folder holds your work from the "Get records you can trust" part, and the
+`grader-sets.json` in this part's folder. Try not to read them. Treat them as the hidden test split, as the test inbox is.
+
+The check also reruns line 1 and line 5. So this folder holds your work from the "Get records you can trust" part, and the
 agent from the "Let it act" part.
 
 Then answer one more question in `NOTES.md`: what your guards missed first.

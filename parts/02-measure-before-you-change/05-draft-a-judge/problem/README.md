@@ -3,8 +3,9 @@
 ## The problem
 
 One failure mode is hard for code. Did the grower name the field, or did the reader guess? "Schoolhouse Qtr" is
-a clear name. "The north block" fits two of Hollis's fields. A word match gets both wrong. So you ask a model to
-judge. A judge is a model that grades another model's work.
+a clear name. "The north block" fits two of Hollis's fields. A word match gets both wrong.
+
+So you ask a model to judge. A judge is a model that grades another model's work.
 
 Many teams ask a judge for a score from 1 to 5. The judge gives almost everything a 4. A score of 4 cannot tell
 your code to stop a bad record.

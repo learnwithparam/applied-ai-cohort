@@ -13,7 +13,9 @@ these:
 Pick the one your project needs. Then prove that it moved a number, without breaking the scorecard.
 
 For example, you could try a cheaper path for easy requests. Today `uv run finished` reports
-`Model calls: 40, cost $0.000616` on the dev inbox. Four of those calls read emails that give the rate per
+`Model calls: 40, cost $0.000616` on the dev inbox.
+
+Four of those calls read emails that give the rate per
 acre. Those emails always go to a person, whatever the model says. A router can send them to a person with no
 model call. The cost goes down, and the scorecard still shows “Booked wrong: 0”.
 

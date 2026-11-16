@@ -21,7 +21,9 @@ An email is matched in two cases:
 
 For example, the trace for `worlds/tallgrass_bend/inbox/dev/TB-1029.txt` shows `book_job` with field `F05`,
 Brasslock and 0.75. Those are the desk's own values. But `book_job` refused the call, because the email says
-"north block", not "North Forty". So no job exists. A grader that reads the trace counts TB-1029 as matched. A
+"north block", not "North Forty". So no job exists.
+
+A grader that reads the trace counts TB-1029 as matched. A
 grader that reads the system does not.
 
 To run the agent on all 40 dev emails, start from an empty system. Run these in the `problem/` folder:

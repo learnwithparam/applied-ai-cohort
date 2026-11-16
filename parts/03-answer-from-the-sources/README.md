@@ -3,8 +3,9 @@
 ## The problem
 
 Growers ask the desk the same questions every season. Can I mix these two products in one tank? What is the
-highest rate on lentils? How long must it stay dry before rain? A wrong answer harms a crop and breaks the
-label. The model does not know the co-op's farming guides or the current labels. So it guesses, and it sounds
+highest rate on lentils? How long must it stay dry before rain? A wrong answer harms a crop and breaks the label.
+
+The model does not know the co-op's farming guides or the current labels. So it guesses, and it sounds
 sure when it does.
 
 For example, a grower asks: "What is the highest rate of Pulsepath on lentils?" The label in
@@ -15,7 +16,9 @@ that the sources do not say.
 ## Why it matters
 
 Retrieval means finding the right passages in your documents before the model answers. You can measure and
-improve retrieval like any other system. Anthropic tried two methods together, called contextual embeddings
+improve retrieval like any other system.
+
+Anthropic tried two methods together, called contextual embeddings
 and contextual BM25. They report that this "reduced the top-20-chunk retrieval failure rate by 49% (5.7% →
 2.9%)". With reranking, the drop was 67%
 ([Anthropic, Introducing Contextual Retrieval](https://www.anthropic.com/engineering/contextual-retrieval)).
@@ -128,7 +131,9 @@ Expect: one line per step, then `Part answer-from-the-sources is done: 7/7 steps
 ## Finished
 
 You now have answers you can check. Each one points to the chunk it came from. The citation is checked against
-the answer. The system says "Not in the sources." when it does not know. You measured search with
+the answer. The system says "Not in the sources." when it does not know.
+
+You measured search with
 recall@5, and beat a plain BM25 baseline with one cheap change. Line 3 of the scorecard is yours.
 
 The next part, [Decide and wait for a person](../04-decide-and-wait/README.md), stops sending unsure requests

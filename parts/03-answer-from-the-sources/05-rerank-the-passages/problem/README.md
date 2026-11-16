@@ -3,9 +3,13 @@
 ## The problem
 
 Search is fast but rough. It looks at each passage on its own, so the right one often lands third or fourth.
-In `first_pass.json` the right passage is in the top two for only one question of six. A reranker is slower and
+In `first_pass.json` the right passage is in the top two for only one question of six.
+
+A reranker is slower and
 sharper. It reads the question and a passage together. You run it on the few candidates the search found, not
-on the whole library, and the right passage moves up. For example, the question "Who must sign off a rate above the label limit?" moves its right passage up. It goes from third to first.
+on the whole library, and the right passage moves up.
+
+For example, the question "Who must sign off a rate above the label limit?" moves its right passage up. It goes from third to first.
 
 ## Your challenge
 

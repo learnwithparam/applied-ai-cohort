@@ -8,7 +8,9 @@ spent, divided by the emails that ended as the desk's records say.
 
 ## Your challenge
 
-Write `price.py`, the `price` verb. Run it after the agent has worked on every dev email. It reads every span
+Write `price.py`, the `price` verb. Run it after the agent has worked on every dev email.
+
+It reads every span
 from the trace store with `tracing.stored_spans()`. It adds up `gen_ai.usage.cost` on the chat spans. It
 counts the successful outcomes with `grade.grade()`. Then it writes `runs/cost-per-outcome.md` and prints
 {"runs", "total_usd", "successes", "per_success_usd"}.

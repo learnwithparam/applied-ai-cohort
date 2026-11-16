@@ -4,6 +4,7 @@
 
 Every step so far ran on the spray desk. A course is only worth something if it works on your own job. This step
 is the proof. You bring your own questions, run your own system, fix one failure and show the number moved.
+
 The check does not look at the spray desk at all. It reads your files, and it asks for evidence. For example, a library desk shows 7 of 12 cases passing before its fix and 10 of 12 after.
 
 ## Your challenge

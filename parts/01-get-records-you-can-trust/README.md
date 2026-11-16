@@ -6,9 +6,9 @@ At Tallgrass Bend, a person types in every spray request by hand. The desk check
 product label from memory. The label is the legal limit for a product: the highest rate, and the crops it may
 go on.
 
-A model can read the email in a second. But its first reply is friendly text with the JSON inside a code
-fence. And when a grower writes "L per acre", the model often reports the number as litres per hectare. It gives no
-warning. The application system books whatever it gets. One wrong rate puts too much product on a crop.
+A model can read the email in a second. But its first reply is friendly text with the JSON inside a code fence. And when a grower writes "L per acre", the model often reports the number as litres per hectare.
+
+It gives no warning. The application system books whatever it gets. One wrong rate puts too much product on a crop.
 
 For example, `worlds/tallgrass_bend/inbox/dev/TB-1006.txt` asks for Glyfallow 540 "at 0.97 L per acre". The
 model reads it as `"rate": 0.97` and `"rate_unit": "L/ha"`. The desk's own record books 2.4 L/ha. The model's
@@ -17,10 +17,14 @@ number is less than half the right amount, and nothing in its reply shows it.
 ## Why it matters
 
 Turning documents into records is where most teams start with models. The result is only worth what you can
-check. EvenUp is a company that drafts legal demands from medical records. Anthropic's case study on EvenUp
+check. EvenUp is a company that drafts legal demands from medical records.
+
+Anthropic's case study on EvenUp
 says its system "Increased accuracy on past medical expense totals by 14% on smaller cases". This is a
 vendor's claim about its own customer
-([Anthropic, EvenUp case study](https://www.anthropic.com/customers/evenup)). A number like that exists only
+([Anthropic, EvenUp case study](https://www.anthropic.com/customers/evenup)).
+
+A number like that exists only
 because someone compared the totals with a record of the right answer. In this part, you build that
 comparison.
 
@@ -48,8 +52,12 @@ rules have never seen:
 
 [Extract Structured Data with LLMs](https://github.com/learnwithparam/live-labs/tree/main/labs/01-structured-output)
 (live-labs `labs/01-structured-output`). The lab uses a different world: it matches
-receipts to card charges. But the pattern is the same. You use typed fields. You check them against a record
-the model did not write. And you send unsure cases to a queue for a person. Optional:
+receipts to card charges.
+
+But the pattern is the same. You use typed fields. You check them against a record
+the model did not write. And you send unsure cases to a queue for a person.
+
+Optional:
 [Process a Million Prompts with Batch APIs](https://github.com/learnwithparam/live-labs/tree/main/labs/03-batch-prompts).
 
 ## Steps

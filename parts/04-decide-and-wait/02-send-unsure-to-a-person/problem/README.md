@@ -4,6 +4,7 @@
 
 Your router picks the right queue for 38 of 40 dev emails. The two it gets wrong are the worst kind. "Stemshure"
 and "Pulse Path" are misspelled, so the names only nearly match. The router books them anyway, with no person.
+
 A wrong queue that a person sees costs a minute. A wrong booking that nobody sees can cost a crop.
 
 ## Your challenge
@@ -21,7 +22,9 @@ Expect: one row per threshold, with the wrong auto-routes and the share sent to 
 ![Wrong auto-routes and the share sent to a person, at each threshold](../images/expected.png)
 
 For example, at 0.9 the two misspelled emails still go through. Their matches are 0.94 and 0.95. At 0.95 one
-still goes through, because 0.95 is not below 0.95. At 0.98 there are 0 wrong auto-routes, and 35% of emails go to a person. Above 1 every email goes to a person. That is safe, but
+still goes through, because 0.95 is not below 0.95. At 0.98 there are 0 wrong auto-routes, and 35% of emails go to a person.
+
+Above 1 every email goes to a person. That is safe, but
 nobody is helped.
 
 ```mermaid

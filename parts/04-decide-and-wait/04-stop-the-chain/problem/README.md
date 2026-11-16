@@ -9,8 +9,9 @@ system: no job is booked, and no request reaches the review queue.
 ## Your challenge
 
 Make the chain act on the check. When the queue is `book`, book the job and draft the message. For any other
-queue, send the email to the review queue with the check's reasons, and stop. Nothing is drafted for it. For
-now the agronomist's requests go to review too. The next step makes them wait.
+queue, send the email to the review queue with the check's reasons, and stop. Nothing is drafted for it.
+
+For now the agronomist's requests go to review too. The next step makes them wait.
 
 ```mermaid
 flowchart LR

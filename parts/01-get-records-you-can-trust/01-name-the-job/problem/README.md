@@ -3,8 +3,9 @@
 ## The problem
 
 "Can AI read these spray emails?" is not a question anyone can answer. A job needs two things first. It
-needs a truth outside the model: a record of the right answers. And it needs a metric: a number with a
-direction, such as "at least 60%". Without them, every demo looks fine. Nobody can say if the system is wrong
+needs a truth outside the model: a record of the right answers. And it needs a metric: a number with a direction, such as "at least 60%".
+
+Without them, every demo looks fine. Nobody can say if the system is wrong
 one time in ten or one time in a thousand.
 
 The desk also has one rule it will never bend. Nothing goes on a crop above the label rate.

@@ -2,7 +2,9 @@
 
 ## The problem
 
-Growers ask things the documents do not cover. What does Brasslock cost? Will it rain tomorrow? A model with
+Growers ask things the documents do not cover. What does Brasslock cost? Will it rain tomorrow?
+
+A model with
 five passages about spray rates still answers, because it is built to answer. It cites passage 1 and says
 something that sounds helpful. On these questions the only right answer is "the sources do not say".
 

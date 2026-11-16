@@ -2,8 +2,9 @@
 
 ## The problem
 
-The co-op's manager asks two questions. What did the agent do on TB-1008? And what did that cost? Right now,
-nobody can answer. `runs/calls.jsonl` holds every model call, but no call says which run it belonged to.
+The co-op's manager asks two questions. What did the agent do on TB-1008? And what did that cost?
+
+Right now, nobody can answer. `runs/calls.jsonl` holds every model call, but no call says which run it belonged to.
 `runs/trace.jsonl` holds the tool calls, but no cost.
 
 A trace answers both. A trace is a record of one run. It is made of spans. A span is one timed piece of work,
