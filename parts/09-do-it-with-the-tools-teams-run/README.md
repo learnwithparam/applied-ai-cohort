@@ -75,7 +75,7 @@ uv run --group assignment --env-file assignment/.env python parts/09-do-it-with-
 
 Expect: `Sent trace` with a 32-character id and `40 model calls.`
 
-Open `http://localhost:3000` and look at the trace. The email is `learner@example.com`. The password is the value
+Open `http://localhost:13000` and look at the trace. The email is `learner@example.com`. The password is the value
 of `LANGFUSE_UI_PASSWORD` in `assignment/.env`.
 
 Expect: one trace named “spray desk, dev inbox”, 40 generations with a model name and token counts, and a

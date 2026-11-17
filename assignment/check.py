@@ -39,7 +39,7 @@ SCORE_LINE = "The trace has a score named for a number the scorer reports"
 
 
 def get_json(path: str) -> tuple[int, dict]:
-    host = os.environ.get("LANGFUSE_HOST", "http://localhost:3000").rstrip("/")
+    host = os.environ.get("LANGFUSE_HOST", "http://localhost:13000").rstrip("/")
     request = urllib.request.Request(host + path)
     public_key = os.environ.get("LANGFUSE_PUBLIC_KEY", "")
     login = f"{public_key}:{os.environ.get('LANGFUSE_SECRET_KEY', '')}"

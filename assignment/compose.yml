@@ -2,7 +2,7 @@
 # It keeps only what tracing needs: the web app, the worker and their four stores.
 # Every secret comes from assignment/.env, which `uv run python assignment/keys.py` writes.
 x-langfuse-env: &langfuse-env
-  NEXTAUTH_URL: http://localhost:3000
+  NEXTAUTH_URL: http://localhost:13000
   DATABASE_URL: postgresql://postgres:${POSTGRES_PASSWORD}@postgres:5432/postgres
   SALT: ${SALT}
   ENCRYPTION_KEY: ${ENCRYPTION_KEY}
@@ -39,7 +39,7 @@ services:
     image: docker.io/langfuse/langfuse:4.80.0
     depends_on: *langfuse-needs
     ports:
-      - 127.0.0.1:3000:3000
+      - 127.0.0.1:13000:3000
     environment:
       <<: *langfuse-env
       NEXTAUTH_SECRET: ${NEXTAUTH_SECRET}

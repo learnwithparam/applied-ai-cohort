@@ -7,7 +7,8 @@
       "!**/.venv",
       "!**/world/recordings",
       "!**/worlds/*/replay",
-      "!**/worlds/*/seed.json"
+      "!**/worlds/*/seed.json",
+      "!**/test-results"
     ]
   },
   "formatter": { "indentStyle": "space", "indentWidth": 2, "lineWidth": 100 },

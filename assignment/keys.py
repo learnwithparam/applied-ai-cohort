@@ -14,7 +14,7 @@ HERE = Path(__file__).parent
 
 def make_values() -> dict[str, str]:
     return {
-        "LANGFUSE_HOST": "http://localhost:3000",
+        "LANGFUSE_HOST": "http://localhost:13000",
         "LANGFUSE_PUBLIC_KEY": "pk-lf-" + secrets.token_hex(16),
         "LANGFUSE_SECRET_KEY": "sk-lf-" + secrets.token_hex(16),
         "LANGFUSE_UI_PASSWORD": secrets.token_urlsafe(16),
