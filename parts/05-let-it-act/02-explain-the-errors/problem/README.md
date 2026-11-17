@@ -34,8 +34,8 @@ has the same job, so a good error turns a lost request into a right booking.
 
 `book_job` must refuse three kinds of job, as your rules in the "Get records you can trust" part did:
 
-- a rate above the label, or a crop the label does not cover;
-- an email that gives the rate per acre;
+- a rate above the label, or a crop the label does not cover.
+- an email that gives the rate per acre.
 - a field the email does not name.
 
 `book_job` gets the `email_id`, so it can read the email from the application system and check it.

@@ -83,7 +83,7 @@ http://localhost:8100. It prints `The spray desk is open at http://localhost:810
 
 **4. See the goal.** Line 1 of the scorecard is the "Get records you can trust" part of this course. You build that system again
 yourself, one step at a time. Each later part turns one more line green. Now copy three numbers from the run
-into the step below.
+into the next step.
 
 ## The step
 

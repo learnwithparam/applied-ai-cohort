@@ -34,7 +34,7 @@ flowchart LR
   D --> E["index/chunks.jsonl"]
 ```
 
-For example, the rain paragraph above becomes this chunk:
+For example, the rain paragraph shown earlier becomes this chunk:
 
 ```json
 {

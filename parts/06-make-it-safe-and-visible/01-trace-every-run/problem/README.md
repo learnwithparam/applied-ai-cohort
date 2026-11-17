@@ -15,8 +15,8 @@ such as one model call or one tool call, with attributes such as tokens and cost
 Give every run of the agent a trace, and send it to the trace store. `tracing.py` already builds spans and sends
 them in OpenTelemetry's JSON format. You do not need to change it. Use it in `agent.py`:
 
-- one `act` span for the whole run, with the run id;
-- one `chat` span for each model call, with the role, the tokens and the cost;
+- one `act` span for the whole run, with the run id.
+- one `chat` span for each model call, with the role, the tokens and the cost.
 - one `execute_tool` span for each tool call, with the tool's name.
 
 Use the run id as the trace id, so a run id finds its trace. Three attribute names come from OpenTelemetry's
