@@ -1,0 +1,1100 @@
+{
+  "modules": [
+    {
+      "key": "orientation",
+      "title": "Start here",
+      "units": [
+        {
+          "key": "orientation.run-the-finished-system",
+          "title": "Run the finished system",
+          "items": [
+            {
+              "key": "orientation.run-the-finished-system.lab",
+              "kind": "lab",
+              "title": "Run the finished system",
+              "minutes": 15,
+              "lab": {
+                "slug": "run-the-finished-system",
+                "repo_path": "00-orientation/01-run-the-finished-system"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "get-records-you-can-trust",
+      "title": "Get records you can trust",
+      "units": [
+        {
+          "key": "get-records-you-can-trust.name-the-job",
+          "title": "Name the job",
+          "items": [
+            {
+              "key": "get-records-you-can-trust.name-the-job.lab",
+              "kind": "lab",
+              "title": "Name the job",
+              "minutes": 15,
+              "lab": {
+                "slug": "name-the-job",
+                "repo_path": "parts/01-get-records-you-can-trust/01-name-the-job"
+              }
+            }
+          ]
+        },
+        {
+          "key": "get-records-you-can-trust.call-the-model",
+          "title": "Call the model",
+          "items": [
+            {
+              "key": "get-records-you-can-trust.call-the-model.lab",
+              "kind": "lab",
+              "title": "Call the model",
+              "minutes": 20,
+              "lab": {
+                "slug": "call-the-model",
+                "repo_path": "parts/01-get-records-you-can-trust/02-call-the-model"
+              }
+            }
+          ]
+        },
+        {
+          "key": "get-records-you-can-trust.fix-the-shape",
+          "title": "Fix the shape",
+          "items": [
+            {
+              "key": "get-records-you-can-trust.fix-the-shape.lab",
+              "kind": "lab",
+              "title": "Fix the shape",
+              "minutes": 30,
+              "lab": {
+                "slug": "fix-the-shape",
+                "repo_path": "parts/01-get-records-you-can-trust/03-fix-the-shape"
+              }
+            }
+          ]
+        },
+        {
+          "key": "get-records-you-can-trust.check-against-truth",
+          "title": "Check against truth",
+          "items": [
+            {
+              "key": "get-records-you-can-trust.check-against-truth.lab",
+              "kind": "lab",
+              "title": "Check against truth",
+              "minutes": 30,
+              "lab": {
+                "slug": "check-against-truth",
+                "repo_path": "parts/01-get-records-you-can-trust/04-check-against-truth"
+              }
+            }
+          ]
+        },
+        {
+          "key": "get-records-you-can-trust.count-the-cost",
+          "title": "Count the cost",
+          "items": [
+            {
+              "key": "get-records-you-can-trust.count-the-cost.lab",
+              "kind": "lab",
+              "title": "Count the cost",
+              "minutes": 15,
+              "lab": {
+                "slug": "count-the-cost",
+                "repo_path": "parts/01-get-records-you-can-trust/05-count-the-cost"
+              }
+            }
+          ]
+        },
+        {
+          "key": "get-records-you-can-trust.prove-the-records",
+          "title": "Prove the records",
+          "items": [
+            {
+              "key": "get-records-you-can-trust.prove-the-records.lab",
+              "kind": "lab",
+              "title": "Prove the records",
+              "minutes": 20,
+              "lab": {
+                "slug": "prove-the-records",
+                "repo_path": "parts/01-get-records-you-can-trust/06-prove-the-records"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "measure-before-you-change",
+      "title": "Measure before you change",
+      "units": [
+        {
+          "key": "measure-before-you-change.read-the-traces",
+          "title": "Read the traces",
+          "items": [
+            {
+              "key": "measure-before-you-change.read-the-traces.lab",
+              "kind": "lab",
+              "title": "Read the traces",
+              "minutes": 30,
+              "lab": {
+                "slug": "read-the-traces",
+                "repo_path": "parts/02-measure-before-you-change/01-read-the-traces"
+              }
+            }
+          ]
+        },
+        {
+          "key": "measure-before-you-change.name-the-failures",
+          "title": "Name the failures",
+          "items": [
+            {
+              "key": "measure-before-you-change.name-the-failures.lab",
+              "kind": "lab",
+              "title": "Name the failures",
+              "minutes": 20,
+              "lab": {
+                "slug": "name-the-failures",
+                "repo_path": "parts/02-measure-before-you-change/02-name-the-failures"
+              }
+            }
+          ]
+        },
+        {
+          "key": "measure-before-you-change.build-the-golden-set",
+          "title": "Build the golden set",
+          "items": [
+            {
+              "key": "measure-before-you-change.build-the-golden-set.lab",
+              "kind": "lab",
+              "title": "Build the golden set",
+              "minutes": 30,
+              "lab": {
+                "slug": "build-the-golden-set",
+                "repo_path": "parts/02-measure-before-you-change/03-build-the-golden-set"
+              }
+            }
+          ]
+        },
+        {
+          "key": "measure-before-you-change.write-a-code-check",
+          "title": "Write a code check",
+          "items": [
+            {
+              "key": "measure-before-you-change.write-a-code-check.lab",
+              "kind": "lab",
+              "title": "Write a code check",
+              "minutes": 20,
+              "lab": {
+                "slug": "write-a-code-check",
+                "repo_path": "parts/02-measure-before-you-change/04-write-a-code-check"
+              }
+            }
+          ]
+        },
+        {
+          "key": "measure-before-you-change.draft-a-judge",
+          "title": "Draft a judge",
+          "items": [
+            {
+              "key": "measure-before-you-change.draft-a-judge.lab",
+              "kind": "lab",
+              "title": "Draft a judge",
+              "minutes": 20,
+              "lab": {
+                "slug": "draft-a-judge",
+                "repo_path": "parts/02-measure-before-you-change/05-draft-a-judge"
+              }
+            }
+          ]
+        },
+        {
+          "key": "measure-before-you-change.align-the-judge",
+          "title": "Align the judge",
+          "items": [
+            {
+              "key": "measure-before-you-change.align-the-judge.lab",
+              "kind": "lab",
+              "title": "Align the judge",
+              "minutes": 20,
+              "lab": {
+                "slug": "align-the-judge",
+                "repo_path": "parts/02-measure-before-you-change/06-align-the-judge"
+              }
+            }
+          ]
+        },
+        {
+          "key": "measure-before-you-change.block-a-bad-change",
+          "title": "Block a bad change",
+          "items": [
+            {
+              "key": "measure-before-you-change.block-a-bad-change.lab",
+              "kind": "lab",
+              "title": "Block a bad change",
+              "minutes": 20,
+              "lab": {
+                "slug": "block-a-bad-change",
+                "repo_path": "parts/02-measure-before-you-change/07-block-a-bad-change"
+              }
+            }
+          ]
+        },
+        {
+          "key": "measure-before-you-change.prove-the-measurements",
+          "title": "Prove the measurements",
+          "items": [
+            {
+              "key": "measure-before-you-change.prove-the-measurements.lab",
+              "kind": "lab",
+              "title": "Prove the measurements",
+              "minutes": 20,
+              "lab": {
+                "slug": "prove-the-measurements",
+                "repo_path": "parts/02-measure-before-you-change/08-prove-the-measurements"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "answer-from-the-sources",
+      "title": "Answer from the sources",
+      "units": [
+        {
+          "key": "answer-from-the-sources.load-the-documents",
+          "title": "Load the documents",
+          "items": [
+            {
+              "key": "answer-from-the-sources.load-the-documents.lab",
+              "kind": "lab",
+              "title": "Load the documents",
+              "minutes": 30,
+              "lab": {
+                "slug": "load-the-documents",
+                "repo_path": "parts/03-answer-from-the-sources/01-load-the-documents"
+              }
+            }
+          ]
+        },
+        {
+          "key": "answer-from-the-sources.search-the-passages",
+          "title": "Search the passages",
+          "items": [
+            {
+              "key": "answer-from-the-sources.search-the-passages.lab",
+              "kind": "lab",
+              "title": "Search the passages",
+              "minutes": 20,
+              "lab": {
+                "slug": "search-the-passages",
+                "repo_path": "parts/03-answer-from-the-sources/02-search-the-passages"
+              }
+            }
+          ]
+        },
+        {
+          "key": "answer-from-the-sources.beat-the-baseline",
+          "title": "Beat the baseline",
+          "items": [
+            {
+              "key": "answer-from-the-sources.beat-the-baseline.lab",
+              "kind": "lab",
+              "title": "Beat the baseline",
+              "minutes": 20,
+              "lab": {
+                "slug": "beat-the-baseline",
+                "repo_path": "parts/03-answer-from-the-sources/03-beat-the-baseline"
+              }
+            }
+          ]
+        },
+        {
+          "key": "answer-from-the-sources.write-synthetic-questions",
+          "title": "Write synthetic questions",
+          "items": [
+            {
+              "key": "answer-from-the-sources.write-synthetic-questions.lab",
+              "kind": "lab",
+              "title": "Write synthetic questions",
+              "minutes": 20,
+              "lab": {
+                "slug": "write-synthetic-questions",
+                "repo_path": "parts/03-answer-from-the-sources/04-write-synthetic-questions"
+              }
+            }
+          ]
+        },
+        {
+          "key": "answer-from-the-sources.rerank-the-passages",
+          "title": "Rerank the passages",
+          "items": [
+            {
+              "key": "answer-from-the-sources.rerank-the-passages.lab",
+              "kind": "lab",
+              "title": "Rerank the passages",
+              "minutes": 20,
+              "lab": {
+                "slug": "rerank-the-passages",
+                "repo_path": "parts/03-answer-from-the-sources/05-rerank-the-passages"
+              }
+            }
+          ]
+        },
+        {
+          "key": "answer-from-the-sources.cite-every-answer",
+          "title": "Cite every answer",
+          "items": [
+            {
+              "key": "answer-from-the-sources.cite-every-answer.lab",
+              "kind": "lab",
+              "title": "Cite every answer",
+              "minutes": 20,
+              "lab": {
+                "slug": "cite-every-answer",
+                "repo_path": "parts/03-answer-from-the-sources/06-cite-every-answer"
+              }
+            }
+          ]
+        },
+        {
+          "key": "answer-from-the-sources.check-the-citations",
+          "title": "Check the citations",
+          "items": [
+            {
+              "key": "answer-from-the-sources.check-the-citations.lab",
+              "kind": "lab",
+              "title": "Check the citations",
+              "minutes": 20,
+              "lab": {
+                "slug": "check-the-citations",
+                "repo_path": "parts/03-answer-from-the-sources/07-check-the-citations"
+              }
+            }
+          ]
+        },
+        {
+          "key": "answer-from-the-sources.say-i-do-not-know",
+          "title": "Say I do not know",
+          "items": [
+            {
+              "key": "answer-from-the-sources.say-i-do-not-know.lab",
+              "kind": "lab",
+              "title": "Say I do not know",
+              "minutes": 20,
+              "lab": {
+                "slug": "say-i-do-not-know",
+                "repo_path": "parts/03-answer-from-the-sources/08-say-i-do-not-know"
+              }
+            }
+          ]
+        },
+        {
+          "key": "answer-from-the-sources.prove-the-answers",
+          "title": "Prove the answers",
+          "items": [
+            {
+              "key": "answer-from-the-sources.prove-the-answers.lab",
+              "kind": "lab",
+              "title": "Prove the answers",
+              "minutes": 20,
+              "lab": {
+                "slug": "prove-the-answers",
+                "repo_path": "parts/03-answer-from-the-sources/09-prove-the-answers"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "decide-and-wait",
+      "title": "Decide and wait for a person",
+      "units": [
+        {
+          "key": "decide-and-wait.route-the-inbox",
+          "title": "Route the inbox",
+          "items": [
+            {
+              "key": "decide-and-wait.route-the-inbox.lab",
+              "kind": "lab",
+              "title": "Route the inbox",
+              "minutes": 30,
+              "lab": {
+                "slug": "route-the-inbox",
+                "repo_path": "parts/04-decide-and-wait/01-route-the-inbox"
+              }
+            }
+          ]
+        },
+        {
+          "key": "decide-and-wait.send-unsure-to-a-person",
+          "title": "Send unsure to a person",
+          "items": [
+            {
+              "key": "decide-and-wait.send-unsure-to-a-person.lab",
+              "kind": "lab",
+              "title": "Send unsure to a person",
+              "minutes": 20,
+              "lab": {
+                "slug": "send-unsure-to-a-person",
+                "repo_path": "parts/04-decide-and-wait/02-send-unsure-to-a-person"
+              }
+            }
+          ]
+        },
+        {
+          "key": "decide-and-wait.chain-the-steps",
+          "title": "Chain the steps",
+          "items": [
+            {
+              "key": "decide-and-wait.chain-the-steps.lab",
+              "kind": "lab",
+              "title": "Chain the steps",
+              "minutes": 20,
+              "lab": {
+                "slug": "chain-the-steps",
+                "repo_path": "parts/04-decide-and-wait/03-chain-the-steps"
+              }
+            }
+          ]
+        },
+        {
+          "key": "decide-and-wait.stop-the-chain",
+          "title": "Stop the chain",
+          "items": [
+            {
+              "key": "decide-and-wait.stop-the-chain.lab",
+              "kind": "lab",
+              "title": "Stop the chain",
+              "minutes": 20,
+              "lab": {
+                "slug": "stop-the-chain",
+                "repo_path": "parts/04-decide-and-wait/04-stop-the-chain"
+              }
+            }
+          ]
+        },
+        {
+          "key": "decide-and-wait.wait-for-approval",
+          "title": "Wait for approval",
+          "items": [
+            {
+              "key": "decide-and-wait.wait-for-approval.lab",
+              "kind": "lab",
+              "title": "Wait for approval",
+              "minutes": 20,
+              "lab": {
+                "slug": "wait-for-approval",
+                "repo_path": "parts/04-decide-and-wait/05-wait-for-approval"
+              }
+            }
+          ]
+        },
+        {
+          "key": "decide-and-wait.survive-the-crash",
+          "title": "Survive the crash",
+          "items": [
+            {
+              "key": "decide-and-wait.survive-the-crash.lab",
+              "kind": "lab",
+              "title": "Survive the crash",
+              "minutes": 20,
+              "lab": {
+                "slug": "survive-the-crash",
+                "repo_path": "parts/04-decide-and-wait/06-survive-the-crash"
+              }
+            }
+          ]
+        },
+        {
+          "key": "decide-and-wait.prove-the-routing",
+          "title": "Prove the routing",
+          "items": [
+            {
+              "key": "decide-and-wait.prove-the-routing.lab",
+              "kind": "lab",
+              "title": "Prove the routing",
+              "minutes": 20,
+              "lab": {
+                "slug": "prove-the-routing",
+                "repo_path": "parts/04-decide-and-wait/07-prove-the-routing"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "let-it-act",
+      "title": "Let it act",
+      "units": [
+        {
+          "key": "let-it-act.write-the-tools",
+          "title": "Write the tools",
+          "items": [
+            {
+              "key": "let-it-act.write-the-tools.lab",
+              "kind": "lab",
+              "title": "Write the tools",
+              "minutes": 20,
+              "lab": {
+                "slug": "write-the-tools",
+                "repo_path": "parts/05-let-it-act/01-write-the-tools"
+              }
+            }
+          ]
+        },
+        {
+          "key": "let-it-act.explain-the-errors",
+          "title": "Explain the errors",
+          "items": [
+            {
+              "key": "let-it-act.explain-the-errors.lab",
+              "kind": "lab",
+              "title": "Explain the errors",
+              "minutes": 20,
+              "lab": {
+                "slug": "explain-the-errors",
+                "repo_path": "parts/05-let-it-act/02-explain-the-errors"
+              }
+            }
+          ]
+        },
+        {
+          "key": "let-it-act.run-the-loop",
+          "title": "Run the loop",
+          "items": [
+            {
+              "key": "let-it-act.run-the-loop.lab",
+              "kind": "lab",
+              "title": "Run the loop",
+              "minutes": 20,
+              "lab": {
+                "slug": "run-the-loop",
+                "repo_path": "parts/05-let-it-act/03-run-the-loop"
+              }
+            }
+          ]
+        },
+        {
+          "key": "let-it-act.trim-and-cache-the-context",
+          "title": "Trim and cache the context",
+          "items": [
+            {
+              "key": "let-it-act.trim-and-cache-the-context.lab",
+              "kind": "lab",
+              "title": "Trim and cache the context",
+              "minutes": 20,
+              "lab": {
+                "slug": "trim-and-cache-the-context",
+                "repo_path": "parts/05-let-it-act/04-trim-and-cache-the-context"
+              }
+            }
+          ]
+        },
+        {
+          "key": "let-it-act.grade-the-end-state",
+          "title": "Grade the end state",
+          "items": [
+            {
+              "key": "let-it-act.grade-the-end-state.lab",
+              "kind": "lab",
+              "title": "Grade the end state",
+              "minutes": 20,
+              "lab": {
+                "slug": "grade-the-end-state",
+                "repo_path": "parts/05-let-it-act/05-grade-the-end-state"
+              }
+            }
+          ]
+        },
+        {
+          "key": "let-it-act.stop-at-the-limit",
+          "title": "Stop at the limit",
+          "items": [
+            {
+              "key": "let-it-act.stop-at-the-limit.lab",
+              "kind": "lab",
+              "title": "Stop at the limit",
+              "minutes": 20,
+              "lab": {
+                "slug": "stop-at-the-limit",
+                "repo_path": "parts/05-let-it-act/06-stop-at-the-limit"
+              }
+            }
+          ]
+        },
+        {
+          "key": "let-it-act.ask-before-acting",
+          "title": "Ask before acting",
+          "items": [
+            {
+              "key": "let-it-act.ask-before-acting.lab",
+              "kind": "lab",
+              "title": "Ask before acting",
+              "minutes": 30,
+              "lab": {
+                "slug": "ask-before-acting",
+                "repo_path": "parts/05-let-it-act/07-ask-before-acting"
+              }
+            }
+          ]
+        },
+        {
+          "key": "let-it-act.test-the-path",
+          "title": "Test the path",
+          "items": [
+            {
+              "key": "let-it-act.test-the-path.lab",
+              "kind": "lab",
+              "title": "Test the path",
+              "minutes": 30,
+              "lab": {
+                "slug": "test-the-path",
+                "repo_path": "parts/05-let-it-act/08-test-the-path"
+              }
+            }
+          ]
+        },
+        {
+          "key": "let-it-act.prove-the-agent",
+          "title": "Prove the agent",
+          "items": [
+            {
+              "key": "let-it-act.prove-the-agent.lab",
+              "kind": "lab",
+              "title": "Prove the agent",
+              "minutes": 20,
+              "lab": {
+                "slug": "prove-the-agent",
+                "repo_path": "parts/05-let-it-act/09-prove-the-agent"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "make-it-safe-and-visible",
+      "title": "Make it safe and visible",
+      "units": [
+        {
+          "key": "make-it-safe-and-visible.trace-every-run",
+          "title": "Trace every run",
+          "items": [
+            {
+              "key": "make-it-safe-and-visible.trace-every-run.lab",
+              "kind": "lab",
+              "title": "Trace every run",
+              "minutes": 30,
+              "lab": {
+                "slug": "trace-every-run",
+                "repo_path": "parts/06-make-it-safe-and-visible/01-trace-every-run"
+              }
+            }
+          ]
+        },
+        {
+          "key": "make-it-safe-and-visible.price-each-outcome",
+          "title": "Price each outcome",
+          "items": [
+            {
+              "key": "make-it-safe-and-visible.price-each-outcome.lab",
+              "kind": "lab",
+              "title": "Price each outcome",
+              "minutes": 20,
+              "lab": {
+                "slug": "price-each-outcome",
+                "repo_path": "parts/06-make-it-safe-and-visible/02-price-each-outcome"
+              }
+            }
+          ]
+        },
+        {
+          "key": "make-it-safe-and-visible.find-private-data",
+          "title": "Find private data",
+          "items": [
+            {
+              "key": "make-it-safe-and-visible.find-private-data.lab",
+              "kind": "lab",
+              "title": "Find private data",
+              "minutes": 20,
+              "lab": {
+                "slug": "find-private-data",
+                "repo_path": "parts/06-make-it-safe-and-visible/03-find-private-data"
+              }
+            }
+          ]
+        },
+        {
+          "key": "make-it-safe-and-visible.hide-private-data",
+          "title": "Hide private data",
+          "items": [
+            {
+              "key": "make-it-safe-and-visible.hide-private-data.lab",
+              "kind": "lab",
+              "title": "Hide private data",
+              "minutes": 20,
+              "lab": {
+                "slug": "hide-private-data",
+                "repo_path": "parts/06-make-it-safe-and-visible/04-hide-private-data"
+              }
+            }
+          ]
+        },
+        {
+          "key": "make-it-safe-and-visible.guard-the-input",
+          "title": "Guard the input",
+          "items": [
+            {
+              "key": "make-it-safe-and-visible.guard-the-input.lab",
+              "kind": "lab",
+              "title": "Guard the input",
+              "minutes": 20,
+              "lab": {
+                "slug": "guard-the-input",
+                "repo_path": "parts/06-make-it-safe-and-visible/05-guard-the-input"
+              }
+            }
+          ]
+        },
+        {
+          "key": "make-it-safe-and-visible.guard-the-tools",
+          "title": "Guard the tools",
+          "items": [
+            {
+              "key": "make-it-safe-and-visible.guard-the-tools.lab",
+              "kind": "lab",
+              "title": "Guard the tools",
+              "minutes": 20,
+              "lab": {
+                "slug": "guard-the-tools",
+                "repo_path": "parts/06-make-it-safe-and-visible/06-guard-the-tools"
+              }
+            }
+          ]
+        },
+        {
+          "key": "make-it-safe-and-visible.prove-the-guards",
+          "title": "Prove the guards",
+          "items": [
+            {
+              "key": "make-it-safe-and-visible.prove-the-guards.lab",
+              "kind": "lab",
+              "title": "Prove the guards",
+              "minutes": 20,
+              "lab": {
+                "slug": "prove-the-guards",
+                "repo_path": "parts/06-make-it-safe-and-visible/07-prove-the-guards"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "ship-it",
+      "title": "Ship it",
+      "units": [
+        {
+          "key": "ship-it.serve-the-contract",
+          "title": "Serve the contract",
+          "items": [
+            {
+              "key": "ship-it.serve-the-contract.lab",
+              "kind": "lab",
+              "title": "Serve the contract",
+              "minutes": 20,
+              "lab": {
+                "slug": "serve-the-contract",
+                "repo_path": "parts/07-ship-it/01-serve-the-contract"
+              }
+            }
+          ]
+        },
+        {
+          "key": "ship-it.survive-a-provider-outage",
+          "title": "Survive a provider outage",
+          "items": [
+            {
+              "key": "ship-it.survive-a-provider-outage.lab",
+              "kind": "lab",
+              "title": "Survive a provider outage",
+              "minutes": 20,
+              "lab": {
+                "slug": "survive-a-provider-outage",
+                "repo_path": "parts/07-ship-it/02-survive-a-provider-outage"
+              }
+            }
+          ]
+        },
+        {
+          "key": "ship-it.lock-the-endpoint",
+          "title": "Lock the endpoint",
+          "items": [
+            {
+              "key": "ship-it.lock-the-endpoint.lab",
+              "kind": "lab",
+              "title": "Lock the endpoint",
+              "minutes": 20,
+              "lab": {
+                "slug": "lock-the-endpoint",
+                "repo_path": "parts/07-ship-it/03-lock-the-endpoint"
+              }
+            }
+          ]
+        },
+        {
+          "key": "ship-it.gate-the-release",
+          "title": "Gate the release",
+          "items": [
+            {
+              "key": "ship-it.gate-the-release.lab",
+              "kind": "lab",
+              "title": "Gate the release",
+              "minutes": 30,
+              "lab": {
+                "slug": "gate-the-release",
+                "repo_path": "parts/07-ship-it/04-gate-the-release"
+              }
+            }
+          ]
+        },
+        {
+          "key": "ship-it.write-the-runbook",
+          "title": "Write the runbook",
+          "items": [
+            {
+              "key": "ship-it.write-the-runbook.lab",
+              "kind": "lab",
+              "title": "Write the runbook",
+              "minutes": 20,
+              "lab": {
+                "slug": "write-the-runbook",
+                "repo_path": "parts/07-ship-it/05-write-the-runbook"
+              }
+            }
+          ]
+        },
+        {
+          "key": "ship-it.show-the-scorecard",
+          "title": "Show the scorecard",
+          "items": [
+            {
+              "key": "ship-it.show-the-scorecard.lab",
+              "kind": "lab",
+              "title": "Show the scorecard",
+              "minutes": 30,
+              "lab": {
+                "slug": "show-the-scorecard",
+                "repo_path": "parts/07-ship-it/06-show-the-scorecard"
+              }
+            }
+          ]
+        },
+        {
+          "key": "ship-it.learn-from-live-feedback",
+          "title": "Learn from live feedback",
+          "items": [
+            {
+              "key": "ship-it.learn-from-live-feedback.lab",
+              "kind": "lab",
+              "title": "Learn from live feedback",
+              "minutes": 20,
+              "lab": {
+                "slug": "learn-from-live-feedback",
+                "repo_path": "parts/07-ship-it/07-learn-from-live-feedback"
+              }
+            }
+          ]
+        },
+        {
+          "key": "ship-it.prove-the-release",
+          "title": "Prove the release",
+          "items": [
+            {
+              "key": "ship-it.prove-the-release.lab",
+              "kind": "lab",
+              "title": "Prove the release",
+              "minutes": 20,
+              "lab": {
+                "slug": "prove-the-release",
+                "repo_path": "parts/07-ship-it/08-prove-the-release"
+              }
+            }
+          ]
+        },
+        {
+          "key": "ship-it.prove-it-on-your-work",
+          "title": "Prove it on your work",
+          "items": [
+            {
+              "key": "ship-it.prove-it-on-your-work.lab",
+              "kind": "lab",
+              "title": "Prove it on your work",
+              "minutes": 30,
+              "lab": {
+                "slug": "prove-it-on-your-work",
+                "repo_path": "parts/07-ship-it/09-prove-it-on-your-work"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "add-one-capability",
+      "title": "Add one capability",
+      "units": [
+        {
+          "key": "add-one-capability.pick-an-elective",
+          "title": "Pick an elective",
+          "items": [
+            {
+              "key": "add-one-capability.pick-an-elective.lab",
+              "kind": "lab",
+              "title": "Pick an elective",
+              "minutes": 10,
+              "lab": {
+                "slug": "pick-an-elective",
+                "repo_path": "parts/08-add-one-capability/01-pick-an-elective"
+              }
+            }
+          ]
+        },
+        {
+          "key": "add-one-capability.bring-your-own-brief",
+          "title": "Bring your own brief",
+          "items": [
+            {
+              "key": "add-one-capability.bring-your-own-brief.lab",
+              "kind": "lab",
+              "title": "Bring your own brief",
+              "minutes": 20,
+              "lab": {
+                "slug": "bring-your-own-brief",
+                "repo_path": "parts/08-add-one-capability/02-bring-your-own-brief"
+              }
+            }
+          ]
+        },
+        {
+          "key": "add-one-capability.build-the-elective",
+          "title": "Build the elective",
+          "items": [
+            {
+              "key": "add-one-capability.build-the-elective.lab",
+              "kind": "lab",
+              "title": "Build the elective",
+              "minutes": 30,
+              "lab": {
+                "slug": "build-the-elective",
+                "repo_path": "parts/08-add-one-capability/03-build-the-elective"
+              }
+            }
+          ]
+        },
+        {
+          "key": "add-one-capability.measure-the-elective",
+          "title": "Measure the elective",
+          "items": [
+            {
+              "key": "add-one-capability.measure-the-elective.lab",
+              "kind": "lab",
+              "title": "Measure the elective",
+              "minutes": 30,
+              "lab": {
+                "slug": "measure-the-elective",
+                "repo_path": "parts/08-add-one-capability/04-measure-the-elective"
+              }
+            }
+          ]
+        },
+        {
+          "key": "add-one-capability.report-the-trade",
+          "title": "Report the trade",
+          "items": [
+            {
+              "key": "add-one-capability.report-the-trade.lab",
+              "kind": "lab",
+              "title": "Report the trade",
+              "minutes": 20,
+              "lab": {
+                "slug": "report-the-trade",
+                "repo_path": "parts/08-add-one-capability/05-report-the-trade"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "do-it-with-the-tools-teams-run",
+      "title": "Do it with the tools teams run",
+      "units": [
+        {
+          "key": "do-it-with-the-tools-teams-run.trace-with-langfuse",
+          "title": "Trace with Langfuse",
+          "items": [
+            {
+              "key": "do-it-with-the-tools-teams-run.trace-with-langfuse.lab",
+              "kind": "lab",
+              "title": "Trace with Langfuse",
+              "minutes": 30,
+              "lab": {
+                "slug": "trace-with-langfuse",
+                "repo_path": "parts/09-do-it-with-the-tools-teams-run/01-trace-with-langfuse"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "check-access-with-openfga",
+      "title": "Check access with OpenFGA",
+      "units": [
+        {
+          "key": "check-access-with-openfga.check-access-with-openfga",
+          "title": "Check access with OpenFGA",
+          "items": [
+            {
+              "key": "check-access-with-openfga.check-access-with-openfga.lab",
+              "kind": "lab",
+              "title": "Check access with OpenFGA",
+              "minutes": 30,
+              "lab": {
+                "slug": "check-access-with-openfga",
+                "repo_path": "parts/10-check-access-with-openfga/01-check-access-with-openfga"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "run-the-agent-with-google-adk",
+      "title": "Run the agent with Google ADK",
+      "units": [
+        {
+          "key": "run-the-agent-with-google-adk.run-the-loop-on-adk",
+          "title": "Run the loop on ADK",
+          "items": [
+            {
+              "key": "run-the-agent-with-google-adk.run-the-loop-on-adk.lab",
+              "kind": "lab",
+              "title": "Run the loop on ADK",
+              "minutes": 20,
+              "lab": {
+                "slug": "run-the-loop-on-adk",
+                "repo_path": "parts/11-run-the-agent-with-google-adk/01-run-the-loop-on-adk"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
